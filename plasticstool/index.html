@@ -4,6 +4,7 @@
     <title>plastic stool</title>
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="../assets/stool3.gif">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body{
             background-color: white;
@@ -68,10 +69,39 @@
         #dacBiet {
             color: yellow;
         }
+        #bottomright {
+            display: none;
+            position: fixed;
+            background-color: blue;
+            width: 9vw;
+            min-width: 90px;
+            max-width: 300px;
+            height: 3vh;
+            top: 97vh;
+            right: 0;
+            z-index: 10000;
+        }
+
+        /* if the conditions in this are true, then
+        these CSS rules are applied */
+        @media (max-width: 600px) {
+            #bottomright {
+            display: inline;
+            }
+
+            body {
+            background-color: red;
+            }
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 1024px){
+
+        }
 
     </style>
 </head>
 <body>
+    <a href=fuck.html>this is how i really feel right now</a>
     <a href="https://duytan.com/"><img id="stool1" class="media" src="../assets/stool1.png"></a>
     <a href="https://tunapee.online"><img id="stool2" class="media" src="../assets/stool2.png"></a>
     <video loop autoplay muted playsinline id="stoolvideo" class="media" src="../assets/stool7.mp4"></video>
@@ -79,5 +109,27 @@
         dùng nhờ vào tính đa dụng cùng giá <br> cả phải chăng. <span id="dacBiet"> Đặc biệt, sản phẩm này còn </span>
         nổi bật trên thị trường bởi chất lượng vượt trội, giá cả hợp lý và cam kết chính hãng. 
         Bài viết này sẽ giúp bạn hiểu rõ hơn về những ưu điểm nổi bật của ghế nhựa bành Duy Tân để sớm đưa ra lựa chọn phù hợp nhất nhé!</div>
+
+
+    <div id="bottomright"></div>
+
+    <script>
+    const isComp = window.matchMedia('(min-width: 600px)')
+
+    if (isComp.matches) {
+    alert("you're probably on your desktop!")
+    }
+
+    </script>
+
+    <script>
+    const isPhone = window.matchMedia('(max-width: 600px)')
+
+    if (isPhone.matches) {
+    alert("you're probably on your phone!");
+    }
+    </script>
+
+
 </body>
 </html>
