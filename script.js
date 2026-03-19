@@ -229,6 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================================
 
 (function () {
+  if (window.innerWidth <= 768) return;
   const FISH = { right: ">)))'>" , left: "<'(((<" };
   const COUNT = 10;
   const MAX_SPEED = 2.2;

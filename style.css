@@ -709,3 +709,109 @@ blockquote {
   margin: 10px auto;
   border: 1px dashed var(--border);
 }
+
+/* ============================================================
+   MOBILE — single column, no fish, simplified layout
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Hide custom scrollbar, restore native */
+  #custom-scrollbar { display: none; }
+  ::-webkit-scrollbar { display: initial; }
+  html { scrollbar-width: initial; }
+
+  /* Full-width content, space below for bottom nav */
+  body {
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #content {
+    order: 1;
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  /* Side panel: pulled into flow, shown at top */
+  #side-panel {
+    order: 0;
+    display: block;
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    max-width: 100%;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  #side-art {
+    max-height: 40vh;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Home grid: single column */
+  .posts-grid { flex-direction: column; }
+
+  /* Works grid: single column */
+  #works-grid { column-count: 1; }
+
+  /* Remove text post height cap */
+  .post-text .post-content { max-height: none; }
+
+  /* Always show dates and footers (touch has no hover) */
+  .post-date {
+    max-height: 20px;
+    opacity: 1;
+    margin-top: 5px;
+    transition: none;
+  }
+
+  .post-footer {
+    max-height: 60px;
+    opacity: 1;
+    margin-top: 5px;
+    transition: none;
+  }
+
+  /* No hover transitions on posts */
+  .post { transition: none; }
+  .post-image .post-content img { transition: none; opacity: 1; }
+
+  /* Work/blog content: images and media full width */
+  #work-content img { max-width: 100%; }
+  #work-content video,
+  #work-content iframe,
+  #work-content embed { width: 100%; }
+
+  /* Image grids collapse to single column */
+  .img-grid--2,
+  .img-grid--3,
+  .img-grid--4 { grid-template-columns: 1fr; }
+
+  /* Bottom nav bar */
+  #fixed-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0 14px;
+    background-color: var(--bg);
+    border-top: 1px solid var(--border);
+    gap: 0;
+    z-index: 99999;
+  }
+
+  .nav-link { font-size: 20px; }
+
+  /* Hide tooltip labels on mobile */
+  .nav-link::after { display: none; }
+}
