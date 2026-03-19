@@ -611,7 +611,13 @@ blockquote {
    BLOG LISTING CARDS
    ============================================================ */
 #blogGrid {
-  column-count: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#blogGrid .post {
+  margin-bottom: 0;
 }
 
 .blog-card-title {
