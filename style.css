@@ -1,0 +1,694 @@
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES — edit these to retheme the whole site
+   ============================================================ */
+:root {
+  --bg:         #ffffff;
+  --line:       #000000;
+  --border:     #000000;
+  --text:       #333333;
+  --link:       #000000;
+  --link-hover: #666666;
+  --post-bg:    #ffffff;
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+::selection         { background: #fafafa; color: #666666; }
+::-moz-selection    { background: #fafafa; color: #666666; }
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+/* Native scrollbar hidden — replaced by custom #custom-scrollbar */
+::-webkit-scrollbar { display: none; }
+html { scrollbar-width: none; }
+
+#custom-scrollbar {
+  position: fixed;
+  top: 0;
+  left: calc(48vw - 5px);
+  width: 4px;
+  height: 100vh;
+  z-index: 99998;
+  pointer-events: auto;
+}
+
+#scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  width: 4px;
+  min-height: 30px;
+  background-color: var(--line);
+  cursor: pointer;
+  transition: opacity 0.2s;
+  opacity: 0.5;
+}
+
+#scrollbar-thumb:hover,
+#scrollbar-thumb.dragging {
+  opacity: 1;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Kosugi', sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: normal;
+  word-spacing: 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+b, strong {
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+i, em {
+  font-size: 9px;
+  font-weight: lighter;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Silkscreen', 'Courier New', monospace;
+}
+
+h2 {
+  font-size: 9px;
+  font-weight: lighter;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  line-height: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 4px;
+  margin-bottom: 15px;
+}
+
+blockquote {
+  border-left: 1px solid var(--border);
+  padding: 2px 0 2px 6px;
+  margin: 4px 0 4px 10px;
+  opacity: 0.7;
+  background-color: var(--post-bg);
+}
+
+/* ============================================================
+   DECORATIVE LINES — the visual signature of this theme
+   ============================================================ */
+
+#line, #line2, #line3, #line4 { display: none; }
+
+/* Wide solid vertical bar at left edge */
+#line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: var(--line);
+  z-index: 99999;
+  pointer-events: none;
+}
+
+/* Thin vertical line, offset from #line */
+#line2 {
+  position: fixed;
+  top: 0;
+  left: 40px;
+  width: 5px;
+  height: 100%;
+  background-color: var(--line);
+  z-index: 99999;
+  pointer-events: none;
+}
+
+/* Upper horizontal line */
+#line3 {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--line);
+  z-index: 99998;
+  pointer-events: none;
+}
+
+/* Slightly higher, thicker horizontal line — double-bar effect */
+#line4 {
+  position: fixed;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--line);
+  z-index: 99998;
+  pointer-events: none;
+}
+
+/* ============================================================
+   CONTENT AREA
+   ============================================================ */
+#content {
+  margin-left: 20px;
+  margin-top: 40px;
+  padding: 10px;
+  width: calc(48vw - 55px);
+}
+
+/* ============================================================
+   MASONRY GRID
+   ============================================================ */
+.posts-grid {
+  column-count: 2;
+  column-gap: 40px;
+}
+
+/* ============================================================
+   POST CARDS
+   ============================================================ */
+.post {
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 20px;
+  border: 1px dashed var(--border);
+  cursor: pointer;
+  padding: 5px;
+  background-color: var(--post-bg);
+  transition: border-color 0.3s ease;
+}
+
+.post-content {
+  /* measured by masonry JS — do not add vertical padding here */
+}
+
+/* Timestamp — box expands to reveal on hover, like the original */
+.post-date {
+  display: block;
+  font-size: 9px;
+  color: #999;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  text-align: right;
+  transition: max-height 0.6s ease, opacity 0.5s ease 0.1s, margin-top 0.6s ease;
+}
+
+.post:hover .post-date {
+  max-height: 20px;
+  opacity: 1;
+  margin-top: 5px;
+}
+
+/* Image posts */
+.post-image .post-content img {
+  width: 100%;
+  display: block;
+  opacity: 0.8;
+  transition: opacity 0.5s ease-out;
+  margin-bottom: 0;
+}
+
+.post-image .post-content img:hover {
+  opacity: 1;
+}
+
+.post-image .caption {
+  font-size: 9px;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+/* Quote posts */
+.post-quote blockquote {
+  margin: 0;
+  font-style: normal;  /* Silkscreen has no italic */
+}
+
+.post-quote cite {
+  display: block;
+  margin-top: 5px;
+  font-style: normal;
+  opacity: 0.5;
+  font-size: 9px;
+}
+
+/* Link posts */
+.post-link .link-title {
+  display: block;
+  font-weight: 700;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+  color: var(--link);
+}
+
+.post-link .link-title:hover {
+  color: var(--link-hover);
+}
+
+.post-link p {
+  font-size: 9px;
+  opacity: 0.8;
+}
+
+/* Text post paragraphs */
+.post-text p {
+  font-size: 9px;
+  line-height: 1.8;
+}
+
+/* Cap text content at a square, not the whole post (so date can still expand out) */
+.post-text .post-content {
+  max-height: calc(24vw - 58px);
+  overflow: hidden;
+}
+
+/* ============================================================
+   SIDE ART — fixed in the right-hand space beside content
+   ============================================================ */
+#side-panel {
+  position: fixed;
+  top: 200px;
+  left: 74vw;
+  transform: translateX(-50%);
+  max-width: calc(52vw - 30px);
+}
+
+#side-art-box {
+  border: 1px dashed var(--border);
+  padding: 5px;
+}
+
+#side-art {
+  display: block;
+  max-width: 100%;
+  max-height: 60vh;
+  object-fit: contain;
+}
+
+#side-info-box {
+  border: 1px dashed var(--border);
+  border-top: none;
+  padding: 8px;
+  font-family: 'Silkscreen', 'Courier New', monospace;
+  font-size: 9px;
+  text-align: center;
+  line-height: 2;
+}
+
+/* ============================================================
+   FIXED NAVIGATION — sits to the right of the content columns
+   ============================================================ */
+#fixed-nav {
+  position: fixed;
+  bottom: 20px;
+  left: calc(48vw + 15px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  z-index: 99999;
+}
+
+.nav-link {
+  font-family: 'Silkscreen', 'Courier New', monospace;
+  font-size: 35px;
+  line-height: 1;
+  color: var(--link);
+  text-decoration: none;
+  opacity: 0.4;
+  transition: opacity 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  opacity: 1;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+  color: var(--link);
+}
+
+/* Tooltip label shown to the right of each link on hover */
+.nav-link::after {
+  content: attr(data-label);
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 9px;
+  font-family: 'Silkscreen', 'Courier New', monospace;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  background-color: var(--line);
+  color: var(--bg);
+  padding: 3px 5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav-link:hover::after {
+  opacity: 1;
+}
+
+/* ============================================================
+   ABOUT PAGE — single column content
+   ============================================================ */
+.about-block {
+  width: 100%;
+  border: 1px dashed var(--border);
+  padding: 10px;
+}
+
+.about-block h1 {
+  margin-bottom: 20px;
+}
+
+.about-block h2 {
+  margin-bottom: 12px;
+}
+
+.about-block h3 {
+  font-size: 9px;
+  font-weight: lighter;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 4px;
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.about-block ul {
+  padding-left: 16px;
+  margin-bottom: 14px;
+}
+
+.about-block li {
+  line-height: 1.8;
+}
+
+.now-meta {
+  font-size: 9px;
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.about-block p {
+  line-height: 1.6;
+  margin-bottom: 14px;
+  white-space: pre-wrap;
+}
+
+.about-block a {
+  border-bottom: 1px dashed var(--border);
+}
+
+.about-block a:hover {
+  border-bottom-color: transparent;
+}
+
+/* ============================================================
+   WORKS GALLERY
+   ============================================================ */
+#works-grid {
+  column-count: 2;
+  column-gap: 40px;
+}
+
+.work-card {
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 20px;
+  border: 1px dashed var(--border);
+  cursor: pointer;
+  background-color: var(--post-bg);
+  transition: border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.work-card:hover {
+  border-style: solid;
+}
+
+.work-cover {
+  width: 100%;
+  display: block;
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
+}
+
+.work-card:hover .work-cover {
+  opacity: 1;
+}
+
+.work-meta {
+  padding: 6px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.work-title {
+  font-family: 'Silkscreen', 'Courier New', monospace;
+  font-size: 9px;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+
+.work-subtitle {
+  font-size: 9px;
+  opacity: 0.6;
+}
+
+.work-date {
+  font-size: 9px;
+  opacity: 0.4;
+  text-align: right;
+}
+
+/* ============================================================
+   WORK VIEWER — rendered markdown
+   ============================================================ */
+.work-back {
+  font-family: 'Silkscreen', 'Courier New', monospace;
+  font-size: 9px;
+  margin-bottom: 20px !important;
+}
+
+.work-back a {
+  border-bottom: 1px dashed var(--border);
+}
+
+#work-content h1 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+  margin-top: 24px;
+}
+
+#work-content h1:first-child {
+  margin-top: 0;
+}
+
+#work-content h2 {
+  font-size: 11px;
+  margin-top: 20px;
+}
+
+#work-content h3 {
+  font-family: 'Silkscreen', 'Courier New', monospace;
+  font-size: 9px;
+  font-weight: lighter;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 4px;
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+#work-content p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+#work-content img {
+  max-width: 60%;
+  width: auto;
+  display: block;
+  margin: 10px auto;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+#work-content ul, #work-content ol {
+  padding-left: 18px;
+  margin-bottom: 14px;
+}
+
+#work-content li {
+  line-height: 1.8;
+  font-size: 9px;
+}
+
+#work-content a {
+  border-bottom: 1px dashed var(--border);
+  word-break: break-all;
+}
+
+#work-content a:hover {
+  border-bottom-color: transparent;
+}
+
+#work-content pre {
+  background-color: #f8f8f8;
+  border: 1px dashed var(--border);
+  padding: 10px;
+  overflow-x: auto;
+  margin: 12px 0;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+#work-content code {
+  font-family: 'Courier New', monospace;
+  font-size: 9px;
+}
+
+#work-content pre code {
+  font-size: 9px;
+}
+
+
+/* ============================================================
+   BLOG LISTING CARDS
+   ============================================================ */
+#blogGrid {
+  column-count: 1;
+}
+
+.blog-card-title {
+  font-size: 9px;
+  font-family: 'Silkscreen', 'Courier New', monospace;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.blog-card-snippet {
+  font-size: 9px;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  transition: max-height 0.6s ease, opacity 0.5s ease 0.1s, margin-top 0.6s ease;
+}
+
+.post:hover .post-footer {
+  max-height: 20px;
+  opacity: 1;
+  margin-top: 5px;
+}
+
+.post-tags {
+  display: flex;
+  gap: 4px;
+}
+
+.blog-tag {
+  font-size: 14px;
+  color: #999;
+}
+
+/* Override the standalone .post-date show-on-hover when inside .post-footer */
+.post-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.post-meta-row .now-meta {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+/* Override the standalone .post-date show-on-hover when inside .post-footer */
+.post-footer .post-date {
+  display: block;
+  font-size: 14px;
+  max-height: none;
+  overflow: visible;
+  opacity: 1;
+  margin-top: 0;
+  transition: none;
+}
+
+.img-grid {
+  display: grid;
+  gap: 4px;
+  margin: 10px 0;
+  width: 100%;
+}
+.img-grid--2 { grid-template-columns: 1fr 1fr; }
+.img-grid--3 { grid-template-columns: 1fr 1fr 1fr; }
+.img-grid--4 { grid-template-columns: 1fr 1fr; }
+
+.img-grid img {
+  width: 100%;
+  margin: 0;
+  display: block;
+}
+
+#work-content video,
+#work-content iframe,
+#work-content embed {
+  width: 50%;
+  display: block;
+  margin: 10px auto;
+  border: 1px dashed var(--border);
+}
