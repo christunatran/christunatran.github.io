@@ -10,3 +10,12 @@ Add an entry to `works.json` with slug, title, subtitle, date, and optionally co
 
 Videos `(.mov/.mp4)` referenced as links in the markdown will 
 automatically render as <video> elements on the page.
+
+# HOW TO DEPLOY
+
+```
+/Users/tunapee/Coding/website/deploy.sh
+```
+
+With commit message:
+"/Users/tunapee/Coding/website/deploy.sh "add new blog post"
