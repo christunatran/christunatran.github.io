@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
     dy: (Math.random() - 0.5) * 1,
   }));
 
-  const NYANS = ['assets/nyan tunas/fish 1.png','assets/nyan tunas/fish 2.png','assets/nyan tunas/fish 3.png','assets/nyan tunas/fish 4.png'];
+  const NYANS = ['/assets/nyan tunas/fish 1.png','/assets/nyan tunas/fish 2.png','/assets/nyan tunas/fish 3.png','/assets/nyan tunas/fish 4.png'];
   const useNyan = Math.random() < 0.5;
 
   const els = fish.map(_f => {
