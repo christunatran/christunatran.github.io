@@ -320,13 +320,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const path = window.location.pathname;
-  const page = path.split('/').pop() || 'index.html';
 
   document.querySelectorAll('.nav-link').forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
-    const linkPage = href.split('/').pop();
-    if (linkPage === page || (page === '' && linkPage === 'index.html')) {
+    if (href === '/' && (path === '/' || path === '')) {
+      link.classList.add('active');
+    } else if (href !== '/' && (path === href || path === href + '/' || path.startsWith(href + '/'))) {
       link.classList.add('active');
     }
   });

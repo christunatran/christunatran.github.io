@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
@@ -27,7 +27,7 @@
 
   <!-- Side art -->
   <div id="side-panel">
-    <div id="side-art-box"><img id="side-art" src="assets/ascii-art.png" alt=""></div>
+    <div id="side-art-box"><img id="side-art" src="/assets/ascii-art.png" alt=""></div>
     <div id="side-info-box">
       <p>location: brooklyn, nyc</p>
       <p>time: <span id="side-time">--:--</span></p>
@@ -37,24 +37,24 @@
 
   <!-- Fixed navigation -->
   <nav id="fixed-nav">
-    <a href="index.html" class="nav-link" data-label="home">home</a>
-    <a href="about.html" class="nav-link" data-label="about">about</a>
-    <a href="works.html" class="nav-link" data-label="works">works</a>
-    <a href="blog.html" class="nav-link" data-label="blog">blog</a>
-    <a href="now.html" class="nav-link" data-label="now">now</a>
+    <a href="/" class="nav-link" data-label="home">home</a>
+    <a href="/about" class="nav-link" data-label="about">about</a>
+    <a href="/works" class="nav-link" data-label="works">works</a>
+    <a href="/blog" class="nav-link" data-label="blog">blog</a>
+    <a href="/now" class="nav-link" data-label="now">now</a>
   </nav>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
   <script>
     const staticImages = [
-      { src: 'assets/GVzNXOLWwAAjivn.jpeg',                   date: '2026.03.16' },
-      { src: 'assets/tumblr_nfkkugWQ1H1qm6msjo1_1280.png',    date: '2026.03.16' },
-      { src: 'assets/my professional headshot.jpg',            date: '2026.03.16' },
+      { src: '/assets/GVzNXOLWwAAjivn.jpeg',                   date: '2026.03.16' },
+      { src: '/assets/tumblr_nfkkugWQ1H1qm6msjo1_1280.png',    date: '2026.03.16' },
+      { src: '/assets/my professional headshot.jpg',            date: '2026.03.16' },
     ];
 
     Promise.all([
-      fetch('works.json').then(r => r.json()),
-      fetch('blog.json').then(r => r.json())
+      fetch('/works.json').then(r => r.json()),
+      fetch('/blog.json').then(r => r.json())
     ]).then(([works, posts]) => {
       const items = [
         ...staticImages.map(i => ({ type: 'image', date: i.date, data: i })),
@@ -90,7 +90,7 @@
             <span class="post-date">${w.date}</span>
           `;
           card.addEventListener('click', () => {
-            window.location.href = `work.html?slug=${w.slug}`;
+            window.location.href = `/work/?slug=${w.slug}`;
           });
         } else {
           const p = item.data;
@@ -103,7 +103,7 @@
             <span class="post-date">${p.date}</span>
           `;
           card.addEventListener('click', () => {
-            window.location.href = `blog-post.html?slug=${p.slug}`;
+            window.location.href = `/blog-post/?slug=${p.slug}`;
           });
         }
 

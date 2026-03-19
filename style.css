@@ -199,11 +199,16 @@ blockquote {
   gap: 20px;
 }
 
+.posts-col .post {
+  margin-bottom: 0;
+}
+
 /* ============================================================
    POST CARDS
    ============================================================ */
 .post {
   width: 100%;
+  margin-bottom: 20px;
   border: 1px dashed var(--border);
   cursor: pointer;
   padding: 5px;
