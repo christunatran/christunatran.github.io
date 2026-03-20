@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog posts by tunapee — thoughts on art, life, code, and everything in between.">
   <title>tunapee</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/components.js" defer></script>
+  <script src="/js/script.js" defer></script>
+  <script src="/js/blog-listing.js" defer></script>
 </head>
 <body>
 
@@ -22,51 +27,9 @@
     <div id="blogGrid"></div>
   </div>
 
-  <div id="side-panel">
-    <div id="side-art-box"><img id="side-art" src="/assets/ascii-art.png" alt=""></div>
-    <div id="side-info-box">
-      <p>location: brooklyn, nyc</p>
-      <p>time: <span id="side-time">--:--</span></p>
-      <p>temperature: <span id="side-temp">--</span></p>
-    </div>
-  </div>
+  <div id="side-panel"></div>
 
-  <nav id="fixed-nav">
-    <a href="/" class="nav-link" data-label="home">home</a>
-    <a href="/about" class="nav-link" data-label="about">about</a>
-    <a href="/works" class="nav-link" data-label="works">works</a>
-    <a href="/blog" class="nav-link" data-label="blog">blog</a>
-    <a href="/now" class="nav-link" data-label="now">now</a>
-  </nav>
+  <nav id="fixed-nav" aria-label="site navigation"></nav>
 
-  <script src="/script.js"></script>
-  <script>
-    fetch('/blog.json')
-      .then(r => r.json())
-      .then(posts => {
-        const grid = document.getElementById('blogGrid');
-        posts.forEach(post => {
-          const card = document.createElement('div');
-          card.className = 'post post-text';
-          const tagsHtml = post.tags && post.tags.length
-            ? `<span class="blog-tag">${post.tags.join(', ')}</span>`
-            : '';
-          card.innerHTML = `
-            <div class="post-content">
-              <p class="blog-card-title">${post.title}</p>
-              ${post.snippet ? `<p class="blog-card-snippet">${post.snippet}</p>` : ''}
-            </div>
-            <div class="post-footer">
-              <span class="post-tags">${tagsHtml}</span>
-              <span class="post-date">${post.date}</span>
-            </div>
-          `;
-          card.addEventListener('click', () => {
-            window.location.href = `/blog-post/?slug=${post.slug}`;
-          });
-          grid.appendChild(card);
-        });
-      });
-  </script>
 </body>
 </html>

@@ -3,111 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="tunapee — Christina Tran's personal site. art, code, and everything in between.">
   <title>tunapee</title>
 
-  <!-- Silkscreen pixel font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/components.js" defer></script>
+  <script src="/js/script.js" defer></script>
+  <script src="/js/home.js" defer></script>
 </head>
 <body>
 
-  <!-- Decorative structural lines -->
   <div id="line"></div>
   <div id="line2"></div>
   <div id="line3"></div>
   <div id="line4"></div>
 
-  <!-- Main content -->
   <div id="content">
     <div class="posts-grid" id="postsGrid"></div>
   </div>
 
-  <!-- Side art -->
-  <div id="side-panel">
-    <div id="side-art-box"><img id="side-art" src="/assets/ascii-art.png" alt=""></div>
-    <div id="side-info-box">
-      <p>location: brooklyn, nyc</p>
-      <p>time: <span id="side-time">--:--</span></p>
-      <p>temperature: <span id="side-temp">--</span></p>
-    </div>
-  </div>
+  <div id="side-panel"></div>
 
-  <!-- Fixed navigation -->
-  <nav id="fixed-nav">
-    <a href="/" class="nav-link" data-label="home">home</a>
-    <a href="/about" class="nav-link" data-label="about">about</a>
-    <a href="/works" class="nav-link" data-label="works">works</a>
-    <a href="/blog" class="nav-link" data-label="blog">blog</a>
-    <a href="/now" class="nav-link" data-label="now">now</a>
-  </nav>
+  <nav id="fixed-nav" aria-label="site navigation"></nav>
 
-  <script src="/script.js"></script>
-  <script>
-    const staticImages = [
-      { src: '/assets/my professional headshot.jpg',            date: '2026.03.16' }
-    ];
-
-    Promise.all([
-      fetch('/works.json').then(r => r.json()),
-      fetch('/blog.json').then(r => r.json())
-    ]).then(([works, posts]) => {
-      const items = [
-        ...staticImages.map(i => ({ type: 'image', date: i.date, data: i })),
-        ...works.map(w => ({ type: 'work', date: w.date, data: w })),
-        ...posts.map(p => ({ type: 'blog', date: p.date, data: p }))
-      ].sort((a, b) => b.date.localeCompare(a.date));
-
-      const grid = document.getElementById('postsGrid');
-      const colL = document.createElement('div');
-      const colR = document.createElement('div');
-      colL.className = 'posts-col';
-      colR.className = 'posts-col';
-      grid.appendChild(colL);
-      grid.appendChild(colR);
-
-      items.forEach((item, idx) => {
-        const card = document.createElement('div');
-
-        if (item.type === 'image') {
-          const i = item.data;
-          card.className = 'post post-image';
-          card.innerHTML = `
-            <div class="post-content"><img src="${i.src}" alt=""></div>
-            <span class="post-date">${i.date}</span>
-          `;
-        } else if (item.type === 'work') {
-          const w = item.data;
-          card.className = 'post post-image';
-          card.innerHTML = `
-            <div class="post-content">
-              ${w.cover ? `<img src="${w.cover}" alt="${w.title}">` : ''}
-            </div>
-            <span class="post-date">${w.date}</span>
-          `;
-          card.addEventListener('click', () => {
-            window.location.href = `/work/?slug=${w.slug}`;
-          });
-        } else {
-          const p = item.data;
-          card.className = 'post post-text';
-          card.innerHTML = `
-            <div class="post-content">
-              <p class="blog-card-title">${p.title}</p>
-              ${p.snippet ? `<p class="blog-card-snippet">${p.snippet}</p>` : ''}
-            </div>
-            <span class="post-date">${p.date}</span>
-          `;
-          card.addEventListener('click', () => {
-            window.location.href = `/blog-post/?slug=${p.slug}`;
-          });
-        }
-
-        (idx % 2 === 0 ? colL : colR).appendChild(card);
-      });
-    });
-  </script>
 </body>
 </html>

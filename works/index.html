@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Works by tunapee — physical computing, film, interactive art.">
   <title>tunapee</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/components.js" defer></script>
+  <script src="/js/script.js" defer></script>
+  <script src="/js/works-listing.js" defer></script>
 </head>
 <body>
 
@@ -22,46 +27,9 @@
     <div id="works-grid"></div>
   </div>
 
-  <div id="side-panel">
-    <div id="side-art-box"><img id="side-art" src="/assets/ascii-art.png" alt=""></div>
-    <div id="side-info-box">
-      <p>location: brooklyn, nyc</p>
-      <p>time: <span id="side-time">--:--</span></p>
-      <p>temperature: <span id="side-temp">--</span></p>
-    </div>
-  </div>
+  <div id="side-panel"></div>
 
-  <nav id="fixed-nav">
-    <a href="/" class="nav-link" data-label="home">home</a>
-    <a href="/about" class="nav-link" data-label="about">about</a>
-    <a href="/works" class="nav-link" data-label="works">works</a>
-    <a href="/blog" class="nav-link" data-label="blog">blog</a>
-    <a href="/now" class="nav-link" data-label="now">now</a>
-  </nav>
+  <nav id="fixed-nav" aria-label="site navigation"></nav>
 
-  <script src="/script.js"></script>
-  <script>
-    fetch('/works.json')
-      .then(r => r.json())
-      .then(works => {
-        const grid = document.getElementById('works-grid');
-        works.forEach(w => {
-          const card = document.createElement('div');
-          card.className = 'work-card';
-          card.innerHTML = `
-            ${w.cover ? `<img class="work-cover" src="/${w.cover}" alt="${w.title}">` : ''}
-            <div class="work-meta">
-              <span class="work-title">${w.title}</span>
-              <span class="work-subtitle">${w.subtitle}</span>
-              <span class="work-date">${w.date}</span>
-            </div>
-          `;
-          card.addEventListener('click', () => {
-            window.location.href = `/work/?slug=${w.slug}`;
-          });
-          grid.appendChild(card);
-        });
-      });
-  </script>
 </body>
 </html>
