@@ -1,10 +1,45 @@
 [
   {
+    "slug": "stupid-hackathon",
+    "title": "stupid hackathon",
+    "subtitle": "event organizing",
+    "date": "2026.03",
+    "cover": "works/stupid-hackathon/assets/table-signage.png"
+  },
+  {
+    "slug": "closer-to-the-fire",
+    "title": "closer to the fire",
+    "subtitle": "MIT Hardmode Hackathon",
+    "date": "2026.26",
+    "cover": "works/closer-to-the-fire/lighter 1.jpeg"
+  },
+  {
+    "slug": "tunapees-favorite-things",
+    "title": "tunapee's favorite things",
+    "subtitle": "fun",
+    "date": "2026.01",
+    "cover": "works/tunapees-favorite-things/favorite things screenshot.png"
+  },
+  {
     "slug": "nose-project",
     "title": "pick me",
     "subtitle": "physical computing",
     "date": "2025.12",
     "cover": "works/nose-project/assets/f7a72084-c1ca-42cb-9f2b-9e2eb25b0091.png"
+  },
+  {
+    "slug": "froggy-chair",
+    "title": "froggy chair",
+    "subtitle": "intro to fabrication",
+    "date": "2025.5",
+    "cover": "works/froggy-chair/assets/chair-main-image.jpg"
+  },
+  {
+    "slug": "fishy-fabrication",
+    "title": "fishy fabrication",
+    "subtitle": "intro to fabrication",
+    "date": "2025.10",
+    "cover": "works/fishy-fabrication/assets/55369b93-a020-421f-9ef9-6853c34d57fd.png"
   },
   {
     "slug": "santa-stop-motion",

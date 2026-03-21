@@ -35,6 +35,7 @@
       replaceVideoLinksWithElements(contentEl);
       autoGridConsecutiveImages(contentEl);
       initLightbox(contentEl);
+      initInstagramEmbeds(contentEl);
       updatePageTitle(contentEl);
     })
     .catch(() => {
@@ -114,6 +115,27 @@
       img.style.cursor = 'pointer';
       img.addEventListener('click', () => lb.openAt(idx));
     });
+  }
+
+  /**
+   * Activates any Instagram embed blockquotes in the container.
+   * Instagram's embed.js must be loaded to transform blockquotes into iframes.
+   * Since innerHTML doesn't execute <script> tags, we load it dynamically here
+   * and call instgrm.Embeds.process() once it's ready.
+   */
+  function initInstagramEmbeds(container) {
+    if (!container.querySelector('.instagram-media')) return;
+
+    if (window.instgrm) {
+      window.instgrm.Embeds.process();
+      return;
+    }
+
+    const script  = document.createElement('script');
+    script.src    = '//www.instagram.com/embed.js';
+    script.async  = true;
+    script.onload = () => window.instgrm && window.instgrm.Embeds.process();
+    document.body.appendChild(script);
   }
 
   function updatePageTitle(container) {

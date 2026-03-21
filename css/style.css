@@ -665,6 +665,11 @@ blockquote {
   display: block;
 }
 
+#work-content .instagram-media {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 #work-content video,
 #work-content iframe,
 #work-content embed {
