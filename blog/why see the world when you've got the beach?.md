@@ -4,3 +4,4 @@ link: why-see-the-world
 published_date: 2026-03-21 16:22
 tags: quotes
 ---
+""
