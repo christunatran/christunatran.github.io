@@ -10,7 +10,7 @@
   'use strict';
 
   const STATIC_IMAGES = [
-    { src: '/assets/my professional headshot.jpg', date: '2026.03.16' },
+    { src: '/assets/my professional headshot.jpg', date: '2025.02' },
   ];
 
   /** Escapes user-supplied strings before inserting into innerHTML. */
@@ -65,28 +65,26 @@
     return card;
   }
 
+  /** Pads month/day components so "2025.5" sorts correctly vs "2025.10". */
+  function normalizeDate(d) {
+    return d.split('.').map((p, i) => i === 0 ? p : p.padStart(2, '0')).join('.');
+  }
+
   function buildGrid(works, posts) {
     const items = [
       ...STATIC_IMAGES.map(i => ({ type: 'image', date: i.date, data: i })),
       ...works.map(w =>         ({ type: 'work',  date: w.date, data: w })),
       ...posts.filter(p => !p.disabled).map(p => ({ type: 'blog', date: p.date, data: p })),
-    ].sort((a, b) => b.date.localeCompare(a.date));
+    ].sort((a, b) => normalizeDate(b.date).localeCompare(normalizeDate(a.date)));
 
     const grid = document.getElementById('postsGrid');
     if (!grid) return;
 
-    const colL = document.createElement('div');
-    const colR = document.createElement('div');
-    colL.className = 'posts-col';
-    colR.className = 'posts-col';
-    grid.appendChild(colL);
-    grid.appendChild(colR);
-
     const creators = { image: createImageCard, work: createWorkCard, blog: createBlogCard };
 
-    items.forEach((item, idx) => {
+    items.forEach(item => {
       const card = creators[item.type]?.(item.data);
-      if (card) (idx % 2 === 0 ? colL : colR).appendChild(card);
+      if (card) grid.appendChild(card);
     });
   }
 

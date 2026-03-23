@@ -185,20 +185,8 @@ blockquote {
    MASONRY GRID
    ============================================================ */
 .posts-grid {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-}
-
-.posts-col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.posts-col .post {
-  margin-bottom: 0;
+  column-count: 2;
+  column-gap: 40px;
 }
 
 /* ============================================================
@@ -212,6 +200,7 @@ blockquote {
   padding: 5px;
   background-color: var(--post-bg);
   transition: border-color 0.3s ease;
+  break-inside: avoid;
 }
 
 .post-content {
@@ -600,8 +589,9 @@ blockquote {
 
 .post-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -610,7 +600,7 @@ blockquote {
 }
 
 .post:hover .post-footer {
-  max-height: 20px;
+  max-height: 40px;
   opacity: 1;
   margin-top: 5px;
 }
@@ -725,7 +715,7 @@ blockquote {
   }
 
   /* Home grid: single column */
-  .posts-grid { flex-direction: column; }
+  .posts-grid { column-count: 1; }
 
   /* Works grid: single column */
   #works-grid { column-count: 1; }

@@ -56,7 +56,9 @@
           return r.text();
         })
         .then(raw => {
-          const { meta, body } = parseFrontmatter(raw);
+          const { meta, body: rawBody } = parseFrontmatter(raw);
+          // Rewrite relative asset paths so they resolve from /blog/, not /blog-post/
+          const body = rawBody.replace(/\((?!https?:\/\/)(assets\/[^)]+)\)/g, '(/blog/$1)');
           const title    = meta.title || post.title;
           const tagsHtml = post.tags && post.tags.length
             ? `<span class="blog-tag">${post.tags.map(escapeHtml).join(', ')}</span>`

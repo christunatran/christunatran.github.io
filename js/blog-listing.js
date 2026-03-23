@@ -35,8 +35,8 @@
             ${post.snippet ? `<p class="blog-card-snippet">${escapeHtml(post.snippet)}</p>` : ''}
           </div>
           <div class="post-footer">
-            <span class="post-tags">${tagsHtml}</span>
             <span class="post-date">${post.date}</span>
+            <span class="post-tags">${tagsHtml}</span>
           </div>
         `;
 
