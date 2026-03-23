@@ -2,7 +2,7 @@
 title: 75 hard
 link: 75-hard
 published_date: 2026-03-23 00:41
-tags:
+tags: medium, self-improvement
 ---
 
 ### why?
@@ -31,7 +31,13 @@ i made this chart to track it:
 
 ![75 hard](assets/75-hard.png)
 
+i'm going to print it out and paste it on my wall.
+
 in the standard 75 hard challenge it requires a daily progress photo but that's not my thing, especially with how my modification is not exactly fully physical-health-oriented. i'd like to write/film a weekly recap. it'll be fun to gamify this process and share my progress.
+
+Today is DAY 0 and i've managed to do everything besdies read 10 pages of a book, which i'll do before bed tonight. i've been reading "God in a Cup: The Obsessive Quest for the Perfect Coffee"
+by Michaele Weissman. lowkey boring but that's exactly the sort of book you need before bed.
+
 
 ### old habit trackers
 

@@ -71,7 +71,7 @@
               <span class="now-meta">${post.date}</span>
               ${tagsHtml ? `<span class="post-tags">${tagsHtml}</span>` : ''}
             </div>
-            ${window.marked ? marked.parse(body) : body}
+            ${window.marked ? marked.parse(body, { breaks: true, gfm: true, mangle: false, headerIds: false }) : body}
           `;
 
           document.title = `${title} — tunapee`;

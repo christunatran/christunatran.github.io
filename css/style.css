@@ -528,7 +528,7 @@ blockquote {
 
 #work-content li {
   line-height: 1.8;
-  font-size: 9px;
+  font-size: 14px;
 }
 
 #work-content a {
@@ -600,7 +600,7 @@ blockquote {
 }
 
 .post:hover .post-footer {
-  max-height: 40px;
+  max-height: 50px;
   opacity: 1;
   margin-top: 5px;
 }
