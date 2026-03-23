@@ -5,11 +5,11 @@ published_date: 2026-03-23 00:41
 tags: medium, self-improvement
 ---
 
-### why?
+## why?
 
 at this moment in time, i've decided that there's nothing holding me back from doing my best; the ["edge of my abilities"](https://www.recurse.com/self-directives). as i've talked about in a previous blog post, what "my best" looks like can fluctuate each day, so it's hard to measure. in my corporate job, my manager, N, asked me,  "if you were to be honest with yourself and the work you are doing right now, are you proud of yourself?". reminded of this, i think that if i can show up every day in some capacity, it can allow me to at least have a record that i tried to set up the ideal conditions for me to do my best work. these ideal conditions involve taking care of my body and mental health, as well as setting up structures to better manage my work.
 
-### how?
+## how?
 
 so, i've decided to challenge myself for the next 75 days to show up for these habits:
 - **45-min workout everyday**
@@ -24,6 +24,7 @@ so, i've decided to challenge myself for the next 75 days to show up for these h
 - **no phone in the bedroom**
     - i just ordered an alarm clock to decouple that task from my phone. i want to force myself to exit my room in order to use my phone; it's just way too comfy to use it in my room, especially my bed.
 - **gratitude journal**
+    - list 5 things i'm grateful for every day
 - **log progress**
     - seems redundant to have this as a tally but i mean to set an intention to journal about my progress privately
 
@@ -39,7 +40,7 @@ Today is DAY 0 and i've managed to do everything besdies read 10 pages of a book
 by Michaele Weissman. lowkey boring but that's exactly the sort of book you need before bed.
 
 
-### old habit trackers
+## old habit trackers
 
 throwback to when i bullet journaled in undergrad when i took much pride in being disciplined and a woman in STEM (2018-2022):
 

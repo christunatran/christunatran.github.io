@@ -64,6 +64,16 @@
             ? `<span class="blog-tag">${post.tags.map(escapeHtml).join(', ')}</span>`
             : '';
 
+          let rendered = window.marked
+            ? marked.parse(body, { gfm: true })
+            : body;
+
+          // Convert bare YouTube URLs (on their own line) into embeds.
+          rendered = rendered.replace(
+            /<p>\s*https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)[^\s<]*\s*<\/p>/g,
+            (_, id) => `<div class="video-embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+          );
+
           // marked.js is loaded via CDN before this script.
           contentEl.innerHTML = `
             <h1>${escapeHtml(title)}</h1>
@@ -71,7 +81,7 @@
               <span class="now-meta">${post.date}</span>
               ${tagsHtml ? `<span class="post-tags">${tagsHtml}</span>` : ''}
             </div>
-            ${window.marked ? marked.parse(body, { breaks: true, gfm: true, mangle: false, headerIds: false }) : body}
+            ${rendered}
           `;
 
           document.title = `${title} — tunapee`;

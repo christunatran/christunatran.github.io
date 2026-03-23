@@ -596,9 +596,8 @@ blockquote {
 
 .post-footer {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 2px;
+  justify-content: space-between;
+  align-items: center;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -607,7 +606,7 @@ blockquote {
 }
 
 .post:hover .post-footer {
-  max-height: 50px;
+  max-height: 20px;
   opacity: 1;
   margin-top: 5px;
 }
@@ -625,8 +624,9 @@ blockquote {
 /* Override the standalone .post-date show-on-hover when inside .post-footer */
 .post-meta-row {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
   margin-bottom: 20px;
 }
 
