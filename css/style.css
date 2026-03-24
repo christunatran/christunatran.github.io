@@ -414,8 +414,15 @@ blockquote {
    WORKS GALLERY
    ============================================================ */
 #works-grid {
-  column-count: 2;
-  column-gap: 40px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.works-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .work-card {
@@ -733,7 +740,8 @@ blockquote {
   .posts-col { flex: none; width: 100%; }
 
   /* Works grid: single column */
-  #works-grid { column-count: 1; }
+  #works-grid { flex-direction: column; }
+  .works-col { flex: none; width: 100%; }
 
   /* Remove text post height cap */
   .post-text .post-content { max-height: none; }

@@ -27,7 +27,16 @@
 
       works.sort((a, b) => normalizeDate(b.date).localeCompare(normalizeDate(a.date)));
 
-      works.forEach(work => {
+      // Two explicit columns, alternating left/right so works fill newest-first
+      // left-to-right rather than top-to-bottom via CSS column-count.
+      const colLeft  = document.createElement('div');
+      const colRight = document.createElement('div');
+      colLeft.className  = 'works-col';
+      colRight.className = 'works-col';
+      grid.appendChild(colLeft);
+      grid.appendChild(colRight);
+
+      works.forEach((work, i) => {
         const card = document.createElement('div');
         card.className = 'work-card';
         card.innerHTML = `
@@ -41,7 +50,7 @@
         card.addEventListener('click', () => {
           window.location.href = `/work/?slug=${work.slug}`;
         });
-        grid.appendChild(card);
+        (i % 2 === 0 ? colLeft : colRight).appendChild(card);
       });
     });
 })();
