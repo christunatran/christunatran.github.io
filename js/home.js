@@ -80,8 +80,6 @@
     const grid = document.getElementById('postsGrid');
     if (!grid) return;
 
-    // Two explicit columns so items alternate left/right in chronological order
-    // rather than CSS masonry filling the left column entirely before the right.
     const colLeft  = document.createElement('div');
     const colRight = document.createElement('div');
     colLeft.className  = 'posts-col';
@@ -91,9 +89,21 @@
 
     const creators = { image: createImageCard, work: createWorkCard, blog: createBlogCard };
 
-    items.forEach((item, i) => {
+    // Estimate item heights to greedily balance column heights:
+    // image/work cards are much taller than text cards.
+    const EST = { image: 280, work: 280, blog: 110 };
+    let heightLeft = 0, heightRight = 0;
+
+    items.forEach(item => {
       const card = creators[item.type]?.(item.data);
-      if (card) (i % 2 === 0 ? colLeft : colRight).appendChild(card);
+      if (!card) return;
+      if (heightLeft <= heightRight) {
+        colLeft.appendChild(card);
+        heightLeft += EST[item.type];
+      } else {
+        colRight.appendChild(card);
+        heightRight += EST[item.type];
+      }
     });
   }
 
