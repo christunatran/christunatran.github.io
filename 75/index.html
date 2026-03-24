@@ -441,9 +441,6 @@
         if (activity) cell.dataset.activity = activity;
         else delete cell.dataset.activity;
       }
-      setCheck(day, WORKOUT_IDX, !!activity);
-      const cb = document.querySelector(`.workout-cb[data-day="${day}"]`);
-      if (cb) cb.checked = !!activity;
     }
 
     function commitDesign(day, activity) {
@@ -454,9 +451,6 @@
         if (activity) cell.dataset.design = activity;
         else delete cell.dataset.design;
       }
-      setCheck(day, DESIGN_IDX, !!activity);
-      const cb = document.querySelector(`.design-cb[data-day="${day}"]`);
-      if (cb) cb.checked = !!activity;
     }
 
     function commitGratitude(day, text) {
@@ -467,19 +461,12 @@
         if (text) cell.dataset.gratitude = text;
         else delete cell.dataset.gratitude;
       }
-      setCheck(day, GRATITUDE_IDX, !!text);
-      const cb = document.querySelector(`.gratitude-cb[data-day="${day}"]`);
-      if (cb) cb.checked = !!text;
     }
 
     function isUnlocked() { return localStorage.getItem(UNLOCK_KEY) === '1'; }
 
     function setEditMode(on) {
-      // regular checkboxes (not picker-controlled ones)
-      document.querySelectorAll('.tracker-cb:not(.workout-cb):not(.design-cb):not(.gratitude-cb)').forEach(cb => {
-        cb.disabled = !on;
-      });
-      // workout/design checkboxes stay disabled (controlled via picker)
+      document.querySelectorAll('.tracker-cb').forEach(cb => { cb.disabled = !on; });
       document.getElementById('edit-btn').style.display = on ? 'none' : '';
       document.getElementById('lock-btn').style.display = on ? '' : 'none';
       document.getElementById('weeks-container').classList.toggle('edit-mode', on);
@@ -627,6 +614,8 @@
               if (act) cell.dataset.activity = act;
               cb.className = 'tracker-cb workout-cb';
               cb.dataset.day = d;
+              cb.addEventListener('change', () => setCheck(d, tIdx, cb.checked));
+              cb.addEventListener('click', e => e.stopPropagation());
               cell.addEventListener('click', () => openPicker(d, cell, 'workout'));
             } else if (tIdx === DESIGN_IDX) {
               cell.className = 'tracker-cell design-cell';
@@ -635,6 +624,8 @@
               if (des) cell.dataset.design = des;
               cb.className = 'tracker-cb design-cb';
               cb.dataset.day = d;
+              cb.addEventListener('change', () => setCheck(d, tIdx, cb.checked));
+              cb.addEventListener('click', e => e.stopPropagation());
               cell.addEventListener('click', () => openTextPicker(d, cell, 'design'));
             } else if (tIdx === GRATITUDE_IDX) {
               cell.className = 'tracker-cell gratitude-cell';
@@ -643,6 +634,8 @@
               if (grat) cell.dataset.gratitude = grat;
               cb.className = 'tracker-cb gratitude-cb';
               cb.dataset.day = d;
+              cb.addEventListener('change', () => setCheck(d, tIdx, cb.checked));
+              cb.addEventListener('click', e => e.stopPropagation());
               cell.addEventListener('click', () => openTextPicker(d, cell, 'gratitude'));
             } else {
               cell.className = 'tracker-cell';
