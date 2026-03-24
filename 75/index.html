@@ -157,12 +157,13 @@
     .tracker-cb:not(:disabled):hover:not(:checked) { border-color: #666; background: #f0f0f0; }
     .tracker-cb:checked { background: #999; border-color: #999; }
 
-    /* ── workout/design cells — hover tooltip (nav style) ── */
-    .workout-cell, .design-cell {
+    /* ── workout/design/gratitude cells — hover tooltip (nav style) ── */
+    .workout-cell, .design-cell, .gratitude-cell {
       position: relative;
     }
     .workout-cell[data-activity]:not([data-activity=""])::after,
-    .design-cell[data-design]:not([data-design=""])::after {
+    .design-cell[data-design]:not([data-design=""])::after,
+    .gratitude-cell[data-gratitude]:not([data-gratitude=""])::after {
       position: absolute;
       bottom: calc(100% + 6px);
       left: 50%;
@@ -186,12 +187,67 @@
     .design-cell[data-design]:not([data-design=""])::after {
       content: attr(data-design);
     }
+    .gratitude-cell[data-gratitude]:not([data-gratitude=""])::after {
+      content: attr(data-gratitude);
+    }
     .workout-cell[data-activity]:not([data-activity=""]):hover::after,
-    .design-cell[data-design]:not([data-design=""]):hover::after {
+    .design-cell[data-design]:not([data-design=""]):hover::after,
+    .gratitude-cell[data-gratitude]:not([data-gratitude=""]):hover::after {
       opacity: 1;
     }
-    /* in edit mode, show cursor on workout/design cells */
-    .edit-mode .workout-cell, .edit-mode .design-cell { cursor: pointer; }
+    /* in edit mode, show cursor on picker-controlled cells */
+    .edit-mode .workout-cell, .edit-mode .design-cell, .edit-mode .gratitude-cell { cursor: pointer; }
+
+    /* ── text picker (design / gratitude) ── */
+    #text-picker {
+      position: fixed;
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      border: 1px dashed var(--border);
+      background: var(--bg);
+      padding: 8px;
+      z-index: 999990;
+      min-width: 160px;
+    }
+    #text-picker.open { display: flex; }
+    #text-input {
+      font-family: 'Kosugi', sans-serif;
+      font-size: 11px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 3px 5px;
+      outline: none;
+      color: var(--text);
+    }
+    #text-confirm {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 3px 5px;
+      cursor: pointer;
+      color: var(--text);
+      transition: background 0.15s, color 0.15s;
+    }
+    #text-confirm:hover { background: var(--border); color: var(--bg); }
+    #text-clear {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      opacity: 0.4;
+      padding: 2px 5px;
+      cursor: pointer;
+      text-align: left;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-top: 1px dashed var(--border);
+      padding-top: 6px;
+      margin-top: 2px;
+    }
+    #text-clear:hover { opacity: 1; }
 
     /* ── activity picker ── */
     #activity-picker {
@@ -317,6 +373,13 @@
     <button class="activity-opt clear-opt" data-value="">clear</button>
   </div>
 
+  <!-- text picker (design/build + gratitude) -->
+  <div id="text-picker">
+    <input type="text" id="text-input" placeholder="type here...">
+    <button id="text-confirm">ok</button>
+    <button id="text-clear">clear</button>
+  </div>
+
   <div id="side-panel"></div>
   <nav id="fixed-nav" aria-label="site navigation"></nav>
 
@@ -325,9 +388,11 @@
     const STORAGE_KEY    = '75hard-checks';
     const ACTIVITIES_KEY = '75hard-activities';
     const DESIGN_KEY     = '75hard-design';
+    const GRATITUDE_KEY  = '75hard-gratitude';
     const UNLOCK_KEY     = '75hard-unlocked';
     const WORKOUT_IDX    = 0; // index of '45-min workout' in TASKS
     const DESIGN_IDX     = 2; // index of '1 hr on design/build' in TASKS
+    const GRATITUDE_IDX  = 7; // index of 'gratitude journal' in TASKS
 
     const TASKS = [
       '45-min workout',
@@ -349,14 +414,17 @@
     let checks     = JSON.parse(localStorage.getItem(STORAGE_KEY)    || '{}');
     let activities = JSON.parse(localStorage.getItem(ACTIVITIES_KEY) || '{}');
     let designs    = JSON.parse(localStorage.getItem(DESIGN_KEY)     || '{}');
+    let gratitudes = JSON.parse(localStorage.getItem(GRATITUDE_KEY)  || '{}');
 
     function saveChecks()     { localStorage.setItem(STORAGE_KEY,    JSON.stringify(checks));     }
     function saveActivities() { localStorage.setItem(ACTIVITIES_KEY, JSON.stringify(activities)); }
     function saveDesigns()    { localStorage.setItem(DESIGN_KEY,     JSON.stringify(designs));    }
+    function saveGratitudes() { localStorage.setItem(GRATITUDE_KEY,  JSON.stringify(gratitudes)); }
 
     function getCheck(day, tIdx)     { return !!(checks[day] && checks[day][tIdx]); }
     function getActivity(day)        { return activities[day] || ''; }
     function getDesign(day)          { return designs[day] || ''; }
+    function getGratitude(day)       { return gratitudes[day] || ''; }
 
     function setCheck(day, tIdx, val) {
       if (!checks[day]) checks[day] = {};
@@ -391,11 +459,24 @@
       if (cb) cb.checked = !!activity;
     }
 
+    function commitGratitude(day, text) {
+      gratitudes[day] = text;
+      saveGratitudes();
+      const cell = document.querySelector(`.gratitude-cell[data-day="${day}"]`);
+      if (cell) {
+        if (text) cell.dataset.gratitude = text;
+        else delete cell.dataset.gratitude;
+      }
+      setCheck(day, GRATITUDE_IDX, !!text);
+      const cb = document.querySelector(`.gratitude-cb[data-day="${day}"]`);
+      if (cb) cb.checked = !!text;
+    }
+
     function isUnlocked() { return localStorage.getItem(UNLOCK_KEY) === '1'; }
 
     function setEditMode(on) {
       // regular checkboxes (not picker-controlled ones)
-      document.querySelectorAll('.tracker-cb:not(.workout-cb):not(.design-cb)').forEach(cb => {
+      document.querySelectorAll('.tracker-cb:not(.workout-cb):not(.design-cb):not(.gratitude-cb)').forEach(cb => {
         cb.disabled = !on;
       });
       // workout/design checkboxes stay disabled (controlled via picker)
@@ -416,9 +497,37 @@
       document.getElementById('progress-line').textContent = `${done} / ${total} (${pct}%)`;
     }
 
+    // ── text picker (design / gratitude) ─────────────────────
+    let textPickerDay  = null;
+    let textPickerType = null;
+
+    function openTextPicker(day, anchorEl, type) {
+      if (!isUnlocked()) return;
+      textPickerDay  = day;
+      textPickerType = type;
+      const picker = document.getElementById('text-picker');
+      const input  = document.getElementById('text-input');
+      const current = type === 'gratitude' ? getGratitude(day) : getDesign(day);
+      input.value = current;
+      const rect = anchorEl.getBoundingClientRect();
+      const ph   = 90;
+      const top  = rect.top - ph - 8 > 0 ? rect.top - ph - 8 : rect.bottom + 6;
+      const left = Math.min(rect.left, window.innerWidth - 200);
+      picker.style.top  = top + 'px';
+      picker.style.left = left + 'px';
+      picker.classList.add('open');
+      setTimeout(() => input.focus(), 30);
+    }
+
+    function closeTextPicker() {
+      document.getElementById('text-picker').classList.remove('open');
+      textPickerDay  = null;
+      textPickerType = null;
+    }
+
     // ── activity picker ──────────────────────────────────────
     let pickerDay  = null;
-    let pickerType = null; // 'workout' | 'design'
+    let pickerType = null; // 'workout'
 
     function openPicker(day, anchorEl, type) {
       if (!isUnlocked()) return;
@@ -526,7 +635,15 @@
               if (des) cell.dataset.design = des;
               cb.className = 'tracker-cb design-cb';
               cb.dataset.day = d;
-              cell.addEventListener('click', () => openPicker(d, cell, 'design'));
+              cell.addEventListener('click', () => openTextPicker(d, cell, 'design'));
+            } else if (tIdx === GRATITUDE_IDX) {
+              cell.className = 'tracker-cell gratitude-cell';
+              cell.dataset.day = d;
+              const grat = getGratitude(d);
+              if (grat) cell.dataset.gratitude = grat;
+              cb.className = 'tracker-cb gratitude-cb';
+              cb.dataset.day = d;
+              cell.addEventListener('click', () => openTextPicker(d, cell, 'gratitude'));
             } else {
               cell.className = 'tracker-cell';
               cb.className   = 'tracker-cb';
@@ -587,19 +704,14 @@
         localStorage.removeItem(UNLOCK_KEY);
         setEditMode(false);
         closePicker();
+        closeTextPicker();
       });
 
-      // ── activity picker ──
+      // ── activity picker (workout only) ──
       const picker      = document.getElementById('activity-picker');
       const customWrap  = document.getElementById('custom-input-wrap');
       const customInput = document.getElementById('custom-input');
       const customOk    = document.getElementById('custom-confirm');
-      const presets     = ['weight-training', 'run', 'dance', 'rest day'];
-
-      function commitPicker(day, val) {
-        if (pickerType === 'design') commitDesign(day, val);
-        else commitActivity(day, val);
-      }
 
       picker.querySelectorAll('.activity-opt').forEach(btn => {
         btn.addEventListener('click', () => {
@@ -609,7 +721,7 @@
             customWrap.classList.add('visible');
             customInput.focus();
           } else {
-            commitPicker(pickerDay, val);
+            commitActivity(pickerDay, val);
             closePicker();
           }
         });
@@ -618,7 +730,7 @@
       customOk.addEventListener('click', () => {
         const val = customInput.value.trim();
         if (val && pickerDay !== null) {
-          commitPicker(pickerDay, val);
+          commitActivity(pickerDay, val);
           closePicker();
         }
       });
@@ -628,12 +740,41 @@
         if (e.key === 'Escape') closePicker();
       });
 
-      // close picker on outside click
+      // ── text picker (design / gratitude) ──
+      const textPicker   = document.getElementById('text-picker');
+      const textInput    = document.getElementById('text-input');
+      const textConfirm  = document.getElementById('text-confirm');
+      const textClearBtn = document.getElementById('text-clear');
+
+      function commitTextPicker(val) {
+        if (textPickerDay === null) return;
+        if (textPickerType === 'gratitude') commitGratitude(textPickerDay, val);
+        else commitDesign(textPickerDay, val);
+        closeTextPicker();
+      }
+
+      textConfirm.addEventListener('click', () => {
+        commitTextPicker(textInput.value.trim());
+      });
+
+      textClearBtn.addEventListener('click', () => {
+        commitTextPicker('');
+      });
+
+      textInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter') commitTextPicker(textInput.value.trim());
+        if (e.key === 'Escape') closeTextPicker();
+      });
+
+      // close pickers on outside click
       document.addEventListener('pointerdown', e => {
-        if (!picker.contains(e.target) &&
-            !e.target.closest('.workout-cell') &&
-            !e.target.closest('.design-cell')) {
+        if (!picker.contains(e.target) && !e.target.closest('.workout-cell')) {
           closePicker();
+        }
+        if (!textPicker.contains(e.target) &&
+            !e.target.closest('.design-cell') &&
+            !e.target.closest('.gratitude-cell')) {
+          closeTextPicker();
         }
       });
     });
