@@ -1,6 +1,6 @@
 # Closer to the Fire
 
-For the MIT Hardmode AI x Hardware Hackathon 2026 <br>
+For the [MIT Hardmode AI x Hardware Hackathon 2026](https://hardmode.media.mit.edu/) <br>
 
 Winner of SEEED Studio prize.
 
