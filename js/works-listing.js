@@ -2,6 +2,9 @@
  * works-listing.js
  *
  * Fetches works.json and renders the works gallery grid.
+ * Uses greedy estimated-height balancing (same pattern as home.js)
+ * to avoid the row-alignment gaps that CSS grid creates with
+ * variable-height cards.
  */
 
 (function () {
@@ -27,6 +30,19 @@
 
       works.sort((a, b) => normalizeDate(b.date).localeCompare(normalizeDate(a.date)));
 
+      const colLeft  = document.createElement('div');
+      const colRight = document.createElement('div');
+      colLeft.className  = 'works-col';
+      colRight.className = 'works-col';
+      grid.appendChild(colLeft);
+      grid.appendChild(colRight);
+
+      // Estimated card height: cover image (~240px) + meta section (~80px)
+      const EST_WITH_COVER    = 320;
+      const EST_WITHOUT_COVER = 80;
+
+      let heightLeft = 0, heightRight = 0;
+
       works.forEach(work => {
         const card = document.createElement('div');
         card.className = 'work-card';
@@ -41,7 +57,15 @@
         card.addEventListener('click', () => {
           window.location.href = `/work/?slug=${work.slug}`;
         });
-        grid.appendChild(card);
+
+        const est = work.cover ? EST_WITH_COVER : EST_WITHOUT_COVER;
+        if (heightLeft <= heightRight) {
+          colLeft.appendChild(card);
+          heightLeft += est;
+        } else {
+          colRight.appendChild(card);
+          heightRight += est;
+        }
       });
     });
 })();
