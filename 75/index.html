@@ -23,7 +23,7 @@
     }
     #tracker-header h1 { margin-bottom: 0; flex: 1; text-align: center; }
 
-    #edit-btn, #lock-btn {
+    #edit-btn, #export-btn, #lock-btn {
       font-family: 'Silkscreen', monospace;
       font-size: 9px;
       border: 1px dashed var(--border);
@@ -35,7 +35,7 @@
       opacity: 0.4;
       transition: opacity 0.2s;
     }
-    #edit-btn:hover, #lock-btn:hover { opacity: 1; }
+    #edit-btn:hover, #export-btn:hover, #lock-btn:hover { opacity: 1; }
 
     /* ── password modal ── */
     #pw-modal {
@@ -339,6 +339,7 @@
       <div id="tracker-header">
         <h1>tunapee's 75 hard challenge</h1>
         <button id="edit-btn">edit</button>
+        <button id="export-btn" style="display:none">export</button>
         <button id="lock-btn" style="display:none">lock</button>
       </div>
       <h3 style="text-align:center; margin-bottom:14px;"><a href="/blog-post/?slug=75-hard">why am i doing this?</a></h3>
@@ -411,15 +412,41 @@
     const TOTAL_DAYS    = END_DAY - START_DAY + 1;
     const DAYS_PER_WEEK = 7;
 
-    let checks     = JSON.parse(localStorage.getItem(STORAGE_KEY)    || '{}');
-    let activities = JSON.parse(localStorage.getItem(ACTIVITIES_KEY) || '{}');
-    let designs    = JSON.parse(localStorage.getItem(DESIGN_KEY)     || '{}');
-    let gratitudes = JSON.parse(localStorage.getItem(GRATITUDE_KEY)  || '{}');
+    // State — populated by initState() before buildTracker() runs.
+    // Fetched from /data/75hard-progress.json so all visitors see live progress.
+    // In edit mode, localStorage overrides the fetched state (editor's live edits).
+    let checks = {}, activities = {}, designs = {}, gratitudes = {};
 
     function saveChecks()     { localStorage.setItem(STORAGE_KEY,    JSON.stringify(checks));     }
     function saveActivities() { localStorage.setItem(ACTIVITIES_KEY, JSON.stringify(activities)); }
     function saveDesigns()    { localStorage.setItem(DESIGN_KEY,     JSON.stringify(designs));    }
     function saveGratitudes() { localStorage.setItem(GRATITUDE_KEY,  JSON.stringify(gratitudes)); }
+
+    async function initState() {
+      // Load committed progress (visible to everyone)
+      try {
+        const r = await fetch('/data/75hard-progress.json');
+        if (r.ok) {
+          const d = await r.json();
+          checks     = d.checks     || {};
+          activities = d.activities || {};
+          designs    = d.designs    || {};
+          gratitudes = d.gratitudes || {};
+        }
+      } catch (e) {}
+
+      // If the editor is unlocked, their localStorage edits take precedence
+      if (isUnlocked()) {
+        const lc = localStorage.getItem(STORAGE_KEY);
+        const la = localStorage.getItem(ACTIVITIES_KEY);
+        const ld = localStorage.getItem(DESIGN_KEY);
+        const lg = localStorage.getItem(GRATITUDE_KEY);
+        if (lc) checks     = JSON.parse(lc);
+        if (la) activities = JSON.parse(la);
+        if (ld) designs    = JSON.parse(ld);
+        if (lg) gratitudes = JSON.parse(lg);
+      }
+    }
 
     function getCheck(day, tIdx)     { return !!(checks[day] && checks[day][tIdx]); }
     function getActivity(day)        { return activities[day] || ''; }
@@ -467,8 +494,9 @@
 
     function setEditMode(on) {
       document.querySelectorAll('.tracker-cb').forEach(cb => { cb.disabled = !on; });
-      document.getElementById('edit-btn').style.display = on ? 'none' : '';
-      document.getElementById('lock-btn').style.display = on ? '' : 'none';
+      document.getElementById('edit-btn').style.display   = on ? 'none' : '';
+      document.getElementById('export-btn').style.display = on ? '' : 'none';
+      document.getElementById('lock-btn').style.display   = on ? '' : 'none';
       document.getElementById('weeks-container').classList.toggle('edit-mode', on);
     }
 
@@ -656,7 +684,8 @@
       if (isUnlocked()) setEditMode(true);
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
+      await initState();
       buildTracker();
 
       // ── password modal ──
@@ -698,6 +727,16 @@
         setEditMode(false);
         closePicker();
         closeTextPicker();
+      });
+
+      document.getElementById('export-btn').addEventListener('click', () => {
+        const json = JSON.stringify({ checks, activities, designs, gratitudes }, null, 2);
+        const blob = new Blob([json], { type: 'application/json' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = '75hard-progress.json';
+        a.click();
+        URL.revokeObjectURL(a.href);
       });
 
       // ── activity picker (workout only) ──

@@ -1,0 +1,62 @@
+{
+  "checks": {
+    "0": {
+      "0": true,
+      "1": false,
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true
+    },
+    "1": {
+      "0": true,
+      "1": true,
+      "2": true,
+      "3": true,
+      "4": true,
+      "5": true,
+      "6": true,
+      "7": true,
+      "8": true
+    },
+    "2": {
+      "0": false
+    },
+    "3": {
+      "0": false
+    },
+    "4": {
+      "0": false
+    },
+    "5": {
+      "0": false
+    },
+    "6": {
+      "0": false
+    },
+    "7": {
+      "0": false
+    },
+    "62": {
+      "0": false
+    },
+    "63": {
+      "0": false
+    }
+  },
+  "activities": {
+    "0": "weight-training",
+    "1": "weight-training"
+  },
+  "designs": {
+    "0": "this website!",
+    "1": "controlling phillips hue bulbs via api"
+  },
+  "gratitudes": {
+    "0": "card games; dutch blitz",
+    "1": "mai & zines"
+  }
+}
