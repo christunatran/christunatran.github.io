@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tunapee</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/components.js" defer></script>
+  <script src="/js/script.js" defer></script>
+
+  <style>
+    /* ── tracker header ── */
+    #tracker-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 16px;
+    }
+    #tracker-header h1 { margin-bottom: 0; }
+
+    #edit-btn, #lock-btn {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 3px 6px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      color: var(--text);
+      opacity: 0.4;
+      transition: opacity 0.2s;
+    }
+    #edit-btn:hover, #lock-btn:hover { opacity: 1; }
+
+    /* ── password modal ── */
+    #pw-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(255,255,255,0.85);
+      z-index: 999999;
+      align-items: center;
+      justify-content: center;
+    }
+    #pw-modal.open { display: flex; }
+
+    #pw-box {
+      border: 1px dashed var(--border);
+      padding: 20px;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 220px;
+    }
+    #pw-box h3 { font-size: 9px; letter-spacing: 1px; margin-bottom: 4px; }
+
+    #pw-form { display: flex; gap: 6px; }
+
+    #pw-input {
+      font-family: 'Kosugi', sans-serif;
+      font-size: 14px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 4px 6px;
+      outline: none;
+      flex: 1;
+      color: var(--text);
+    }
+    #pw-submit {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 4px 8px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      color: var(--text);
+      transition: background 0.2s, color 0.2s;
+    }
+    #pw-submit:hover { background: var(--border); color: var(--bg); }
+    #pw-error { font-size: 9px; opacity: 0.5; display: none; }
+
+    /* ── weeks grid ── */
+    .tracker-week {
+      border: 1px dashed var(--border);
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      overflow-x: auto;
+    }
+    .tracker-grid {
+      display: grid;
+      grid-template-columns: 148px repeat(7, 26px);
+      row-gap: 0;
+      column-gap: 2px;
+      min-width: max-content;
+    }
+    .tracker-grid.days-1 { grid-template-columns: 148px repeat(1, 26px); }
+    .tracker-grid.days-2 { grid-template-columns: 148px repeat(2, 26px); }
+    .tracker-grid.days-3 { grid-template-columns: 148px repeat(3, 26px); }
+    .tracker-grid.days-4 { grid-template-columns: 148px repeat(4, 26px); }
+    .tracker-grid.days-5 { grid-template-columns: 148px repeat(5, 26px); }
+    .tracker-grid.days-6 { grid-template-columns: 148px repeat(6, 26px); }
+
+    .tracker-week-label {
+      grid-column: 1 / -1;
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 1px dashed var(--border);
+      padding-bottom: 5px;
+      margin-bottom: 4px;
+    }
+    .tracker-header-cell {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      text-align: center;
+      opacity: 0.4;
+      line-height: 22px;
+      padding-bottom: 3px;
+    }
+    .tracker-task-label {
+      font-family: 'Kosugi', sans-serif;
+      font-size: 11px;
+      line-height: 24px;
+      white-space: nowrap;
+      padding-right: 8px;
+      opacity: 0.85;
+    }
+    .tracker-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 24px;
+    }
+
+    /* ── checkboxes ── */
+    .tracker-cb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 13px;
+      height: 13px;
+      border: 1px solid #aaa;
+      background: transparent;
+      flex-shrink: 0;
+      transition: background 0.1s, border-color 0.1s;
+    }
+    .tracker-cb:not(:disabled) { cursor: pointer; }
+    .tracker-cb:disabled { cursor: default; opacity: 0.6; }
+    .tracker-cb:not(:disabled):hover:not(:checked) { border-color: #666; background: #f0f0f0; }
+    .tracker-cb:checked { background: #999; border-color: #999; }
+
+    /* ── workout cells — hover tooltip (nav style) ── */
+    .workout-cell {
+      position: relative;
+    }
+    .workout-cell[data-activity]:not([data-activity=""])::after {
+      content: attr(data-activity);
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 9px;
+      font-family: 'Silkscreen', monospace;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      background-color: var(--border);
+      color: var(--bg);
+      padding: 3px 5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      z-index: 100;
+      transition: opacity 0.2s ease;
+    }
+    .workout-cell[data-activity]:not([data-activity=""]):hover::after {
+      opacity: 1;
+    }
+    /* in edit mode, show cursor on workout cells */
+    .edit-mode .workout-cell { cursor: pointer; }
+
+    /* ── activity picker ── */
+    #activity-picker {
+      position: fixed;
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      border: 1px dashed var(--border);
+      background: var(--bg);
+      padding: 8px;
+      z-index: 999990;
+      min-width: 130px;
+    }
+    #activity-picker.open { display: flex; }
+
+    .activity-opt {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      padding: 4px 6px;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.15s, color 0.15s;
+    }
+    .activity-opt:hover, .activity-opt.selected {
+      background: var(--border);
+      color: var(--bg);
+    }
+    .activity-opt.clear-opt {
+      opacity: 0.4;
+      border-top: 1px dashed var(--border);
+      margin-top: 4px;
+      padding-top: 6px;
+    }
+    .activity-opt.clear-opt:hover { opacity: 1; }
+
+    #custom-input-wrap {
+      display: none;
+      gap: 4px;
+      margin-top: 2px;
+    }
+    #custom-input-wrap.visible { display: flex; }
+    #custom-input {
+      font-family: 'Kosugi', sans-serif;
+      font-size: 11px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 3px 5px;
+      outline: none;
+      color: var(--text);
+      flex: 1;
+      min-width: 0;
+    }
+    #custom-confirm {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 3px 5px;
+      cursor: pointer;
+      color: var(--text);
+      transition: background 0.15s, color 0.15s;
+    }
+    #custom-confirm:hover { background: var(--border); color: var(--bg); }
+
+    /* ── progress ── */
+    #progress-line {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      opacity: 0.4;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="line"></div>
+  <div id="line2"></div>
+  <div id="line3"></div>
+  <div id="line4"></div>
+
+  <div id="content">
+    <div class="about-block">
+      <div id="tracker-header">
+        <h1 style="text-align:center;">tunapee's 75 hard challenge</h1>
+        <button id="edit-btn">edit</button>
+        <button id="lock-btn" style="display:none">lock</button>
+      </div>
+      <h3 style="text-align:center; margin-bottom:14px;"><a href="/blog-post/?slug=75-hard">why am i doing this?</a></h3>
+      <p id="progress-line"></p>
+      <div id="weeks-container"></div>
+    </div>
+  </div>
+
+  <!-- password modal -->
+  <div id="pw-modal">
+    <div id="pw-box">
+      <h3>enter password to edit</h3>
+      <div id="pw-form">
+        <input type="password" id="pw-input" autocomplete="off">
+        <button id="pw-submit">enter</button>
+      </div>
+      <p id="pw-error">wrong password</p>
+    </div>
+  </div>
+
+  <!-- activity picker (shared, repositioned per cell) -->
+  <div id="activity-picker">
+    <button class="activity-opt" data-value="weight-training">weight-training</button>
+    <button class="activity-opt" data-value="run">run</button>
+    <button class="activity-opt" data-value="dance">dance</button>
+    <button class="activity-opt" data-value="rest day">rest day</button>
+    <button class="activity-opt" data-value="__custom__">custom</button>
+    <div id="custom-input-wrap">
+      <input type="text" id="custom-input" placeholder="type activity...">
+      <button id="custom-confirm">ok</button>
+    </div>
+    <button class="activity-opt clear-opt" data-value="">clear</button>
+  </div>
+
+  <div id="side-panel"></div>
+  <nav id="fixed-nav" aria-label="site navigation"></nav>
+
+  <script>
+    const PASSWORD       = 'chillyandlangley';
+    const STORAGE_KEY    = '75hard-checks';
+    const ACTIVITIES_KEY = '75hard-activities';
+    const UNLOCK_KEY     = '75hard-unlocked';
+    const WORKOUT_IDX    = 0; // index of '45-min workout' in TASKS
+
+    const TASKS = [
+      '45-min workout',
+      'start work by 10am',
+      '1 hr on design/build',
+      '10 pages of a book',
+      '2 glasses of water',
+      'take creatine',
+      'no phone in bedroom',
+      'gratitude journal',
+      'log progress',
+    ];
+
+    const START_DAY     = 0;
+    const END_DAY       = 75;
+    const TOTAL_DAYS    = END_DAY - START_DAY + 1;
+    const DAYS_PER_WEEK = 7;
+
+    let checks     = JSON.parse(localStorage.getItem(STORAGE_KEY)    || '{}');
+    let activities = JSON.parse(localStorage.getItem(ACTIVITIES_KEY) || '{}');
+
+    function saveChecks()     { localStorage.setItem(STORAGE_KEY,    JSON.stringify(checks));     }
+    function saveActivities() { localStorage.setItem(ACTIVITIES_KEY, JSON.stringify(activities)); }
+
+    function getCheck(day, tIdx)     { return !!(checks[day] && checks[day][tIdx]); }
+    function getActivity(day)        { return activities[day] || ''; }
+
+    function setCheck(day, tIdx, val) {
+      if (!checks[day]) checks[day] = {};
+      checks[day][tIdx] = val;
+      saveChecks();
+      updateProgress();
+    }
+
+    function commitActivity(day, activity) {
+      activities[day] = activity;
+      saveActivities();
+      // update tooltip data attribute
+      const cell = document.querySelector(`.workout-cell[data-day="${day}"]`);
+      if (cell) {
+        if (activity) cell.dataset.activity = activity;
+        else delete cell.dataset.activity;
+      }
+      // mark checked if activity set, uncheck if cleared
+      setCheck(day, WORKOUT_IDX, !!activity);
+      const cb = document.querySelector(`.workout-cb[data-day="${day}"]`);
+      if (cb) cb.checked = !!activity;
+    }
+
+    function isUnlocked() { return localStorage.getItem(UNLOCK_KEY) === '1'; }
+
+    function setEditMode(on) {
+      // regular checkboxes
+      document.querySelectorAll('.tracker-cb:not(.workout-cb)').forEach(cb => {
+        cb.disabled = !on;
+      });
+      // workout checkboxes stay disabled (controlled via picker)
+      document.getElementById('edit-btn').style.display = on ? 'none' : '';
+      document.getElementById('lock-btn').style.display = on ? '' : 'none';
+      // toggle cursor on workout cells
+      document.getElementById('weeks-container').classList.toggle('edit-mode', on);
+    }
+
+    function updateProgress() {
+      let done = 0;
+      for (let d = START_DAY; d <= END_DAY; d++) {
+        for (let t = 0; t < TASKS.length; t++) {
+          if (getCheck(d, t)) done++;
+        }
+      }
+      const total = TOTAL_DAYS * TASKS.length;
+      const pct   = Math.round((done / total) * 100);
+      document.getElementById('progress-line').textContent = `${done} / ${total} (${pct}%)`;
+    }
+
+    // ── activity picker ──────────────────────────────────────
+    let pickerDay = null;
+
+    function openPicker(day, anchorEl) {
+      if (!isUnlocked()) return;
+      pickerDay = day;
+      const picker    = document.getElementById('activity-picker');
+      const current   = getActivity(day);
+      const customWrap = document.getElementById('custom-input-wrap');
+      const customInput = document.getElementById('custom-input');
+
+      // mark selected option
+      const presets = ['weight-training', 'run', 'dance', 'rest day'];
+      picker.querySelectorAll('.activity-opt').forEach(btn => {
+        const val = btn.dataset.value;
+        const isCustomPreset = val === '__custom__';
+        const isCurrentCustom = current && !presets.includes(current);
+        btn.classList.toggle('selected',
+          val === current || (isCustomPreset && isCurrentCustom)
+        );
+      });
+
+      // show custom input if current activity is a custom one
+      const isCustom = current && !presets.includes(current);
+      customWrap.classList.toggle('visible', isCustom);
+      if (isCustom) customInput.value = current;
+      else customInput.value = '';
+
+      // position picker above (or below if not enough room) the cell
+      const rect  = anchorEl.getBoundingClientRect();
+      const ph    = 220; // approx picker height
+      const top   = rect.top - ph - 8 > 0 ? rect.top - ph - 8 : rect.bottom + 6;
+      const left  = Math.min(rect.left, window.innerWidth - 160);
+      picker.style.top  = top + 'px';
+      picker.style.left = left + 'px';
+      picker.classList.add('open');
+    }
+
+    function closePicker() {
+      document.getElementById('activity-picker').classList.remove('open');
+      pickerDay = null;
+    }
+
+    function buildTracker() {
+      const container = document.getElementById('weeks-container');
+      container.innerHTML = '';
+
+      const allDays = [];
+      for (let d = START_DAY; d <= END_DAY; d++) allDays.push(d);
+
+      for (let i = 0; i < allDays.length; i += DAYS_PER_WEEK) {
+        const chunk   = allDays.slice(i, i + DAYS_PER_WEEK);
+        const weekNum = Math.floor(i / DAYS_PER_WEEK);
+        const numDays = chunk.length;
+
+        const weekEl = document.createElement('div');
+        weekEl.className = 'tracker-week';
+
+        const gridEl = document.createElement('div');
+        gridEl.className = 'tracker-grid' + (numDays < 7 ? ' days-' + numDays : '');
+
+        // week label
+        const label = document.createElement('div');
+        label.className = 'tracker-week-label';
+        label.textContent = weekNum === 0 ? 'week 0' : 'week ' + weekNum;
+        gridEl.appendChild(label);
+
+        // header row
+        const emptyHeader = document.createElement('div');
+        emptyHeader.className = 'tracker-header-cell';
+        gridEl.appendChild(emptyHeader);
+        chunk.forEach(d => {
+          const cell = document.createElement('div');
+          cell.className = 'tracker-header-cell';
+          cell.textContent = d;
+          gridEl.appendChild(cell);
+        });
+
+        // task rows
+        TASKS.forEach((task, tIdx) => {
+          const taskLabel = document.createElement('div');
+          taskLabel.className = 'tracker-task-label';
+          taskLabel.textContent = task;
+          gridEl.appendChild(taskLabel);
+
+          chunk.forEach(d => {
+            const cell = document.createElement('div');
+            const cb   = document.createElement('input');
+            cb.type      = 'checkbox';
+            cb.checked   = getCheck(d, tIdx);
+            cb.disabled  = true;
+
+            if (tIdx === WORKOUT_IDX) {
+              // workout cell: tooltip + picker
+              cell.className = 'tracker-cell workout-cell';
+              cell.dataset.day = d;
+              const act = getActivity(d);
+              if (act) cell.dataset.activity = act;
+
+              cb.className = 'tracker-cb workout-cb';
+              cb.dataset.day = d;
+              // always controlled via picker, not direct toggle
+
+              cell.addEventListener('click', () => openPicker(d, cell));
+            } else {
+              cell.className = 'tracker-cell';
+              cb.className   = 'tracker-cb';
+              cb.addEventListener('change', () => setCheck(d, tIdx, cb.checked));
+            }
+
+            cell.appendChild(cb);
+            gridEl.appendChild(cell);
+          });
+        });
+
+        weekEl.appendChild(gridEl);
+        container.appendChild(weekEl);
+      }
+
+      updateProgress();
+      if (isUnlocked()) setEditMode(true);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      buildTracker();
+
+      // ── password modal ──
+      const modal   = document.getElementById('pw-modal');
+      const input   = document.getElementById('pw-input');
+      const submit  = document.getElementById('pw-submit');
+      const error   = document.getElementById('pw-error');
+      const editBtn = document.getElementById('edit-btn');
+      const lockBtn = document.getElementById('lock-btn');
+
+      editBtn.addEventListener('click', () => {
+        modal.classList.add('open');
+        input.value = '';
+        error.style.display = 'none';
+        setTimeout(() => input.focus(), 50);
+      });
+
+      modal.addEventListener('click', e => {
+        if (e.target === modal) modal.classList.remove('open');
+      });
+
+      function tryUnlock() {
+        if (input.value === PASSWORD) {
+          localStorage.setItem(UNLOCK_KEY, '1');
+          modal.classList.remove('open');
+          setEditMode(true);
+        } else {
+          error.style.display = 'block';
+          input.value = '';
+          input.focus();
+        }
+      }
+
+      submit.addEventListener('click', tryUnlock);
+      input.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
+
+      lockBtn.addEventListener('click', () => {
+        localStorage.removeItem(UNLOCK_KEY);
+        setEditMode(false);
+        closePicker();
+      });
+
+      // ── activity picker ──
+      const picker      = document.getElementById('activity-picker');
+      const customWrap  = document.getElementById('custom-input-wrap');
+      const customInput = document.getElementById('custom-input');
+      const customOk    = document.getElementById('custom-confirm');
+      const presets     = ['weight-training', 'run', 'dance', 'rest day'];
+
+      picker.querySelectorAll('.activity-opt').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (pickerDay === null) return;
+          const val = btn.dataset.value;
+          if (val === '__custom__') {
+            customWrap.classList.add('visible');
+            customInput.focus();
+          } else {
+            commitActivity(pickerDay, val);
+            closePicker();
+          }
+        });
+      });
+
+      customOk.addEventListener('click', () => {
+        const val = customInput.value.trim();
+        if (val && pickerDay !== null) {
+          commitActivity(pickerDay, val);
+          closePicker();
+        }
+      });
+
+      customInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter') customOk.click();
+        if (e.key === 'Escape') closePicker();
+      });
+
+      // close picker on outside click
+      document.addEventListener('pointerdown', e => {
+        if (!picker.contains(e.target) &&
+            !e.target.closest('.workout-cell')) {
+          closePicker();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

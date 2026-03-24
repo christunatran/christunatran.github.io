@@ -185,8 +185,15 @@ blockquote {
    MASONRY GRID
    ============================================================ */
 .posts-grid {
-  column-count: 2;
-  column-gap: 40px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.posts-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ============================================================
@@ -722,7 +729,8 @@ blockquote {
   }
 
   /* Home grid: single column */
-  .posts-grid { column-count: 1; }
+  .posts-grid { flex-direction: column; }
+  .posts-col { flex: none; width: 100%; }
 
   /* Works grid: single column */
   #works-grid { column-count: 1; }

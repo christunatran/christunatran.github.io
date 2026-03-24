@@ -80,11 +80,20 @@
     const grid = document.getElementById('postsGrid');
     if (!grid) return;
 
+    // Two explicit columns so items alternate left/right in chronological order
+    // rather than CSS masonry filling the left column entirely before the right.
+    const colLeft  = document.createElement('div');
+    const colRight = document.createElement('div');
+    colLeft.className  = 'posts-col';
+    colRight.className = 'posts-col';
+    grid.appendChild(colLeft);
+    grid.appendChild(colRight);
+
     const creators = { image: createImageCard, work: createWorkCard, blog: createBlogCard };
 
-    items.forEach(item => {
+    items.forEach((item, i) => {
       const card = creators[item.type]?.(item.data);
-      if (card) grid.appendChild(card);
+      if (card) (i % 2 === 0 ? colLeft : colRight).appendChild(card);
     });
   }
 

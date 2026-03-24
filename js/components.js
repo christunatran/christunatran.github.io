@@ -20,7 +20,16 @@
     { href: '/works', label: 'works' },
     { href: '/blog',  label: 'blog'  },
     { href: '/now',   label: 'now'   },
+    { href: '/75',    label: '75'    },
   ];
+
+  function injectFavicon() {
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/svg+xml';
+    link.href = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐟</text></svg>';
+    document.head.appendChild(link);
+  }
 
   function injectNav() {
     const nav = document.getElementById('fixed-nav');
@@ -47,6 +56,7 @@
     `;
   }
 
+  injectFavicon();
   injectNav();
   injectSidePanel();
 })();
