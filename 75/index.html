@@ -665,7 +665,7 @@
         // week label
         const label = document.createElement('div');
         label.className = 'tracker-week-label';
-        label.textContent = weekNum === 0 ? 'week 0' : 'week ' + weekNum;
+        label.textContent = 'week ' + (weekNum + 1);
         gridEl.appendChild(label);
 
         // header row
