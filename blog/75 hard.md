@@ -7,7 +7,7 @@ tags: medium, self-improvement
 
 ## why?
 
-**at this moment in time, i've decided that there's nothing holding me back from doing my best**; the ["edge of my abilities"](https://www.recurse.com/self-directives). as i've talked about in a previous blog post, what "my best" looks like can fluctuate each day, so it's hard to measure. in my corporate job, my manager, N, asked me,  "if you were to be honest with yourself and the work you are doing right now, are you proud of yourself?". reminded of this, i think that if i can show up every day in some capacity, it can allow me to at least have a record that i tried to set up the ideal conditions for me to do my best work. these ideal conditions involve taking care of my body and mental health, as well as setting up structures to better manage my work.
+***at this moment in time, i've decided that there's nothing holding me back from doing my best***; the ["edge of my abilities"](https://www.recurse.com/self-directives). as i've talked about in a previous blog post, what "my best" looks like can fluctuate each day, so it's hard to measure. in my corporate job, my manager, N, asked me,  "if you were to be honest with yourself and the work you are doing right now, are you proud of yourself?". reminded of this, i think that if i can show up every day in some capacity, it can allow me to at least have a record that i tried to set up the ideal conditions for me to do my best work. these ideal conditions involve taking care of my body and mental health, as well as setting up structures to better manage my work.
 
 ## how?
 
