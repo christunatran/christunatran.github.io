@@ -27,15 +27,6 @@
 
       works.sort((a, b) => normalizeDate(b.date).localeCompare(normalizeDate(a.date)));
 
-      const colLeft  = document.createElement('div');
-      const colRight = document.createElement('div');
-      colLeft.className  = 'works-col';
-      colRight.className = 'works-col';
-      grid.appendChild(colLeft);
-      grid.appendChild(colRight);
-
-      let heightLeft = 0, heightRight = 0;
-
       works.forEach(work => {
         const card = document.createElement('div');
         card.className = 'work-card';
@@ -50,12 +41,7 @@
         card.addEventListener('click', () => {
           window.location.href = `/work/?slug=${work.slug}`;
         });
-
-        // Use actual rendered height after appending to keep columns balanced.
-        const target = heightLeft <= heightRight ? colLeft : colRight;
-        target.appendChild(card);
-        if (target === colLeft) heightLeft += card.offsetHeight;
-        else heightRight += card.offsetHeight;
+        grid.appendChild(card);
       });
     });
 })();

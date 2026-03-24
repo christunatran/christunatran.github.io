@@ -157,12 +157,12 @@
     .tracker-cb:not(:disabled):hover:not(:checked) { border-color: #666; background: #f0f0f0; }
     .tracker-cb:checked { background: #999; border-color: #999; }
 
-    /* ── workout cells — hover tooltip (nav style) ── */
-    .workout-cell {
+    /* ── workout/design cells — hover tooltip (nav style) ── */
+    .workout-cell, .design-cell {
       position: relative;
     }
-    .workout-cell[data-activity]:not([data-activity=""])::after {
-      content: attr(data-activity);
+    .workout-cell[data-activity]:not([data-activity=""])::after,
+    .design-cell[data-design]:not([data-design=""])::after {
       position: absolute;
       bottom: calc(100% + 6px);
       left: 50%;
@@ -180,11 +180,18 @@
       z-index: 100;
       transition: opacity 0.2s ease;
     }
-    .workout-cell[data-activity]:not([data-activity=""]):hover::after {
+    .workout-cell[data-activity]:not([data-activity=""])::after {
+      content: attr(data-activity);
+    }
+    .design-cell[data-design]:not([data-design=""])::after {
+      content: attr(data-design);
+    }
+    .workout-cell[data-activity]:not([data-activity=""]):hover::after,
+    .design-cell[data-design]:not([data-design=""]):hover::after {
       opacity: 1;
     }
-    /* in edit mode, show cursor on workout cells */
-    .edit-mode .workout-cell { cursor: pointer; }
+    /* in edit mode, show cursor on workout/design cells */
+    .edit-mode .workout-cell, .edit-mode .design-cell { cursor: pointer; }
 
     /* ── activity picker ── */
     #activity-picker {
@@ -317,8 +324,10 @@
     const PASSWORD       = 'chillyandlangley';
     const STORAGE_KEY    = '75hard-checks';
     const ACTIVITIES_KEY = '75hard-activities';
+    const DESIGN_KEY     = '75hard-design';
     const UNLOCK_KEY     = '75hard-unlocked';
     const WORKOUT_IDX    = 0; // index of '45-min workout' in TASKS
+    const DESIGN_IDX     = 2; // index of '1 hr on design/build' in TASKS
 
     const TASKS = [
       '45-min workout',
@@ -339,12 +348,15 @@
 
     let checks     = JSON.parse(localStorage.getItem(STORAGE_KEY)    || '{}');
     let activities = JSON.parse(localStorage.getItem(ACTIVITIES_KEY) || '{}');
+    let designs    = JSON.parse(localStorage.getItem(DESIGN_KEY)     || '{}');
 
     function saveChecks()     { localStorage.setItem(STORAGE_KEY,    JSON.stringify(checks));     }
     function saveActivities() { localStorage.setItem(ACTIVITIES_KEY, JSON.stringify(activities)); }
+    function saveDesigns()    { localStorage.setItem(DESIGN_KEY,     JSON.stringify(designs));    }
 
     function getCheck(day, tIdx)     { return !!(checks[day] && checks[day][tIdx]); }
     function getActivity(day)        { return activities[day] || ''; }
+    function getDesign(day)          { return designs[day] || ''; }
 
     function setCheck(day, tIdx, val) {
       if (!checks[day]) checks[day] = {};
@@ -356,29 +368,39 @@
     function commitActivity(day, activity) {
       activities[day] = activity;
       saveActivities();
-      // update tooltip data attribute
       const cell = document.querySelector(`.workout-cell[data-day="${day}"]`);
       if (cell) {
         if (activity) cell.dataset.activity = activity;
         else delete cell.dataset.activity;
       }
-      // mark checked if activity set, uncheck if cleared
       setCheck(day, WORKOUT_IDX, !!activity);
       const cb = document.querySelector(`.workout-cb[data-day="${day}"]`);
+      if (cb) cb.checked = !!activity;
+    }
+
+    function commitDesign(day, activity) {
+      designs[day] = activity;
+      saveDesigns();
+      const cell = document.querySelector(`.design-cell[data-day="${day}"]`);
+      if (cell) {
+        if (activity) cell.dataset.design = activity;
+        else delete cell.dataset.design;
+      }
+      setCheck(day, DESIGN_IDX, !!activity);
+      const cb = document.querySelector(`.design-cb[data-day="${day}"]`);
       if (cb) cb.checked = !!activity;
     }
 
     function isUnlocked() { return localStorage.getItem(UNLOCK_KEY) === '1'; }
 
     function setEditMode(on) {
-      // regular checkboxes
-      document.querySelectorAll('.tracker-cb:not(.workout-cb)').forEach(cb => {
+      // regular checkboxes (not picker-controlled ones)
+      document.querySelectorAll('.tracker-cb:not(.workout-cb):not(.design-cb)').forEach(cb => {
         cb.disabled = !on;
       });
-      // workout checkboxes stay disabled (controlled via picker)
+      // workout/design checkboxes stay disabled (controlled via picker)
       document.getElementById('edit-btn').style.display = on ? 'none' : '';
       document.getElementById('lock-btn').style.display = on ? '' : 'none';
-      // toggle cursor on workout cells
       document.getElementById('weeks-container').classList.toggle('edit-mode', on);
     }
 
@@ -395,13 +417,15 @@
     }
 
     // ── activity picker ──────────────────────────────────────
-    let pickerDay = null;
+    let pickerDay  = null;
+    let pickerType = null; // 'workout' | 'design'
 
-    function openPicker(day, anchorEl) {
+    function openPicker(day, anchorEl, type) {
       if (!isUnlocked()) return;
-      pickerDay = day;
+      pickerDay  = day;
+      pickerType = type;
       const picker    = document.getElementById('activity-picker');
-      const current   = getActivity(day);
+      const current   = type === 'design' ? getDesign(day) : getActivity(day);
       const customWrap = document.getElementById('custom-input-wrap');
       const customInput = document.getElementById('custom-input');
 
@@ -434,7 +458,8 @@
 
     function closePicker() {
       document.getElementById('activity-picker').classList.remove('open');
-      pickerDay = null;
+      pickerDay  = null;
+      pickerType = null;
     }
 
     function buildTracker() {
@@ -487,17 +512,21 @@
             cb.disabled  = true;
 
             if (tIdx === WORKOUT_IDX) {
-              // workout cell: tooltip + picker
               cell.className = 'tracker-cell workout-cell';
               cell.dataset.day = d;
               const act = getActivity(d);
               if (act) cell.dataset.activity = act;
-
               cb.className = 'tracker-cb workout-cb';
               cb.dataset.day = d;
-              // always controlled via picker, not direct toggle
-
-              cell.addEventListener('click', () => openPicker(d, cell));
+              cell.addEventListener('click', () => openPicker(d, cell, 'workout'));
+            } else if (tIdx === DESIGN_IDX) {
+              cell.className = 'tracker-cell design-cell';
+              cell.dataset.day = d;
+              const des = getDesign(d);
+              if (des) cell.dataset.design = des;
+              cb.className = 'tracker-cb design-cb';
+              cb.dataset.day = d;
+              cell.addEventListener('click', () => openPicker(d, cell, 'design'));
             } else {
               cell.className = 'tracker-cell';
               cb.className   = 'tracker-cb';
@@ -567,6 +596,11 @@
       const customOk    = document.getElementById('custom-confirm');
       const presets     = ['weight-training', 'run', 'dance', 'rest day'];
 
+      function commitPicker(day, val) {
+        if (pickerType === 'design') commitDesign(day, val);
+        else commitActivity(day, val);
+      }
+
       picker.querySelectorAll('.activity-opt').forEach(btn => {
         btn.addEventListener('click', () => {
           if (pickerDay === null) return;
@@ -575,7 +609,7 @@
             customWrap.classList.add('visible');
             customInput.focus();
           } else {
-            commitActivity(pickerDay, val);
+            commitPicker(pickerDay, val);
             closePicker();
           }
         });
@@ -584,7 +618,7 @@
       customOk.addEventListener('click', () => {
         const val = customInput.value.trim();
         if (val && pickerDay !== null) {
-          commitActivity(pickerDay, val);
+          commitPicker(pickerDay, val);
           closePicker();
         }
       });
@@ -597,7 +631,8 @@
       // close picker on outside click
       document.addEventListener('pointerdown', e => {
         if (!picker.contains(e.target) &&
-            !e.target.closest('.workout-cell')) {
+            !e.target.closest('.workout-cell') &&
+            !e.target.closest('.design-cell')) {
           closePicker();
         }
       });
