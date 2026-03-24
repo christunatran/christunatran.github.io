@@ -75,7 +75,7 @@
       ...STATIC_IMAGES.map(i => ({ type: 'image', date: i.date, data: i })),
       ...works.map(w =>         ({ type: 'work',  date: w.date, data: w })),
       ...posts.filter(p => !p.disabled).map(p => ({ type: 'blog', date: p.date, data: p })),
-    ].sort((a, b) => normalizeDate(b.date).localeCompare(normalizeDate(a.date))).slice(0, 20);
+    ].sort((a, b) => normalizeDate(b.date).localeCompare(normalizeDate(a.date)));
 
     const grid = document.getElementById('postsGrid');
     if (!grid) return;

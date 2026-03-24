@@ -49,7 +49,7 @@
         <img id="side-art" src="/assets/ascii-art.png" alt="" aria-hidden="true">
       </div>
       <div id="side-info-box">
-        <p>location: brooklyn, nyc</p>
+        <p>location: brooklyn, ny</p>
         <p>time: <span id="side-time">--:--</span></p>
         <p>temperature: <span id="side-temp">--</span></p>
       </div>
