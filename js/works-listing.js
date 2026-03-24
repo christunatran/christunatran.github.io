@@ -27,8 +27,6 @@
 
       works.sort((a, b) => normalizeDate(b.date).localeCompare(normalizeDate(a.date)));
 
-      // Two explicit columns, alternating left/right so works fill newest-first
-      // left-to-right rather than top-to-bottom via CSS column-count.
       const colLeft  = document.createElement('div');
       const colRight = document.createElement('div');
       colLeft.className  = 'works-col';
@@ -36,7 +34,9 @@
       grid.appendChild(colLeft);
       grid.appendChild(colRight);
 
-      works.forEach((work, i) => {
+      let heightLeft = 0, heightRight = 0;
+
+      works.forEach(work => {
         const card = document.createElement('div');
         card.className = 'work-card';
         card.innerHTML = `
@@ -50,7 +50,12 @@
         card.addEventListener('click', () => {
           window.location.href = `/work/?slug=${work.slug}`;
         });
-        (i % 2 === 0 ? colLeft : colRight).appendChild(card);
+
+        // Use actual rendered height after appending to keep columns balanced.
+        const target = heightLeft <= heightRight ? colLeft : colRight;
+        target.appendChild(card);
+        if (target === colLeft) heightLeft += card.offsetHeight;
+        else heightRight += card.offsetHeight;
       });
     });
 })();
