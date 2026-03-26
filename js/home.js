@@ -11,7 +11,7 @@
 
   const STATIC_IMAGES = [
     { src: '/assets/my professional headshot.jpg', date: '2025.02' },
-    { src: '/assets/hard mode winner.png', date: '2025.03', href: '/work/?slug=closer-to-the-fire' },
+    { src: '/assets/hard mode winner.png', date: '2026.03.08', href: '/work/?slug=closer-to-the-fire' },
   ];
 
   /** Escapes user-supplied strings before inserting into innerHTML. */
