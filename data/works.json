@@ -35,6 +35,13 @@
     "cover": "works/nose-project/assets/f7a72084-c1ca-42cb-9f2b-9e2eb25b0091.png"
   },
   {
+    "slug": "fish-cam",
+    "title": "fish cam",
+    "subtitle": "intro to computational media",
+    "date": "2025.11",
+    "cover": "works/fish-cam/assets/Screenshot_2025-11-03_at_4.28.31_PM.png"
+  },
+  {
     "slug": "froggy-chair",
     "title": "froggy chair",
     "subtitle": "fun",
