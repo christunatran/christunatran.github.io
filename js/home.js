@@ -11,6 +11,7 @@
 
   const STATIC_IMAGES = [
     { src: '/assets/my professional headshot.jpg', date: '2025.02' },
+    { src: '/assets/hard mode winner.png', date: '2025.03', href: '/work/?slug=closer-to-the-fire' },
   ];
 
   /** Escapes user-supplied strings before inserting into innerHTML. */
@@ -31,6 +32,10 @@
       </div>
       <span class="post-date">${image.date}</span>
     `;
+    if (image.href) {
+      card.style.cursor = 'pointer';
+      card.addEventListener('click', () => { window.location.href = image.href; });
+    }
     return card;
   }
 
