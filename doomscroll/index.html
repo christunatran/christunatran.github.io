@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'KawaraCaps';
+      src: url('KawaraCaps.otf') format('opentype');
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #fff; }
+    canvas { display: block; }
+
+    #blur-overlay {
+      position: fixed;
+      inset: 0;
+      backdrop-filter: blur(0.5px);
+      -webkit-backdrop-filter: blur(2px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #reveal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 120px;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      z-index: 2;
+    }
+
+    #reveal.active {
+      pointer-events: auto;
+    }
+
+    #reveal-text {
+      text-align: center;
+      max-width: 100%;
+    }
+
+    #reveal span {
+      color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      user-select: text;
+      cursor: text;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    #reveal span.kawara .digit {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      letter-spacing: 0.06em;
+    }
+
+    #reveal span.kawara {
+      font-family: 'KawaraCaps', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: clamp(1.8rem, 6vw, 5rem);
+      letter-spacing: 0.03em;
+      max-width: 85vw;
+    }
+
+    #reveal span::selection {
+      background: #b3d4fd;
+      color: #fff;
+    }
+
+    #cursor {
+      display: inline-block;
+      width: 1px;
+      height: 0.7em;
+      background: #fff;
+      vertical-align: text-bottom;
+      margin-left: 2px;
+      opacity: 0;
+      animation: blink 0.8s step-start infinite;
+    }
+
+    #cursor.kawara {
+      font-size: clamp(1.8rem, 6vw, 5rem);
+      height: 1.1em;
+    }
+
+@keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    #scrollbar {
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 12px;
+      height: 100%;
+      background: #e0e0e0;
+      z-index: 10;
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
+    #thumb {
+      position: absolute;
+      width: 100%;
+      height: 40px;
+      background: #000;
+      border-radius: 6px;
+      top: 0;
+    }
+
+    /* --- NOTEPAD --- */
+    #notepad {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 380px;
+      border: 2px solid #000;
+      background: #fff;
+      display: none;
+      flex-direction: column;
+      z-index: 50;
+      box-shadow: 3px 3px 0 #000;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    #notepad-titlebar span,
+    #notepad-menubar,
+    #notepad-statusbar {
+      filter: blur(2px);
+    }
+
+    #notepad-titlebar {
+      background: #000;
+      color: #fff;
+      font-size: 11px;
+      padding: 3px 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      cursor: move;
+    }
+
+    #notepad-titlebar span { letter-spacing: 0.05em; }
+
+    #notepad-controls { display: flex; gap: 4px; }
+    #notepad-controls button {
+      background: #fff;
+      color: #000;
+      border: 1px solid #000;
+      width: 14px;
+      height: 14px;
+      font-size: 9px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #notepad-menubar {
+      background: #fff;
+      border-bottom: 1px solid #000;
+      font-size: 11px;
+      padding: 2px 4px;
+      display: flex;
+      gap: 12px;
+      color: #000;
+    }
+
+    #notepad-menubar span {
+      cursor: default;
+      text-decoration: underline;
+    }
+    #notepad-menubar span:first-letter { text-decoration: underline; }
+
+    #notepad textarea {
+      width: 100%;
+      height: 180px;
+      border: none;
+      outline: none;
+      resize: none;
+      font: 12px/1.5 'Courier New', Courier, monospace;
+      padding: 6px;
+      background: #fff;
+      color: #000;
+      text-align: center;
+    }
+
+    #notepad-statusbar {
+      border-top: 1px solid #000;
+      font-size: 10px;
+      padding: 2px 6px;
+      color: #000;
+    }
+    #skip-btn {
+      transition: background 0.08s, color 0.08s;
+    }
+    #skip-btn:active {
+      background: #fff;
+      color: #000;
+      outline: 1px solid #000;
+    }
+    @keyframes skip-flash {
+      0%   { background: #fff; color: #000; outline: 1px solid #000; }
+      100% { background: #000; color: #fff; outline: none; }
+    }
+    #skip-btn.pressed {
+      animation: skip-flash 0.3s ease-out forwards;
+    }
+  </style>
+</head>
+<body>
+  <audio id="bg-audio" src="2_09.mp3" loop></audio>
+  <canvas id="c"></canvas>
+  <div id="blur-overlay"></div>
+  <canvas id="grain-canvas" style="position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:0;"></canvas>
+  <canvas id="love-canvas" style="position:fixed;inset:0;z-index:2;pointer-events:none;"></canvas>
+  <canvas id="birds-canvas" style="position:fixed;inset:0;z-index:2;pointer-events:none;display:none;"></canvas>
+  <canvas id="globe-canvas" style="position:fixed;display:none;z-index:3;pointer-events:none;"></canvas>
+
+  <div id="notepad">
+    <div id="notepad-titlebar">
+      <span>Untitled - Notepad</span>
+      <div id="notepad-controls">
+        <button>_</button>
+        <button>□</button>
+        <button onclick="document.getElementById('notepad').style.display='none'">×</button>
+      </div>
+    </div>
+    <div id="notepad-menubar">
+      <span>File</span><span>Edit</span><span>Format</span><span>View</span><span>Help</span>
+    </div>
+    <textarea placeholder=""></textarea>
+    <div id="notepad-statusbar">Ln 1, Col 1</div>
+  </div>
+
+  <div id="reveal"><div id="reveal-text"><span></span><span id="cursor"></span></div></div>
+  <div id="scrollbar"><div id="thumb"></div></div>
+  <div id="dev-counter" style="position:fixed;top:12px;right:24px;z-index:999;font:11px 'Courier New',Courier,monospace;color:#888;pointer-events:none;">0%</div>
+<button id="skip-btn" style="position:fixed;bottom:16px;right:24px;z-index:999;padding:3px 10px;font-size:11px;font-family:'Courier New',monospace;cursor:pointer;background:#000;color:#fff;border:none;letter-spacing:0.05em;user-select:none;">skip to end</button>
+
+  <script src="index_3.js"></script>
+</body>
+</html>
