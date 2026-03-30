@@ -117,7 +117,8 @@
       grid-template-columns: 148px repeat(7, 26px);
       row-gap: 0;
       column-gap: 2px;
-      min-width: max-content;
+      min-width: 342px;
+      flex-shrink: 0;
     }
     .tracker-grid.days-1 { grid-template-columns: 148px repeat(1, 26px); }
     .tracker-grid.days-2 { grid-template-columns: 148px repeat(2, 26px); }
@@ -459,7 +460,7 @@
     ];
 
     const START_DAY     = 0;
-    const END_DAY       = 75;
+    const END_DAY       = 74;
     const TOTAL_DAYS    = END_DAY - START_DAY + 1;
     const DAYS_PER_WEEK = 7;
 
