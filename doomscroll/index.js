@@ -49,11 +49,12 @@ const skipMessages = [
   "don't go",
   "don't leave me here",
   "i'll wait",
-  "please don't give up",
+  "won't you please stay?",
   "stay.",
   "...",
   "please",
   "...",
+  "i'm tired.",
   "",
 ];
 let skipMsgIndex = 0;
@@ -99,6 +100,7 @@ const BIRDS_FREQ         = 0.018; // sine frequency — lower = wider waves
 const BIRDS_FRAME_TICKS  = 4;    // scroll ticks per GIF frame advance
 const BIRDS_SCALE        = 0.5;  // size multiplier for birds GIF
 const GIF_FRAME_SKIP     = 3;    // scroll ticks per globe frame (higher = slower)
+const RETURN_SPEED_MULT  = 30;   // speed multiplier when scrolling back after reaching 100%
 // =========================================
 
 // Grain effect — separate overlay canvas so it fades in over the circle
@@ -396,6 +398,7 @@ let pageIndex = 0;
 let charCount = 0;
 let holdTicks = 0;
 let hasFinished = false;
+let hasReached100 = false;
 let eggActive = false;
 let eggPageIndex = 0;
 let eggCharCount = 0;
@@ -439,6 +442,8 @@ function setRadius(r) {
     enterGifPhase();
     return;
   }
+  // Reset so globe plays again on every pass-through
+  if (tCheck < GIF_TRIGGER_T && gifPhase === 'done') gifPhase = 'pre';
   draw();
   updateThumb();
 }
@@ -670,7 +675,7 @@ window.addEventListener('wheel', (e) => {
     const dir = e.deltaY > 0 ? 1 : -1;
     const currentPage = pages[pageIndex];
     const fullyTyped = Math.floor(charCount) >= currentPage.length;
-    if (pageIndex >= pages.length - 1 && fullyTyped) hasFinished = true;
+    if (pageIndex >= pages.length - 1 && fullyTyped) { hasFinished = true; hasReached100 = true; }
     if (fullyTyped && dir > 0) {
       holdTicks++;
       if (holdTicks >= HOLD_TICKS) {
@@ -694,7 +699,8 @@ window.addEventListener('wheel', (e) => {
     return;
   }
   const scrollDir = e.deltaY > 0 ? 1 : -1;
-  setRadius(radius + scrollDir * CIRCLE_SPEED);
+  const circleSpeed = (hasReached100 && scrollDir < 0) ? CIRCLE_SPEED * RETURN_SPEED_MULT : CIRCLE_SPEED;
+  setRadius(radius + scrollDir * circleSpeed);
 }, { passive: false });
 
 window.addEventListener('keydown', (e) => {
@@ -729,7 +735,7 @@ window.addEventListener('keydown', (e) => {
   }
   if (radius >= maxRadius()) {
     const currentPage = pages[pageIndex];
-    if (pageIndex >= pages.length - 1 && Math.floor(charCount) >= currentPage.length) hasFinished = true;
+    if (pageIndex >= pages.length - 1 && Math.floor(charCount) >= currentPage.length) { hasFinished = true; hasReached100 = true; }
     charCount = Math.max(0, charCount + dir * (pageIndex === 0 ? TYPING_SPEED_KAWARA : TYPING_SPEED));
     if (charCount >= currentPage.length && dir > 0) {
       if (pageIndex < pages.length - 1) { pageIndex++; charCount = 0; }
@@ -744,9 +750,22 @@ window.addEventListener('keydown', (e) => {
     revealSpan.innerHTML = renderRevealText(pages[pageIndex].slice(0, Math.floor(charCount)), pageIndex === 0);
     cursor.style.display = Math.floor(charCount) < pages[pageIndex].length ? 'inline-block' : 'none';
   } else {
-    setRadius(radius + dir * CIRCLE_SPEED);
+    const kSpeed = (hasReached100 && dir < 0) ? CIRCLE_SPEED * RETURN_SPEED_MULT : CIRCLE_SPEED;
+    // Update state immediately but throttle rendering via rAF to avoid
+    // locking up during birds GIF when arrow keys repeat rapidly
+    radius = Math.max(minRadius, Math.min(maxRadius(), radius + dir * kSpeed));
+    const tCheck = (radius - minRadius) / (maxRadius() - minRadius);
+    if (tCheck >= GIF_TRIGGER_T && gifPhase === 'pre' && gifFrames) { enterGifPhase(); return; }
+    if (tCheck < GIF_TRIGGER_T && gifPhase === 'done') gifPhase = 'pre';
+    updateThumb();
+    if (!_keyDrawPending) {
+      _keyDrawPending = true;
+      requestAnimationFrame(() => { _keyDrawPending = false; draw(); });
+    }
   }
 });
+
+let _keyDrawPending = false;
 
 // Scrollbar drag (toggle with SCROLLBAR_DRAG in config)
 let sbDragging = false, sbStartY = 0, sbStartRadius = 0;
@@ -764,3 +783,13 @@ document.addEventListener('mouseup', () => { sbDragging = false; });
 
 window.addEventListener('resize', resize);
 resize();
+
+// Debug jump buttons (uncomment + add HTML buttons to re-enable)
+// document.getElementById('debug-5').addEventListener('click', () => {
+//   if (gifPhase === 'playing') { gifPhase = 'pre'; globeCanvas.style.display = 'none'; canvas.style.display = 'block'; blurOverlay.style.display = 'block'; }
+//   setRadius(minRadius + 0.05 * (maxRadius() - minRadius));
+// });
+// document.getElementById('debug-100').addEventListener('click', () => {
+//   if (gifPhase === 'playing') { gifPhase = 'done'; globeCanvas.style.display = 'none'; canvas.style.display = 'block'; blurOverlay.style.display = 'block'; }
+//   setRadius(maxRadius());
+// });
