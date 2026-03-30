@@ -45,6 +45,7 @@ const thumb = document.getElementById('thumb');
 const devCounter = document.getElementById('dev-counter');
 const skipBtn = document.getElementById('skip-btn');
 const skipMessages = [
+  "keep going.",
   "please don't leave",
   "don't go",
   "don't leave me here",
@@ -260,10 +261,10 @@ function renderGifFrame(index) {
   globeCtx.drawImage(gifTempCanvas, cx - d / 2, cy - d / 2, d, d);
 }
 
-function enterGifPhase() {
+function enterGifPhase(dir = 1) {
   if (!gifFrames) return; // not loaded yet, skip
   gifPhase = 'playing';
-  gifFrameIndex = 0;
+  gifFrameIndex = dir > 0 ? 0 : gifFrames.length - 1;
   gifRevolutionCount = 0;
   gifFrozenRadius = radius;
   // Full-screen canvas so black bg covers everything
@@ -276,7 +277,7 @@ function enterGifPhase() {
   globeCanvas.style.display = 'block';
   canvas.style.display = 'none';
   blurOverlay.style.display = 'none';
-  renderGifFrame(0);
+  renderGifFrame(gifFrameIndex);
 }
 
 function advanceGifFrame(dir) {
@@ -443,7 +444,8 @@ function setRadius(r) {
   if (gifPhase === 'pre' && gifFrames) {
     const crossFwd = prevT < GIF_TRIGGER_T && tCheck >= GIF_TRIGGER_T;
     const crossBwd = prevT >= GIF_TRIGGER_T && tCheck < GIF_TRIGGER_T;
-    if (crossFwd || crossBwd) { enterGifPhase(); return; }
+    if (crossFwd) { enterGifPhase(1); return; }
+    if (crossBwd) { enterGifPhase(-1); return; }
   }
   draw();
   updateThumb();
@@ -761,7 +763,8 @@ window.addEventListener('keydown', (e) => {
     if (gifPhase === 'pre' && gifFrames) {
       const crossFwd = prevT < GIF_TRIGGER_T && tCheck >= GIF_TRIGGER_T;
       const crossBwd = prevT >= GIF_TRIGGER_T && tCheck < GIF_TRIGGER_T;
-      if (crossFwd || crossBwd) { enterGifPhase(); return; }
+      if (crossFwd) { enterGifPhase(1); return; }
+      if (crossBwd) { enterGifPhase(-1); return; }
     }
     updateThumb();
     if (!_keyDrawPending) {
