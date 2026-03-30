@@ -1,1 +1,4 @@
-first week down. getting used to the routine.
+- purchased an alarm clock to decouple this task from phone
+- "the fool" workshop -> lifechanging
+- lots of tears, lots of emotion, lots of pushing through; it's healing
+- pouring into my beloved support system-- friends, family, commmunity; lots of simply enjoying one another's presence!
