@@ -451,6 +451,16 @@ function updateThumb() {
   }
   thumb.style.top = (Math.min(1, t) * trackH) + 'px';
   devCounter.textContent = Math.round(Math.min(1, t) * 100) + '%';
+  const skipLabels = [
+    'skip to end',
+    'make it end?',
+    'i want out',
+    'get me out of here',
+    'skip to end',
+    'is it over yet?',
+  ];
+  const pct = Math.round(Math.min(1, t) * 100);
+  skipBtn.textContent = skipLabels[Math.floor(pct / 10) % skipLabels.length];
 }
 
 function setRadius(r) {
