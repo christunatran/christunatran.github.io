@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Kosugi&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="/js/components.js" defer></script>
   <script src="/js/script.js" defer></script>
 
@@ -178,7 +179,8 @@
       transform: translateX(-50%);
       font-size: 9px;
       font-family: 'Silkscreen', monospace;
-      white-space: nowrap;
+      white-space: normal;
+      max-width: 180px;
       opacity: 0;
       pointer-events: none;
       background-color: var(--border);
@@ -325,6 +327,68 @@
     }
     #custom-confirm:hover { background: var(--border); color: var(--bg); }
 
+    /* ── two-column layout ── */
+    #tracker-layout {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+    #tracker-main { flex: 1; min-width: 0; }
+
+    /* ── notes panel ── */
+    #notes-panel {
+      width: 200px;
+      flex-shrink: 0;
+      border: 1px dashed var(--border);
+      padding: 12px;
+    }
+    #notes-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      border-bottom: 1px dashed var(--border);
+      padding-bottom: 8px;
+    }
+    #notes-week-label {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .notes-nav-btn {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      color: var(--text);
+      opacity: 0.5;
+      padding: 2px 4px;
+    }
+    .notes-nav-btn:hover { opacity: 1; }
+    #notes-content {
+      font-family: 'Kosugi', sans-serif;
+      font-size: 11px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    #notes-content h1, #notes-content h2, #notes-content h3 {
+      font-size: 11px;
+      font-family: 'Silkscreen', monospace;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 10px 0 4px;
+    }
+    #notes-content p { margin-bottom: 8px; }
+    #notes-content a { color: var(--link); }
+    #notes-content em { opacity: 0.4; }
+
+    @media (max-width: 700px) {
+      #tracker-layout { flex-direction: column; }
+      #notes-panel { width: 100%; }
+    }
+
     /* ── progress ── */
     #progress-line {
       font-family: 'Silkscreen', monospace;
@@ -343,16 +407,26 @@
   <div id="line4"></div>
 
   <div id="content">
-    <div class="about-block">
-      <div id="tracker-header">
-        <h1>tunapee's 75 hard challenge</h1>
-        <button id="edit-btn">edit</button>
-        <span id="sync-status" style="display:none"></span>
-        <button id="lock-btn" style="display:none">lock</button>
+    <div id="tracker-layout">
+      <div id="tracker-main" class="about-block">
+        <div id="tracker-header">
+          <h1>tunapee's 75 hard challenge</h1>
+          <button id="edit-btn">edit</button>
+          <span id="sync-status" style="display:none"></span>
+          <button id="lock-btn" style="display:none">lock</button>
+        </div>
+        <h3 style="text-align:center; margin-bottom:14px;"><a href="/blog-post/?slug=75-hard">why am i doing this?</a></h3>
+        <p id="progress-line"></p>
+        <div id="weeks-container"></div>
       </div>
-      <h3 style="text-align:center; margin-bottom:14px;"><a href="/blog-post/?slug=75-hard">why am i doing this?</a></h3>
-      <p id="progress-line"></p>
-      <div id="weeks-container"></div>
+      <div id="notes-panel">
+        <div id="notes-nav">
+          <button class="notes-nav-btn" id="notes-prev">←</button>
+          <span id="notes-week-label">week 1</span>
+          <button class="notes-nav-btn" id="notes-next">→</button>
+        </div>
+        <div id="notes-content"></div>
+      </div>
     </div>
   </div>
 
@@ -675,7 +749,7 @@
         chunk.forEach(d => {
           const cell = document.createElement('div');
           cell.className = 'tracker-header-cell';
-          cell.textContent = d;
+          cell.textContent = d + 1;
           gridEl.appendChild(cell);
         });
 
@@ -846,6 +920,36 @@
         if (e.key === 'Enter') commitTextPicker(textInput.value.trim());
         if (e.key === 'Escape') closeTextPicker();
       });
+
+      // ── notes panel ──
+      const TOTAL_WEEKS = Math.ceil(TOTAL_DAYS / DAYS_PER_WEEK);
+      let notesWeek = 1;
+
+      async function loadNotes(week) {
+        const el = document.getElementById('notes-content');
+        document.getElementById('notes-week-label').textContent = 'week ' + week;
+        el.innerHTML = '';
+        try {
+          const r = await fetch(`/75/notes/week-${week}.md`);
+          if (r.ok) {
+            const md = await r.text();
+            el.innerHTML = marked.parse(md);
+          } else {
+            el.innerHTML = '<em>no notes yet</em>';
+          }
+        } catch(e) {
+          el.innerHTML = '<em>no notes yet</em>';
+        }
+      }
+
+      document.getElementById('notes-prev').addEventListener('click', () => {
+        if (notesWeek > 1) { notesWeek--; loadNotes(notesWeek); }
+      });
+      document.getElementById('notes-next').addEventListener('click', () => {
+        if (notesWeek < TOTAL_WEEKS) { notesWeek++; loadNotes(notesWeek); }
+      });
+
+      loadNotes(notesWeek);
 
       // close pickers on outside click
       document.addEventListener('pointerdown', e => {

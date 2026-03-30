@@ -1,26 +1,25 @@
 /**
- * home.js
+ * home.js — masonry grid for the home page.
  *
- * Builds the two-column masonry grid on the home page by merging static
- * images, works, and blog posts, sorted newest-first. Items alternate
- * left/right so both columns fill evenly top-to-bottom.
+ * Items (works, blog posts, static images) are sorted newest-first and placed
+ * into a two-column absolute-position masonry layout. Heights are measured
+ * after images decode so the layout is always accurate.
  */
 
 (function () {
   'use strict';
+
+  const GAP = 20; // px gap between cards and columns
 
   const STATIC_IMAGES = [
     { src: '/assets/my professional headshot.jpg', date: '2025.02' },
     { src: '/assets/hard mode winner.png', date: '2026.03.08', href: '/work/?slug=closer-to-the-fire' },
   ];
 
-  /** Escapes user-supplied strings before inserting into innerHTML. */
   function escapeHtml(str) {
     return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
   function createImageCard(image) {
@@ -28,7 +27,7 @@
     card.className = 'post post-image';
     card.innerHTML = `
       <div class="post-content">
-        <img src="${image.src}" alt="" loading="lazy">
+        <img src="${image.src}" alt="">
       </div>
       <span class="post-date">${image.date}</span>
     `;
@@ -44,13 +43,11 @@
     card.className = 'post post-image';
     card.innerHTML = `
       <div class="post-content">
-        ${work.cover ? `<img src="${work.cover}" alt="${escapeHtml(work.title)}" loading="lazy">` : ''}
+        ${work.cover ? `<img src="${work.cover}" alt="${escapeHtml(work.title)}">` : ''}
       </div>
       <span class="post-date">${work.date}</span>
     `;
-    card.addEventListener('click', () => {
-      window.location.href = `/work/?slug=${work.slug}`;
-    });
+    card.addEventListener('click', () => { window.location.href = `/work/?slug=${work.slug}`; });
     return card;
   }
 
@@ -64,15 +61,43 @@
       </div>
       <span class="post-date">${post.date}</span>
     `;
-    card.addEventListener('click', () => {
-      window.location.href = `/blog-post/?slug=${post.slug}`;
-    });
+    card.addEventListener('click', () => { window.location.href = `/blog-post/?slug=${post.slug}`; });
     return card;
   }
 
-  /** Pads month/day components so "2025.5" sorts correctly vs "2025.10". */
   function normalizeDate(d) {
     return d.split('.').map((p, i) => i === 0 ? p : p.padStart(2, '0')).join('.');
+  }
+
+  function masonry(grid, cards) {
+    // Mobile: skip absolute positioning (CSS handles single-column)
+    if (window.innerWidth <= 768) return;
+
+    const w = grid.clientWidth;
+    if (!w) return;
+    const colW = Math.floor((w - GAP) / 2);
+
+    // Set column width on each card so text wraps correctly before measuring
+    cards.forEach(c => {
+      c.style.position = 'absolute';
+      c.style.width = colW + 'px';
+      c.style.visibility = 'hidden';
+    });
+
+    // Force reflow so offsetHeight reflects correct column width
+    void grid.offsetHeight;
+
+    // Greedy: place each card into the shorter column
+    const ys = [0, 0];
+    cards.forEach(c => {
+      const col = ys[0] <= ys[1] ? 0 : 1;
+      c.style.left  = (col * (colW + GAP)) + 'px';
+      c.style.top   = ys[col] + 'px';
+      c.style.visibility = 'visible';
+      ys[col] += c.offsetHeight + GAP;
+    });
+
+    grid.style.height = Math.max(...ys) + 'px';
   }
 
   function buildGrid(works, posts) {
@@ -85,31 +110,28 @@
     const grid = document.getElementById('postsGrid');
     if (!grid) return;
 
-    const colLeft  = document.createElement('div');
-    const colRight = document.createElement('div');
-    colLeft.className  = 'posts-col';
-    colRight.className = 'posts-col';
-    grid.appendChild(colLeft);
-    grid.appendChild(colRight);
-
     const creators = { image: createImageCard, work: createWorkCard, blog: createBlogCard };
-
-    // Estimate item heights to greedily balance column heights:
-    // image/work cards are much taller than text cards.
-    const EST = { image: 280, work: 280, blog: 110 };
-    let heightLeft = 0, heightRight = 0;
+    const cards = [];
 
     items.forEach(item => {
       const card = creators[item.type]?.(item.data);
       if (!card) return;
-      if (heightLeft <= heightRight) {
-        colLeft.appendChild(card);
-        heightLeft += EST[item.type];
-      } else {
-        colRight.appendChild(card);
-        heightRight += EST[item.type];
-      }
+      grid.appendChild(card);
+      cards.push(card);
     });
+
+    function doLayout() { masonry(grid, cards); }
+
+    // Wait for all images to decode, then layout
+    const imgs = Array.from(grid.querySelectorAll('img'));
+    Promise.all(imgs.map(i => i.decode().catch(() => {}))).then(doLayout);
+
+    // Re-layout as any lazy/slow images finish loading
+    const ro = new ResizeObserver(doLayout);
+    imgs.forEach(i => ro.observe(i));
+
+    // Re-layout on resize
+    window.addEventListener('resize', doLayout);
   }
 
   Promise.all([
