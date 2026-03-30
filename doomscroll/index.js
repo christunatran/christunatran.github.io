@@ -421,12 +421,30 @@ function maxRadius() {
   return Math.sqrt((window.innerWidth / 2) ** 2 + (window.innerHeight / 2) ** 2);
 }
 
+function getTypingPageT() {
+  // Weight each page by how many scroll ticks it takes (chars/speed + hold).
+  // This makes every scroll tick advance the bar by the same amount,
+  // preventing short pages (like "goodbye.") from jumping the bar.
+  let ticksDone = 0, totalTicks = 0;
+  for (let i = 0; i < pages.length; i++) {
+    const speed = i === 0 ? TYPING_SPEED_KAWARA : TYPING_SPEED;
+    const pageTicks = pages[i].length / speed + HOLD_TICKS;
+    totalTicks += pageTicks;
+    if (i < pageIndex) {
+      ticksDone += pageTicks;
+    } else if (i === pageIndex) {
+      ticksDone += Math.min(charCount, pages[i].length) / speed
+        + (Math.floor(charCount) >= pages[i].length ? holdTicks : 0);
+    }
+  }
+  return ticksDone / Math.max(1, totalTicks);
+}
+
 function updateThumb() {
   const trackH = scrollbar.clientHeight - thumb.offsetHeight;
   let t;
   if (radius >= maxRadius()) {
-    const pageT = (pageIndex + Math.min(charCount / Math.max(1, pages[pageIndex].length), 1)) / pages.length;
-    t = 0.8 + pageT * 0.2;
+    t = 0.8 + getTypingPageT() * 0.2;
   } else {
     // circle phase occupies 0–80% so the final scene doesn't cause a jump
     t = ((radius - minRadius) / (maxRadius() - minRadius)) * 0.8;
@@ -445,7 +463,7 @@ function setRadius(r) {
     const crossFwd = prevT < GIF_TRIGGER_T && tCheck >= GIF_TRIGGER_T;
     const crossBwd = prevT >= GIF_TRIGGER_T && tCheck < GIF_TRIGGER_T;
     if (crossFwd) { enterGifPhase(1); return; }
-    if (crossBwd) { enterGifPhase(-1); return; }
+    if (crossBwd && !hasReached100) { enterGifPhase(-1); return; }
   }
   draw();
   updateThumb();
@@ -574,6 +592,8 @@ function showEggScene() {
   scrollbar.style.background = '#333';
   thumb.style.background = '#fff';
   skipBtn.style.display = 'none';
+  startGrain();
+  grainCanvas.style.opacity = '1';
 }
 
 function checkFill() {
@@ -764,7 +784,7 @@ window.addEventListener('keydown', (e) => {
       const crossFwd = prevT < GIF_TRIGGER_T && tCheck >= GIF_TRIGGER_T;
       const crossBwd = prevT >= GIF_TRIGGER_T && tCheck < GIF_TRIGGER_T;
       if (crossFwd) { enterGifPhase(1); return; }
-      if (crossBwd) { enterGifPhase(-1); return; }
+      if (crossBwd && !hasReached100) { enterGifPhase(-1); return; }
     }
     updateThumb();
     if (!_keyDrawPending) {
