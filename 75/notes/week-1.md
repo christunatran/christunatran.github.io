@@ -2,4 +2,5 @@
 - "the fool" workshop -> lifechanging
 - lots of tears, lots of emotion, lots of pushing through; it's healing
 - pouring into my beloved support system-- friends, family, commmunity; lots of simply enjoying one another's presence!
-- note to self: spot test new skincaer products before slathering them on. retinal eye cream was irritating
+- note to self: spot test new skincare products before slathering them on. too much retinal eye cream was irritating
+- spent lots of time outdoors and it was amazing. i love walking everywhere.
