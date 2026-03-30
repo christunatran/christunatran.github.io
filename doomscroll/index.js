@@ -436,14 +436,15 @@ function updateThumb() {
 
 function setRadius(r) {
   if (gifPhase === 'playing') return;
+  const prevT = (radius - minRadius) / (maxRadius() - minRadius);
   radius = Math.max(minRadius, Math.min(maxRadius(), r));
   const tCheck = (radius - minRadius) / (maxRadius() - minRadius);
-  if (tCheck >= GIF_TRIGGER_T && gifPhase === 'pre' && gifFrames) {
-    enterGifPhase();
-    return;
-  }
-  // Reset so globe plays again on every pass-through
   if (tCheck < GIF_TRIGGER_T && gifPhase === 'done') gifPhase = 'pre';
+  if (gifPhase === 'pre' && gifFrames) {
+    const crossFwd = prevT < GIF_TRIGGER_T && tCheck >= GIF_TRIGGER_T;
+    const crossBwd = prevT >= GIF_TRIGGER_T && tCheck < GIF_TRIGGER_T;
+    if (crossFwd || crossBwd) { enterGifPhase(); return; }
+  }
   draw();
   updateThumb();
 }
@@ -753,10 +754,15 @@ window.addEventListener('keydown', (e) => {
     const kSpeed = (hasReached100 && dir < 0) ? CIRCLE_SPEED * RETURN_SPEED_MULT : CIRCLE_SPEED;
     // Update state immediately but throttle rendering via rAF to avoid
     // locking up during birds GIF when arrow keys repeat rapidly
+    const prevT = (radius - minRadius) / (maxRadius() - minRadius);
     radius = Math.max(minRadius, Math.min(maxRadius(), radius + dir * kSpeed));
     const tCheck = (radius - minRadius) / (maxRadius() - minRadius);
-    if (tCheck >= GIF_TRIGGER_T && gifPhase === 'pre' && gifFrames) { enterGifPhase(); return; }
     if (tCheck < GIF_TRIGGER_T && gifPhase === 'done') gifPhase = 'pre';
+    if (gifPhase === 'pre' && gifFrames) {
+      const crossFwd = prevT < GIF_TRIGGER_T && tCheck >= GIF_TRIGGER_T;
+      const crossBwd = prevT >= GIF_TRIGGER_T && tCheck < GIF_TRIGGER_T;
+      if (crossFwd || crossBwd) { enterGifPhase(); return; }
+    }
     updateThumb();
     if (!_keyDrawPending) {
       _keyDrawPending = true;
