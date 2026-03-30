@@ -9,6 +9,7 @@ bgAudio.play().catch(() => {});
 document.addEventListener('click', startAudio, { once: true });
 document.addEventListener('keydown', startAudio, { once: true });
 document.addEventListener('pointerdown', startAudio, { once: true });
+document.addEventListener('wheel', startAudio, { once: true });
 
 const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
