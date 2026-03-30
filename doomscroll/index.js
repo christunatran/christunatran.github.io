@@ -813,16 +813,17 @@ window.addEventListener('keydown', (e) => {
 
 let _keyDrawPending = false;
 
-// Clicking scrollbar shows notepad instead of jumping
+// Clicking scrollbar shows notepad with the same message sequence as skip button
 scrollbar.addEventListener('mousedown', (e) => {
   if (e.target === thumb && SCROLLBAR_DRAG) return; // allow drag if enabled
   e.preventDefault();
+  notepadTextarea.value = skipMessages[skipMsgIndex % skipMessages.length];
+  notepadTextarea.style.paddingTop = '81px';
+  skipMsgIndex++;
   notepad.style.display = 'flex';
   notepad.style.left = '50%';
   notepad.style.top = '50%';
   notepad.style.transform = 'translate(-50%, -50%)';
-  notepadTextarea.value = '';
-  notepadTextarea.style.paddingTop = '';
 });
 
 // Scrollbar drag (toggle with SCROLLBAR_DRAG in config)
