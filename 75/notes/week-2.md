@@ -2,3 +2,4 @@
 - i think i've run out of tears
 - my new tupperware comes in clutch
 - i'm pre-gaming hot girl summer
+- i've found a new neighborhood cafe to frequent. it's a space i can easily walk to, spacious and well it. i feel inspired and lucky to spend my mornings here! i can't wait to invite my friends.
