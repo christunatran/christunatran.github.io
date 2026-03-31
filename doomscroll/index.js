@@ -411,7 +411,8 @@ let eggHoldTicks = 0;
 
 const easterEggPages = [
   `"Blessed are the forgetful: for they get the better even of their blunders."`,
-  `"You know what's wrong with you, Miss Whoever-you-are? You're chicken, you've got no guts. You're afraid to stick out your chin and say, "Okay, life's a fact, people do fall in love, people do belong to each other, because that's the only chance anybody's got for real happiness." You call yourself a free spirit, a "wild thing," and you're terrified somebody's gonna stick you in a cage. Well baby, you're already in that cage. You built it yourself. And it's not bounded in the west by Tulip, Texas, or in the east by Somali-land. It's wherever you go. Because no matter where you run, you just end up running into yourself."`,
+  `"You know what's wrong with you, Miss Whoever-you-are? You're chicken, you've got no guts. You're afraid to stick out your chin and say, "Okay, life's a fact, people do fall in love, people do belong to each other, because that's the only chance anybody's got for real happiness." You call yourself a free spirit, a "wild thing," and you're terrified somebody's gonna stick you in a cage. Well baby, you're already in that cage. You built it yourself. And it's not bounded in the west by Tulip, Texas, or in the east by Somali-land. It's wherever you go."`,
+  `Because no matter where you run, you just end up running into yourself."`,
   `"I wish you'd stayed."`,
   `"I wish I'd stayed, too."`
 ];
