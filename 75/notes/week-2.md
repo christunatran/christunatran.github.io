@@ -1,0 +1,4 @@
+- my classes keep getting canceled!
+- i think i've run out of tears
+- my new tupperware comes in clutch
+- i'm pre-gaming hot girl summer
