@@ -119,10 +119,10 @@
 
     const creators = { image: createImageCard, work: createWorkCard, blog: createBlogCard };
 
-    items.forEach((item, idx) => {
+    items.forEach((item) => {
       const card = creators[item.type]?.(item.data);
       if (!card) return;
-      (idx % 2 === 0 ? col0 : col1).appendChild(card);
+      (col0.scrollHeight <= col1.scrollHeight ? col0 : col1).appendChild(card);
     });
   }
 
