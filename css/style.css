@@ -185,8 +185,7 @@ blockquote {
    MASONRY GRID
    ============================================================ */
 .posts-grid {
-  columns: 2;
-  column-gap: 20px;
+  position: relative;
 }
 
 /* ============================================================
@@ -720,7 +719,7 @@ blockquote {
     margin: 0 auto;
   }
 
-  /* Home + works: single column on mobile (masonry JS handles desktop) */
+  /* Home + works: single column on mobile */
   .post, .work-card { position: static !important; width: 100% !important; left: auto !important; top: auto !important; }
   .posts-grid, #works-grid { height: auto !important; }
   .post { margin-bottom: 20px; }

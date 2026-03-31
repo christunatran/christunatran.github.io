@@ -70,8 +70,8 @@
   }
 
   function masonry(grid, cards) {
-    // CSS columns handle layout — no absolute positioning needed
-    return;
+    // Mobile: skip absolute positioning (CSS handles single-column)
+    if (window.innerWidth <= 768) return;
 
     const w = grid.clientWidth;
     if (!w) return;
@@ -87,10 +87,10 @@
     // Force reflow so offsetHeight reflects correct column width
     void grid.offsetHeight;
 
-    // Greedy: place each card into the shorter column
+    // Strict left-to-right: 1st→col0, 2nd→col1, 3rd→col0, ...
     const ys = [0, 0];
-    cards.forEach(c => {
-      const col = ys[0] <= ys[1] ? 0 : 1;
+    cards.forEach((c, idx) => {
+      const col = idx % 2;
       c.style.left  = (col * (colW + GAP)) + 'px';
       c.style.top   = ys[col] + 'px';
       c.style.visibility = 'visible';

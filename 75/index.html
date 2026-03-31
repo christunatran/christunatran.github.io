@@ -510,22 +510,35 @@
     }
 
     async function initState() {
-      // Fetch live progress from JSONbin (all visitors see this)
-      if (JSONBIN_BIN) {
-        try {
-          const r = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN}/latest`,
-            JSONBIN_KEY ? { headers: { 'X-Master-Key': JSONBIN_KEY } } : {}
-          );
-          if (r.ok) {
-            const d = await r.json();
-            checks     = d.record.checks     || {};
-            activities = d.record.activities || {};
-            designs    = d.record.designs    || {};
-            gratitudes = d.record.gratitudes || {};
-          }
-        } catch (e) {}
-      } else {
-        // Fallback: local JSON file (before JSONbin is set up)
+      // Load from localStorage immediately (fast, no network)
+      const lc = localStorage.getItem(STORAGE_KEY);
+      const la = localStorage.getItem(ACTIVITIES_KEY);
+      const ld = localStorage.getItem(DESIGN_KEY);
+      const lg = localStorage.getItem(GRATITUDE_KEY);
+      if (lc) checks     = JSON.parse(lc);
+      if (la) activities = JSON.parse(la);
+      if (ld) designs    = JSON.parse(ld);
+      if (lg) gratitudes = JSON.parse(lg);
+
+      // Fetch live progress from JSONbin in the background
+      if (JSONBIN_BIN && !isUnlocked()) {
+        fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN}/latest`,
+          JSONBIN_KEY ? { headers: { 'X-Master-Key': JSONBIN_KEY } } : {}
+        ).then(r => r.ok ? r.json() : null).then(d => {
+          if (!d) return;
+          checks     = d.record.checks     || {};
+          activities = d.record.activities || {};
+          designs    = d.record.designs    || {};
+          gratitudes = d.record.gratitudes || {};
+          // Cache for next visit
+          localStorage.setItem(STORAGE_KEY,    JSON.stringify(checks));
+          localStorage.setItem(ACTIVITIES_KEY, JSON.stringify(activities));
+          localStorage.setItem(DESIGN_KEY,     JSON.stringify(designs));
+          localStorage.setItem(GRATITUDE_KEY,  JSON.stringify(gratitudes));
+          buildTracker();
+        }).catch(() => {});
+      } else if (!JSONBIN_BIN) {
+        // Fallback: local JSON file
         try {
           const r = await fetch('/data/75hard-progress.json');
           if (r.ok) {
@@ -536,18 +549,6 @@
             gratitudes = d.gratitudes || {};
           }
         } catch (e) {}
-      }
-
-      // In edit mode, localStorage overrides (live editing session)
-      if (isUnlocked()) {
-        const lc = localStorage.getItem(STORAGE_KEY);
-        const la = localStorage.getItem(ACTIVITIES_KEY);
-        const ld = localStorage.getItem(DESIGN_KEY);
-        const lg = localStorage.getItem(GRATITUDE_KEY);
-        if (lc) checks     = JSON.parse(lc);
-        if (la) activities = JSON.parse(la);
-        if (ld) designs    = JSON.parse(ld);
-        if (lg) gratitudes = JSON.parse(lg);
       }
     }
 
