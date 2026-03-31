@@ -221,8 +221,9 @@ Promise.all([
         px[j] = 255; px[j + 1] = 255; px[j + 2] = 255; px[j + 3] = 255;
       }
     }
-    birdsTempCtx.putImageData(imgData, 0, 0);
-    return birdsTempCtx.getImageData(0, 0, birdsNaturalW, birdsNaturalH);
+    const fc = new OffscreenCanvas(birdsNaturalW, birdsNaturalH);
+    fc.getContext('2d').putImageData(imgData, 0, 0);
+    return fc;
   });
 });
 
@@ -246,11 +247,10 @@ function drawBirds() {
   const birdsSpeed = (birdsCanvas.width + scaledW) / totalTicks;
 
   const frameIndex = Math.floor(offset / BIRDS_FRAME_TICKS) % birdsFrames.length;
-  birdsTempCtx.putImageData(birdsFrames[frameIndex], 0, 0);
 
   const x = birdsCanvas.width - offset * birdsSpeed;
   const y = cy - scaledH / 2 + Math.sin(offset * BIRDS_FREQ) * BIRDS_AMPLITUDE;
-  birdsCtx.drawImage(birdsTempCanvas, x, y, scaledW, scaledH);
+  birdsCtx.drawImage(birdsFrames[frameIndex], x, y, scaledW, scaledH);
 }
 
 function renderGifFrame(index) {
