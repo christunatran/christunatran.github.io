@@ -185,7 +185,16 @@ blockquote {
    MASONRY GRID
    ============================================================ */
 .posts-grid {
-  position: relative;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.posts-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 /* ============================================================
@@ -193,7 +202,6 @@ blockquote {
    ============================================================ */
 .post {
   width: 100%;
-  margin-bottom: 20px;
   border: 1px dashed var(--border);
   cursor: pointer;
   padding: 5px;
@@ -719,10 +727,12 @@ blockquote {
     margin: 0 auto;
   }
 
-  /* Home + works: single column on mobile */
-  .post, .work-card { position: static !important; width: 100% !important; left: auto !important; top: auto !important; }
-  .posts-grid, #works-grid { height: auto !important; }
-  .post { margin-bottom: 20px; }
+  /* Home: single column on mobile */
+  .posts-grid { flex-direction: column; }
+  .posts-col { width: 100%; }
+  /* Works: single column on mobile */
+  .work-card { position: static !important; width: 100% !important; left: auto !important; top: auto !important; }
+  #works-grid { height: auto !important; }
 
   /* Remove text post height cap */
   .post-text .post-content { max-height: none; }

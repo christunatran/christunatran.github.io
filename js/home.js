@@ -70,8 +70,8 @@
   }
 
   function masonry(grid, cards) {
-    // Mobile: skip absolute positioning (CSS handles single-column)
-    if (window.innerWidth <= 768) return;
+    // CSS grid handles layout
+    return;
 
     const w = grid.clientWidth;
     if (!w) return;
@@ -110,28 +110,20 @@
     const grid = document.getElementById('postsGrid');
     if (!grid) return;
 
-    const creators = { image: createImageCard, work: createWorkCard, blog: createBlogCard };
-    const cards = [];
+    const col0 = document.createElement('div');
+    const col1 = document.createElement('div');
+    col0.className = 'posts-col';
+    col1.className = 'posts-col';
+    grid.appendChild(col0);
+    grid.appendChild(col1);
 
-    items.forEach(item => {
+    const creators = { image: createImageCard, work: createWorkCard, blog: createBlogCard };
+
+    items.forEach((item, idx) => {
       const card = creators[item.type]?.(item.data);
       if (!card) return;
-      grid.appendChild(card);
-      cards.push(card);
+      (idx % 2 === 0 ? col0 : col1).appendChild(card);
     });
-
-    function doLayout() { masonry(grid, cards); }
-
-    // Wait for all images to decode, then layout
-    const imgs = Array.from(grid.querySelectorAll('img'));
-    Promise.all(imgs.map(i => i.decode().catch(() => {}))).then(doLayout);
-
-    // Re-layout as any lazy/slow images finish loading
-    const ro = new ResizeObserver(doLayout);
-    imgs.forEach(i => ro.observe(i));
-
-    // Re-layout on resize
-    window.addEventListener('resize', doLayout);
   }
 
   Promise.all([
