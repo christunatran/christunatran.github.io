@@ -908,7 +908,7 @@
         const week = div.dataset.week;
         const body = div.querySelector('.week-notes-body');
         try {
-          const r = await fetch(`/75/notes/week-${week}.md`);
+          const r = await fetch(`/75/notes/week-${week}.md`, { cache: 'no-store' });
           if (r.ok) {
             const md = await r.text();
             body.innerHTML = marked.parse(md);
