@@ -70,8 +70,8 @@
   }
 
   function masonry(grid, cards) {
-    // Mobile: skip absolute positioning (CSS handles single-column)
-    if (window.innerWidth <= 768) return;
+    // CSS columns handle layout — no absolute positioning needed
+    return;
 
     const w = grid.clientWidth;
     if (!w) return;

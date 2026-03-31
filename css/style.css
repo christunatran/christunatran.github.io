@@ -185,7 +185,8 @@ blockquote {
    MASONRY GRID
    ============================================================ */
 .posts-grid {
-  position: relative;
+  columns: 2;
+  column-gap: 20px;
 }
 
 /* ============================================================
@@ -206,7 +207,7 @@ blockquote {
   /* measured by masonry JS — do not add vertical padding here */
 }
 
-/* Timestamp — box expands to reveal on hover, like the original */
+/* Timestamp — slides down on hover */
 .post-date {
   display: block;
   font-size: 9px;
@@ -250,7 +251,7 @@ blockquote {
   line-height: 1.8;
 }
 
-/* Cap text content at a square, not the whole post (so date can still expand out) */
+/* Cap text content at a square */
 .post-text .post-content {
   max-height: calc(24vw - 58px);
   overflow: hidden;
@@ -615,7 +616,7 @@ blockquote {
 }
 
 .blog-tag {
-  font-size: 14px;
+  font-size: 9px;
   color: #999;
 }
 
@@ -636,7 +637,7 @@ blockquote {
 /* Override the standalone .post-date show-on-hover when inside .post-footer */
 .post-footer .post-date {
   display: block;
-  font-size: 14px;
+  font-size: 9px;
   max-height: none;
   overflow: visible;
   opacity: 1;
@@ -726,14 +727,6 @@ blockquote {
 
   /* Remove text post height cap */
   .post-text .post-content { max-height: none; }
-
-  /* Always show dates and footers (touch has no hover) */
-  .post-date {
-    max-height: 20px;
-    opacity: 1;
-    margin-top: 5px;
-    transition: none;
-  }
 
   .post-footer {
     max-height: 60px;
