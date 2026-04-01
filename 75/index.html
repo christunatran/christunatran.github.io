@@ -536,6 +536,7 @@
           localStorage.setItem(DESIGN_KEY,     JSON.stringify(designs));
           localStorage.setItem(GRATITUDE_KEY,  JSON.stringify(gratitudes));
           buildTracker();
+          loadNotes();
         }).catch(() => {});
       } else if (!JSONBIN_BIN) {
         // Fallback: local JSON file
@@ -689,6 +690,20 @@
       document.getElementById('activity-picker').classList.remove('open');
       pickerDay  = null;
       pickerType = null;
+    }
+
+    function loadNotes() {
+      document.querySelectorAll('.week-notes').forEach(async div => {
+        const week = div.dataset.week;
+        const body = div.querySelector('.week-notes-body');
+        try {
+          const r = await fetch(`/75/notes/week-${week}.md`, { cache: 'no-store' });
+          if (r.ok) {
+            const md = await r.text();
+            body.innerHTML = marked.parse(md);
+          }
+        } catch(e) {}
+      });
     }
 
     function buildTracker() {
@@ -905,17 +920,7 @@
       });
 
       // ── inline notes per week ──
-      document.querySelectorAll('.week-notes').forEach(async div => {
-        const week = div.dataset.week;
-        const body = div.querySelector('.week-notes-body');
-        try {
-          const r = await fetch(`/75/notes/week-${week}.md`, { cache: 'no-store' });
-          if (r.ok) {
-            const md = await r.text();
-            body.innerHTML = marked.parse(md);
-          }
-        } catch(e) {}
-      });
+      loadNotes();
 
       // close pickers on outside click
       document.addEventListener('pointerdown', e => {
