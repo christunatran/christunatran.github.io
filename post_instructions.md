@@ -47,7 +47,15 @@ Supported: `.jpg` `.png` `.gif` `.avif` `.webp`
 
 ### 4. preview locally
 
-Open `http://127.0.0.1:5500/blog-post/?slug=your-post-title` in your browser (with Live Server running).
+First regenerate `blog.json` so Live Server picks up the new post:
+
+```bash
+node _dev/generate-blog-json.js
+```
+
+Then open `http://127.0.0.1:5500/blog-post/?slug=your-post-title` in your browser.
+
+> The deploy script runs this automatically — you only need to do it manually for local preview.
 
 ### 5. deploy
 

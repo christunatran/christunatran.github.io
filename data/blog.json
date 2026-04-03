@@ -1,5 +1,13 @@
 [
   {
+    "slug": "some-plants-were-meant-to-die",
+    "title": "some plants were meant to die",
+    "date": "2026.04.03",
+    "file": "some plants were meant to die.md",
+    "snippet": "sometimes, plants are already doomed from the moment you bought them--they were already rotted, or they already had a disease, or the soil they were potted in was the wrong kind of the wrong pH level.",
+    "tags": []
+  },
+  {
     "slug": "75-hard",
     "title": "75 hard",
     "date": "2026.03.23",
@@ -134,7 +142,7 @@
     "slug": "where-the-hell-did-the-time-go",
     "title": "where the hell did the time go?",
     "date": "2025.12.11",
-    "file": "where the hell did the time go.md",
+    "file": "where the hell did the time go?.md",
     "snippet": "it's already december 11, the last day of classes of my first semester of grad school. where did the time go?",
     "tags": [
       "medium"
@@ -170,7 +178,7 @@
     "slug": "pro-tip-just-get-started",
     "title": "reminder of a pro tip: just get started",
     "date": "2025.11.06",
-    "file": "reminder of a pro tip - just get started.md",
+    "file": "reminder of a pro tip: just get started.md",
     "snippet": "i found it daunting to be assigned a 3-hour Unity tutorial for my Hypercinema class. i wrote down on my to-do list to just get started with 30 minutes of it. this way, i lowered the stakes for myself. now that i have a s…",
     "tags": [
       "short"
@@ -190,7 +198,7 @@
     "slug": "when-life-gives-you-tangerines",
     "title": "“when life gives you tangerines”",
     "date": "2025.10.18",
-    "file": "when life gives you trangerines.md",
+    "file": "\"when life gives you trangerines\".md",
     "snippet": "this show made me believe in love again.",
     "tags": [
       "media"
