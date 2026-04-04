@@ -9,7 +9,7 @@ sometimes, plants are already doomed from the moment you bought them--they were 
 
 sometimes, when you bought them they were already dying and they just didn't show you that they were yet.
 
-i ask, "but what about plants that you take care of and that seem to be healthy for years before htey one day die on you?"
+i ask, "but what about plants that you take care of and that seem to be healthy for years before they one day die on you?"
 
 and the plant shop owner shrugs and says, "sometimes it's not anything you did."
 
