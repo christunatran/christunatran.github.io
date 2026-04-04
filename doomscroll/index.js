@@ -848,6 +848,8 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('mouseup', () => { sbDragging = false; });
 
 
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
 window.addEventListener('resize', resize);
 resize();
 
