@@ -465,8 +465,8 @@ function updateThumb() {
     "life is too short",
     'i want out',
     "i don't want to be here anymore",
-    'skip to end',
-    "get me out of here!",
+    'i need something new',
+    "i can't do this anymore.",
     'is it over yet?',
   ];
   const pct = Math.round(Math.min(1, t) * 100);
