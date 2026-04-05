@@ -53,7 +53,7 @@ const skipMessages = [
   "please don't leave",
   "don't go",
   "don't leave me here",
-  "i'll wait",
+  "i'll wait, i'll do anything for you to stay",
   "won't you please stay?",
   "stay.",
   "...",
