@@ -84,12 +84,14 @@ a:hover {
   cursor: pointer;
 }
 
-b, strong {
+:not(#work-content) b,
+:not(#work-content) strong {
   font-size: 9px;
   text-transform: uppercase;
 }
 
-i, em {
+:not(#work-content) i,
+:not(#work-content) em {
   font-size: 9px;
   font-weight: lighter;
 }
@@ -537,11 +539,9 @@ blockquote {
   font-size: 14px;
 }
 
-#work-content b,
-#work-content strong {
-  font-size: 14px;
-  text-transform: none;
-  font-weight: bold;
+#work-content em,
+#work-content i {
+  font-style: italic;
 }
 
 #work-content a {
