@@ -6,6 +6,10 @@ for "Web Art as Site"
 
 coming soon
 
-[![cover image](assets/doomscroll-screenshot.png)](https://tunapee.online/doomscroll)
+[![cover image](assets/doomscroll-screenshot-2.png)](https://tunapee.online/doomscroll)
+
+[![image](assets/doomscroll-screenshot.png)](https://tunapee.online/doomscroll)
+
+
 
 <!-- **love, breakups, longing, healing, growth, clarity, detachment** -->
