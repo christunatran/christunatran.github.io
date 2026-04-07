@@ -1,15 +1,47 @@
-const loremText = `nice to meet you, my name is what's your name? how do you like your coffee? one espresso and one kona drip, please. i don't want to talk about coffee anymore! can i walk you to the station? it's okay? what are you looking for? to spend time with someone i find attractive and enjoy being around. a reasonable man. my locking meetup. what a strange girl. we should take things slow. we can help each other! i want to be selfish. you only laugh at yourself. welcome! booba. we should cool down on how much time we spend together. that made me spiral for two months. i'm too independent. booba? i wonder how we'll shape each other. i'm scared. i really want this to work. booba i like how you worked before. booba i think that you're a reasonable chinese man. i miss you. sopa. booba i need alone time. i love you. trocadero. quad espresso over ice. do you care about my feelings? fuck you! i want you to be the very best that you can be. so delicious! emotional support person. thank you. i want to be a free bird. detachment. i still love and care about you very much. our vancouver home. i want to be selfish, sometimes. booba. never love a wild thing. the pain will come. the pain will come. so get it over with. a better man for my tunapee. you hold your breath all of the time. she sucks. she did something unscrupulous. booba? put these on. we can have connection without constant communication. we're in a rough patch. they don't want to meet you unless we're getting married. they don't want to get attached. i learned so much from you. i love your videos. neque odio, et finibus ante aliquet et. Ut in lectus justo. Integer mollis cursus sapien, non mollis elit convallis quis. Donec facilisis neque odio, ut tempor dui mollis sed. Mauris id molestie nibh. Proin imperdiet at ante non condimentum. Sed sit amet velit sed nulla posuere semper et eget eros. Morbi ultricies, risus eu commodo dapibus, mi sapien ullamcorper leo, ac ornare dui neque scelerisque mi. Proin eget tempor nibh. Ut porta lectus eu magna varius, at blandit ante gravida. Sed id eros mauris. Etiam porta purus quis ligula tempus, eget luctus nisi placerat. In congue posuere interdum. Pellentesque iaculis suscipit ipsum et condimentum. Quisque in odio pellentesque, scelerisque lorem in, euismod velit. Donec rhoncus erat sit amet enim laoreet porta. Integer interdum leo dolor, nec euismod justo tempus nec. Ut eu libero eu lacus elementum hendrerit ut ac eros. Maecenas rhoncus tempus eros sit amet lobortis. Nulla facilisi. Donec placerat, sem nec accumsan luctus, urna leo efficitur purus, ac egestas est sapien et tortor. Integer eu lacinia lorem, fermentum consectetur magna. Mauris sed purus lacinia, fringilla augue eu, dictum eros. Phasellus non fringilla metus. Etiam condimentum, ante vitae fermentum euismod, odio ante viverra risus, at porta libero nisi sed quam. Sed faucibus fermentum quam sit amet condimentum. Maecenas tincidunt interdum dui, efficitur eleifend justo porta sed. Suspendisse vestibulum ante vel est eleifend, nec convallis eros hendrerit. Donec in tellus in massa porta congue. Nullam tempor lobortis justo, eget feugiat purus accumsan in. Etiam feugiat nisl vitae odio porttitor auctor. Nunc sed erat luctus purus blandit tristique. Etiam vitae ligula eu est semper dictum. Duis nec enim sodales, mattis orci semper, sagittis arcu. Morbi accumsan vehicula sollicitudin. Ut pulvinar sagittis purus, quis vehicula libero imperdiet quis. Phasellus ut orci ut est pulvinar viverra non eget nisi. Suspendisse et sollicitudin lorem. Sed maximus elit at dolor commodo ultrices. Curabitur convallis nibh ut ipsum vulputate, vitae volutpat nisl cursus. Morbi imperdiet varius ligula vitae lobortis. Sed ut rutrum purus, eget accumsan mauris. Morbi nisl diam, semper et nunc nec, porttitor bibendum urna. Duis nec est libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mattis congue elit, elementum sagittis arcu fringilla nec. Vivamus pulvinar arcu neque, nec venenatis dolor rhoncus sed. Pellentesque eget magna leo. Donec vitae cursus ex. Fusce vitae mollis eros. In lacus risus, ultricies id ipsum nec, accumsan venenatis magna. Sed sed ipsum vitae felis tincidunt lobortis. Nullam id neque nec odio lacinia cursus quis ut dolor. Maecenas sit amet porta mi. Vivamus rutrum feugiat placerat. Vestibulum blandit suscipit est, sed eleifend turpis fermentum non. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In molestie aliquet mauris sit amet semper. `.repeat(30);
+const loremText = `hi i think we would really get along. what makes you say that? you don't think so? i'm looking forward to meeting you too. hi, nice to meet you! how do you like your coffee? one cold brew and one kona drip, please. i don't want to talk about coffee anymore! can i walk you to the station? it's okay? what are you looking for? to spend time with someone i find attractive and enjoy being around. a reasonable man. my locking meetup. what a strange girl. we should take things slow. we can help each other! i want to be selfish. you only laugh at yourself. welcome! booba. we should cool down on how much time we spend together. that made me spiral for two months. i'm too independent. booba? i wonder how we'll shape each other. i'm scared. i really want this to work. booba i like how you worked before. booba i think that you're a reasonable chinese man. i miss you. sopa. booba i need alone time. i love you. trocadero. quad espresso over ice. do you care about my feelings? fuck you! i want you to be the very best that you can be. so delicious! emotional support person. prom. single? thank you. i want to be a free bird. detachment. i still love and care about you very much. our vancouver home. we can help each other! we've encountered so many people together. my weehawken summer home. the family july 4th bbq. you're a fish. i want to be selfish, sometimes. booba. never love a wild thing. the pain will come. the pain will come. so get it over with. a better man for my tunapee. you hold your breath all of the time. she sucks. she did something unscrupulous. booba? put these on. we can have connection without constant communication. we're in a rough patch. they don't want to meet you unless we're getting married. i like your weird. they don't want to get attached. i learned so much from you. i love your videos. who is amanda? i feel insecure. i just want to see where people end up in life. i can't stop thinking about other girls. i guess i am bored. what do i get out of this relationship? we're super compatible. sometimes it just feels like a yap fest and i'm just paying for everything. let's go for a walk. i've just been taking care of her when she's sick. maybe if i give him space he'll feel less suffocated and things will go back to how they were. i think you don't take the lead enough, i don't think you've shown me enough masculinity for me to feel secure in this relationship. booba. stop. sometimes i just want to be by myself, i don't want to worry about someone else's feelings. i still want to be friends and collaborate. i'm not going to speak to you anymore. you didn't choose us. you chose yourself! i've learned so much from you. i made a blot blog. i have a now page. i have a log book. i learned so much about cats. i miss chilly. i miss you.`.repeat(30);
 
 const bgAudio = document.getElementById('bg-audio');
 let interacted = false;
-const startAudio = () => bgAudio.play().catch(() => {});
-// Try immediately on load — works if browser allows autoplay (repeat visitors, etc.)
-bgAudio.play().catch(() => {});
-// Fallback: start on first interaction if autoplay was blocked
-document.addEventListener('click', startAudio, { once: true });
-document.addEventListener('keydown', startAudio, { once: true });
-document.addEventListener('pointerdown', startAudio, { once: true });
-document.addEventListener('wheel', startAudio, { once: true });
+let splashDismissed = false;
+
+// Splash screen
+const splash = document.getElementById('splash');
+const splashGrainCanvas = document.getElementById('splash-grain');
+const splashGrainCtx = splashGrainCanvas.getContext('2d');
+const splashOffscreen = document.createElement('canvas');
+splashOffscreen.width = 320;
+splashOffscreen.height = 200;
+const splashOffCtx = splashOffscreen.getContext('2d');
+let splashAnimId = null;
+
+function drawSplashGrain() {
+  const w = splashOffscreen.width, h = splashOffscreen.height;
+  const imageData = splashOffCtx.createImageData(w, h);
+  const data = imageData.data;
+  for (let i = 0; i < data.length; i += 4) {
+    const v = Math.random() * 20;
+    data[i] = v; data[i+1] = v; data[i+2] = v; data[i+3] = 255;
+  }
+  splashOffCtx.putImageData(imageData, 0, 0);
+  splashGrainCtx.drawImage(splashOffscreen, 0, 0, splashGrainCanvas.width, splashGrainCanvas.height);
+  splashAnimId = requestAnimationFrame(drawSplashGrain);
+}
+
+splashGrainCanvas.width = window.innerWidth;
+splashGrainCanvas.height = window.innerHeight;
+window.addEventListener('resize', () => {
+  splashGrainCanvas.width = window.innerWidth;
+  splashGrainCanvas.height = window.innerHeight;
+});
+drawSplashGrain();
+
+splash.addEventListener('click', () => {
+  cancelAnimationFrame(splashAnimId);
+  splash.style.opacity = '0';
+  bgAudio.play().catch(() => {});
+  splashDismissed = true;
+  setTimeout(() => { splash.style.display = 'none'; }, 800);
+});
 
 const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
@@ -53,7 +85,7 @@ const skipMessages = [
   "please don't leave",
   "don't go",
   "don't leave me here",
-  "i'll wait",
+  "i'll wait, i'll do anything for you to stay",
   "won't you please stay?",
   "stay.",
   "...",
@@ -67,6 +99,13 @@ skipBtn.addEventListener('click', () => {
   skipBtn.classList.remove('pressed');
   void skipBtn.offsetWidth; // force reflow to restart animation
   skipBtn.classList.add('pressed');
+  if (birdsActive) {
+    stopBirdsLoop();
+    birdsActive = false;
+    birdsCompleted = true;
+    birdsCanvas.style.display = 'none';
+    return;
+  }
   if (!interacted) {
     interacted = true;
     if (radius <= minRadius) { draw(); return; } // circle not started yet — show prompt
@@ -104,6 +143,7 @@ const BIRDS_AMPLITUDE    = 70;    // vertical sine amplitude in px
 const BIRDS_FREQ         = 0.018; // sine frequency — lower = wider waves
 const BIRDS_FRAME_TICKS  = 4;    // scroll ticks per GIF frame advance
 const BIRDS_SCALE        = 0.5;  // size multiplier for birds GIF
+const BIRDS_AUTO_SPEED   = 0.1;  // ticks per rAF frame during autonomous birds loop
 const GIF_FRAME_SKIP     = 3;    // scroll ticks per globe frame (higher = slower)
 const RETURN_SPEED_MULT  = 30;   // speed multiplier when scrolling back after reaching 100%
 // =========================================
@@ -192,6 +232,10 @@ const birdsTempCanvas = document.createElement('canvas');
 const birdsTempCtx = birdsTempCanvas.getContext('2d');
 let birdsFrames = null;
 let birdsNaturalW = 1, birdsNaturalH = 1;
+let birdsActive = false;    // autonomous birds loop is running
+let birdsCompleted = false; // birds have been dismissed, don't re-trigger
+let birdsLoopTick = 0;
+let birdsAnimId = null;
 
 Promise.all([
   import('https://esm.sh/gifuct-js'),
@@ -228,29 +272,45 @@ Promise.all([
 });
 
 function drawBirds() {
-  const t = (radius - minRadius) / (maxRadius() - minRadius);
-  const scrollPct = t * 80;
-  if (!birdsFrames || scrollPct < BIRDS_START_PCT || radius >= maxRadius()) {
+  if (birdsCompleted && !birdsActive) { birdsCanvas.style.display = 'none'; return; }
+  const birdsStartRadius = (BIRDS_START_PCT / 80) * (maxRadius() - minRadius) + minRadius;
+  const totalTicks = (maxRadius() - birdsStartRadius) / CIRCLE_SPEED;
+  if (!birdsFrames || (!birdsActive && (radius < birdsStartRadius || radius >= maxRadius()))) {
     birdsCanvas.style.display = 'none';
     return;
   }
   birdsCanvas.style.display = 'block';
   birdsCtx.clearRect(0, 0, birdsCanvas.width, birdsCanvas.height);
 
-  const birdsStartRadius = (BIRDS_START_PCT / 80) * (maxRadius() - minRadius) + minRadius;
-  const totalTicks = (maxRadius() - birdsStartRadius) / CIRCLE_SPEED;
-  const offset = Math.max(0, (radius - birdsStartRadius) / CIRCLE_SPEED);
-  const cy = birdsCanvas.height / 2;
   const scaledW = birdsNaturalW * BIRDS_SCALE;
   const scaledH = birdsNaturalH * BIRDS_SCALE;
-  // Auto-speed: birds enter right edge at 73% and are fully off left edge at 80%
+  const cy = birdsCanvas.height / 2;
   const birdsSpeed = (birdsCanvas.width + scaledW) / totalTicks;
 
-  const frameIndex = Math.floor(offset / BIRDS_FRAME_TICKS) % birdsFrames.length;
+  const offset = birdsActive
+    ? birdsLoopTick % totalTicks
+    : Math.max(0, (radius - birdsStartRadius) / CIRCLE_SPEED);
 
+  const frameIndex = Math.floor(offset / BIRDS_FRAME_TICKS) % birdsFrames.length;
   const x = birdsCanvas.width - offset * birdsSpeed;
   const y = cy - scaledH / 2 + Math.sin(offset * BIRDS_FREQ) * BIRDS_AMPLITUDE;
   birdsCtx.drawImage(birdsFrames[frameIndex], x, y, scaledW, scaledH);
+}
+
+function startBirdsLoop() {
+  if (birdsAnimId) return;
+  function loop() {
+    birdsLoopTick += BIRDS_AUTO_SPEED;
+    drawBirds();
+    birdsAnimId = requestAnimationFrame(loop);
+  }
+  birdsAnimId = requestAnimationFrame(loop);
+}
+
+function stopBirdsLoop() {
+  if (!birdsAnimId) return;
+  cancelAnimationFrame(birdsAnimId);
+  birdsAnimId = null;
 }
 
 function renderGifFrame(index) {
@@ -393,7 +453,8 @@ function buildPages() {
     "but,",
     "i know you don't want to be here anymore.",
     "i won't hold you here any longer.",
-    "i'll let you be free now.",
+    "i'll let you go now.",
+    "take care.",
     "goodbye."
   ];
 }
@@ -411,8 +472,10 @@ let eggHoldTicks = 0;
 
 const easterEggPages = [
   `"Blessed are the forgetful: for they get the better even of their blunders."`,
-  `"You know what's wrong with you, Miss Whoever-you-are? You're chicken, you've got no guts. You're afraid to stick out your chin and say, "Okay, life's a fact, people do fall in love, people do belong to each other, because that's the only chance anybody's got for real happiness." You call yourself a free spirit, a "wild thing," and you're terrified somebody's gonna stick you in a cage. Well baby, you're already in that cage. You built it yourself. And it's not bounded in the west by Tulip, Texas, or in the east by Somali-land. It's wherever you go."`,
-  `Because no matter where you run, you just end up running into yourself."`,
+  `"You know what's wrong with you, Miss Whoever-you-are? You're chicken, you've got no guts. You're afraid to stick out your chin and say,`, 
+  `...Okay, life's a fact, people do fall in love, people do belong to each other, because that's the only chance anybody's got for real happiness. You call yourself a free spirit, a "wild thing," and you're terrified somebody's gonna stick you in a cage. Well baby, you're already in that cage. You built it yourself. And it's not bounded in the west by Tulip, Texas, or in the east by Somali-land. It's wherever you go...`,
+  `...Because no matter where you run, you just end up running into yourself."`,
+  `...`,
   `"I wish you'd stayed."`,
   `"I wish I'd stayed, too."`
 ];
@@ -462,9 +525,9 @@ function updateThumb() {
     'make it end?',
     "life is too short",
     'i want out',
-    "i don't want to be here anymore",
-    'skip to end',
-    "get me out of here!",
+    "i don't want to do this anymore",
+    "i need something new",
+    "i want to be freed",
     'is it over yet?',
   ];
   const pct = Math.round(Math.min(1, t) * 100);
@@ -476,6 +539,16 @@ function setRadius(r) {
   const prevT = (radius - minRadius) / (maxRadius() - minRadius);
   radius = Math.max(minRadius, Math.min(maxRadius(), r));
   const tCheck = (radius - minRadius) / (maxRadius() - minRadius);
+  // Enter autonomous birds mode when crossing the birds threshold
+  const birdsStartRadius = (BIRDS_START_PCT / 80) * (maxRadius() - minRadius) + minRadius;
+  if (!birdsActive && !birdsCompleted && birdsFrames && radius >= birdsStartRadius) {
+    radius = birdsStartRadius;
+    birdsActive = true;
+    draw();
+    updateThumb();
+    startBirdsLoop();
+    return;
+  }
   if (tCheck < GIF_TRIGGER_T && gifPhase === 'done') gifPhase = 'pre';
   if (gifPhase === 'pre' && gifFrames) {
     const crossFwd = prevT < GIF_TRIGGER_T && tCheck >= GIF_TRIGGER_T;
@@ -639,7 +712,7 @@ function checkFill() {
       skipBtn.style.display = 'none';
       return;
     }
-    if (hasFinished) { showEggScene(); return; }
+    if (hasReached100) { showEggScene(); return; }
     blurOverlay.style.backdropFilter = `blur(0px)`;
     blurOverlay.style.webkitBackdropFilter = `blur(0px)`;
     blurOverlay.style.background = 'transparent';
@@ -676,6 +749,7 @@ function checkFill() {
 
 window.addEventListener('wheel', (e) => {
   e.preventDefault();
+  if (!splashDismissed || birdsActive) return;
   notepad.style.display = 'none';
   if (gifPhase === 'playing') {
     const gDir = e.deltaY > 0 ? 1 : -1;
@@ -703,7 +777,7 @@ window.addEventListener('wheel', (e) => {
       eggCharCount = Math.max(0, eggCharCount + eggDir * TYPING_SPEED);
       if (eggCharCount <= 0 && eggDir < 0) {
         if (eggPageIndex > 0) { eggPageIndex--; eggCharCount = easterEggPages[eggPageIndex].length; }
-        else { eggActive = false; hasFinished = false; radius = minRadius + CIRCLE_SPEED; draw(); updateThumb(); return; }
+        else { eggActive = false; radius = minRadius + CIRCLE_SPEED; draw(); updateThumb(); return; }
       }
       eggCharCount = Math.max(0, Math.min(easterEggPages[eggPageIndex].length, eggCharCount));
     }
@@ -747,6 +821,7 @@ window.addEventListener('wheel', (e) => {
 window.addEventListener('keydown', (e) => {
   if (!['ArrowDown', 'ArrowUp', 'ArrowRight', 'ArrowLeft'].includes(e.key)) return;
   e.preventDefault();
+  if (!splashDismissed || birdsActive) return;
   notepad.style.display = 'none';
   const dir = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : -1;
   if (gifPhase === 'playing') {
@@ -767,7 +842,7 @@ window.addEventListener('keydown', (e) => {
       else { eggCharCount = currentPage.length; }
     } else if (eggCharCount <= 0 && eggDir < 0) {
       if (eggPageIndex > 0) { eggPageIndex--; eggCharCount = easterEggPages[eggPageIndex].length; }
-      else { eggActive = false; hasFinished = false; radius = minRadius + CIRCLE_SPEED; draw(); updateThumb(); return; }
+      else { eggActive = false; radius = minRadius + CIRCLE_SPEED; draw(); updateThumb(); return; }
     }
     eggCharCount = Math.max(0, Math.min(easterEggPages[eggPageIndex].length, eggCharCount));
     revealSpan.innerHTML = easterEggPages[eggPageIndex].slice(0, Math.floor(eggCharCount));
@@ -816,8 +891,14 @@ let _keyDrawPending = false;
 
 // Clicking scrollbar shows notepad with the same message sequence as skip button
 scrollbar.addEventListener('mousedown', (e) => {
+  if (!splashDismissed) return;
   if (e.target === thumb && SCROLLBAR_DRAG) return; // allow drag if enabled
   e.preventDefault();
+  if (!interacted) {
+    interacted = true;
+    draw(); // show "scroll or press arrow keys to begin"
+    return;
+  }
   notepadTextarea.value = skipMessages[skipMsgIndex % skipMessages.length];
   notepadTextarea.style.paddingTop = '81px';
   skipMsgIndex++;
@@ -841,15 +922,47 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('mouseup', () => { sbDragging = false; });
 
 
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
 window.addEventListener('resize', resize);
 resize();
 
-// Debug jump buttons (uncomment + add HTML buttons to re-enable)
-// document.getElementById('debug-5').addEventListener('click', () => {
-//   if (gifPhase === 'playing') { gifPhase = 'pre'; globeCanvas.style.display = 'none'; canvas.style.display = 'block'; blurOverlay.style.display = 'block'; }
-//   setRadius(minRadius + 0.05 * (maxRadius() - minRadius));
-// });
-// document.getElementById('debug-100').addEventListener('click', () => {
-//   if (gifPhase === 'playing') { gifPhase = 'done'; globeCanvas.style.display = 'none'; canvas.style.display = 'block'; blurOverlay.style.display = 'block'; }
-//   setRadius(maxRadius());
-// });
+// Debug jump panel — local only
+if (['localhost', '127.0.0.1', ''].includes(location.hostname)) {
+  const panel = document.createElement('div');
+  panel.style.cssText = 'position:fixed;top:12px;left:12px;z-index:9999;display:flex;flex-direction:column;gap:4px;';
+  for (let pct = 10; pct <= 100; pct += 10) {
+    const btn = document.createElement('button');
+    btn.textContent = pct + '%';
+    btn.style.cssText = 'padding:2px 8px;font:11px "Courier New",monospace;cursor:pointer;background:#000;color:#fff;border:none;letter-spacing:0.05em;';
+    btn.addEventListener('click', () => {
+      // Clear gif phase if needed
+      if (gifPhase === 'playing') {
+        gifPhase = 'pre';
+        globeCanvas.style.display = 'none';
+        canvas.style.display = 'block';
+        blurOverlay.style.display = 'block';
+      }
+      if (pct <= 80) {
+        // Circle phase: scrollbar 0–80% maps to minRadius–maxRadius
+        if (gifPhase === 'done') gifPhase = 'pre';
+        eggActive = false;
+        setRadius(minRadius + (pct / 80) * (maxRadius() - minRadius));
+      } else {
+        // Typing phase: jump into final scene
+        gifPhase = 'done';
+        eggActive = false;
+        radius = maxRadius();
+        const typingT = (pct - 80) / 20; // 0 at 80%, 1 at 100%
+        pageIndex = Math.min(pages.length - 1, Math.floor(typingT * pages.length));
+        charCount = pct >= 100 ? pages[pageIndex].length : 0;
+        holdTicks = 0;
+        if (pct >= 100) { hasFinished = true; hasReached100 = true; interacted = true; }
+        checkFill();
+        updateThumb();
+      }
+    });
+    panel.appendChild(btn);
+  }
+  document.body.appendChild(panel);
+}

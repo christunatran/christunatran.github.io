@@ -19,7 +19,7 @@
 - organizing an [exhibition](/work/?slug=we-live-together-anyway)
 - making installation art for an upcoming exhibition at the new york transit museum :)
 - building a lamp that breathes
-- making [web art](tunapee.online/doomscroll) inspired by [nancy holt's locators](https://holtsmithsonfoundation.org/dual-locators)
+- making [web art]() inspired by [nancy holt's locators](https://holtsmithsonfoundation.org/dual-locators)
 - documenting my work via this blog and videos on my instagram [@100tunapee](https://instagram.com/100tunapee)
 
 ### consuming

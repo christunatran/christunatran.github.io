@@ -129,5 +129,5 @@
   Promise.all([
     fetch('/data/works.json').then(r => r.json()),
     fetch('/data/blog.json').then(r => r.json()),
-  ]).then(([works, posts]) => buildGrid(works, posts));
+  ]).then(([works, posts]) => buildGrid(works.filter(w => !w.hidden), posts));
 })();

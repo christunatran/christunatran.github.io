@@ -3,4 +3,5 @@
 - my new tupperware comes in clutch
 - i'm pre-gaming hot girl summer
 - i've found a new neighborhood cafe to frequent. it's a space i can easily walk to, spacious and well lit. i feel inspired and lucky to spend my mornings here! i can't wait to invite my friends.
-- not much beats a warm hug from a good friend. we should all be hugging more.
+- in the changing room, someone told me, "you're all muscle" and i felt very flattered. my efforts are showing!
+- feeling a mix of clarity and anti-social

@@ -54,6 +54,7 @@
       const grid = document.getElementById('works-grid');
       if (!grid) return;
 
+      works = works.filter(w => !w.hidden);
       works.sort((a, b) => normalizeDate(b.date).localeCompare(normalizeDate(a.date)));
 
       const cards = [];
