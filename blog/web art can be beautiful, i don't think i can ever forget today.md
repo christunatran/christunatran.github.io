@@ -32,3 +32,7 @@ this special, serendipitous moment could only be experienced in this context, in
 as mixed as my feelings are about this class,
 
 i'm grateful to this class, my instructor theo, **all** of my classmates, and to mark for allowing me to feel so much through art today.
+
+i'm getting better at accepting temporality and letting go. life is so short, everything is temporary, yada yada yada. but i'm glad to have shared this moment with you.
+
+i'm excited to keep learning, growing, and sharing.
