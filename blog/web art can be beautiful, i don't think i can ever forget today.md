@@ -23,7 +23,7 @@ i guess the similarity of our work goes to show that despite the circumstances t
 
 making my web art piece was cathartic. i had late (sometimes drunken) nights where, lost with how to cope with my feelings, i opened up vscode and started adding features, tweaking the design, using it as a way to release the memories that i had accumulated. i have to confess that this site is a way to preserve those memories as well-- i'm pretty sentimental.
 
-the moment i got on his site, the tears started. i'm a cry baby! somehow, expressing how we feel, communicating through these artworks touches me in a way that words can't. i picture each of us sitting behind our computers working on them, every line of code (or LLM prompt) filled with intention... something about a labor of love really gets me.
+the moment i got on his site, the tears started. i'm a cry baby! somehow, expressing how we feel, communicating through these artworks touches me in a way that words can't. i picture each of us sitting behind our computers working on them, every line of code (or LLM prompt) filled with intention... something about a time-consuming labor of love really gets me.
 
 this special, serendipitous moment could only be experienced in this context, in this classroom. it feels like a once in a lifetime event that i was privileged to experience.
 
