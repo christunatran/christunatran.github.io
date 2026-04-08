@@ -34,7 +34,7 @@
 - 📚 "Goodbye, Again" by Jonny Sun
 
 ### this summer
-- hang out at [glub glub labs](https://glubglublabs.com/)
+- hang out at [glub glub labs](https://glubglublabs.com/) as a glub-tern (josh and tres, if you're reading this, PLEASE!! 🙇🏻‍♀️)
 - [itp camp](https://itp.nyu.edu/camp/2026/about)
 - go to open sauce
 - make lots of videos
