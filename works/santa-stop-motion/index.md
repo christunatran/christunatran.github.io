@@ -2,6 +2,8 @@
 
 Class: Hypercinema
 
+Made in collaboration with Kassia Kang
+
 ![Video](assets/santaaa.mp4)
 
 ## Behind the Scenes
