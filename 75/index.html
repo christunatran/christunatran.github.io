@@ -358,7 +358,17 @@
       opacity: 0.45;
       margin-bottom: 6px;
     }
+    .week-notes-body::-webkit-scrollbar {
+      display: block;
+      width: 3px;
+    }
+    .week-notes-body::-webkit-scrollbar-thumb {
+      background-color: rgba(0,0,0,0.4);
+    }
     .week-notes-body {
+      height: 180px;
+      overflow-y: scroll;
+      padding-right: 10px;
       font-family: 'Kosugi', sans-serif;
       font-size: 11px;
       line-height: 1.7;

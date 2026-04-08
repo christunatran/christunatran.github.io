@@ -1,4 +1,4 @@
-- i've been spending a lot of time on my own website, which isn't necessarily a bad thing.
+- i've been spending a lot of time on my own website, which is a good thing!
 - living near my friends is so fun. popping in for dinner, doing work on the couch while they watch tv. spontaneous fun!
 - the scheduling part of collaborating with others is really my least favorite part. i just want to use my own hands to get things done, i hate waiting. 
 - thai diner is overpriced but lots of fun. i highly recommend the slushy beer. it was an experience, is all i'll say.
