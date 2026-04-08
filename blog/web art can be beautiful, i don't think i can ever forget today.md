@@ -15,6 +15,8 @@ see for yourself:
 - [here's mine](https://tunapee.online/doomscroll/)
 - [here's his](https://mc5859.github.io/web-art-midterm/)
 
+my website was vertical-scroll, his was horizontal scroll. i was pleasantly surprised at the feedback i got from my classmates; almost everyone discovered the easter egg in my work.
+
 a question that has come up in the class is, "what's the point?" i think i finally get it today.
 
 i guess the similarity of our work goes to show that despite the circumstances that led to us ending things, in the time we shared together, we inevitably shaped each other. we're probably going through similar experiences right now. it made me a bit more empathetic to both of us. feelings are hard!!
