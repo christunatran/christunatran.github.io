@@ -21,7 +21,7 @@ a question that has come up in the class is, "what's the point?" i think i final
 
 i guess the similarity of our work goes to show that despite the circumstances that led to us ending things, in the time we shared together, we inevitably shaped each other. we're probably going through similar experiences right now, and we're processing them using the same tools (coding). when else do you get that sort of parallel experience? maybe i'm assigning too much significance to this whole thing, haha. it made me a bit more empathetic to both of us. feelings are hard!!
 
-making my web art piece was cathartic. i had late (sometimes drunken) nights where, lost with how to cope with my feelings, i opened up vscode and started adding features, tweaking the design, using it as a way to release the memories that i had accumulated. in undergrad, my best physics and coding work was done with a beer. it helped me to be more ~~~~compulsive~~~~ action-oriented and less in my head with the overthinking. *less think, more do.* (alcoholism)
+making my web art piece was cathartic. i had late ~~sometimes~~ drunken nights where, lost with how to cope with my feelings spirals, i opened up vscode and started adding features, tweaking the design, using it as a way to release the memories that i had accumulated. in undergrad, my best physics and coding work was done with a beer. it helped me to be more ~~~~compulsive~~~~ action-oriented and less in my head with the overthinking. *less think, more do.* (alcoholism)
 
 i have to confess that this site is a way to preserve those memories as well-- i'm pretty sentimental.
 
