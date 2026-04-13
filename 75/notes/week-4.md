@@ -1,0 +1,4 @@
+- this modified 75-day challenge is the main thing keeping me from falling apart lately. it doesn't feel right to call it "75-hard" though. maybe "75-day tunapee challenge" lololol.
+- finding that i don't believe in enabling what i see as bad behaviors from students and even friends; i'm a tough-love type of person
+- watched "the hand" by wong kar wai at metrograph... on that note, i want to watch a film every week. i think it's doable. i like the way it makes my brain feel to sit, immersed in a theatre. i want to watch a movie at BAM before i graduate. i want to go to IFC more.
+- museums/galleries i want to visit this spring/summer: whitney biennial, pioneer works, bitforms, culturehub.

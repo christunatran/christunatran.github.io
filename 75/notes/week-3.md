@@ -7,3 +7,4 @@
 - i like to be friendly with everyone at school
 - i mended my dress this week with mai and really glad i trekked all the way to chinatown to finally do it.
 - installation week for open call exhibition... have to be MEAN TUNAPEE this week
+- hosted a party! it was much needed to be surrounded by people, imbibing and dancing. as i said before, degenerate activities are needed in moderation. stress -> relived.
