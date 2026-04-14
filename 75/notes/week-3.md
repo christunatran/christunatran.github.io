@@ -3,8 +3,7 @@
 - the scheduling part of collaborating with others is really my least favorite part. i just want to use my own hands to get things done, i hate waiting. 
 - thai diner is overpriced but lots of fun. i highly recommend the slushy beer. it was an experience, is all i'll say.
 - i crave a **recurring, low-stakes, body-based group activity with the same people every week**. is that what a team sport offers? which one should i do? i like to dance and play tennis but should i compromise for a sport i like less that more of my friends play? but my time is already so limited as-is. GET OUT OF THE INDECISION LOOP ABOUT THIS AND JUST PICK SOMETHING ALREADY!!!
-- degenerate activities are fun in moderation. it's not sustainable to be on that 24/7 wellness grind. BALANCE, BABY.
 - i like to be friendly with everyone at school
 - i mended my dress this week with mai and really glad i trekked all the way to chinatown to finally do it.
 - installation week for open call exhibition... have to be MEAN TUNAPEE this week
-- hosted a party! it was much needed to be surrounded by people, imbibing and dancing. as i said before, degenerate activities are needed in moderation. stress -> relieved.
+- hosted a party! it was much needed to be surrounded by good people, imbibing and dancing. stress -> relieved... degenerate activities are fun in moderation. it's not sustainable to be on that 24/7 wellness grind. BALANCE, BABY.

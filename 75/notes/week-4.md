@@ -5,3 +5,4 @@
 - sometimes i am not the most 'productive' in terms of output. this week i had a day where i just ran around with j and met various people in creative spaces. that's important too.
 - summer bucket list additions: a walking tour in greenpoint/williamsburg, film noir cinema, apollo bagels, light and sound design, chyelle's tokyo record bar, hustle class, play spikeball, pitch my hotpot CPG, build a community space w/ my friends, open sauce road trip
 - it's amazing, a few months ago i felt like i didn't want anything and questioned the point of everything daily (depreshun). now i have things i want again
+- it was langley's birthday this past weekend!
