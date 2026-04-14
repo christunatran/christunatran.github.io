@@ -1,4 +1,7 @@
 - this modified 75-day challenge is the main thing keeping me from falling apart lately. it doesn't feel right to call it "75-hard" though. maybe "75-day tunapee challenge" lololol.
 - finding that i don't believe in enabling what i see as bad behaviors from students and even friends; i'm a tough-love type of person
 - watched "the hand" by wong kar wai at metrograph... on that note, i want to watch a film every week. i think it's doable. i like the way it makes my brain feel to sit, immersed in a theatre. i want to watch a movie at BAM before i graduate. i want to go to IFC more.
-- museums/galleries i want to visit this spring/summer: whitney biennial, pioneer works, bitforms, culturehub.
+- museums/galleries i want to visit this spring/summer: whitney biennial, new museum, nguyen wahed, pioneer works, bitforms, culturehub, cooper hewitt design museum
+- sometimes i am not the most 'productive' in terms of output. this week i had a day where i just ran around with j and met various people in creative spaces. that's important too.
+- summer bucket list additions: a walking tour in greenpoint/williamsburg, film noir cinema, apollo bagels, light and sound design, chyelle's tokyo record bar, hustle class, play spikeball, pitch my hotpot CPG, build a community space w/ my friends
+- it's amazing, a few months ago i felt like i didn't want anything and questioned the point of everything daily (depreshun). now i have things i want again
