@@ -1,0 +1,3 @@
+- need stakes for this challenge; every empty box incurred will require me to add fully-complete day to the challenge.
+- taking a short break from drinking
+- getting tired of some of the bullshit from some people in my program. sometimes i have to set boundaries but with how sensitive some people are i may come off as a bitch. well, I AM A BITCH LOL, bitch

@@ -8,3 +8,4 @@
 - it was langley's birthday this past weekend!
 - reading "memorial park" by minh nguyen... thinking about... propaganda, the hearts and minds of people, propaganda as art...
 - my first shift at the Shop!
+- been splurging a lot on eating out... i need good food at this point in the semester otherwise i'll be depressed
