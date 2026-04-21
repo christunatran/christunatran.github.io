@@ -23,7 +23,7 @@ possibly, i can use a tiny lcd monitor that fits into the telescope like this:
 
 and a distance sensor so that the piece only progresses while someone is actively looking into the telescope-- tying into the theme of directed attention that i was going for. 
 
-maybe i need to use a raspberry pi to run the code locally? or even a mac mini, but that seems like overkill. figuring out the technical intricacies to make this work is getting me excited. i feel like a certain boy who gets all excited and giddy thinking about girls' smiles.
+maybe i need to use a raspberry pi to run the code locally? or even a mac mini, but that seems like overkill. figuring out the technical intricacies to make this work is getting me excited. 
 
 i want there to be this illusion that someone is just staring into the black dot in the wall when they're having a close intimate experience that only they can hear. in my case, i'm looking to mimic a private emotional experience that cannot be seen or fully understood by another person.
 
