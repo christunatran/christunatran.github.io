@@ -3,3 +3,4 @@
 - getting tired of some of the bullshit from some people in my program. sometimes i have to set boundaries but with how sensitive some people are i may come off as a bitch. well, I AM A BITCH LOL, bitch
 - dying whenever the G train is down for the weekend
 - watching BEEF season 2
+- fell off gym these past few days cuz i got sick :(
