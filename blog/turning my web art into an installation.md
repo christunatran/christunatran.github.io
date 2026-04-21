@@ -15,6 +15,8 @@ i'm thinking about reconstructing one of the black steel telescopes and having i
 
 i want to recreate a required intimacy for viewing through physical installation design inspired by Dara Birnbaum's "Tiananmen Square: Break-In Transmission", where viewers had to stand closely before small LCD monitors to watch the footage of the 1989 protests, mimicing the restricted and intimate ways information was transmitted during that time period.
 
+![tiananman](blog\assets\tiananman.jpg)
+
 possibly, i can use a tiny lcd monitor that fits into the telescope like this: 
 
 ![tiny lcd](blog\assets\tiny-lcd.jpg)
