@@ -4,3 +4,6 @@
 - dying whenever the G train is down for the weekend
 - watching BEEF season 2
 - fell off gym these past few days cuz i got sick :(
+- so many events to go to at the end of the semester, so little time to attend
+- coming up: đàn bầu, volleyball, spawn-tuna
+- my lamp is coming together
