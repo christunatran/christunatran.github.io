@@ -7,3 +7,4 @@
 - so many events to go to at the end of the semester, so little time to attend
 - coming up: đàn bầu, volleyball, spawn-tuna
 - my lamp is coming together
+- been spending money like a motherfuck but its an investment in myself i guess
