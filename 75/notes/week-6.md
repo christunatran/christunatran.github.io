@@ -3,3 +3,4 @@
 - people at this school are pissing me off. i think i should stop being an enabler and just let this program and nyc weed people out if they really can't do the work. and that's inclusive of sorting your life together to put yourself in a position where you CAN get through school, because that's no one else's responsibility but your own. (i am a bitch)
 - my web art final may or may not be about plastic stools.
 - there are people in this world who are miserable so they act insensitive and cruel to others. i guess what we have to do is pay them no mind and focus on ourselves.
+- my laptop is officially on life support; i need to get a new one this summer aaaa
