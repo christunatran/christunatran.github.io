@@ -1,0 +1,4 @@
+- watching bojack horseman at night to turn off my brain is doing wonders for me
+- feeling a lot of momentum; things are moving along and coming together. the days are long just as they are fulfilling
+- people at this school are pissing me off. i think i should stop being an enabler and just let this program and nyc weed people out if they really can't do the work. and that's inclusive of sorting your life together to put yourself in a position where you CAN get through school, because that's no one else's responsibility but your own. (i am a bitch)
+- my web art final may or may not be about plastic stools.
