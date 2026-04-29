@@ -5,3 +5,4 @@
 - there are people in this world like michael and omi who are miserable so they act insensitive and cruel to others. i guess what we have to do is pay them no mind and focus on ourselves. you are the company that you keep. "itp's worst"
 - my laptop is officially on life support; i need to get a new one this summer aaaa
 - people are now coming to me to help organize exhibitions. who would've thought, you do stuff and people notice and remember. all the work has led to something
+- excited to write/film weekly creative practice updates~~
