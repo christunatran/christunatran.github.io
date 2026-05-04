@@ -1,6 +1,6 @@
 # tunapee's favorite things
 
-Class: Web Art as Site
+fun
 
 [tunapees-favorite-things.vercel.app](https://tunapees-favorite-things.vercel.app/)
 
