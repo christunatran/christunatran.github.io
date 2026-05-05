@@ -1,0 +1,627 @@
+<!-- phase 1: stool sways left and right on yellow-green background -->
+<!-- phase 2: manga action lines with growing stool, activated by clicking the stool in phase 1 -->
+<!-- phase 3: stools stack rapidly upward (blue1 base, blue2 ×2, blue3 for rest), activated by clicking the enlarged stool in phase 2 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ghe nhua</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: #d4dc00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* ── phase 1 ── */
+
+    #phase1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .stool-p1 {
+      width: 160px;
+      cursor: pointer;
+      animation: sway 1.8s ease-in-out infinite;
+      transform-origin: bottom center;
+    }
+
+    @keyframes sway {
+      0%   { transform: rotate(0deg)  translateX(0px); }
+      25%  { transform: rotate(-4deg) translateX(-12px); }
+      50%  { transform: rotate(0deg)  translateX(0px); }
+      75%  { transform: rotate(4deg)  translateX(12px); }
+      100% { transform: rotate(0deg)  translateX(0px); }
+    }
+
+    /* ── phase 2 ── */
+
+    #phase2 {
+      display: none;
+      position: fixed;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #phase2.active {
+      display: flex;
+    }
+
+    /* action lines image flips horizontally like a strobe */
+    .lines-wrap {
+      position: absolute;
+      inset: 0;
+      animation: flipH 0.22s steps(1) infinite;
+    }
+
+    @keyframes flipH {
+      0%   { transform: scaleX(1); }
+      50%  { transform: scaleX(-1); }
+    }
+
+    .lines-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* stool grows once from phase 1 size to large */
+    .stool-p2 {
+      position: relative;
+      z-index: 10;
+      width: 160px;
+      cursor: pointer;
+      animation: grow 3s ease-in forwards;
+    }
+
+    @keyframes grow {
+      0%   { transform: scale(1); }
+      100% { transform: scale(5); }
+    }
+
+    /* ── phase 4 modal ── */
+
+    #phase4-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #phase4-modal.active { display: flex; }
+
+    .modal-box {
+      background: #fff;
+      border: 1px solid #888;
+      border-radius: 8px;
+      padding: 24px 28px 18px;
+      min-width: 300px;
+      max-width: 420px;
+      box-shadow: 4px 4px 16px rgba(0,0,0,0.35);
+      font-family: system-ui, sans-serif;
+      font-size: 14px;
+      color: #111;
+    }
+
+    .modal-message {
+      margin-bottom: 20px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .modal-btn-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    .modal-btn {
+      padding: 5px 18px;
+      font-size: 13px;
+      cursor: pointer;
+      border: 1px solid #888;
+      border-radius: 4px;
+      background: #f0f0f0;
+    }
+
+    .modal-btn:hover { background: #e0e0e0; }
+
+    #phase7-ok:active { transform: scale(0.93); }
+
+    /* ── phase 3 ── */
+
+    #phase3 {
+      display: none;
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    #phase3.active { display: block; }
+
+    /* stools are absolutely positioned inside here via JS */
+    .stack {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ── phase 5 ── */
+
+    #phase5 {
+      display: none;
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    #phase5.active { display: block; }
+
+    /* silhouettes flash on/off */
+    @keyframes silhouetteFlash {
+      0%   { opacity: 1; }
+      50%  { opacity: 0; }
+    }
+
+    .silhouette {
+      position: absolute;
+      animation: silhouetteFlash 0.4s steps(1) infinite;
+    }
+
+    /* ── phase 7 ── */
+
+    #phase7 {
+      display: none;
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      background-color: #d4dc00;
+    }
+
+    #phase7.active { display: block; }
+
+    .p7-stool {
+      position: absolute;
+      width: 160px;
+      transform-origin: bottom center;
+    }
+
+    /* ── phase 6 ── */
+
+    #phase6 {
+      display: none;
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      cursor: grab;
+    }
+
+    #phase6.active { display: block; }
+
+    .p6-silhouette {
+      position: absolute;
+      animation: silhouetteFlash 0.4s steps(1) infinite;
+    }
+
+    .p6-silhouette[data-filled] {
+      animation: none;
+    }
+
+    /* stool following the cursor during drag */
+    #p6-drag {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- phase 1 -->
+  <div id="phase1">
+    <img class="stool-p1" id="stoolP1" src="ghe nhua blue 1.png" alt="ghe nhua">
+  </div>
+
+  <!-- phase 2 -->
+  <div id="phase2">
+    <div class="lines-wrap">
+      <img src="action lines.jpg" alt="">
+    </div>
+    <img class="stool-p2" id="stoolP2" src="ghe nhua blue 1.png" alt="ghe nhua">
+  </div>
+
+  <!-- phase 3 -->
+  <div id="phase3">
+    <div class="stack" id="stack"></div>
+  </div>
+
+  <!-- phase 5: stack + flashing silhouettes around it -->
+  <div id="phase5">
+    <div class="stack" id="stack5"></div>
+    <!-- 9 silhouettes at 36° intervals (bottom-center removed), radius ~38% h / 42% v -->
+    <img class="silhouette" src="silhouette.png" style="left:calc(50% - 80px);top:3%;width:160px;">
+    <img class="silhouette" src="silhouette.png" style="left:calc(72% - 80px);top:11%;width:160px;">
+    <img class="silhouette" src="silhouette.png" style="left:calc(86% - 80px);top:32%;width:160px;">
+    <img class="silhouette" src="silhouette.png" style="left:calc(86% - 80px);top:58%;width:160px;">
+    <img class="silhouette" src="silhouette.png" style="left:calc(72% - 80px);top:79%;width:160px;">
+    <img class="silhouette" src="silhouette.png" style="left:calc(28% - 80px);top:79%;width:160px;">
+    <img class="silhouette" src="silhouette.png" style="left:calc(14% - 80px);top:58%;width:160px;">
+    <img class="silhouette" src="silhouette.png" style="left:calc(14% - 80px);top:32%;width:160px;">
+    <img class="silhouette" src="silhouette.png" style="left:calc(28% - 80px);top:11%;width:160px;">
+  </div>
+
+  <!-- phase 6: drag stools from tower onto silhouette targets -->
+  <div id="phase6">
+    <div class="stack" id="stack6"></div>
+    <!-- same 9 positions as phase 5, static (no flash) -->
+    <img class="p6-silhouette" src="silhouette.png" style="left:calc(50% - 80px);top:3%;width:160px;">
+    <img class="p6-silhouette" src="silhouette.png" style="left:calc(72% - 80px);top:11%;width:160px;">
+    <img class="p6-silhouette" src="silhouette.png" style="left:calc(86% - 80px);top:32%;width:160px;">
+    <img class="p6-silhouette" src="silhouette.png" style="left:calc(86% - 80px);top:58%;width:160px;">
+    <img class="p6-silhouette" src="silhouette.png" style="left:calc(72% - 80px);top:79%;width:160px;">
+    <img class="p6-silhouette" src="silhouette.png" style="left:calc(28% - 80px);top:79%;width:160px;">
+    <img class="p6-silhouette" src="silhouette.png" style="left:calc(14% - 80px);top:58%;width:160px;">
+    <img class="p6-silhouette" src="silhouette.png" style="left:calc(14% - 80px);top:32%;width:160px;">
+    <img class="p6-silhouette" src="silhouette.png" style="left:calc(28% - 80px);top:11%;width:160px;">
+  </div>
+
+  <!-- phase 7: stools strobe blue/red alternating, no tower -->
+  <div id="phase7">
+    <img class="p7-stool" style="left:calc(50% - 80px);top:3%;">
+    <img class="p7-stool" style="left:calc(72% - 80px);top:11%;">
+    <img class="p7-stool" style="left:calc(86% - 80px);top:32%;">
+    <img class="p7-stool" style="left:calc(86% - 80px);top:58%;">
+    <img class="p7-stool" style="left:calc(72% - 80px);top:79%;">
+    <img class="p7-stool" style="left:calc(28% - 80px);top:79%;">
+    <img class="p7-stool" style="left:calc(14% - 80px);top:58%;">
+    <img class="p7-stool" style="left:calc(14% - 80px);top:32%;">
+    <img class="p7-stool" style="left:calc(28% - 80px);top:11%;">
+    <img class="p7-stool" style="left:calc(50% - 80px);top:79%;">
+  </div>
+
+  <!-- phase 2 end modal -->
+  <div id="phase2-modal" style="display:none;position:fixed;inset:0;z-index:9998;align-items:center;justify-content:center;">
+    <div class="modal-box">
+      <div class="modal-message">THE SELF</div>
+      <div class="modal-btn-row">
+        <button class="modal-btn" id="phase2-ok">...</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- phase 3b modal: appears after tower finishes stacking -->
+  <div id="phase3b-modal" style="display:none;position:fixed;inset:0;z-index:9998;justify-content:center;">
+    <div class="modal-box">
+      <div class="modal-message">it's lonely at the top.<br>such a shame to keep all of these seats to yourself.</div>
+      <div class="modal-btn-row">
+        <button class="modal-btn" id="phase3b-ok">i guess...</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- phase 7 end modal -->
+  <div id="phase7-modal" style="display:none;position:fixed;inset:0;z-index:9998;justify-content:center;">
+    <div class="modal-box">
+      <div class="modal-message">could it be? community?</div>
+      <div class="modal-btn-row">
+        <button class="modal-btn" id="phase7-ok">accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const PHASES = ['phase1', 'phase2', 'phase3', 'phase5', 'phase6', 'phase7'];
+
+    // ── phase 3 stool stack sequence ────────────────────────────
+    // blue1 = base, blue2 ×2 above it, blue3 for the rest
+    const STACK_IMAGES = [
+      'ghe nhua blue 1.png',
+      'ghe nhua blue 2.png',
+      'ghe nhua blue 2.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+      'ghe nhua blue 3.png',
+    ];
+    const STACK_INTERVAL_MS = 120;
+    let stackTimers = [];
+    let towerTopPx = null;
+
+    function positionModal(el) {
+      const cap = towerTopPx !== null ? towerTopPx : window.innerHeight * 0.45;
+      el.style.top = '0';
+      el.style.left = '0';
+      el.style.right = '0';
+      el.style.bottom = 'auto';
+      el.style.height = cap + 'px';
+      el.style.alignItems = 'center';
+      el.style.justifyContent = 'center';
+      el.style.display = 'flex';
+    }
+
+    // each stool is 160px wide, placed at bottom-center;
+    // first stool starts 30px below viewport so bottom is cut off like the reference images;
+    // each subsequent stool is 38px higher (tight nesting, most of each stool hidden)
+    const STOOL_WIDTH  = 160;
+    const STEP_HEIGHT  = 18;
+    const BASE_BOTTOM  = -80;
+
+    function startPhase3() {
+      stackTimers.forEach(clearTimeout);
+      stackTimers = [];
+      document.getElementById('stack').innerHTML = '';
+
+      STACK_IMAGES.forEach((src, i) => {
+        const t = setTimeout(() => {
+          const img = document.createElement('img');
+          img.src = src;
+          img.style.cssText = `
+            position: absolute;
+            width: ${STOOL_WIDTH}px;
+            bottom: ${BASE_BOTTOM + i * STEP_HEIGHT}px;
+            left: 50%;
+            transform: translateX(-50%);
+          `;
+          document.getElementById('stack').appendChild(img);
+          new Audio('thud.mp3').play();
+
+          if (i === STACK_IMAGES.length - 1) {
+            setTimeout(() => {
+              towerTopPx = img.getBoundingClientRect().top;
+              triggerPhase3b();
+            }, 600);
+          }
+        }, i * STACK_INTERVAL_MS);
+        stackTimers.push(t);
+      });
+    }
+
+    // phase 5: rebuild stack instantly (no animation) + silhouettes flash
+    function startPhase5() {
+      const stack = document.getElementById('stack5');
+      stack.innerHTML = '';
+      STACK_IMAGES.forEach((src, i) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.style.cssText = `
+          position: absolute;
+          width: ${STOOL_WIDTH}px;
+          bottom: ${BASE_BOTTOM + i * STEP_HEIGHT}px;
+          left: calc(50% - 16px);
+          transform: translateX(-50%);
+        `;
+        stack.appendChild(img);
+      });
+    }
+
+    // ── phase 7: alternating blue/red strobe ────────────────────
+    let p7Interval = null;
+    const P7_BLUE = 'ghe nhua blue 1.png';
+    const P7_RED  = 'ghe nhua red.png';
+
+    const p7Audio      = new Audio('mongchieuxuan.mp3');
+    const drumrollAudio = new Audio('drumroll.mp3');
+    const drumAudio     = new Audio('drum.mp3');
+
+    function startPhase7() {
+      clearInterval(p7Interval);
+      p7Audio.currentTime = 0.6;
+      p7Audio.play();
+      setTimeout(() => {
+        const m = document.getElementById('phase7-modal');
+        m.style.top = '0'; m.style.left = '0';
+        m.style.right = '0'; m.style.bottom = '0';
+        m.style.height = '100%';
+        m.style.alignItems = 'center';
+        m.style.justifyContent = 'center';
+        m.style.display = 'flex';
+      }, 2000);
+      const stools = document.querySelectorAll('.p7-stool');
+      stools.forEach(el => {
+        const period = (1.2 + Math.random() * 1.6).toFixed(2);
+        el.style.animation = `sway ${period}s ease-in-out infinite`;
+      });
+      function render() {
+        stools.forEach(el => {
+          el.src = Math.random() < 0.5 ? P7_RED : P7_BLUE;
+        });
+      }
+      render();
+      p7Interval = setInterval(render, 300);
+    }
+
+    // ── phase 6: drag-and-drop stools onto silhouette targets ────
+    const SNAP_DIST = 100;
+    let p6StackSize = 0, p6Dragging = false, p6DragEl = null, p6ListenersAdded = false;
+
+    function renderStack6() {
+      const stack = document.getElementById('stack6');
+      stack.innerHTML = '';
+      for (let i = 0; i < p6StackSize; i++) {
+        const img = document.createElement('img');
+        img.src = STACK_IMAGES[i];
+        img.style.cssText = `position:absolute;width:${STOOL_WIDTH}px;bottom:${BASE_BOTTOM + i * STEP_HEIGHT}px;left:calc(50% - 16px);transform:translateX(-50%);`;
+        stack.appendChild(img);
+      }
+    }
+
+    function startPhase6() {
+      p6StackSize = STACK_IMAGES.length;
+      renderStack6();
+      document.querySelectorAll('.p6-silhouette').forEach(el => {
+        el.src = 'silhouette.png';
+        el.removeAttribute('data-filled');
+        el.style.opacity = '';
+      });
+      if (!p6ListenersAdded) { setupP6Listeners(); p6ListenersAdded = true; }
+    }
+
+    function setupP6Listeners() {
+      document.getElementById('stack6').addEventListener('mousedown', e => {
+        if (!document.getElementById('phase6').classList.contains('active')) return;
+        if (p6StackSize <= 0) return;
+        e.preventDefault();
+        p6StackSize--; renderStack6();
+        p6DragEl = document.createElement('img');
+        p6DragEl.id = 'p6-drag';
+        p6DragEl.src = 'ghe nhua blue 1.png';
+        p6DragEl.style.width = STOOL_WIDTH + 'px';
+        document.body.appendChild(p6DragEl);
+        p6MoveDrag(e.clientX, e.clientY);
+        p6Dragging = true;
+      });
+
+      document.addEventListener('mousemove', e => {
+        if (!p6Dragging) return;
+        p6MoveDrag(e.clientX, e.clientY);
+        document.querySelectorAll('.p6-silhouette:not([data-filled])').forEach(el => {
+          const r = el.getBoundingClientRect();
+          el.style.opacity = Math.hypot(e.clientX - (r.left + r.width/2), e.clientY - (r.top + r.height/2)) < SNAP_DIST ? '0.4' : '1';
+        });
+      });
+
+      document.addEventListener('mouseup', e => {
+        if (!p6Dragging) return;
+        p6Dragging = false;
+        let snapped = false;
+        document.querySelectorAll('.p6-silhouette:not([data-filled])').forEach(el => {
+          el.style.opacity = '1';
+          if (snapped) return;
+          const r = el.getBoundingClientRect();
+          if (Math.hypot(e.clientX - (r.left + r.width/2), e.clientY - (r.top + r.height/2)) < SNAP_DIST) {
+            el.src = 'ghe nhua blue 1.png'; el.dataset.filled = 'true'; snapped = true;
+          }
+        });
+        if (!snapped) { p6StackSize++; renderStack6(); }
+        p6DragEl?.remove(); p6DragEl = null;
+        if (document.querySelectorAll('.p6-silhouette[data-filled]').length === 9) {
+          setTimeout(() => goToPhase('phase7'), 400);
+        }
+      });
+    }
+
+    function p6MoveDrag(x, y) {
+      if (p6DragEl) { p6DragEl.style.left = x + 'px'; p6DragEl.style.top = y + 'px'; }
+    }
+
+    function triggerPhase3b() {
+      positionModal(document.getElementById('phase3b-modal'));
+    }
+
+    document.getElementById('phase2-ok').addEventListener('click', () => {
+      document.getElementById('phase2-modal').style.display = 'none';
+    });
+
+    document.getElementById('phase3b-ok').addEventListener('click', () => {
+      document.getElementById('phase3b-modal').style.display = 'none';
+      goToPhase('phase6');
+    });
+
+    document.getElementById('phase7-ok').addEventListener('click', () => {
+      const msg = document.querySelector('#phase7-modal .modal-message');
+      msg.textContent = ':)';
+      msg.style.marginBottom = '0';
+      document.querySelector('#phase7-modal .modal-btn-row').remove();
+    });
+
+    function goToPhase(id) {
+      clearInterval(p7Interval);
+      p7Audio.pause();
+      drumrollAudio.pause();
+      drumAudio.pause();
+      document.getElementById('phase2-modal').style.display = 'none';
+      document.getElementById('phase3b-modal').style.display = 'none';
+      document.getElementById('phase7-modal').style.display = 'none';
+
+      PHASES.forEach(p => {
+        const el = document.getElementById(p);
+        if (!el) return;
+        el.style.display = 'none';
+        el.classList.remove('active');
+      });
+
+      const target = document.getElementById(id);
+      if (!target) return;
+
+      if (id === 'phase3') {
+        target.style.display = 'block';
+        startPhase3();
+      } else if (id === 'phase5') {
+        target.style.display = 'block';
+        startPhase5();
+      } else if (id === 'phase6') {
+        target.style.display = 'block';
+        startPhase6();
+      } else if (id === 'phase7') {
+        target.style.display = 'block';
+        startPhase7();
+      } else {
+        target.style.display = 'flex';
+      }
+      target.classList.add('active');
+
+      // restart the grow animation when re-entering phase 2
+      if (id === 'phase2') {
+        const stool = document.querySelector('.stool-p2');
+        stool.style.animation = 'none';
+        stool.offsetHeight; // force reflow
+        stool.style.animation = '';
+        drumrollAudio.currentTime = 0;
+        drumrollAudio.play();
+        stool.addEventListener('animationend', () => {
+          drumrollAudio.pause();
+          drumAudio.currentTime = 0;
+          drumAudio.play();
+          positionModal(document.getElementById('phase2-modal'));
+        }, { once: true });
+      }
+    }
+
+    // ── normal phase transitions ─────────────────────────────────
+    document.getElementById('stoolP1').addEventListener('click', () => goToPhase('phase2'));
+    document.getElementById('stoolP2').addEventListener('click', () => goToPhase('phase3'));
+
+  </script>
+
+</body>
+</html>
