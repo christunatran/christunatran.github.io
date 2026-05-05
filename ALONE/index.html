@@ -547,7 +547,12 @@
     }
 
     function triggerPhase3b() {
-      positionModal(document.getElementById('phase3b-modal'));
+      const wind = new Audio('wind.mp3');
+      wind.play();
+      setTimeout(() => {
+        wind.pause();
+        positionModal(document.getElementById('phase3b-modal'));
+      }, 1000);
     }
 
     document.getElementById('phase2-ok').addEventListener('click', () => {
