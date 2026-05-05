@@ -7,9 +7,12 @@
 - getting tired of ITP (situational, it's finals szn) but summer is the time to step away and recharge before the start of the next semester.
 - having a great time working at the Shop
 - NEW THERAPIST!!! she is white and middle-aged. ok; but she asks me more about my family background and childhood than any other therapist i've seen. interesting... let's see how this goes.
-- *any* relationship, romantic or platonic friendship, should be adding to your life, not be a detriment. had a recent recknoning with deciding to distance myself from a friend who was constantly bringing chaos and stress into my life, even though i care about them a lot. when i tried to help, i ended up getting burned. it seems we're not aligned; i refuse to be the enabler of someone's negative behaviors
+- *any* relationship, romantic or platonic friendship, should be adding to your life, not be a detriment. had a recent recknoning with deciding to distance myself from a friend who was constantly bringing chaos and stress into my life, even though i care about them a lot. when i tried to help, i ended up getting burned. it seems we're not aligned; i refuse to be the enabler of someone's misery
 - i wish to skilled with my hands... to be prolific...
 - nice analogy: in a musical score, a 'rest' is still a part of the piece at-large. it's arguably just as necessary as the other notes being played, and ADDS to the piece by placing emphasis on when there IS sound. in life, rest is just as necessary as action; rest can be viewed as necessary FOR action to truly be effective.
+- WHOAA, organizing stupid hackathon is bringing me places. i was invited to go on a funded trip to paris from it. holy shit. life's crazy
+- been praying a lot lately
+- made al pastor pork shoulder + elote salad and its the best thing i've cooked IN MONTHS!!
 
 
 
