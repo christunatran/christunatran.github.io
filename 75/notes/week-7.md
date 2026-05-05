@@ -13,7 +13,7 @@
 - WHOAA, organizing stupid hackathon is bringing me places. i was invited to go on a funded trip to paris from it. holy shit. life's crazy
 - been praying a lot lately
 - made al pastor pork shoulder + elote salad and its the best thing i've cooked IN MONTHS!!
-
+- asking myself why i like "it's me" by ILLIT so much... it sounds like vinahouse lol
 
 
 
