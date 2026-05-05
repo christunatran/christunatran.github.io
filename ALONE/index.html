@@ -444,6 +444,17 @@
     const drumrollAudio = new Audio('drumroll.mp3');
     const drumAudio     = new Audio('drum.mp3');
 
+    const plopCtx = new (window.AudioContext || window.webkitAudioContext)();
+    let plopBuffer = null;
+    fetch('plop.mp3').then(r => r.arrayBuffer()).then(buf => plopCtx.decodeAudioData(buf)).then(decoded => { plopBuffer = decoded; });
+    function playPlop() {
+      if (!plopBuffer) return;
+      const src = plopCtx.createBufferSource();
+      src.buffer = plopBuffer;
+      src.connect(plopCtx.destination);
+      src.start(0);
+    }
+
     function startPhase7() {
       clearInterval(p7Interval);
       p7Audio.currentTime = 0.6;
@@ -531,7 +542,7 @@
           const r = el.getBoundingClientRect();
           if (Math.hypot(e.clientX - (r.left + r.width/2), e.clientY - (r.top + r.height/2)) < SNAP_DIST) {
             el.src = 'ghe nhua blue 1.png'; el.dataset.filled = 'true'; snapped = true;
-            const plop = new Audio('plop.mp3'); plop.play();
+            playPlop();
           }
         });
         if (!snapped) { p6StackSize++; renderStack6(); }
