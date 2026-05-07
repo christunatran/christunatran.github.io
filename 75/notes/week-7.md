@@ -19,5 +19,5 @@
 - spent 13+ hours at school... wtf... but it was the most fulfilling work day ever.
 - watching thesis presentations this week. the thing i fear is to produce a half-baked thesis. adequate preparation must begin now to avoid that fear coming true.
 - a fabricator i admire asked me if i was a second year, because he was impressed by my lamp. i was really happy to get his praise, and it motivates me to KEEP PUSHING HARDER TO IMPROVE.
-
+- i ran out of creatine :(
 
