@@ -1,5 +1,27 @@
 [
   {
+    "slug": "13-hours",
+    "title": "13 hours",
+    "date": "2026.05.07",
+    "file": "13-hours.md",
+    "snippet": "i spent over 13 hours at school today. arriving at 9:30 for my Shop shift, and staying until 11. yet, it was the most fulfilling day i've spent at NYU ITP thus far.",
+    "tags": [
+      "itp",
+      "life"
+    ]
+  },
+  {
+    "slug": "poisonous-thoughts",
+    "title": "poisonous thoughts",
+    "date": "2026.05.06",
+    "file": "poisonous thoughts.md",
+    "snippet": "it's a harsh way of thinking, but i feel like i used to be such a loser. spending so much time in my head, not leaning into action, being negative and focusing on others rather than myself.",
+    "tags": [
+      "rant",
+      "life"
+    ]
+  },
+  {
     "slug": "turning-my-web-art-into-an-installation",
     "title": "turning my web art into an installation",
     "date": "2026.04.20",
