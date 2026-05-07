@@ -25,5 +25,7 @@ the book "Why Greatness Cannot Be Planned: The Myth of the Objective" changed my
 
 i feel like i've found what i'm meant to do: making through exploring and experimenting, agnostic of medium, at the edge of my abilities.
 
+i'm exactly where i need to be for this chapter of my life.
+
 and i'm getting better about documenting and sharing it all!
 

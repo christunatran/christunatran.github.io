@@ -444,15 +444,12 @@
     const drumrollAudio = new Audio('drumroll.mp3');
     const drumAudio     = new Audio('drum.mp3');
 
-    const plopCtx = new (window.AudioContext || window.webkitAudioContext)();
-    let plopBuffer = null;
-    fetch('plop.mp3').then(r => r.arrayBuffer()).then(buf => plopCtx.decodeAudioData(buf)).then(decoded => { plopBuffer = decoded; });
+    const plopAudio = new Audio('plop.mp3');
+    plopAudio.preload = 'auto';
+    plopAudio.load();
     function playPlop() {
-      if (!plopBuffer) return;
-      const src = plopCtx.createBufferSource();
-      src.buffer = plopBuffer;
-      src.connect(plopCtx.destination);
-      src.start(0);
+      plopAudio.currentTime = 0;
+      plopAudio.play().catch(() => {});
     }
 
     function startPhase7() {
