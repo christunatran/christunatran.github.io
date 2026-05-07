@@ -14,6 +14,10 @@
 - been praying a lot lately
 - made al pastor pork shoulder + elote salad and its the best thing i've cooked IN MONTHS!!
 - asking myself why i like "it's me" by ILLIT so much... it sounds like vinahouse lol
-
+- can't believe it, i'm actually finished with the breathing lamp. time to add bonus features and document the shit out of it.
+- created an awesome handshake with matt and ryan B)
+- spent 13+ hours at school... wtf... but it was the most fulfilling work day ever.
+- watching thesis presentations this week. the thing i fear is to produce a half-baked thesis. adequate preparation must begin now to avoid that fear coming true.
+- a fabricator i admire asked me if i was a second year, because he was impressed by my lamp. i was really happy to get his praise, and it motivates me to KEEP PUSHING HARDER TO IMPROVE.
 
 
