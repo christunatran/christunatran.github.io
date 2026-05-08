@@ -1,5 +1,12 @@
 [
   {
+    "slug": "ALONE",
+    "title": "ALONE",
+    "subtitle": "web art as site",
+    "date": "2026.05",
+    "cover": "works/ALONE/assets/alone-cover.gif"
+  }
+  ,{
     "slug": "nose-project",
     "title": "pick me",
     "subtitle": "physical computing",
