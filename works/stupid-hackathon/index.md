@@ -1,5 +1,7 @@
 # Stupid Hackathon
 
+I co-organized the 2026 ITP Stupid Hackathon with Anshula Saha! It was a major success, with 150+ attendees and 40+ demos during this 12-hour event!
+
 [stupid-hackathon-2026.eventbrite.com](https://stupid-hackathon-2026.eventbrite.com/)
 
 ![Table Signage](assets/table-signage.png)
