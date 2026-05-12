@@ -8,7 +8,8 @@
     "tags": [
       "rant",
       "life"
-    ]
+    ],
+    "disabled": true
   },
   {
     "slug": "13-hours",
@@ -30,7 +31,8 @@
     "tags": [
       "rant",
       "life"
-    ]
+    ],
+    "disabled": true
   },
   {
     "slug": "turning-my-web-art-into-an-installation",
