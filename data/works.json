@@ -1,5 +1,12 @@
 [
   {
+    "slug": "breathing-lamp",
+    "title": "breathing lamp",
+    "subtitle": "soft robotics + light & interactivity",
+    "date": "2026.05.10",
+    "cover": "works/breathing-lamp/breathing lamp gif.gif"
+  },
+  {
     "slug": "ALONE",
     "title": "ALONE",
     "subtitle": "web art as site",
@@ -47,7 +54,7 @@
     "title": "pick me",
     "subtitle": "physical computing",
     "date": "2025.12",
-    "cover": "works/nose-project/assets/f7a72084-c1ca-42cb-9f2b-9e2eb25b0091.png"
+    "cover": "works/nose-project/assets/nose-clean-background.png"
   },
   {
     "slug": "fish-cam",
