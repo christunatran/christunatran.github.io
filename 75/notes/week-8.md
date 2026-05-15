@@ -1,3 +1,4 @@
+- i went birdwatching for the first time. my gateway bird is the downy woodpecker.
 - the semester is officially over! lots of celebrations but i have to remind myself that i don't need to go to all of them
 - recurse center Never Graduate Week! so many celebrations... so much good food... as i am writing i am well-fed and content
 - talking to startups
