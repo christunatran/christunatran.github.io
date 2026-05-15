@@ -1,0 +1,4 @@
+- the semester is officially over! lots of celebrations but i have to remind myself that i don't need to go to all of them
+- recurse center Never Graduate Week! so many celebrations
+- applied to my first serious artist residency
+- danced for the first time in a long time
