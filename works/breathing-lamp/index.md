@@ -1,4 +1,4 @@
-# breathing lamp
+# breathing light
 
 for "Exploring Concepts from Soft Robotics" taught by Kari Love and "Light & Interactivity" taught by Tom Igoe
 

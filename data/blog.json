@@ -1,5 +1,16 @@
 [
   {
+    "slug": "household-income",
+    "title": "household income",
+    "date": "2026.05.14",
+    "file": "household-income.md",
+    "snippet": "if your family's household income is above $200k and i've been mean to you then you probably deserve it.",
+    "tags": [
+      "haha"
+    ],
+    "disabled": true
+  },
+  {
     "slug": "schadenfreude",
     "title": "schadenfreude",
     "date": "2026.05.07",

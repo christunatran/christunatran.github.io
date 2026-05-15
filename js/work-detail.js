@@ -28,7 +28,7 @@
     .then(md => {
       // Rewrite relative asset paths to root-relative so they resolve correctly
       // regardless of the URL the page is served from.
-      md = md.replace(/\((?!https?:\/\/)(assets\/[^)]+)\)/g, `(/works/${slug}/$1)`);
+      md = md.replace(/\((?!https?:\/\/)(?!\/)([^)]+\.(?:gif|jpe?g|png|mp4|mov|webp|avif|svg|pdf))\)/gi, `(/works/${slug}/$1)`);
 
       contentEl.innerHTML = marked.parse(md);
 

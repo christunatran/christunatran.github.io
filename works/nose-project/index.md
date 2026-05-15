@@ -2,6 +2,8 @@
 
 Class: Physical Computing
 
+![IMG_0789 2.JPG](assets/nose-clean-background.png)
+
 ![IMG_0789 2.JPG](assets/f7a72084-c1ca-42cb-9f2b-9e2eb25b0091.png)
 
 ![IMG_0810 2.JPG](assets/5fe04228-4625-434d-b6f6-515d8c7b0909.png)
