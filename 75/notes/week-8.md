@@ -1,4 +1,9 @@
 - the semester is officially over! lots of celebrations but i have to remind myself that i don't need to go to all of them
-- recurse center Never Graduate Week! so many celebrations
+- recurse center Never Graduate Week! so many celebrations... so much good food... as i am writing i am well-fed and content
+- talking to startups
+- i'm excited to work at ITP CAMP!!! 
+- i'm excited to write out my SUMMER BUCKET LIST~~
+- garnering interest for my shared coworking space/studio with M and S; pinky-swore; SALOTTO-core
 - applied to my first serious artist residency
 - danced for the first time in a long time
+- a random guy reached his hand out to me and i screamed in public, thinking i was getting attacked. turned out he was trying to tell me he liked my madeon shirt. in conclusion, the hand-reaching wasn't necessary
