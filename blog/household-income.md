@@ -1,1 +1,1 @@
-if your family's household income is above $200k and i've been mean to you then you probably deserve it. that's just the tax you have to pay in this life. suck it
+if your family's household income is above $200k and i've been mean to you before then you probably deserve it. that's just the tunapee tax you have to pay in this life. 
