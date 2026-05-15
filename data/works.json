@@ -1,10 +1,10 @@
 [
   {
-    "slug": "breathing-lamp",
-    "title": "breathing lamp",
+    "slug": "breathing-light",
+    "title": "breathing light",
     "subtitle": "soft robotics + light & interactivity",
     "date": "2026.05.10",
-    "cover": "works/breathing-lamp/breathing lamp gif.gif"
+    "cover": "works/breathing-light/breathing lamp gif.gif"
   },
   {
     "slug": "ALONE",
@@ -89,6 +89,6 @@
     "title": "santa stop-motion",
     "subtitle": "hypercinema",
     "date": "2025.09",
-    "cover": "works/santa-stop-motion/assets/94C6D261-7F33-4373-A83A-FE679F06053D.png"
+    "cover": "works/santa-stop-motion/assets/santaaa.gif"
   }
 ]
