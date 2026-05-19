@@ -1,5 +1,6 @@
 - i love playing spikeball!!!!
 - my first freelance gig...
+- my friend visited my program's spring show and commented htat a lot of the students' work is very "inward" and its stuck with me since. this program is really full of inward-looking... it's too much self-centeredness
 - 2026 brought both my brother and i back to church... we had a nice conversation about this shared coincidence
 - i ran into J at a juice bar and E in my own neighborhood. turns out we've been living in the same neighborhood for the past year in the same program but have never run into one another during commute. so many coincidences
 - finally satisfied my beef tartare craving with M
@@ -8,3 +9,4 @@
 - i can play happy birthday on the dan bau
 - R and M and i have been working really hard together and its brought much closer. i'm so glad to work and dine and hang out with these folks.
 - i really can be a hateful person sometimes. certain circumstances put me around i struggle to respect. i have to remind myself of my agency to create new situation by doing things such as distancing myself so that i no longer have things to complain about. it really is so easy to unfollow people whose lives i don't want to see anymore-- so that's what i did this week.
+- there is an evil voice in my head that goes "
