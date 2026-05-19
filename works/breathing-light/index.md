@@ -8,18 +8,13 @@ I was interested in exploring how the light would diffuse as the material stretc
 
 I used a [Programmable Air kit](https://www.programmableair.com/) designed by NYU ITP alumni Amitabh Shrivastava.
 
-![breathing lamp gif](breathing lamp gif.gif)
-
+![breathing lamp gif](breathing%20lamp%20gif.gif)
 ![R0008326](R0008326.jpeg)
-
-![IMG_5265](IMG_5265.jpg)
-
-![IMG_5266](IMG_5266.jpg)
-
 ![IMG_5267](IMG_5267.jpg)
-
 ![IMG_5268](IMG_5268.jpg)
-
+![IMG_5266](IMG_5266.jpg)
+![IMG_5265](IMG_5265.jpg)
 ![R0008334](R0008334.jpeg)
-
 ![R0008322](R0008322.jpeg)
+
+![IMG_5263](IMG_5263.mov)

@@ -1,0 +1,8 @@
+- i love playing spikeball!!!!
+- my first freelance gig...
+- 2026 brought both my brother and i back to church... we had a nice conversation about this shared coincidence
+- i ran into J at a juice bar and E in my own neighborhood. turns out we've been living in the same neighborhood for the past year in the same program but have never run into one another during commute. so many coincidences
+- finally satisfied my beef tartare craving with M
+- discovered "gypsy jazz" by stumbling upon an improv jam where there was the most talented fiddler
+- i finally got to play the violin again, one of my first loves. it felt really good to help A tune hers.
+- R and M and i have been working really hard together and its brought much closer. i'm so glad to work and dine and hang out with these folks.
