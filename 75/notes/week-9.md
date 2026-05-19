@@ -5,8 +5,8 @@
 - i ran into J at a juice bar and E in my own neighborhood. turns out we've been living in the same neighborhood for the past year in the same program but have never run into one another during commute. so many coincidences
 - finally satisfied my beef tartare craving with M
 - discovered "gypsy jazz" by stumbling upon an improv jam where there was the most talented fiddler
-- i finally got to play the violin again, one of my first loves. it felt really good to help A tune hers.
+- i finally got to play the violin again, one of my first loves. it felt really good to help AT tune hers.
 - i can play happy birthday on the dan bau
 - R and M and i have been working really hard together and its brought much closer. i'm so glad to work and dine and hang out with these folks.
-- i really can be a hateful person sometimes. certain circumstances put me around i struggle to respect. i have to remind myself of my agency to create new situation by doing things such as distancing myself so that i no longer have things to complain about. it really is so easy to unfollow people whose lives i don't want to see anymore-- so that's what i did this week.
-- there is an evil voice in my head that goes "my opps are undisciplined, bloated, and basic"
+- did a social media purge where i unfollowed people who don't give me good vibes. it's really not that deep! this is agency at work
+- there is an evil voice in my head that goes "my opps are undisciplined, bloated, and basic". 
