@@ -1,11 +1,11 @@
 [(This is a now page. You can make one too.)](https://nownownow.com/about)
 
-*last updated (5/15/2026)*
+*last updated (5/21/2026)*
 
 ### what i'm up to
 
-- doing a [75 hard challenge](/75), on week 8 now!
-- making installation art for an upcoming exhibition at the new york transit museum (may 20-21)
+- doing a [75 hard challenge](/75), on week 9 now!
+- made installation art for an upcoming exhibition at the [new york transit museum](/work/?slug=in-26-slides) (may 20-21)
 - i'm working at the [ITP Shop](https://shop.itp.io/)
 - built a [lamp that breathes](https://www.instagram.com/p/DXiHJamDH-4/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==)
 - i'm on summer break! i'm writing my summer bucket list and summer syllabus
@@ -29,6 +29,7 @@
 ### this summer
 - [itp camp counselor](https://itp.nyu.edu/camp/2026/about)
 - hang out at [glub glub labs](https://glubglublabs.com/) 
+- working freelance!
 - visit home in the DMV
 - go to paris
 - go to open sauce and fidget camp in SF
