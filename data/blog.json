@@ -8,7 +8,8 @@
     "tags": [
       "haha"
     ],
-    "disabled": false
+    "disabled": false,
+    "blogOnly": true
   },
   {
     "slug": "schadenfreude",
