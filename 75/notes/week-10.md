@@ -1,1 +1,0 @@
-- i did my first pull-up today. i wasn't even deliberating training for it these law few months. strength really does build in silence

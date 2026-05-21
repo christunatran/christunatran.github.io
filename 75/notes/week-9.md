@@ -1,5 +1,6 @@
 - i love playing spikeball!!!!
 - my first freelance gig...
+- i did my first pull-up today. i wasn't even deliberately training for it these law few months. strength really does build in silence
 - my friend visited my program's spring show and commented that a lot of the students' work is very "inward" and its stuck with me since. this program is really full of inward-looking... it's too much self-centeredness
 - 2026 brought both my brother and i back to church... we had a nice conversation about this shared coincidence
 - i ran into J at a juice bar and E in my own neighborhood. turns out we've been living in the same neighborhood for the past year in the same program but have never run into one another during commute. so many coincidences
