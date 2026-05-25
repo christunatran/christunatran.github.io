@@ -19,4 +19,4 @@ maybe vibe-coding isn't as bad as people make it out to be. as a learning tool, 
 
 anh thu is a phd in music education from columbia. nhan is a phd in linguistics from nyu. nhan is actually an early researcher in natural language processing, having worked on it in the 80s. he contributed to vietnamese unicode.
 
-being the first in my family to go to college, i didn't grow up having conversations about academia or research. the idea pursuing such a level of education for a vietnamese-american seemed so out of reach. it wasn't until i got older that i began to encounter vietnamese-americans who had such opportunities to study. i'm grateful to have met such passionate, life-long learners as mentors. 
+being of the first generation in my family to go to college, i didn't grow up having conversations about academia or research. the idea pursuing such a level of education for a vietnamese-american seemed so out of reach. it wasn't until i got older that i began to encounter vietnamese-americans who had such opportunities to study. i'm grateful to have met such passionate, life-long learners as mentors. 
