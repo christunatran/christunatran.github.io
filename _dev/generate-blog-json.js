@@ -52,7 +52,12 @@ function parseFrontmatter(content) {
 
 function extractSnippet(content) {
   const body = content.replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n?/, '').trim();
-  const para = body.split(/\n{2,}/)[0]
+  // Find first paragraph that isn't an image, video, or empty
+  const paragraphs = body.split(/\n{2,}/);
+  const para = (paragraphs.find(p => {
+    const t = p.trim();
+    return t && !t.startsWith('![') && !t.startsWith('<video') && !t.startsWith('<img');
+  }) || '')
     .replace(/[#*_`>~]/g, '')   // strip markdown syntax
     .replace(/\s+/g, ' ')
     .trim();
@@ -97,6 +102,7 @@ function generate() {
     };
 
     if (fm.disabled === 'true') post.disabled = true;
+    if (fm.cover) post.cover = fm.cover;
 
     return [post];
   });

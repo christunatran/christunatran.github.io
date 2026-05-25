@@ -1,38 +1,44 @@
 [
   {
-    "slug": "2025-2026-itp-year-1",
-    "title": "2025-2026ish recap, ITP year 1",
-    "date": "2026.05.24",
-    "file": "2025-2026-itp-year-1.md",
-    "snippet": "i just finished another chapter.",
+    "slug": "art-as-investigation-and-expression",
+    "title": "art as investigation and expression",
+    "date": "2026.05.25",
+    "file": "art-as-investigation-and-expression.md",
+    "snippet": "\"work as an artifact of the process rather than the outcome\"",
     "tags": [
-      "life",
-      "itp"
+      "quotes"
+    ],
+    "disabled": true
+  },
+  {
+    "slug": "grad-school-is-about-collecting-starts",
+    "title": "grad school is about collecting starts",
+    "date": "2026.05.25",
+    "file": "grad-school-is-about-collecting-starts.md",
+    "snippet": "-- theo ballew",
+    "tags": [
+      "quotes"
+    ],
+    "disabled": true
+  },
+  {
+    "slug": "those-who-tell-the-stories-rule-society",
+    "title": "those who tell the stories rule society",
+    "date": "2026.05.25",
+    "file": "those-who-tell-the-stories-rule-society.md",
+    "snippet": "-- plato",
+    "tags": [
+      "quotes"
     ]
   },
   {
-    "slug": "household-income",
-    "title": "household income",
-    "date": "2026.05.14",
-    "file": "household-income.md",
-    "snippet": "if your family's household income is above $200k and iyou've been personally offended by me before... then i probably meant it and you probably deserve it.",
-    "tags": [
-      "haha"
-    ],
-    "disabled": false,
-    "blogOnly": true
-  },
-  {
-    "slug": "schadenfreude",
-    "title": "schadenfreude",
-    "date": "2026.05.07",
-    "file": "schadenfreude.md",
-    "snippet": "constantly, i'm reminded that i don't need to take any action toward my opps. the universe just handles it on its own.",
-    "tags": [
-      "rant",
-      "life"
-    ],
-    "disabled": true
+    "slug": "vibe-coding-in-the-right-hands",
+    "title": "vibe-coding in the right hands",
+    "date": "2026.05.25",
+    "file": "vibe-coding-in-the-right-hands.md",
+    "snippet": "",
+    "tags": [],
+    "cover": "/blog/assets/dan-bau-1.jpeg"
   },
   {
     "slug": "13-hours",
@@ -46,16 +52,26 @@
     ]
   },
   {
+    "slug": "schadenfreude",
+    "title": "schadenfreude",
+    "date": "2026.05.07",
+    "file": "schadenfreude.md",
+    "snippet": "schadenfreude; enjoyment obtained from seeing or hearing about the troubles of others",
+    "tags": [
+      "rant",
+      "life"
+    ]
+  },
+  {
     "slug": "poisonous-thoughts",
     "title": "poisonous thoughts",
     "date": "2026.05.06",
     "file": "poisonous thoughts.md",
-    "snippet": "it's a harsh way of thinking, but i feel like i used to be such a loser. spending so much time in my head, not leaning into action, being negative and focusing on others rather than myself.",
+    "snippet": "it's a harsh way of thinking, but i feel like i'm sometimes prone to being such a loser... spending so much time in my head, not leaning into action, being negative and focusing on others rather than myself. when i behav…",
     "tags": [
       "rant",
       "life"
-    ],
-    "disabled": true
+    ]
   },
   {
     "slug": "turning-my-web-art-into-an-installation",
@@ -72,7 +88,7 @@
     "title": "i don't think i can ever forget today, this is what art is all about",
     "date": "2026.04.07",
     "file": "web art can be beautiful, i don't think i can ever forget today.md",
-    "snippet": "i don't think i'll ever forget what i experienced today in my \"web art as site\" class. my boyfriend and i recently broke up, but we happen to remain in this class together. we hadn't spoken at all for the last few weeks,…",
+    "snippet": "i don't think i'll ever forget what i experienced today in my \"web art as site\" class.",
     "tags": [
       "sappy",
       "emotional"
@@ -93,7 +109,7 @@
     "title": "some plants were meant to die",
     "date": "2026.04.03",
     "file": "some plants were meant to die.md",
-    "snippet": "sometimes, plants are already doomed from the moment you bought them--they were already rotted, or they already had a disease, or the soil they were potted in was the wrong kind of the wrong pH level. sometimes, when you…",
+    "snippet": "sometimes, plants are already doomed from the moment you bought them--they were already rotted, or they already had a disease, or the soil they were potted in was the wrong kind of the wrong pH level.",
     "tags": []
   },
   {
@@ -101,7 +117,7 @@
     "title": "75 hard",
     "date": "2026.03.23",
     "file": "75 hard.md",
-    "snippet": "why? at this moment in time, i've decided that there's nothing holding me back from doing my best; the [\"edge of my abilities\"](https://www.recurse.com/self-directives). as i've talked about in a previous blog post, what…",
+    "snippet": "why?",
     "tags": [
       "medium",
       "self-improvement"
@@ -112,7 +128,7 @@
     "title": "“why see the world when you've got the beach?”",
     "date": "2026.03.21",
     "file": "why see the world when youve got the beach.md",
-    "snippet": "this song resonated with me lately. the more you have, the harder it is to be content in life, and by extension, in love. we can try all we want to keep chasing novelty but eventually, doesn't it get so tiresome? https:/…",
+    "snippet": "this song resonated with me lately. the more you have, the harder it is to be content in life, and by extension, in love. we can try all we want to keep chasing novelty but eventually, doesn't it get so tiresome?",
     "tags": [
       "quotes"
     ]
@@ -138,23 +154,23 @@
     "disabled": true
   },
   {
-    "slug": "rich-people-dont-have-sauce",
-    "title": "rich people don't have sauce",
-    "date": "2026.02.19",
-    "file": "rich people don't have sauce.md",
-    "snippet": "a wise man once said, \"rich people don't have sauce.\" \"...so they buy sauce from other people\", in the form of art, clothing, music, and other materialistic pursuits. some of the funniest people i know are those i grew u…",
-    "tags": [
-      "rant",
-      "short"
-    ]
-  },
-  {
     "slug": "salotto-my-dream-space",
     "title": "SALOTTO, my dream space",
     "date": "2026.02.19",
     "file": "SALOTTO, my dream space.md",
-    "snippet": "i visited the [Salotto](https://salotto.nyc/) space today to attend a talk by Giorgia Lupi. i found the concept of the space so inspiring. to my understanding, it's a coworking space shared by a few small design firms an…",
+    "snippet": "i visited the [Salotto](https://salotto.nyc/) space today to attend a talk by Giorgia Lupi. i found the concept of the space so inspiring.",
     "tags": []
+  },
+  {
+    "slug": "rich-people-dont-have-sauce",
+    "title": "rich people don't have sauce",
+    "date": "2026.02.19",
+    "file": "rich people don't have sauce.md",
+    "snippet": "a wise man once said, \"rich people don't have sauce.\"",
+    "tags": [
+      "rant",
+      "short"
+    ]
   },
   {
     "slug": "conceptual-art-and-god",
@@ -172,7 +188,7 @@
     "title": "everything is easier when you're healthy",
     "date": "2026.01.28",
     "file": "everything is easier when you're healthy.md",
-    "snippet": "uhhhh, no brainer here. but i find it really true, especially now that i'm being more intentional about prioritizing my health this year. what that looks like: prioritizing sleep, not skipping meals, exercising regularly…",
+    "snippet": "uhhhh, no brainer here. but i find it really true, especially now that i'm being more intentional about prioritizing my health this year.",
     "tags": [
       "short"
     ]
@@ -182,7 +198,7 @@
     "title": "life as performance art",
     "date": "2026.01.28",
     "file": "life as performance art.md",
-    "snippet": "a thought i had: what is stopping us from treating our entire lives as a big performance art? fear? of what? of not being well-received? of totally casting away societal norms and ending up broke on the streets as the re…",
+    "snippet": "a thought i had: what is stopping us from treating our entire lives as a big performance art?",
     "tags": [
       "short"
     ]
@@ -192,7 +208,7 @@
     "title": "we've reached a peak in hyperrealistic AI",
     "date": "2026.01.22",
     "file": "we've reached a peak in hyperrealistic AI.md",
-    "snippet": "we've reached a peak in hyperrealistic AI images... now it's time to take steps backwards [In Defense of the Poor Image](https://www.e-flux.com/journal/10/61362/in-defense-of-the-poor-image). it's interesting how intenti…",
+    "snippet": "we've reached a peak in hyperrealistic AI images... now it's time to take steps backwards [In Defense of the Poor Image](https://www.e-flux.com/journal/10/61362/in-defense-of-the-poor-image).",
     "tags": [
       "short"
     ]
@@ -222,7 +238,7 @@
     "title": "too much self-analysis is not good, working on the edge of your abilities",
     "date": "2025.12.11",
     "file": "too much self-analysis is not good, working on the edge of your abilities.md",
-    "snippet": "this is more of a self-reminder. i may be self-analyzing right now, just as i have been for the past 2 posts and the past several weeks. i have a habit of mistaking worry for a problem that needs immediate solving throug…",
+    "snippet": "this is more of a self-reminder. i may be self-analyzing right now, just as i have been for the past 2 posts and the past several weeks.",
     "tags": [
       "medium"
     ]
@@ -242,7 +258,7 @@
     "title": "on naps",
     "date": "2025.11.29",
     "file": "on naps.md",
-    "snippet": "when you know in your heart that you’re going to take a nap later in the day, it makes it a lot easier to wake up in the morning. maybe what america needs is more siesta time. when i was in vietnam, relatives and friends…",
+    "snippet": "when you know in your heart that you’re going to take a nap later in the day, it makes it a lot easier to wake up in the morning.",
     "tags": []
   },
   {
@@ -278,7 +294,7 @@
     "title": "theatre kids' party",
     "date": "2025.11.02",
     "file": "theatre kids' party.md",
-    "snippet": "on halloween this year, i went to a party thrown by people who would typically be labeled as \"theatre kids\". i am writing to report that as adults, theatre kids seem to have the most fun. these folks really know how to t…",
+    "snippet": "on halloween this year, i went to a party thrown by people who would typically be labeled as \"theatre kids\". i am writing to report that as adults, theatre kids seem to have the most fun.",
     "tags": [
       "medium"
     ]
@@ -308,7 +324,7 @@
     "title": "nighttime routines, rituals, time",
     "date": "2025.09.21",
     "file": "nighttime routines, rituals, time.md",
-    "snippet": "i tracked that i spent almost 2 hours on my full night routine tonight… went on a short run, took a shower, flossed, put on hasan minhaj’s podcast, brushed my teeth, did my skincare, blow dried my hair. does everyone do…",
+    "snippet": "i tracked that i spent almost 2 hours on my full night routine tonight… went on a short run, took a shower, flossed, put on hasan minhaj’s podcast, brushed my teeth, did my skincare, blow dried my hair.",
     "tags": [
       "short"
     ]
@@ -318,7 +334,7 @@
     "title": "thinking about where to go with this blog",
     "date": "2025.09.21",
     "file": "thinking about where to go with this blog.md",
-    "snippet": "I actually started this blog in October 2024. Since then, I have yet to make a single post, besides updating my \"about\" and \"now\" pages every few months. The short answer as to why is because I've been scared… - To put m…",
+    "snippet": "I actually started this blog in October 2024. Since then, I have yet to make a single post, besides updating my \"about\" and \"now\" pages every few months.",
     "tags": [
       "medium"
     ]
@@ -338,7 +354,7 @@
     "title": "finally, a first post",
     "date": "2025.08.09",
     "file": "finally, a first post.md",
-    "snippet": "I actually started this blog in October 2024. Since then, I have yet to make a single post, besides updating my \"about\" and \"now\" pages every few months. The short answer as to why is because I've been scared… - To put m…",
+    "snippet": "I actually started this blog in October 2024. Since then, I have yet to make a single post, besides updating my \"about\" and \"now\" pages every few months.",
     "tags": [
       "long"
     ]

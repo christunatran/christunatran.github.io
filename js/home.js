@@ -53,14 +53,24 @@
 
   function createBlogCard(post) {
     const card = document.createElement('div');
-    card.className = 'post post-text';
-    card.innerHTML = `
-      <div class="post-content">
-        <p class="blog-card-title">${escapeHtml(post.title)}</p>
-        ${post.snippet ? `<p class="blog-card-snippet">${escapeHtml(post.snippet)}</p>` : ''}
-      </div>
-      <span class="post-date">${post.date}</span>
-    `;
+    if (post.cover) {
+      card.className = 'post post-image';
+      card.innerHTML = `
+        <div class="post-content">
+          <img src="${escapeHtml(post.cover)}" alt="${escapeHtml(post.title)}">
+        </div>
+        <span class="post-date">${post.date}</span>
+      `;
+    } else {
+      card.className = 'post post-text';
+      card.innerHTML = `
+        <div class="post-content">
+          <p class="blog-card-title">${escapeHtml(post.title)}</p>
+          ${post.snippet ? `<p class="blog-card-snippet">${escapeHtml(post.snippet)}</p>` : ''}
+        </div>
+        <span class="post-date">${post.date}</span>
+      `;
+    }
     card.addEventListener('click', () => { window.location.href = `/blog-post/?slug=${post.slug}`; });
     return card;
   }
