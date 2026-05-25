@@ -64,9 +64,13 @@
             ? `<span class="blog-tag">${post.tags.map(escapeHtml).join(', ')}</span>`
             : '';
 
+          const normalizedBody = body
+            .replace(/[‘’]/g, "'")
+            .replace(/[“”]/g, '"');
+
           let rendered = window.marked
-            ? marked.parse(body, { gfm: true })
-            : body;
+            ? marked.parse(normalizedBody, { gfm: true })
+            : normalizedBody;
 
           // Convert bare YouTube URLs (on their own line) into embeds.
           rendered = rendered.replace(
