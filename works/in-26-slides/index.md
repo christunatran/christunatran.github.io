@@ -2,11 +2,11 @@
 
 made in collaboration with ryan webber and matthew blanco for exhibition at the [new york transit museum](https://www.nytransitmuseum.org/program/transit-operas-thu/) in collaboration with the nyu tisch operas.
 
-![](assets/new cover.jpeg)
+![](assets/new-cover.jpeg)
 
 <br>
 
-![](assets/new cover 2.jpeg)
+![](assets/new-cover-2.jpeg)
 
 <br>
 
@@ -14,11 +14,11 @@ made in collaboration with ryan webber and matthew blanco for exhibition at the 
 
 <br>
 
-![](assets/many people.jpeg)
+![](assets/many-people.jpeg)
 
 <br>
 
-![](assets/many people 2.jpeg)
+![](assets/many-people-2.jpeg)
 
 <br>
 
@@ -38,7 +38,7 @@ made in collaboration with ryan webber and matthew blanco for exhibition at the 
 
 <br>
 
-![](assets/slide out.jpeg)
+![](assets/slide-out.jpeg)
 
 <br>
 
@@ -54,7 +54,7 @@ made in collaboration with ryan webber and matthew blanco for exhibition at the 
 
 <br>
 
-![](assets/legend and proportion.jpeg)
+![](assets/legend-and-proportion.jpeg)
 
 <br>
 
