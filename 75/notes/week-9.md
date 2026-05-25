@@ -8,7 +8,7 @@
 - discovered "gypsy jazz" by stumbling upon an improv jam where there was the most talented fiddler
 - i finally got to play the violin again, one of my first loves. it felt really good to help AT tune hers.
 - i can play happy birthday on the dan bau
-- R and M and i have been working really hard together and its brought much closer. i'm so glad to work and dine and hang out with these folks.
+- R and M and i have been working really hard together and its brought us much closer. i'm so glad to work and dine and hang out with these folks.
 - did a social media purge where i unfollowed people who don't give me good vibes. it's really not that deep! this is agency at work
 - there is an evil voice in my head that goes "my opps are undisciplined, bloated, and basic". 
 - trader joe's carrot juice
