@@ -86,13 +86,11 @@ a:hover {
 
 :not(#work-content) b,
 :not(#work-content) strong {
-  font-size: 9px;
   text-transform: uppercase;
 }
 
 :not(#work-content) i,
 :not(#work-content) em {
-  font-size: 9px;
   font-weight: lighter;
 }
 
