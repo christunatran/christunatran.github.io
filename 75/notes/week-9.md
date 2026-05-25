@@ -1,6 +1,6 @@
 - i love playing spikeball!!!!
 - my first freelance gig...
-- i did my first pull-up today. i wasn't even deliberately training for it these law few months. strength really does build in silence
+- i did my first pull-up today. i wasn't even deliberately training for it these last few months. strength really does build in silence
 - my friend visited my program's spring show and commented that a lot of the students' work is very "inward" and its stuck with me since. this program is really full of inward-looking... it's too much self-centeredness
 - 2026 brought both my brother and i back to church... we had a nice conversation about this shared coincidence
 - i ran into J at a juice bar and E in my own neighborhood. turns out we've been living in the same neighborhood for the past year in the same program but have never run into one another during commute. so many coincidences
@@ -12,5 +12,5 @@
 - did a social media purge where i unfollowed people who don't give me good vibes. it's really not that deep! this is agency at work
 - there is an evil voice in my head that goes "my opps are undisciplined, bloated, and basic". 
 - trader joe's carrot juice
-- i have an idea for a story where a spineless, emotionally stunted, cowardly young man in his late 20s has everything handed to him to keep failing upward and yet he's so scared. he doesn't stand up for himself nor others. he doesn't know how to be with himself so he associates with the loudest, most obnoxious, unproductive, attention-driven peers he can keep at an emotional distance and mutes out his own thoughts. he attempts to portray himself as a bold and interesting person but its all overcompensating for the sterile, sheltered, privileged upbringing he had and the boring yuppies he surrounds himself with.
+- i have an idea for a story where a spineless, emotionally stunted, cowardly young man in his late 20s has everything handed to him to keep failing upward and yet he's so scared. he doesn't stand up for himself nor others. he doesn't know how to be with himself so he associates with the loudest, most obnoxious, unproductive, attention-driven peers he can keep at an emotional distance and mutes out his own feelings. he attempts to portray himself as a bold and interesting person but its all overcompensating for the sterile, sheltered, privileged upbringing he had and the boring yuppies he surrounds himself with.
 - i have another idea for an insecure and overweight young asian woman who gets validation from pandering to a group of men who are pushing their 30s by being as loud, obnoxious, and annoying as possible. she even ends up sleeping with those mediocre men. in spending time with them, she squanders her time in graduate school. she has to learn what self-respect is through the personal journey of her quarter-life crisis.
