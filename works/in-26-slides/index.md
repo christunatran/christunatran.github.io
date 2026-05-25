@@ -6,6 +6,10 @@ made in collaboration with ryan webber and matthew blanco for exhibition at the 
 
 <br>
 
+![](assets/slide-out.jpeg)
+
+<br>
+
 ![](assets/new-cover-2.jpeg)
 
 <br>
@@ -35,10 +39,6 @@ made in collaboration with ryan webber and matthew blanco for exhibition at the 
 <br>
 
 ![](assets/side.jpeg)
-
-<br>
-
-![](assets/slide-out.jpeg)
 
 <br>
 
