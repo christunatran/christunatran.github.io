@@ -60,7 +60,8 @@
     "tags": [
       "rant",
       "life"
-    ]
+    ], 
+    "disabled": true
   },
   {
     "slug": "poisonous-thoughts",
@@ -71,7 +72,8 @@
     "tags": [
       "rant",
       "life"
-    ]
+    ],
+    "disabled": true
   },
   {
     "slug": "turning-my-web-art-into-an-installation",
