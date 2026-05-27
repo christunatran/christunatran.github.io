@@ -2,9 +2,9 @@
   {
     "slug": "art-as-investigation-and-expression",
     "title": "art as investigation and expression",
-    "date": "2026.05.26",
+    "date": "2026.05.25",
     "file": "art-as-investigation-and-expression.md",
-    "snippet": "-- ali santana ",
+    "snippet": "-- ali santana",
     "tags": [
       "quotes"
     ]
@@ -34,20 +34,31 @@
     "title": "vibe-coding in the right hands",
     "date": "2026.05.25",
     "file": "vibe-coding-in-the-right-hands.md",
-    "snippet": "i am learning the đàn bầu, the vietnamese monochord, from anh thu and nhan. i've been spending some time with them after our weekly classes. today we were snacking some stir-fried corn. when i shared with them that i cod…",
+    "snippet": "i am learning the đàn bầu, the vietnamese monochord, from anh thu and nhan. i've been spending some time with them after our weekly classes. today we were snacking on some stir-fried corn. when i shared with them that i…",
     "tags": [],
     "cover": "/blog/assets/dan-bau-1.jpeg"
   },
   {
     "slug": "2025-2026-itp-year-1",
     "title": "2025-2026ish recap, ITP year 1",
-    "date": "2026.05.26",
+    "date": "2026.05.24",
     "file": "2025-2026-itp-year-1.md",
     "snippet": "recapping highlights of january 2025-may 2026 out of fear of forgetting",
     "tags": [
       "life",
       "itp"
     ]
+  },
+  {
+    "slug": "household-income",
+    "title": "household income",
+    "date": "2026.05.14",
+    "file": "household-income.md",
+    "snippet": "if your family's household income is above $200k and iyou've been personally offended by me before... then i probably meant it and you probably deserve it. that's just the tunapee tax you have to pay in this life. nobles…",
+    "tags": [
+      "haha"
+    ],
+    "blogOnly": true
   },
   {
     "slug": "13-hours",
@@ -69,7 +80,8 @@
     "tags": [
       "rant",
       "life"
-    ]
+    ],
+    "disabled": true
   },
   {
     "slug": "poisonous-thoughts",
@@ -80,7 +92,8 @@
     "tags": [
       "rant",
       "life"
-    ]
+    ],
+    "disabled": true
   },
   {
     "slug": "turning-my-web-art-into-an-installation",

@@ -28,32 +28,19 @@
           ? `<span class="blog-tag">${post.tags.map(escapeHtml).join(', ')}</span>`
           : '';
 
-        if (post.cover) {
-          card.className = 'post post-image';
-          card.innerHTML = `
-            <div class="post-content">
-              <img src="${escapeHtml(post.cover)}" alt="${escapeHtml(post.title)}">
-            </div>
-            <div class="post-footer">
-              <span class="post-date">${post.date}</span>
-              ${tagsHtml ? `<span class="post-tags">${tagsHtml}</span>` : ''}
-            </div>
-          `;
-        } else {
-          card.className = 'post post-text';
-          const isQuote = post.tags && post.tags.includes('quotes');
-          const displayTitle = isQuote ? `"${post.title}"` : post.title;
-          card.innerHTML = `
-            <div class="post-content">
-              <p class="blog-card-title">${escapeHtml(displayTitle)}</p>
-              ${post.snippet ? `<p class="blog-card-snippet">${escapeHtml(post.snippet)}</p>` : ''}
-            </div>
-            <div class="post-footer">
-              <span class="post-date">${post.date}</span>
-              <span class="post-tags">${tagsHtml}</span>
-            </div>
-          `;
-        }
+        card.className = 'post post-text';
+        const isQuote = post.tags && post.tags.includes('quotes');
+        const displayTitle = isQuote ? `"${post.title}"` : post.title;
+        card.innerHTML = `
+          <div class="post-content">
+            <p class="blog-card-title">${escapeHtml(displayTitle)}</p>
+            ${post.snippet ? `<p class="blog-card-snippet">${escapeHtml(post.snippet)}</p>` : ''}
+          </div>
+          <div class="post-footer">
+            <span class="post-date">${post.date}</span>
+            <span class="post-tags">${tagsHtml}</span>
+          </div>
+        `;
 
         card.addEventListener('click', () => {
           window.location.href = `/blog-post/?slug=${post.slug}`;

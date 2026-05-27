@@ -3,6 +3,7 @@ title: schadenfreude
 link: schadenfreude
 published_date: 2026-05-07
 tags: rant, life
+disabled: true
 ---
 
 > schadenfreude; enjoyment obtained from seeing or hearing about the troubles of others

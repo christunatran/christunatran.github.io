@@ -102,6 +102,7 @@ function generate() {
     };
 
     if (fm.disabled === 'true') post.disabled = true;
+    if (fm.blogOnly === 'true') post.blogOnly = true;
     if (fm.cover) post.cover = fm.cover;
 
     return [post];
