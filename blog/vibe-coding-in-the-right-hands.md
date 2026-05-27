@@ -6,7 +6,7 @@ tags:
 cover: /blog/assets/dan-bau-1.jpeg
 ---
 
-i am learning the đàn bầu, the vietnamese monochord, from anh thu and nhan. i've been spending some time with them after our weekly classes. today we were snacking some stir-fried corn. when i shared with them that i code for a living, anh thu suddenly, excitedly, whipped out her laptop to show off the music apps that the two of them had been learning to vibe-code using tools like mediapipe and three.js. it was so impressive how fast they learned these tools and how much the friction from idea to execution had been lifted for them. 
+i am learning the đàn bầu, the vietnamese monochord, from anh thu and nhan. i've been spending some time with them after our weekly classes. today we were snacking on some stir-fried corn. when i shared with them that i code for a living, anh thu suddenly, excitedly, whipped out her laptop to show off the music apps that the two of them had been learning to vibe-code using tools like mediapipe and three.js. it was so impressive how fast they learned these tools and how much the friction from idea to execution had been lifted for them. 
 
 
 ![dan bau 1](assets/dan-bau-1.jpeg)
