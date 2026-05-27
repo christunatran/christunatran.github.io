@@ -4,6 +4,8 @@ I co-organized the 2026 ITP Stupid Hackathon with Anshula Saha! It was a major s
 
 [stupid-hackathon-2026.eventbrite.com](https://stupid-hackathon-2026.eventbrite.com/)
 
+[Washington Square News Article](https://nyunews.com/culture/2026/04/15/stupid-hackathon/)
+
 ![Table Signage](assets/table-signage.png)
 
 ![Poster](assets/poster-2.png)
