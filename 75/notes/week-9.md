@@ -17,7 +17,7 @@
 - visiting the DMV
 - i finally have my own flix bus horror story to share
 - driving around has been so healing
-- inspired by elliot choy's vietnam blog "it's okay to be honest with how you want to spend your time." it made me reflect on how i'd rather be doing some activities alone, and how i often fall into the pressure that i *should* be doing it with others. but sometimes others' presence distracts from the solitary experience i could be having doing things like viewing artwork or enjoying a meal. i feel peace in my body when i decide to do it alone out of truly wanting to.
+- inspired by elliot choy's vietnam vlog "it's okay to be honest with how you want to spend your time." it made me reflect on how i'd rather be doing some activities alone, and how i often fall into the pressure that i *should* be doing it with others. but sometimes others' presence distracts from the solitary experience i could be having doing things like viewing artwork or enjoying a meal. i feel peace in my body when i decide to do it alone out of truly wanting to.
 - "tourist in my own city"; solo day in DC
 - reading "McSweeney's 78: The Make Believers"
 - watched "Obsession"
