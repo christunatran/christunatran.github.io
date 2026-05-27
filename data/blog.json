@@ -7,8 +7,7 @@
     "snippet": "\"work as an artifact of the process rather than the outcome\"",
     "tags": [
       "quotes"
-    ],
-    "disabled": true
+    ]
   },
   {
     "slug": "grad-school-is-about-collecting-starts",
@@ -18,8 +17,7 @@
     "snippet": "-- theo ballew",
     "tags": [
       "quotes"
-    ],
-    "disabled": true
+    ]
   },
   {
     "slug": "those-who-tell-the-stories-rule-society",
@@ -36,9 +34,20 @@
     "title": "vibe-coding in the right hands",
     "date": "2026.05.25",
     "file": "vibe-coding-in-the-right-hands.md",
-    "snippet": "",
+    "snippet": "i am learning the đàn bầu, the vietnamese monochord, from anh thu and nhan. i've been spending some time with them after our weekly classes. today we were snacking some stir-fried corn. when i shared with them that i cod…",
     "tags": [],
     "cover": "/blog/assets/dan-bau-1.jpeg"
+  },
+  {
+    "slug": "2025-2026-itp-year-1",
+    "title": "2025-2026ish recap, ITP year 1",
+    "date": "2026.05.24",
+    "file": "2025-2026-itp-year-1.md",
+    "snippet": "recapping highlights of january 2025-may 2026 out of fear of forgetting",
+    "tags": [
+      "life",
+      "itp"
+    ]
   },
   {
     "slug": "13-hours",
@@ -60,8 +69,7 @@
     "tags": [
       "rant",
       "life"
-    ], 
-    "disabled": true
+    ]
   },
   {
     "slug": "poisonous-thoughts",
@@ -72,8 +80,7 @@
     "tags": [
       "rant",
       "life"
-    ],
-    "disabled": true
+    ]
   },
   {
     "slug": "turning-my-web-art-into-an-installation",
@@ -336,7 +343,7 @@
     "title": "thinking about where to go with this blog",
     "date": "2025.09.21",
     "file": "thinking about where to go with this blog.md",
-    "snippet": "I actually started this blog in October 2024. Since then, I have yet to make a single post, besides updating my \"about\" and \"now\" pages every few months.",
+    "snippet": "it seems like i haven't been a tunapee of my word with this blog. in my [first post](https://tunapee.online/blog-post/?slug=finally), i talked about micro-blogging and \"shitty drafts\" as ways to lower the stakes of posti…",
     "tags": [
       "medium"
     ]

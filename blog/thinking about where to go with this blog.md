@@ -29,9 +29,9 @@ i wonder if i can help someone else by sharing my own experiences.
 i wonder if i'll eventually have things to write professional or educational blogs about, to practice ["learning generously"](https://www.recurse.com/self-directives). something close to that it my [ITP blog](https://www.notion.so/249c224450b58005b9aecf7357ed98f1?v=262c224450b580129b70000c20deb4e9&source=copy_link) which is highly encouraged and sometimes required documentation for my school work. (i plan to eventually move it out of Notion and onto a site i build myself.)
 
 serious time: 
-### *i want to reduce my friction toward writing.*
-### *i want to build a habit of writing*.
-### *i want to write more!*
+- *i want to reduce my friction toward writing.*
+- *i want to build a habit of writing*.
+- *i want to write more!*
 
 unserious time:
-### *imma do whateva i want, biyyyyyyyaaaaaatttttccchhhh*
+- *imma do whateva i want, biyyyyyyyaaaaaatttttccchhhh*
