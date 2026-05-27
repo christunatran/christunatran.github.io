@@ -15,3 +15,8 @@
 - i have an idea for a story where a spineless, emotionally stunted, cowardly young man in his late 20s has everything handed to him to keep failing upward and yet he's so scared. he doesn't stand up for himself nor others. he doesn't know how to be with himself so he associates with the loudest, most obnoxious, unproductive, attention-driven peers he can keep at an emotional distance and mutes out his own feelings. he attempts to portray himself as a bold and interesting person but its all overcompensating for the sterile, sheltered, privileged upbringing he had and the boring yuppies he surrounds himself with.
 - i have another idea for an insecure and overweight young asian woman who gets validation from pandering to a group of men who are pushing their 30s by being as loud, obnoxious, and annoying as possible. she even ends up sleeping with those mediocre men. in spending time with them, she squanders her time in graduate school. she has to learn what self-respect is through the personal journey of her quarter-life crisis.
 - visiting the DMV
+- i finally have my own flix bus horror story to share
+- inspired by elliot choy's vietnam blog "it's okay to be honest with how you want to spend your time." it made me reflect on how i'd rather be doing some activities alone, and how i often fall into the pressure that i *should* be doing it with others. but sometimes others' presence distracts from the solitary experience i could be having doing things like viewing artwork or enjoying a meal. i feel peace in my body when i decide to do it alone out of truly wanting to.
+- reading "McSweeney's 78: The Make Believers"
+- watched "Obsession"
+- aftering talking to them, it turns out my MAGA family members have now turned against trump, surprise surprise?
