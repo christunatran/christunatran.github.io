@@ -22,3 +22,4 @@
 - reading "McSweeney's 78: The Make Believers"
 - watched "Obsession"
 - aftering talking to them, it turns out my MAGA family members have now turned against trump, surprise surprise?
+- tapped into my viet side and took a good ass nap
