@@ -1,0 +1,4 @@
+- itp camp has begun!
+- freelance work is underway
+- NY tech week
+- this week is an adjustment period because lots of new things are starting-- falling off of routines, social life, not as productive. it's okay, it's okay.
