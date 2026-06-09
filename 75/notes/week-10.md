@@ -1,4 +1,10 @@
 - itp camp has begun!
 - freelance work is underway
-- NY tech week
+- NY tech week... the highlight was a Tomato Party
 - this week is an adjustment period because lots of new things are starting-- falling off of routines, social life, not as productive. it's okay, it's okay.
+- i watched "born to kill" at tribeca film festival, i think it was my first film festival. my friend was in it. this solidified my decision to learn more about documentary film!!! went to dinner with the cast/crew afterward and they're such a wonderful and welcoming group of people who are just having a good fun time together... it's no surprise that they were able to make something so moving.
+- I LOVE MY FRIENDS I LOVE GLUB GLUB THANK YOU FOR SHARING THIS SPACE AND YOUR PRESENCES WITH ME MWAH
+- i'm excited to move in with this group of friends into the Jank House (working title)
+- i lamented that i feel like i have little time to think... whenever i am not working my mind is filled with logistics for upcoming travel/move. i need to take a *real* break. 
+- spent time playing around with shapr3d and blender just to end up going back to fusion (haha)
+- went on a date lol
