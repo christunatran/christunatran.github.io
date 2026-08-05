@@ -42,4 +42,6 @@ So, to whichever quiet Asian girl he's kicking it with now (seems to be his type
 
 As I go back into the world, I am reminded...
 
-> There are other fish in the sea... Bigger ones. Cleaner ones. Circumcised ones. Ones that won't give you a yeast infection.
+> There are other fish in the sea... Bigger ones. Cleaner ones. Circumcised ones. 
+> 
+> Ones that won't give you a yeast infection.
