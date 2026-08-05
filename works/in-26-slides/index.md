@@ -2,6 +2,8 @@
 
 Made in collaboration with Ryan Webber and Matthew Blanco for exhibition at the [New York Transit Museum](https://www.nytransitmuseum.org/program/transit-operas-thu/) in collaboration with the NYU Tisch Operas.
 
+A data physicalization sculpture depicting 26 years of historical ridership data telling the story of how New York's MTA became the MTA.
+
 See Matt's blog post on it [here](https://mattblanco.me/projects/26_slides)
 
 <br>
