@@ -1,6 +1,8 @@
 # in 26 slides
 
-made in collaboration with ryan webber and matthew blanco for exhibition at the [new york transit museum](https://www.nytransitmuseum.org/program/transit-operas-thu/) in collaboration with the nyu tisch operas.
+Made in collaboration with Ryan Webber and Matthew Blanco for exhibition at the [New York Transit Museum](https://www.nytransitmuseum.org/program/transit-operas-thu/) in collaboration with the NYU Tisch Operas.
+
+See Matt's blog post on it [here](https://mattblanco.me/projects/26_slides)
 
 <br>
 
