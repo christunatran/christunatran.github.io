@@ -13,10 +13,10 @@ I grew up hearing:
 > - Addicted to women
 > 
 > Because these are things that can't be fixed.
- 
+
 I made the mistake of dating someone with all 3.
 
-Rather than someone who wanted to be my everything, I ended up with someone who wanted to be a little bit of something for everyone. 
+Rather than someone who wanted to be my everything, I wasted time with someone who wanted to be a little bit of something for everyone. 
 
 Someone who said that this relationship made him "turn into goo". This was especially jarring to hear from someone who I view as one of the most undisciplined, inconsistent people I have ever met in my entire life. Someone who keeps failing upward on his parents' money and the connections from elite private schooling full of people just like him. No, *you* were the one who was turning *me* into goo. 
 
@@ -28,7 +28,7 @@ The most spineless, people-pleasing final boss who doesn't even like his own "fr
 
 I spent a lot of time spiraling about how this all came about. Why I spent so much time and energy trying to be overly understanding and accommodating, to much disrespect to myself. Resenting myself for being a naive, trusting version of myself that I feel like I can't get back. 
 
-Sometimes I receive unsolicited bits of information about what he and his buddies are up to, even when I decline to hear it. It turns out that they're up to the same old shit, the same old patterns. Even though a part of me hopes that this person will grow and change into someone who is good for themselves and others, I keep getting disappointed. This "ick" is my sign that things turned out for the better. I'm doing a lot better now.
+Sometimes I receive unsolicited bits of information about what he and his buddies are up to, even when I decline to hear it. It turns out that they're up to the same old shit, the same old patterns. Even though a part of me hopes that this person will grow and change into someone who is good for themselves and others, I keep getting disappointed. Even people who have known him for longer than I have say things like "It seems like he becomes a shittier person every year." This "ick" is my sign that things turned out for the better. I'm doing a lot better now.
 
 One of his friends, who I frankly don't really respect and don't see at all as a source of wisdom, told me that I should "navigate this breakup with grace and to just let it go". No thanks. I'm allowed to be upset and bitter. And those aren't the only feelings I experience. I also feel clarity, relief, and peace now that I'm back on my own and don't have to worry about an emotionally immature man-child. Multiple truths and feelings can exist at the same time. 
 
