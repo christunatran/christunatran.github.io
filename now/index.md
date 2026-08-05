@@ -15,6 +15,7 @@
 - 📚 "The End of Storytelling: The Future of Narrative in the Storyplex"
 - 📚 "Who Can Afford to Be Critical? An Inquiry into What We Can’t Do Alone, as Designers, and into What We Might Be Able to Do Together, as People"
 - 📚 "Data Feminism"
+- 📚 "The Order of Time" by Carlo Rovelli
 - 📺 House of the Dragon season 3
 - 📺 Smiling Friends
 

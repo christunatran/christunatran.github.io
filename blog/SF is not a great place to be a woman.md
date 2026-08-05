@@ -5,7 +5,7 @@ published_date: 2026-08-05 01:42
 tags:
 ---
 
-In the < 1 week I was in SF I was catcalled more than my almost 4 years of living in NYC. Here are records of some incidents:
+In the < 1 week I was in SF I was catcalled more than my almost 4 years of living in NYC. Here are records of some events:
 
 ![catcalling screenshot](assets/2026-07-30_00-23-54_000-1.jpeg)
 
