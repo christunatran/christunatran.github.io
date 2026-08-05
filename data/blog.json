@@ -4,7 +4,7 @@
     "title": "SF is not a great place to be a woman",
     "date": "2026.08.05",
     "file": "SF is not a great place to be a woman.md",
-    "snippet": "In the < 1 week I was in SF I was catcalled more than my almost 4 years of living in NYC. Here are records of some incidents:",
+    "snippet": "In the < 1 week I was in SF I was catcalled more than my almost 4 years of living in NYC. Here are records of some events:",
     "tags": []
   },
   {
@@ -18,6 +18,16 @@
     ]
   },
   {
+    "slug": "when-the-devil-can-t-get-to-you",
+    "title": "when the devil can't get to you,",
+    "date": "2026.08.02",
+    "file": "when the devil can't get to you,.md",
+    "snippet": "HE SENDS A MAN INSTEAD",
+    "tags": [
+      "quotes"
+    ]
+  },
+  {
     "slug": "fidget-camp-recap",
     "title": "fidget camp recap",
     "date": "2026.07.19",
@@ -25,6 +35,15 @@
     "snippet": "From July 24-August 2 I attended Fidget Camp in SF!",
     "tags": [],
     "cover": "/blog/assets/fidget-camp-workshop.jpeg"
+  },
+  {
+    "slug": "open-sauce-recap",
+    "title": "Open Sauce Recap",
+    "date": "2026.07.19",
+    "file": "Open Sauce Recap.md",
+    "snippet": "On July 17-19, I boothed at Open Sauce in San Mateo, CA with my roommates Justin and Chianli.",
+    "tags": [],
+    "cover": "/blog/assets/2026-07-18_13-16-54_498.jpg"
   },
   {
     "slug": "improbable-seminar-recap",
