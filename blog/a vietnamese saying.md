@@ -38,7 +38,7 @@ One of his friends, who I frankly don't really respect and don't see at all as a
 
 I'm still able to move on with my life while feeling like people like that shouldn't continue to walk around unchecked. Fuck you lol.
 
-So, to whichever quiet Asian girl he's kicking it with now (seems to be his type), enjoy it while it lasts, because it's always fun at first. But watch what happens the moment you express a single need.
+So, to whichever quiet Asian girl he's kicking it with now (that's his admitted type), enjoy it while it lasts, because it's always fun at first. But watch what happens the moment you express a single need.
 
 As I go back into the world, I am reminded...
 
