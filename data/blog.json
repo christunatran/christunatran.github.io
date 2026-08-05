@@ -30,7 +30,7 @@
   {
     "slug": "fidget-camp-recap",
     "title": "fidget camp recap",
-    "date": "2026.08.02",
+    "date": "2026.07.19",
     "file": "Fidget Camp Recap.md",
     "snippet": "From July 24-August 2 I attended Fidget Camp in SF!",
     "tags": [],
@@ -56,6 +56,15 @@
       "medium"
     ],
     "cover": "/blog/assets/improbable-seminar-14.jpg"
+  },
+  {
+    "slug": "freelance-product-design-work",
+    "title": "Freelance Product Design Work",
+    "date": "2026.06.26",
+    "file": "Freelance Product Design Work.md",
+    "snippet": "In May, I met my first freelance client almost by accident, at the [NYC x Design Week group exhibition: Utility of Joy](https://nycxdesign.org/events/group-exhibition-utility-of-joy).",
+    "tags": [],
+    "cover": "/blog/assets/freelance-design-mockup-1.jpg"
   },
   {
     "slug": "art-as-investigation-and-expression",
