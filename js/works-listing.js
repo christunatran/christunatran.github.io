@@ -70,7 +70,7 @@
           </div>
         `;
         card.addEventListener('click', () => {
-          window.location.href = `/work/?slug=${work.slug}`;
+          window.location.href = `/work/${work.slug}`;
         });
         grid.appendChild(card);
         cards.push(card);

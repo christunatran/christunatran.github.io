@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tunapee</title>
+</head>
+<body>
+  <script>
+    // GitHub Pages has no server-side routing, so clean URLs like
+    // /blog-post/<slug> and /work/<slug> 404 on a direct hit or refresh.
+    // This fallback loads the real page shell in place (address bar keeps
+    // showing the requested clean URL) and lets its own script read the
+    // slug from location.pathname.
+    (function () {
+      var match = window.location.pathname.match(/^\/(blog-post|work)\/([^/]+)\/?$/);
+
+      if (match) {
+        fetch('/' + match[1] + '/index.html')
+          .then(function (r) { return r.text(); })
+          .then(function (html) {
+            document.open();
+            document.write(html);
+            document.close();
+          })
+          .catch(showNotFound);
+      } else {
+        showNotFound();
+      }
+
+      function showNotFound() {
+        document.body.innerHTML =
+          '<div style="font-family: sans-serif; text-align:center; padding: 4rem 1rem;">' +
+          '<h1>404</h1><p>page not found.</p><p><a href="/">go home</a></p>' +
+          '</div>';
+      }
+    })();
+  </script>
+</body>
+</html>

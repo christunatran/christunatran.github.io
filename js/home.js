@@ -13,7 +13,7 @@
 
   const STATIC_IMAGES = [
     { src: '/assets/my professional headshot.jpg', date: '2025.02' },
-    { src: '/assets/hard mode winner.png', date: '2026.03.08', href: '/work/?slug=closer-to-the-fire' },
+    { src: '/assets/hard mode winner.png', date: '2026.03.08', href: '/work/closer-to-the-fire' },
   ];
 
   function escapeHtml(str) {
@@ -47,7 +47,7 @@
       </div>
       <span class="post-date">${work.date}</span>
     `;
-    card.addEventListener('click', () => { window.location.href = `/work/?slug=${work.slug}`; });
+    card.addEventListener('click', () => { window.location.href = `/work/${work.slug}`; });
     return card;
   }
 
@@ -71,7 +71,7 @@
         <span class="post-date">${post.date}</span>
       `;
     }
-    card.addEventListener('click', () => { window.location.href = `/blog-post/?slug=${post.slug}`; });
+    card.addEventListener('click', () => { window.location.href = `/blog-post/${post.slug}`; });
     return card;
   }
 

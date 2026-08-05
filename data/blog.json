@@ -1,10 +1,20 @@
 [
   {
+    "slug": "a-vietnamese-saying",
+    "title": "a vietnamese saying",
+    "date": "2026.08.04",
+    "file": "a vietnamese saying.md",
+    "snippet": "I grew up hearing:",
+    "tags": [
+      "rant"
+    ]
+  },
+  {
     "slug": "art-as-investigation-and-expression",
     "title": "art as investigation and expression",
     "date": "2026.05.25",
     "file": "art-as-investigation-and-expression.md",
-    "snippet": "-- ali santana",
+    "snippet": "\"work as an artifact of the process rather than the outcome\"",
     "tags": [
       "quotes"
     ]
@@ -12,7 +22,7 @@
   {
     "slug": "grad-school-is-about-collecting-starts",
     "title": "grad school is about collecting starts",
-    "date": "2026.03.12",
+    "date": "2026.05.25",
     "file": "grad-school-is-about-collecting-starts.md",
     "snippet": "-- theo ballew",
     "tags": [

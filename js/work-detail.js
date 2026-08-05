@@ -2,7 +2,8 @@
  * work-detail.js
  *
  * Fetches and renders an individual work project from its markdown file.
- * Reads ?slug= from the URL to find the project under /works/<slug>/index.md.
+ * Reads the slug from the clean URL path (/work/<slug>) to find the
+ * project under /works/<slug>/index.md.
  *
  * Dependencies (loaded via CDN before this script):
  *   - marked.js  — markdown → HTML
@@ -12,8 +13,16 @@
 (function () {
   'use strict';
 
-  const slug      = new URLSearchParams(window.location.search).get('slug');
   const contentEl = document.getElementById('work-content');
+  let slug = new URLSearchParams(window.location.search).get('slug');
+
+  if (slug) {
+    // legacy ?slug= link — switch the address bar to the clean URL
+    history.replaceState(null, '', '/work/' + encodeURIComponent(slug));
+  } else {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    slug = parts.length > 1 ? decodeURIComponent(parts[1]) : null;
+  }
 
   if (!slug) {
     contentEl.innerHTML = '<p>no work specified.</p>';

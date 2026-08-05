@@ -43,7 +43,7 @@
         `;
 
         card.addEventListener('click', () => {
-          window.location.href = `/blog-post/?slug=${post.slug}`;
+          window.location.href = `/blog-post/${post.slug}`;
         });
 
         grid.appendChild(card);

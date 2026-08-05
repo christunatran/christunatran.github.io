@@ -1,16 +1,25 @@
 /**
  * blog-post.js
  *
- * Fetches and renders an individual blog post. Reads ?slug= from the URL
- * to look up the post's markdown filename in blog.json, then fetches and
- * renders the markdown body via marked.js (loaded separately via CDN).
+ * Fetches and renders an individual blog post. Reads the slug from the
+ * clean URL path (/blog-post/<slug>) to look up the post's markdown
+ * filename in blog.json, then fetches and renders the markdown body via
+ * marked.js (loaded separately via CDN).
  */
 
 (function () {
   'use strict';
 
-  const slug      = new URLSearchParams(window.location.search).get('slug');
   const contentEl = document.getElementById('work-content');
+  let slug = new URLSearchParams(window.location.search).get('slug');
+
+  if (slug) {
+    // legacy ?slug= link — switch the address bar to the clean URL
+    history.replaceState(null, '', '/blog-post/' + encodeURIComponent(slug));
+  } else {
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    slug = parts.length > 1 ? decodeURIComponent(parts[1]) : null;
+  }
 
   if (!slug) {
     contentEl.innerHTML = '<p>no post specified.</p>';
