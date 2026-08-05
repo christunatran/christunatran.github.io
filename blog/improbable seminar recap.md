@@ -3,6 +3,7 @@ title: improbable seminar recap
 link: improbable-seminar-recap
 published_date: 2026-07-09 12:00
 tags: itp, medium
+cover: /blog/assets/improbable-seminar-14.jpg
 ---
 
 In February, Anshula Saha and I co-organized the 2026 Stupid Hackathon at [**New York University**](https://www.linkedin.com/company/new-york-university/) [**ITP (Interactive Telecommunications Program)**](https://www.linkedin.com/company/itp-nyu/).
