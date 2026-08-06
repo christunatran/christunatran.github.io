@@ -3,6 +3,7 @@
 *last updated (8/6/2026)*
 
 ### what i'm up to
+- Going into my 2nd year of graduate school at NYU ITP
 - Doing freelance product design work, mostly CAD!
 - Going to Vietnam to learn about manufacturing
 - Moving in with my 4 good friends!!!
