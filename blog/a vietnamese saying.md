@@ -55,12 +55,15 @@ I found a video of the guide that he must have followed to a tee to end up the w
 
 <iframe src="https://player.vimeo.com/video/119502294" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
 
-Right down to the 
+#### Right down to the 
 
 > “If you’re successful in your online dating, you can tell the same story over and over and over again, and reset with a brand new audience each time.”
 
-And the 
+I wonder how many people have heard his "if I went missing, would you still post on your story?" bit.
+
+### And 
+the part about paying for prostitution, because it's so normalized within his friend group over in Markham.
+
+#### And finally 
 
 > "... No one will ever truly know who you really are... And New York will always be the perfect place to be alone. And with enough practice, no one will have to depend on you for the rest of your life. Because as far as you're concerned, you don't need anyone else. So, go ahead and lose it all."
-
-Right down to the part about paying for prostitution, because it's so normalized within his friend group over in Markham.
