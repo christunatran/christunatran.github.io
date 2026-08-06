@@ -61,7 +61,7 @@ I found a video of the guide that he must have followed to a tee to end up the w
 
 I wonder how many people have heard his "if I went missing, would you still post on your story?" bit.
 
-### And 
+#### And 
 the part about paying for prostitution, because it's so normalized within his friend group over in Markham.
 
 #### And finally 
