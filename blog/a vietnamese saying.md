@@ -14,7 +14,7 @@ I grew up hearing:
 > 
 > Because these are things that can't be fixed.
 
-I made the mistake of dating someone with all 3.
+I made the mistake of dating someone with all 3. I've learned that no amount of love or patience can cure it.
 
 Rather than someone who wanted to be my everything, I wasted time with someone who wanted to be a little bit of something for everyone. 
 
