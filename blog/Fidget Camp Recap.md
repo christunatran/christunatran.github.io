@@ -18,6 +18,8 @@ I made lots of new friends throughout exploring the Bay, SF, and Oakland.
 
 ![fidget camp workshop](assets/fidget-camp-workshop.jpeg)
 
+![fidget camp](assets/fidget-badge.jpeg)
+
 ![fidget camp](assets/2026-07-25_10-57-32_326.jpeg)
 
 <video src="/blog/assets/fidget-camp-workshop-video.mov" controls style="width:100%"></video>
@@ -35,8 +37,6 @@ I made lots of new friends throughout exploring the Bay, SF, and Oakland.
 ![fidget camp](assets/2026-07-26_15-21-37_042.jpeg)
 
 ![fidget camp](assets/2026-07-25_14-28-39_917.jpeg)
-
-![fidget camp](assets/fidget-badge.jpeg)
 
 ![fidget camp](assets/paper-lantern-1.jpeg)
 
