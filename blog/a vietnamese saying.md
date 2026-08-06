@@ -36,9 +36,9 @@ Sometimes I receive unsolicited bits of information about what he and his buddie
 
 One of his friends, who I frankly don't really respect and don't see at all as a source of wisdom, told me that I should "navigate this breakup with grace and to just let it go". No thanks. I'm allowed to be upset and bitter. And those aren't the only feelings I experience. I also feel clarity, relief, and peace now that I'm back on my own and don't have to worry about an emotionally immature man-child. Multiple truths and feelings can exist at the same time. 
 
-I'm still able to move on with my life while feeling like people like that shouldn't continue to walk around unchecked. Fuck you lol.
+I'm still able to move on with my life while feeling like people like that shouldn't continue to walk around unchecked. Knowing him, the *only* lesson he applies from all this is simply to stop introducing the girls he's seeing to his friends, because protecting his reputation is so important to him. Fuck you lol.
 
-So, to whichever quiet Asian girl he's kicking it with now (that's his admitted type), enjoy it while it lasts, because it's always fun at first. But watch what happens the moment you express a single need. Knowing him, the *only* lesson he applies from all this is simply to stop introducing the girls he's seeing to his friends. 
+So, to whichever quiet Asian girl he's kicking it with now (that's his admitted type), enjoy it while it lasts, because it's always fun at first. But watch what happens the moment you express a single need. 
 
 As I go back into the world, I am reminded...
 
