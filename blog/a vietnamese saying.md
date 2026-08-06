@@ -61,4 +61,4 @@ And the
 
 > "... No one will ever truly know who you really are... And New York will always be the perfect place to be alone. And with enough practice, no one will have to depend on you for the rest of your life. Because as far as you're concerned, you don't need anyone else. So, go ahead and lose it all."
 
-Right down to the part about prostitution, because his friends, even the married ones, are regular consumers of it over in Markham, while he turns a blind eye to it. 
+Right down to the part about prostitution, because it's so normalized within his friend group over in Markham.
