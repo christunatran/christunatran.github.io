@@ -16,6 +16,8 @@ I grew up hearing:
 
 I made the mistake of dating someone with all 3. I've learned that no amount of love or patience can cure it.
 
+This sort of [depressing North American relationship](https://the6thspence.substack.com/p/north-americans-have-depressing-relationships?s=r&curius=5294) is not for me.
+
 Rather than someone who wanted to be my everything, I wasted time with someone who wanted to be a little bit of something for everyone. 
 
 Someone who said that this relationship made him "turn into goo". This was especially jarring to hear from someone who I view as one of the most undisciplined, inconsistent people I have ever met in my entire life. Someone who keeps failing upward on his parents' money and the connections from expensive private schooling full of privileged kids just like him. Whose good qualities were handed to them on a nice silver platter. Whose mind gets occupied with priorities like their $700 boots or looksmaxxing due to an absence of real problems. No, *you* were the one who was turning *me* into goo. 
