@@ -10,7 +10,7 @@ From July 24-August 2 I attended Fidget Camp in SF!
 
 I hosted a workshop titled "3D Scanning from virtual to miniature." In just 1.5 hours, participants made live, interactive websites including objects that they 3D scanned!
 
-I contributed to a stained glass chessboard piece with moving fingers as chess pieces! I cut and grinded stained glass to build the chessboard using copper foil and solder.
+I contributed to a stained glass chessboard piece with moving fingers as chess pieces! I cut and grinded stained glass to build the chessboard using copper foil and solder. I also programmed the lights. Fun fact: the fingers move using "muscle wire". 
 
 I also sewed plushies, made paper lanterns, wrapped coils for brushless motors, made chopsticks, and learned about carbon-fiber layups.
 
@@ -35,4 +35,8 @@ I made lots of new friends throughout exploring the Bay, SF, and Oakland.
 ![fidget camp](assets/2026-07-26_15-21-37_042.jpeg)
 
 ![fidget camp](assets/2026-07-25_14-28-39_917.jpeg)
+
+![fidget camp](assets/paper-lantern-1.jpeg)
+
+![fidget camp](assets/paper-lantern-2.jpeg)
 
