@@ -36,6 +36,8 @@ I made lots of new friends throughout exploring the Bay, SF, and Oakland.
 
 ![fidget camp](assets/2026-07-25_14-28-39_917.jpeg)
 
+![fidget camp](assets/fidget-badge.jpeg)
+
 ![fidget camp](assets/paper-lantern-1.jpeg)
 
 ![fidget camp](assets/paper-lantern-2.jpeg)
