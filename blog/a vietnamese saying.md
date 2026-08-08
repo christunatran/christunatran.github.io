@@ -22,7 +22,7 @@ Rather than someone who wanted to be my everything, I wasted time with someone w
 
 > Someone who said that this relationship made him *"turn into goo"*. 
 
-This was especially jarring to hear from someone who I view as one of the most undisciplined, inconsistent people I have ever met in my entire life. Someone who keeps failing upward on his parents' money and the connections from expensive private schooling full of privileged kids just like him. Whose good qualities were handed to them on a nice silver platter. Whose mind gets occupied with priorities like their $700 boots or looksmaxxing due to an absence of real problems. There is a thing with rich kids who over-catastrophize. In his case, he was catastrophizing about "missing going on dates and flirting with girls and presenting a bold version of himself", and how it made "being in a relationship feel like a death sentence". Grow up. 
+This was especially jarring to hear from someone who I view as one of the most undisciplined, inconsistent people I have ever met in my entire life. Someone who keeps failing upward on his parents' money and the connections from expensive private schooling full of privileged kids just like him. Whose good qualities were handed to them on a nice silver platter. Whose mind gets occupied with priorities like their $700 boots or looksmaxxing due to an absence of real problems. There is a thing with rich kids tending to overcatastrophize. In his case, he was catastrophizing about "missing going on dates and flirting with girls and presenting a bold version of himself", and how it made "being in a relationship feel like a death sentence". Grow up. 
 
 > No, *you* were the one who was turning *me* into goo. 
 
