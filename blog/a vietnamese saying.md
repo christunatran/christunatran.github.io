@@ -46,13 +46,14 @@ I'm still able to move on with my life while feeling like people like that shoul
 
 So, to whichever quiet Asian girl he's kicking it with now (that's his admitted type), enjoy it while it lasts, because it's always fun at first. But watch what happens the moment you express a single need. 
 
+With distance I have gained clarity. You disgust me. I've lost respect for you. I was right to cut you out of my life.
+
 As I go back into the world, I am reminded...
 
 > There are other fish in the sea... Bigger ones. Cleaner ones. Circumcised ones. 
 > 
 > Ones that won't give you a yeast infection.
 
-I was right to cut you out of my life.
 
 
 # Bonus
