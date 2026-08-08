@@ -2,7 +2,9 @@
 
 ## overview
 
-All items on the home page — works, blog posts, and static images — are combined into one flat list, sorted newest-first by date, then distributed into two columns.
+All items on the home page — works, blog posts, and static images — are combined into one flat list, sorted newest-first by date, then distributed into columns.
+
+**On mobile (viewport ≤768px, matching the `.posts-grid { flex-direction: column }` breakpoint in `css/style.css`), a single column is used instead of two**, so the feed reads strictly newest-first top to bottom. The two-column shortest-column-first behavior described below applies to desktop widths only. `js/home.js` listens for `resize` and rebuilds the grid if the viewport crosses the 768px breakpoint (e.g. rotating a device).
 
 ## step 1: collecting items
 

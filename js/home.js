@@ -110,6 +110,8 @@
     grid.style.height = Math.max(...ys) + 'px';
   }
 
+  const MOBILE_BREAKPOINT = 768;
+
   function buildGrid(works, posts) {
     const items = [
       ...STATIC_IMAGES.map(i => ({ type: 'image', date: i.date, data: i })),
@@ -120,14 +122,28 @@
     const grid = document.getElementById('postsGrid');
     if (!grid) return;
 
+    grid.innerHTML = '';
+    const creators = { image: createImageCard, work: createWorkCard, blog: createBlogCard };
+
+    // Mobile stacks columns vertically (see .posts-grid { flex-direction: column }
+    // in style.css), so a single chronological column keeps the feed in date order.
+    if (window.innerWidth <= MOBILE_BREAKPOINT) {
+      const col = document.createElement('div');
+      col.className = 'posts-col';
+      grid.appendChild(col);
+      items.forEach((item) => {
+        const card = creators[item.type]?.(item.data);
+        if (card) col.appendChild(card);
+      });
+      return;
+    }
+
     const col0 = document.createElement('div');
     const col1 = document.createElement('div');
     col0.className = 'posts-col';
     col1.className = 'posts-col';
     grid.appendChild(col0);
     grid.appendChild(col1);
-
-    const creators = { image: createImageCard, work: createWorkCard, blog: createBlogCard };
 
     items.forEach((item) => {
       const card = creators[item.type]?.(item.data);
@@ -139,5 +155,21 @@
   Promise.all([
     fetch('/data/works.json').then(r => r.json()),
     fetch('/data/blog.json').then(r => r.json()),
-  ]).then(([works, posts]) => buildGrid(works.filter(w => !w.hidden), posts));
+  ]).then(([works, posts]) => {
+    const filteredWorks = works.filter(w => !w.hidden);
+    let isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+    buildGrid(filteredWorks, posts);
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const nowMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+        if (nowMobile !== isMobile) {
+          isMobile = nowMobile;
+          buildGrid(filteredWorks, posts);
+        }
+      }, 150);
+    });
+  });
 })();
