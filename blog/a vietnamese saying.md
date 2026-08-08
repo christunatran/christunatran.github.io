@@ -52,6 +52,8 @@ As I go back into the world, I am reminded...
 > 
 > Ones that won't give you a yeast infection.
 
+I was right to cut you out of my life.
+
 
 # Bonus
 
