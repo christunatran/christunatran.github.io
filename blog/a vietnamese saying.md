@@ -30,7 +30,7 @@ This person who said they'd rather "drag out the undefined period (a situationsh
 
 The most spineless, people-pleasing final boss who doesn't even like his own "friends" OB, OL, PJ, MC, TY, and MW. Who advised me to keep hanging around people I didn't like because "you never know when you can use them later". No thanks.
 
-After being told about shitty things his friends were doing, he said he'd "talk to them". A month later, he still hadn't. So why promise to do something you have no intention of following through on? It says a lot about someone who can't stand up for himself nor others. Someone like that can't be relied on or trusted. This is not someone I want as a friend.
+After being told about shitty things his friends were doing, he said he'd "talk to them". A month later, he still hadn't. So why promise to do something you have no intention of following through on? It says a lot about someone who can't stand up for himself nor others. I can't trust someone like that. This is not someone I want as a friend.
 
 *You're* the goo. I *know* that I am a disciplined, consistent, and committed person. *You're* the one who was dragging me down with your constant pushing and pulling, with the way your actions don't line up with your words. Someone who is scared of being honest. Someone who brought me so much stress and anxiety through their indecisiveness and selfishness. Who, at their big age, doesn't know what they want, and convince themselves that they're better off alone. 
 
