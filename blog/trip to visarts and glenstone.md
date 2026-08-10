@@ -56,7 +56,7 @@ An interesting display of On Kawara's "Moon Landing". The ceiling was sooooooooo
 
 ![On Kawara's Moon Landing](assets/glenstone-visarts-moon-landing.png)
 
-Rubber Pencil Devil (Hell House) by Alex Da Corte. This is an elaborate enclosure for a VIDEO ART PIECE. It turns watching video art into a whole installation experience. Good shit. I usually find neon lights to be so annoyingly jarring but somehow the ones here had a certain softness to them that didn't diminish their vibrancy.
+"Rubber Pencil Devil (Hell House)" by Alex Da Corte. This is an elaborate enclosure for a VIDEO ART PIECE. It turns watching video art into a whole installation experience. Good shit. I usually find neon lights to be so annoyingly jarring but somehow the ones here had a certain softness to them that didn't diminish their vibrancy.
 
 ![Rubber Pencil Devil by Alex Da Corte](assets/glenstone-visarts-rubber-pencil-devil.png)
 
