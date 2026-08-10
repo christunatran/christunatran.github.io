@@ -3,6 +3,7 @@ title: life as performance art
 link: life-as-performance-art
 published_date: 2026-01-28 22:48
 tags: short
+temperature: personal
 ---
 a thought i had: what is stopping us from treating our entire lives as a big performance art?
 

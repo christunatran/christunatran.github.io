@@ -22,6 +22,7 @@ title: your post title
 link: your-post-title         ← URL slug, auto-generated, change if needed
 published_date: 2026-04-01 14:00
 tags: short, self-improvement  ← comma-separated, optional
+temperature: personal          ← who this is appropriate for, see below
 ---
 
 Your writing goes here. **bold**, *italic*, [links](https://url.com) all work.
@@ -32,6 +33,11 @@ More writing.
 ```
 
 **tags** — use these to categorize. `short` / `medium` / `long` are common length tags.
+
+**temperature** — relative appropriateness of the post's content:
+- `employable` — fine for an employer/portfolio reader (e.g. "fidget camp recap")
+- `personal` — fine for friends and family (e.g. "sf is not a great place to be a woman")
+- `shit-talk` — talking shit, spilling tea (e.g. "a vietnamese saying")
 
 **disabled: true** — add this field to hide a post without deleting it.
 

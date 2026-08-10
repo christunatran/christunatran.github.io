@@ -3,6 +3,7 @@ title: vibe-coding in the right hands
 link: vibe-coding-in-the-right-hands
 published_date: 2026-05-25
 tags: 
+temperature: employable
 cover: /blog/assets/dan-bau-1.jpeg
 ---
 

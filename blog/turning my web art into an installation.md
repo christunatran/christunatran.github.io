@@ -3,6 +3,7 @@ title: turning my web art into an installation
 link: turning-my-web-art-into-an-installation
 published_date: 2026-04-20 23:11
 tags: art
+temperature: employable
 ---
 
 i've been fixated on how i can turn my recent [web art piece](/works/doomscroll) into a physical installation. 

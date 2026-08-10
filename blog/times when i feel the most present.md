@@ -3,6 +3,7 @@ title: times when i feel the most present
 link: times-when-i-feel-the-most-present
 published_date: 2025-09-21 05:55
 tags: short
+temperature: employable
 ---
 present:
 - working with woodworking tools. listening to the hum and feeling the viibrations of the machinery makes me feel like i'm *really* there. the repetitive, tactile motions toward the vision of an idea brought to life. not being attentive could lead to losing a finger...

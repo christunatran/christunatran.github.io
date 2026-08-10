@@ -3,6 +3,7 @@ title: we've reached a peak in hyperrealistic AI
 link: weve-reached-a-peak-in-hyperrealistic-ai
 published_date: 2026-01-22 12:51
 tags: short
+temperature: employable
 ---
 we've reached a peak in hyperrealistic AI images... now it's time to take steps backwards [In Defense of the Poor Image](https://www.e-flux.com/journal/10/61362/in-defense-of-the-poor-image).
 

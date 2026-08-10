@@ -3,6 +3,7 @@ title: rich people don't have sauce
 link: rich-people-dont-have-sauce
 published_date: 2026-02-19 21:01
 tags: rant, short
+temperature: personal
 ---
 a wise man once said, "rich people don't have sauce."
 

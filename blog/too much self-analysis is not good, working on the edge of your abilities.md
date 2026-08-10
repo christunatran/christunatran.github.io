@@ -3,6 +3,7 @@ title: too much self-analysis is not good, working on the edge of your abilities
 link: too-much-self-analysis-is-not-good
 published_date: 2025-12-11 09:46
 tags: medium
+temperature: employable
 ---
 this is more of a self-reminder. i may be self-analyzing right now, just as i have been for the past 2 posts and the past several weeks.
 

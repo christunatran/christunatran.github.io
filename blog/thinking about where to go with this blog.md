@@ -3,6 +3,7 @@ title: thinking about where to go with this blog
 link: thinking-about-where-to-go-with-this-blog
 published_date: 2025-09-21 04:48
 tags: medium
+temperature: employable
 ---
 
 it seems like i haven't been a tunapee of my word with this blog. in my [first post](https://tunapee.online/blog-post/?slug=finally), i talked about micro-blogging and "shitty drafts" as ways to lower the stakes of posting. well, this is my first post in 43 days... so... maybe... the stakes are *still* not low enough.

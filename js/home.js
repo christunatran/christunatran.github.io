@@ -51,27 +51,48 @@
     return card;
   }
 
-  function createBlogCard(post) {
+  // Only the full post body is gated (js/blog-post.js) — the preview here
+  // (cover image or title+snippet) always shows normally. A locked post
+  // just gets a small corner badge marking it as gated.
+  function createBlogCard(post, locked) {
     const card = document.createElement('div');
+    const lockClass = locked ? ' temp-locked' : '';
+    const badgeHtml = locked
+      ? `<span class="temp-lock-badge">${window.Temperature.LOCK_ICON}<span>${escapeHtml(post.temperature)}</span></span>`
+      : '';
+
     if (post.cover) {
-      card.className = 'post post-image';
+      card.className = 'post post-image' + lockClass;
       card.innerHTML = `
+        ${badgeHtml}
         <div class="post-content">
           <img src="${escapeHtml(post.cover)}" alt="${escapeHtml(post.title)}">
         </div>
         <span class="post-date">${post.date}</span>
       `;
     } else {
-      card.className = 'post post-text';
+      card.className = 'post post-text' + lockClass;
       card.innerHTML = `
+        ${badgeHtml}
         <div class="post-content">
           <p class="blog-card-title">${escapeHtml(post.title)}</p>
-          ${post.snippet ? `<p class="blog-card-snippet">${escapeHtml(post.snippet)}</p>` : ''}
+          <p class="blog-card-snippet">${post.snippet ? escapeHtml(post.snippet) : ''}</p>
         </div>
         <span class="post-date">${post.date}</span>
       `;
     }
-    card.addEventListener('click', () => { window.location.href = `/blog-post/${post.slug}`; });
+
+    if (!locked) {
+      card.addEventListener('click', () => { window.location.href = `/blog-post/${post.slug}`; });
+    }
+
+    if (!post.cover && !post.snippet) {
+      const snippetEl = card.querySelector('.blog-card-snippet');
+      window.Temperature.fetchSnippet(post).then(text => {
+        if (text) snippetEl.textContent = text;
+      });
+    }
+
     return card;
   }
 
@@ -123,7 +144,14 @@
     if (!grid) return;
 
     grid.innerHTML = '';
-    const creators = { image: createImageCard, work: createWorkCard, blog: createBlogCard };
+    const creators = { image: createImageCard, work: createWorkCard };
+    const tier = window.Temperature.getTier();
+    function createItemCard(item) {
+      if (item.type === 'blog') {
+        return createBlogCard(item.data, !window.Temperature.isUnlocked(item.data.temperature, tier));
+      }
+      return creators[item.type]?.(item.data);
+    }
 
     // Mobile stacks columns vertically (see .posts-grid { flex-direction: column }
     // in style.css), so a single chronological column keeps the feed in date order.
@@ -132,7 +160,7 @@
       col.className = 'posts-col';
       grid.appendChild(col);
       items.forEach((item) => {
-        const card = creators[item.type]?.(item.data);
+        const card = createItemCard(item);
         if (card) col.appendChild(card);
       });
       return;
@@ -146,7 +174,7 @@
     grid.appendChild(col1);
 
     items.forEach((item) => {
-      const card = creators[item.type]?.(item.data);
+      const card = createItemCard(item);
       if (!card) return;
       (col0.scrollHeight <= col1.scrollHeight ? col0 : col1).appendChild(card);
     });
@@ -171,5 +199,7 @@
         }
       }, 150);
     });
+
+    window.addEventListener(window.Temperature.EVENT_NAME, () => buildGrid(filteredWorks, posts));
   });
 })();

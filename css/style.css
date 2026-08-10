@@ -265,6 +265,70 @@ blockquote {
 }
 
 /* ============================================================
+   TEMPERATURE LOCK — posts above the current temperature setting.
+   Only the full post body is gated (js/blog-post.js) — listing cards
+   (home / blog listing) still show their title and snippet as normal,
+   just with a small corner badge marking them as gated. See
+   .temp-lock-badge below. The full-page lock message on an individual
+   post still uses .temp-redacted as its own block-level placeholder.
+   ============================================================ */
+.post.temp-locked {
+  position: relative;
+  cursor: not-allowed;
+}
+
+/* Reserve room on the right so the badge never sits over title or snippet
+   text (the snippet stays visible even when locked — only the full post
+   body is gated). Scoped to text cards only: on image cards the badge
+   overlays the cover image itself, which is fine, there's no text there. */
+.post.post-text.temp-locked .post-content {
+  padding-right: 46px;
+}
+
+.temp-lock-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 2;
+  background: var(--border);
+  color: var(--bg);
+  font-family: 'Silkscreen', 'Courier New', monospace;
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.temp-redacted {
+  background: var(--border);
+  color: var(--bg);
+  font-family: 'Silkscreen', 'Courier New', monospace;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 10px 6px;
+  user-select: none;
+  -webkit-user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Lock icon — inline SVG (see js/temperature.js / blog-listing.js / home.js /
+   blog-post.js), colored via currentColor so it matches whichever
+   black-background context it's placed in (badge or full redacted block). */
+.temp-lock-icon {
+  flex-shrink: 0;
+  display: block;
+}
+
+/* ============================================================
    SIDE ART — fixed in the right-hand space beside content
    ============================================================ */
 #side-panel {
@@ -351,6 +415,95 @@ blockquote {
 
 .nav-link:hover::after {
   opacity: 1;
+}
+
+/* ============================================================
+   TEMPERATURE DIAL — content-appropriateness gate, top of the
+   nav column (mirrors #fixed-nav's horizontal anchor, top instead
+   of bottom). Injected by js/temperature.js.
+   ============================================================ */
+#temperature-dial {
+  --td-scale: 0.375;
+  position: fixed;
+  top: -10px;
+  left: calc(48vw - 10px);
+  width: calc(316px * var(--td-scale));
+  height: calc(340px * var(--td-scale));
+  z-index: 9998;
+}
+
+.td-stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 316px;
+  height: 340px;
+  transform: scale(var(--td-scale));
+  transform-origin: top left;
+  touch-action: none;
+  cursor: grab;
+  outline: none;
+}
+
+.td-stage.dragging { cursor: grabbing; }
+
+.td-stage:focus-visible {
+  outline: 1px dashed var(--border);
+  outline-offset: 6px;
+}
+
+.td-ticks { position: absolute; inset: 0; pointer-events: none; }
+
+.td-tick {
+  position: absolute;
+  width: 3px;
+  height: 9px;
+  background: rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  transition: background-color 0.2s ease;
+}
+
+.td-tick.active { background: var(--border); }
+
+.td-knob {
+  position: absolute;
+  left: 159px;
+  top: 156px;
+  width: 164px;
+  height: 164px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--border);
+  pointer-events: none;
+}
+
+.td-indicator {
+  position: absolute;
+  border-radius: 6px;
+  background: var(--border);
+  transform-origin: 10px 5.5px;
+  pointer-events: none;
+}
+
+.td-stage:not(.dragging) .td-indicator {
+  transition: left 0.25s ease, top 0.25s ease, transform 0.25s ease;
+}
+
+.td-label {
+  position: absolute;
+  left: 50%;
+  top: 250px;
+  transform: translateX(-50%);
+  font-family: 'Silkscreen', 'Courier New', monospace;
+  font-size: 20px; /* temperature dial text size */
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 /* ============================================================
@@ -787,4 +940,18 @@ blockquote {
 
   /* Hide tooltip labels on mobile */
   .nav-link::after { display: none; }
+
+  /* Temperature dial: dropped into normal flow between the side panel
+     and the post feed (no empty top-right corner to pin it to on mobile) */
+  #temperature-dial {
+    --td-scale: 0.42;
+    position: relative;
+    top: auto;
+    left: auto;
+    order: 0;
+    align-self: center;
+    width: calc(316px * var(--td-scale));
+    height: calc(340px * var(--td-scale));
+    margin: 20px auto;
+  }
 }

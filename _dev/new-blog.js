@@ -33,6 +33,7 @@ title: ${title}
 link: ${slug}
 published_date: ${dateStr}
 tags:
+temperature:
 ---
 
 Write your post here.

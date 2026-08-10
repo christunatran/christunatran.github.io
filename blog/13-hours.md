@@ -3,6 +3,7 @@ title: 13 hours
 link: 13-hours
 published_date: 2026-05-07
 tags: itp, life
+temperature: personal
 ---
 
 i spent over 13 hours at school today. arriving at 9:30 for my Shop shift, and staying until 11. yet, it was the most fulfilling day i've spent at NYU ITP thus far.

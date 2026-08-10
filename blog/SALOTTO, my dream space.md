@@ -2,6 +2,7 @@
 title: SALOTTO, my dream space
 link: salotto-my-dream-space
 published_date: 2026-02-19 21:25
+temperature: employable
 ---
 i visited the [Salotto](https://salotto.nyc/) space today to attend a talk by Giorgia Lupi. i found the concept of the space so inspiring. 
 

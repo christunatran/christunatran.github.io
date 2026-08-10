@@ -3,6 +3,7 @@ title: things to live for
 link: things-to-live-for
 published_date: 2025-12-11 06:28
 tags: short
+temperature: employable
 ---
 - endorphins from movement: exercise, dance
 - endorphins from spending time with loved ones

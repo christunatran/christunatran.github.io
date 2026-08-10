@@ -1,7 +1,12 @@
 /**
  * blog-listing.js
  *
- * Fetches blog.json and renders the blog post listing.
+ * Fetches blog.json and renders the blog post listing. The temperature
+ * dial (js/temperature.js) only gates the full post body — every card
+ * here always shows its title and snippet, with a small corner badge
+ * marking posts above the visitor's current temperature setting. Locked
+ * cards aren't clickable (cursor: not-allowed) — the full post still
+ * lives behind /blog-post/, so this is just a soft deterrent.
  */
 
 (function () {
@@ -15,38 +20,65 @@
       .replace(/"/g, '&quot;');
   }
 
+  function buildCard(post, locked) {
+    const card = document.createElement('div');
+    card.className = 'post post-text' + (locked ? ' temp-locked' : '');
+
+    const tagsHtml = post.tags && post.tags.length
+      ? `<span class="blog-tag">${post.tags.map(escapeHtml).join(', ')}</span>`
+      : '';
+
+    const isQuote = post.tags && post.tags.includes('quotes');
+    const displayTitle = isQuote ? `"${post.title}"` : post.title;
+
+    const badgeHtml = locked
+      ? `<span class="temp-lock-badge">${window.Temperature.LOCK_ICON}<span>${escapeHtml(post.temperature)}</span></span>`
+      : '';
+
+    card.innerHTML = `
+      ${badgeHtml}
+      <div class="post-content">
+        <p class="blog-card-title">${escapeHtml(displayTitle)}</p>
+        <p class="blog-card-snippet">${post.snippet ? escapeHtml(post.snippet) : ''}</p>
+      </div>
+      <div class="post-footer">
+        <span class="post-date">${post.date}</span>
+        <span class="post-tags">${tagsHtml}</span>
+      </div>
+    `;
+
+    if (!locked) {
+      card.addEventListener('click', () => {
+        window.location.href = `/blog-post/${post.slug}`;
+      });
+    }
+
+    if (!post.snippet) {
+      const snippetEl = card.querySelector('.blog-card-snippet');
+      window.Temperature.fetchSnippet(post).then(text => {
+        if (text) snippetEl.textContent = text;
+      });
+    }
+
+    return card;
+  }
+
+  function render(grid, posts) {
+    grid.innerHTML = '';
+    const tier = window.Temperature.getTier();
+    posts.filter(post => !post.disabled).forEach(post => {
+      const locked = !window.Temperature.isUnlocked(post.temperature, tier);
+      grid.appendChild(buildCard(post, locked));
+    });
+  }
+
   fetch('/data/blog.json')
     .then(r => r.json())
     .then(posts => {
       const grid = document.getElementById('blogGrid');
       if (!grid) return;
 
-      posts.filter(post => !post.disabled).forEach(post => {
-        const card = document.createElement('div');
-
-        const tagsHtml = post.tags && post.tags.length
-          ? `<span class="blog-tag">${post.tags.map(escapeHtml).join(', ')}</span>`
-          : '';
-
-        card.className = 'post post-text';
-        const isQuote = post.tags && post.tags.includes('quotes');
-        const displayTitle = isQuote ? `"${post.title}"` : post.title;
-        card.innerHTML = `
-          <div class="post-content">
-            <p class="blog-card-title">${escapeHtml(displayTitle)}</p>
-            ${post.snippet ? `<p class="blog-card-snippet">${escapeHtml(post.snippet)}</p>` : ''}
-          </div>
-          <div class="post-footer">
-            <span class="post-date">${post.date}</span>
-            <span class="post-tags">${tagsHtml}</span>
-          </div>
-        `;
-
-        card.addEventListener('click', () => {
-          window.location.href = `/blog-post/${post.slug}`;
-        });
-
-        grid.appendChild(card);
-      });
+      render(grid, posts);
+      window.addEventListener(window.Temperature.EVENT_NAME, () => render(grid, posts));
     });
 })();

@@ -3,6 +3,7 @@ title: Open Sauce Recap
 link: open-sauce-recap
 published_date: 2026-07-19 00:00
 tags:
+temperature: employable
 cover: /blog/assets/2026-07-18_13-16-54_498.jpg
 ---
 

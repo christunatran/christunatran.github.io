@@ -3,6 +3,7 @@ title: 75 hard
 link: 75-hard
 published_date: 2026-03-23 00:41
 tags: medium, self-improvement
+temperature: employable
 ---
 
 ## why?

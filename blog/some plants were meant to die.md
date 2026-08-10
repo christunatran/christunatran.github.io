@@ -3,6 +3,7 @@ title: some plants were meant to die
 link: some-plants-were-meant-to-die
 published_date: 2026-04-03 18:30
 tags:
+temperature: employable
 ---
 
 sometimes, plants are already doomed from the moment you bought them--they were already rotted, or they already had a disease, or the soil they were potted in was the wrong kind of the wrong pH level. 

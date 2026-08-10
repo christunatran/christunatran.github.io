@@ -209,10 +209,27 @@ setInterval(updateTemp, 10 * 60 * 1_000);
       el.style.left = f.x + 'px';
       el.style.top  = f.y + 'px';
     });
-    requestAnimationFrame(tick);
+    rafId = requestAnimationFrame(tick);
   }
 
-  requestAnimationFrame(tick);
+  // Press "0" to toggle the fish off/on — pauses the animation loop and
+  // hides them entirely rather than just leaving them frozen in place.
+  let enabled = true;
+  let rafId   = requestAnimationFrame(tick);
+
+  window.addEventListener('keydown', e => {
+    if (e.key !== '0') return;
+    const active = document.activeElement;
+    if (active && (active.tagName === 'INPUT' || active.tagName === 'TEXTAREA' || active.isContentEditable)) return;
+
+    enabled = !enabled;
+    els.forEach(el => { el.style.display = enabled ? '' : 'none'; });
+    if (enabled) {
+      rafId = requestAnimationFrame(tick);
+    } else {
+      cancelAnimationFrame(rafId);
+    }
+  });
 })();
 
 // ============================================================

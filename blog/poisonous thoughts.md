@@ -3,6 +3,7 @@ title: poisonous thoughts
 link: poisonous-thoughts
 published_date: 2026-05-06
 tags: rant, life
+temperature: shit-talk
 disabled: true
 ---
 

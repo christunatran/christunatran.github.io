@@ -3,6 +3,7 @@ title: "when life gives you tangerines"
 link: when-life-gives-you-tangerines
 published_date: 2025-10-18 02:35
 tags: media
+temperature: personal
 ---
 this show made me believe in love again.
 

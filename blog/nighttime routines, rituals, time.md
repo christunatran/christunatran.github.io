@@ -3,6 +3,7 @@ title: nighttime routines, rituals, time
 link: nighttime-routines-rituals-time
 published_date: 2025-09-21 23:14
 tags: short
+temperature: personal
 ---
 i tracked that i spent almost 2 hours on my full night routine tonight… 
 went on a short run,

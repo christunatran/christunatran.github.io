@@ -10,7 +10,14 @@
  *   link           — URL slug
  *   published_date — "YYYY-MM-DD HH:MM" → stored as "YYYY.MM.DD"
  *   tags           — comma-separated string → array
+ *   temperature    — "employable" | "personal" | "shit-talk" (appropriateness level)
+ *   snippet        — optional override for the auto-extracted preview text
  *   disabled       — "true" to hide the post
+ *
+ * Note: the `snippet` preview always ships regardless of temperature tier —
+ * only the full post body is gated by the temperature dial (js/temperature.js),
+ * on the individual post page. A locked listing card still shows its title
+ * and snippet as normal, just with a small corner badge indicating it's gated.
  *
  * Usage:  node _dev/generate-blog-json.js
  */
@@ -97,10 +104,11 @@ function generate() {
       title:   fm.title,
       date:    formatDate(fm.published_date),
       file:    filename,
-      snippet: extractSnippet(content),
+      snippet: fm.snippet || extractSnippet(content),
       tags,
     };
 
+    if (fm.temperature) post.temperature = fm.temperature;
     if (fm.disabled === 'true') post.disabled = true;
     if (fm.blogOnly === 'true') post.blogOnly = true;
     if (fm.cover) post.cover = fm.cover;

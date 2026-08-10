@@ -3,6 +3,7 @@ title: fidget camp recap
 link: fidget-camp-recap
 published_date: 2026-07-19
 tags:
+temperature: employable
 cover: /blog/assets/fidget-camp-workshop.jpeg
 ---
 

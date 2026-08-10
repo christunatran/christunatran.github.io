@@ -3,6 +3,7 @@ title: i don't think i can ever forget today, this is what art is all about
 link: forget-art
 published_date: 2026-04-07 20:14
 tags: sappy, emotional
+temperature: personal
 ---
 
 i don't think i'll ever forget what i experienced today in my "web art as site" class. 

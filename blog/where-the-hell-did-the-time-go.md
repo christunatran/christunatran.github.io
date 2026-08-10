@@ -3,6 +3,7 @@ title: where the hell did the time go?
 link: where-the-hell-did-the-time-go
 published_date: 2025-12-11 07:20
 tags: medium
+temperature: employable
 ---
 it's already december 11, the last day of classes of my first semester of grad school. where did the time go? 
 

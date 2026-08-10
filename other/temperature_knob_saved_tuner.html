@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Temperature Knob — Saved Tuner</title>
+<style>
+  :root{color-scheme:light;--bg:#f5f5f5;--panel:#fff;--text:#111;--muted:#666;--line:#ddd}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+  main{max-width:1120px;margin:0 auto;padding:24px}
+  h1{font-size:24px;margin:0 0 6px}
+  .intro{color:var(--muted);margin:0 0 20px;line-height:1.45}
+  .layout{display:grid;grid-template-columns:340px 1fr;gap:20px;align-items:start}
+  .panel,.preview{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .control{margin-bottom:18px}
+  label.row{display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:600;margin-bottom:7px}
+  .value{font-variant-numeric:tabular-nums;color:#444}
+  input[type=range]{width:100%}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .switch{display:flex;align-items:center;justify-content:space-between;gap:14px;border:1px solid var(--line);border-radius:12px;padding:11px 12px;margin-bottom:14px}
+  .switch label{font-size:14px;font-weight:600}
+  button{appearance:none;border:1px solid #bbb;background:#fff;color:#111;padding:9px 12px;border-radius:10px;cursor:pointer}
+  button:hover{background:#f7f7f7}
+  .buttons{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}
+  .preview-stage{min-height:470px;display:grid;place-items:center;border:1px dashed #d7d7d7;border-radius:14px;background:#fafafa}
+  svg{width:min(100%,430px);height:auto}
+  .saved{margin-top:14px;font-size:13px;color:var(--muted);line-height:1.45}
+  textarea{width:100%;min-height:165px;margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:12px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px}
+  @media(max-width:850px){.layout{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+  <h1>Temperature Knob Tuner</h1>
+  <p class="intro">Your recorded baseline is built into this file. Changes are automatically saved in this browser, so you can reopen the HTML later and continue where you left off.</p>
+
+  <div class="layout">
+    <section class="panel">
+      <div class="control">
+        <label class="row" for="distance"><span>Outer ring distance</span><span id="distanceV" class="value"></span></label>
+        <input id="distance" type="range" min="90" max="115" step="1">
+      </div>
+
+      <div class="control">
+        <label class="row" for="signSize"><span>− / + size</span><span id="signSizeV" class="value"></span></label>
+        <input id="signSize" type="range" min="8" max="36" step=".5">
+      </div>
+
+      <div class="switch">
+        <label for="showSigns">Show − / + signs</label>
+        <input id="showSigns" type="checkbox">
+      </div>
+
+      <div class="two">
+        <div class="control">
+          <label class="row" for="minusX"><span>− X</span><span id="minusXV" class="value"></span></label>
+          <input id="minusX" type="range" min="50" max="140" step="1">
+        </div>
+        <div class="control">
+          <label class="row" for="minusY"><span>− Y</span><span id="minusYV" class="value"></span></label>
+          <input id="minusY" type="range" min="205" max="285" step="1">
+        </div>
+      </div>
+
+      <div class="two">
+        <div class="control">
+          <label class="row" for="plusX"><span>+ X</span><span id="plusXV" class="value"></span></label>
+          <input id="plusX" type="range" min="220" max="305" step="1">
+        </div>
+        <div class="control">
+          <label class="row" for="plusY"><span>+ Y</span><span id="plusYV" class="value"></span></label>
+          <input id="plusY" type="range" min="205" max="285" step="1">
+        </div>
+      </div>
+
+      <div class="control">
+        <label class="row" for="tickThickness"><span>Tick thickness</span><span id="tickThicknessV" class="value"></span></label>
+        <input id="tickThickness" type="range" min=".35" max="2.5" step=".05">
+      </div>
+
+      <div class="control">
+        <label class="row" for="taperSize"><span>Taper size</span><span id="taperSizeV" class="value"></span></label>
+        <input id="taperSize" type="range" min=".35" max="2.5" step=".05">
+      </div>
+
+      <div class="control">
+        <label class="row" for="tickCount"><span>Number of ticks</span><span id="tickCountV" class="value"></span></label>
+        <input id="tickCount" type="range" min="12" max="70" step="1">
+      </div>
+
+      <div class="switch">
+        <label for="filled">Fill center circle black</label>
+        <input id="filled" type="checkbox">
+      </div>
+
+      <div class="control">
+        <label class="row" for="borderThickness"><span>Circle border thickness</span><span id="borderThicknessV" class="value"></span></label>
+        <input id="borderThickness" type="range" min="0" max="16" step=".5">
+      </div>
+
+      <div class="buttons">
+        <button id="restore" type="button">Restore recorded baseline</button>
+        <button id="downloadSvg" type="button">Download SVG</button>
+        <button id="exportJson" type="button">Download values JSON</button>
+      </div>
+      <div id="status" class="saved">Recorded baseline loaded.</div>
+    </section>
+
+    <section class="preview">
+      <div class="preview-stage">
+        <svg id="knob" viewBox="0 0 310 316" role="img" aria-label="Temperature knob preview">
+          <rect width="310" height="316" fill="#fff"/>
+          <g id="ticks" fill="#000"></g>
+          <circle id="circle" cx="181" cy="176" r="87"></circle>
+          <circle id="indicator" cx="228.4" cy="128.6" r="9.5"></circle>
+          <g id="signs" fill="#000"></g>
+        </svg>
+      </div>
+      <textarea id="valuesText" readonly></textarea>
+    </section>
+  </div>
+</main>
+
+<script>
+const RECORDED = {"outerRingDistance": 99, "signSize": 22, "showSigns": true, "minusX": 93, "minusY": 246, "plusX": 276, "plusY": 246, "tickThicknessScale": 1.0, "taperSizeScale": 1.0, "tickCount": 40, "centerFilledBlack": true, "borderThickness": 4.0};
+const STORAGE_KEY = "temperatureKnobTunerStateV1";
+
+const ids = {
+  outerRingDistance:"distance",
+  signSize:"signSize",
+  showSigns:"showSigns",
+  minusX:"minusX",
+  minusY:"minusY",
+  plusX:"plusX",
+  plusY:"plusY",
+  tickThicknessScale:"tickThickness",
+  taperSizeScale:"taperSize",
+  tickCount:"tickCount",
+  centerFilledBlack:"filled",
+  borderThickness:"borderThickness"
+};
+
+const $ = id => document.getElementById(id);
+
+function loadState(){
+  try{
+    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    return stored ? {...RECORDED, ...stored} : {...RECORDED};
+  }catch(e){
+    return {...RECORDED};
+  }
+}
+
+let state = loadState();
+
+function applyStateToInputs(){
+  for(const [key,id] of Object.entries(ids)){
+    const node=$(id);
+    if(node.type==="checkbox") node.checked=!!state[key];
+    else node.value=state[key];
+  }
+}
+
+function readStateFromInputs(){
+  state = {
+    outerRingDistance:+$("distance").value,
+    signSize:+$("signSize").value,
+    showSigns:$("showSigns").checked,
+    minusX:+$("minusX").value,
+    minusY:+$("minusY").value,
+    plusX:+$("plusX").value,
+    plusY:+$("plusY").value,
+    tickThicknessScale:+$("tickThickness").value,
+    taperSizeScale:+$("taperSize").value,
+    tickCount:+$("tickCount").value,
+    centerFilledBlack:$("filled").checked,
+    borderThickness:+$("borderThickness").value
+  };
+}
+
+function svgEl(name,attrs){
+  const n=document.createElementNS("http://www.w3.org/2000/svg",name);
+  for(const [k,v] of Object.entries(attrs)) n.setAttribute(k,v);
+  return n;
+}
+
+function render(){
+  readStateFromInputs();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+
+  $("distanceV").textContent=state.outerRingDistance;
+  $("signSizeV").textContent=state.signSize;
+  $("minusXV").textContent=state.minusX;
+  $("minusYV").textContent=state.minusY;
+  $("plusXV").textContent=state.plusX;
+  $("plusYV").textContent=state.plusY;
+  $("tickThicknessV").textContent=state.tickThicknessScale.toFixed(2);
+  $("taperSizeV").textContent=state.taperSizeScale.toFixed(2);
+  $("tickCountV").textContent=state.tickCount;
+  $("borderThicknessV").textContent=state.borderThickness;
+
+  const cx=181, cy=176, start=150, end=382;
+  const ticks=$("ticks");
+  ticks.replaceChildren();
+
+  for(let i=0;i<state.tickCount;i++){
+    const t=i/(state.tickCount-1);
+    const angle=start+(end-start)*t;
+    const len=(2.3+13.8*Math.pow(t,1.08))*state.taperSizeScale;
+    const thick=(2+3.4*Math.pow(t,1.15))*state.tickThicknessScale;
+    ticks.appendChild(svgEl("rect",{
+      x:(cx+state.outerRingDistance).toFixed(2),
+      y:(cy-thick/2).toFixed(2),
+      width:len.toFixed(2),
+      height:thick.toFixed(2),
+      transform:`rotate(${angle} ${cx} ${cy})`
+    }));
+  }
+
+  const signs=$("signs");
+  signs.replaceChildren();
+  signs.style.display=state.showSigns?"":"none";
+  if(state.showSigns){
+    const s=state.signSize;
+    const st=Math.max(1.1,s*.145);
+    signs.appendChild(svgEl("rect",{x:state.minusX-s/2,y:state.minusY-st/2,width:s,height:st,rx:.5}));
+    signs.appendChild(svgEl("rect",{x:state.plusX-s/2,y:state.plusY-st/2,width:s,height:st,rx:.5}));
+    signs.appendChild(svgEl("rect",{x:state.plusX-st/2,y:state.plusY-s/2,width:st,height:s,rx:.5}));
+  }
+
+  const circle=$("circle");
+  circle.setAttribute("fill",state.centerFilledBlack?"#000":"#fff");
+  circle.setAttribute("stroke","#000");
+  circle.setAttribute("stroke-width",state.borderThickness);
+  $("indicator").setAttribute("fill",state.centerFilledBlack?"#fff":"#000");
+
+  $("valuesText").value=JSON.stringify(state,null,2);
+  $("status").textContent="Changes auto-saved in this browser.";
+}
+
+function buildSvgString(){
+  const svg=$("knob").cloneNode(true);
+  svg.setAttribute("xmlns","http://www.w3.org/2000/svg");
+  svg.setAttribute("width","310");
+  svg.setAttribute("height","316");
+  return new XMLSerializer().serializeToString(svg);
+}
+
+function download(name,text,type){
+  const blob=new Blob([text],{type});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+for(const id of Object.values(ids)){
+  const node=$(id);
+  node.addEventListener(node.type==="checkbox"?"change":"input",render);
+}
+
+$("restore").addEventListener("click",()=>{
+  state={...RECORDED};
+  applyStateToInputs();
+  render();
+  $("status").textContent="Recorded baseline restored.";
+});
+
+$("downloadSvg").addEventListener("click",()=>{
+  download("temperature-knob-current.svg",buildSvgString(),"image/svg+xml;charset=utf-8");
+});
+
+$("exportJson").addEventListener("click",()=>{
+  download("temperature-knob-values.json",JSON.stringify(state,null,2),"application/json;charset=utf-8");
+});
+
+applyStateToInputs();
+render();
+</script>
+</body>
+</html>

@@ -3,6 +3,7 @@ title: SF is not a great place to be a woman
 link: sf-is-not-a-great-place-to-be-a-woman
 published_date: 2026-08-05 01:42
 tags:
+temperature: personal
 ---
 
 In the < 1 week I was in SF I was catcalled more than my almost 4 years of living in NYC. Here are records of some events:

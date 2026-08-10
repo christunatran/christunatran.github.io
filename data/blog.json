@@ -1,31 +1,46 @@
 [
   {
+    "slug": "temperature-dial-build-log",
+    "title": "temperature dial build log",
+    "date": "2026.08.08",
+    "file": "temperature dial build log.md",
+    "snippet": "I have one personal website where I host my personal blog, my \"professional\"/ITP blog, and informal portfolio.",
+    "tags": [
+      "medium"
+    ],
+    "temperature": "employable",
+    "cover": "/blog/assets/temperature-dial-cover.gif"
+  },
+  {
     "slug": "sf-is-not-a-great-place-to-be-a-woman",
     "title": "SF is not a great place to be a woman",
     "date": "2026.08.05",
     "file": "SF is not a great place to be a woman.md",
     "snippet": "In the < 1 week I was in SF I was catcalled more than my almost 4 years of living in NYC. Here are records of some events:",
-    "tags": []
+    "tags": [],
+    "temperature": "personal"
   },
   {
     "slug": "a-vietnamese-saying",
     "title": "a vietnamese saying",
     "date": "2026.08.04",
     "file": "a vietnamese saying.md",
-    "snippet": "I grew up hearing:",
+    "snippet": "I grew up hearing: Never marry a man who has these three addictions...",
     "tags": [
       "rant"
-    ]
+    ],
+    "temperature": "shit-talk"
   },
   {
     "slug": "when-the-devil-can-t-get-to-you",
     "title": "when the devil can't get to you,",
     "date": "2026.08.02",
     "file": "when the devil can't get to you,.md",
-    "snippet": "HE SENDS A MAN INSTEAD\n-- Ruth Mekonnen",
+    "snippet": "HE SENDS A MAN INSTEAD",
     "tags": [
       "quotes"
-    ]
+    ],
+    "temperature": "personal"
   },
   {
     "slug": "fidget-camp-recap",
@@ -34,6 +49,7 @@
     "file": "Fidget Camp Recap.md",
     "snippet": "From July 24-August 2 I attended Fidget Camp in SF!",
     "tags": [],
+    "temperature": "employable",
     "cover": "/blog/assets/fidget-camp-workshop.jpeg"
   },
   {
@@ -43,6 +59,7 @@
     "file": "Open Sauce Recap.md",
     "snippet": "On July 17-19, I boothed at Open Sauce in San Mateo, CA with my roommates Justin and Chianli.",
     "tags": [],
+    "temperature": "employable",
     "cover": "/blog/assets/2026-07-18_13-16-54_498.jpg"
   },
   {
@@ -55,6 +72,7 @@
       "itp",
       "medium"
     ],
+    "temperature": "employable",
     "cover": "/blog/assets/improbable-seminar-14.jpg"
   },
   {
@@ -65,7 +83,8 @@
     "snippet": "\"work as an artifact of the process rather than the outcome\"",
     "tags": [
       "quotes"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "grad-school-is-about-collecting-starts",
@@ -75,7 +94,8 @@
     "snippet": "-- theo ballew",
     "tags": [
       "quotes"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "those-who-tell-the-stories-rule-society",
@@ -85,7 +105,8 @@
     "snippet": "-- plato",
     "tags": [
       "quotes"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "vibe-coding-in-the-right-hands",
@@ -94,6 +115,7 @@
     "file": "vibe-coding-in-the-right-hands.md",
     "snippet": "i am learning the đàn bầu, the vietnamese monochord, from anh thu and nhan. i've been spending some time with them after our weekly classes. today we were snacking on some stir-fried corn. when i shared with them that i…",
     "tags": [],
+    "temperature": "employable",
     "cover": "/blog/assets/dan-bau-1.jpeg"
   },
   {
@@ -105,7 +127,8 @@
     "tags": [
       "life",
       "itp"
-    ]
+    ],
+    "temperature": "personal"
   },
   {
     "slug": "household-income",
@@ -116,7 +139,7 @@
     "tags": [
       "haha"
     ],
-    "blogOnly": true
+    "temperature": "shit-talk"
   },
   {
     "slug": "13-hours",
@@ -127,7 +150,8 @@
     "tags": [
       "itp",
       "life"
-    ]
+    ],
+    "temperature": "personal"
   },
   {
     "slug": "schadenfreude",
@@ -139,6 +163,7 @@
       "rant",
       "life"
     ],
+    "temperature": "shit-talk",
     "disabled": true
   },
   {
@@ -151,6 +176,7 @@
       "rant",
       "life"
     ],
+    "temperature": "shit-talk",
     "disabled": true
   },
   {
@@ -161,7 +187,8 @@
     "snippet": "i've been fixated on how i can turn my recent [web art piece](/works/doomscroll) into a physical installation.",
     "tags": [
       "art"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "forget-art",
@@ -172,7 +199,8 @@
     "tags": [
       "sappy",
       "emotional"
-    ]
+    ],
+    "temperature": "personal"
   },
   {
     "slug": "build-it-to-understand",
@@ -182,7 +210,8 @@
     "snippet": "that's it.",
     "tags": [
       "short"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "some-plants-were-meant-to-die",
@@ -190,7 +219,8 @@
     "date": "2026.04.03",
     "file": "some plants were meant to die.md",
     "snippet": "sometimes, plants are already doomed from the moment you bought them--they were already rotted, or they already had a disease, or the soil they were potted in was the wrong kind of the wrong pH level.",
-    "tags": []
+    "tags": [],
+    "temperature": "employable"
   },
   {
     "slug": "75-hard",
@@ -201,7 +231,8 @@
     "tags": [
       "medium",
       "self-improvement"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "why-see-the-world",
@@ -211,7 +242,8 @@
     "snippet": "this song resonated with me lately. the more you have, the harder it is to be content in life, and by extension, in love. we can try all we want to keep chasing novelty but eventually, doesn't it get so tiresome?",
     "tags": [
       "quotes"
-    ]
+    ],
+    "temperature": "personal"
   },
   {
     "slug": "anger-issues",
@@ -219,7 +251,8 @@
     "date": "2026.03.03",
     "file": "anger issues.md",
     "snippet": "",
-    "tags": []
+    "tags": [],
+    "temperature": "personal"
   },
   {
     "slug": "asian-friend-groups",
@@ -231,6 +264,7 @@
       "rant",
       "short"
     ],
+    "temperature": "personal",
     "disabled": true
   },
   {
@@ -239,7 +273,8 @@
     "date": "2026.02.19",
     "file": "SALOTTO, my dream space.md",
     "snippet": "i visited the [Salotto](https://salotto.nyc/) space today to attend a talk by Giorgia Lupi. i found the concept of the space so inspiring.",
-    "tags": []
+    "tags": [],
+    "temperature": "employable"
   },
   {
     "slug": "rich-people-dont-have-sauce",
@@ -250,7 +285,8 @@
     "tags": [
       "rant",
       "short"
-    ]
+    ],
+    "temperature": "personal"
   },
   {
     "slug": "conceptual-art-and-god",
@@ -261,7 +297,8 @@
     "tags": [
       "intrusive",
       "short"
-    ]
+    ],
+    "temperature": "personal"
   },
   {
     "slug": "everything-is-easier-when-youre-healthy",
@@ -271,7 +308,8 @@
     "snippet": "uhhhh, no brainer here. but i find it really true, especially now that i'm being more intentional about prioritizing my health this year.",
     "tags": [
       "short"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "life-as-performance-art",
@@ -281,7 +319,8 @@
     "snippet": "a thought i had: what is stopping us from treating our entire lives as a big performance art?",
     "tags": [
       "short"
-    ]
+    ],
+    "temperature": "personal"
   },
   {
     "slug": "weve-reached-a-peak-in-hyperrealistic-ai",
@@ -291,7 +330,8 @@
     "snippet": "we've reached a peak in hyperrealistic AI images... now it's time to take steps backwards [In Defense of the Poor Image](https://www.e-flux.com/journal/10/61362/in-defense-of-the-poor-image).",
     "tags": [
       "short"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "emergence-and-spontaneity-in-picking-a-movie",
@@ -301,7 +341,8 @@
     "snippet": "chris is my mom's good friend and housemate. he's a (horror) movie enthusiast, and over the past few years of coexistence, has become an unlikely friend of mine too. he watches at least 1 movie a day, so it's always inte…",
     "tags": [
       "medium"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "things-to-live-for",
@@ -311,7 +352,8 @@
     "snippet": "- endorphins from movement: exercise, dance - endorphins from spending time with loved ones - exploring: beautiful nature, art, music, history of our world - delicious, comforting food - expressing myself through art --…",
     "tags": [
       "short"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "too-much-self-analysis-is-not-good",
@@ -321,7 +363,8 @@
     "snippet": "this is more of a self-reminder. i may be self-analyzing right now, just as i have been for the past 2 posts and the past several weeks.",
     "tags": [
       "medium"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "where-the-hell-did-the-time-go",
@@ -331,7 +374,8 @@
     "snippet": "it's already december 11, the last day of classes of my first semester of grad school. where did the time go?",
     "tags": [
       "medium"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "on-naps",
@@ -339,7 +383,8 @@
     "date": "2025.11.29",
     "file": "on naps.md",
     "snippet": "when you know in your heart that you’re going to take a nap later in the day, it makes it a lot easier to wake up in the morning.",
-    "tags": []
+    "tags": [],
+    "temperature": "employable"
   },
   {
     "slug": "faith-in-humanity-is-gradually-going-up",
@@ -347,7 +392,8 @@
     "date": "2025.11.09",
     "file": "faith in humanity is gradually going up.md",
     "snippet": "- grateful to have met new friends at the art exhibition opening who touched me with their positive energy and warm invitation into their circle - grateful for friends of various levels of closeness accepting my invitati…",
-    "tags": []
+    "tags": [],
+    "temperature": "employable"
   },
   {
     "slug": "eating-me-alive-positive-signals-new",
@@ -357,7 +403,8 @@
     "snippet": "i have a project idea that i’m calling “Big Nose” for now… every day that i’m not moving it forward feels like it’s eating me alive. i question why i’m still entertaining these other commitments that don’t make me feel t…",
     "tags": [
       "short"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "pro-tip-just-get-started",
@@ -367,7 +414,8 @@
     "snippet": "i found it daunting to be assigned a 3-hour Unity tutorial for my Hypercinema class. i wrote down on my to-do list to just get started with 30 minutes of it. this way, i lowered the stakes for myself. now that i have a s…",
     "tags": [
       "short"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "theatre-kids-party",
@@ -377,7 +425,8 @@
     "snippet": "on halloween this year, i went to a party thrown by people who would typically be labeled as \"theatre kids\". i am writing to report that as adults, theatre kids seem to have the most fun.",
     "tags": [
       "medium"
-    ]
+    ],
+    "temperature": "personal"
   },
   {
     "slug": "when-life-gives-you-tangerines",
@@ -387,7 +436,8 @@
     "snippet": "this show made me believe in love again.",
     "tags": [
       "media"
-    ]
+    ],
+    "temperature": "personal"
   },
   {
     "slug": "bangs",
@@ -397,7 +447,8 @@
     "snippet": "are a lot harder to manage than they let on. a decent-looking fringe can require daily washing, a hair dryer, a hair roller, hair oil, and a straightener. all of that work just for it to get split apart by the wind. i on…",
     "tags": [
       "short"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "nighttime-routines-rituals-time",
@@ -407,7 +458,8 @@
     "snippet": "i tracked that i spent almost 2 hours on my full night routine tonight… went on a short run, took a shower, flossed, put on hasan minhaj’s podcast, brushed my teeth, did my skincare, blow dried my hair.",
     "tags": [
       "short"
-    ]
+    ],
+    "temperature": "personal"
   },
   {
     "slug": "thinking-about-where-to-go-with-this-blog",
@@ -417,7 +469,8 @@
     "snippet": "it seems like i haven't been a tunapee of my word with this blog. in my [first post](https://tunapee.online/blog-post/?slug=finally), i talked about micro-blogging and \"shitty drafts\" as ways to lower the stakes of posti…",
     "tags": [
       "medium"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "times-when-i-feel-the-most-present",
@@ -427,7 +480,8 @@
     "snippet": "present: - working with woodworking tools. listening to the hum and feeling the viibrations of the machinery makes me feel like i'm really there. the repetitive, tactile motions toward the vision of an idea brought to li…",
     "tags": [
       "short"
-    ]
+    ],
+    "temperature": "employable"
   },
   {
     "slug": "finally",
@@ -437,6 +491,7 @@
     "snippet": "I actually started this blog in October 2024. Since then, I have yet to make a single post, besides updating my \"about\" and \"now\" pages every few months.",
     "tags": [
       "long"
-    ]
+    ],
+    "temperature": "employable"
   }
 ]

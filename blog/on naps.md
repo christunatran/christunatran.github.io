@@ -2,6 +2,7 @@
 title: on naps
 link: on-naps
 published_date: 2025-11-29 10:51
+temperature: employable
 ---
 when you know in your heart that you’re going to take a nap later in the day, it makes it a lot easier to wake up in the morning.
 

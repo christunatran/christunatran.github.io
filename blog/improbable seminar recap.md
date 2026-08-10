@@ -3,6 +3,7 @@ title: improbable seminar recap
 link: improbable-seminar-recap
 published_date: 2026-07-09 12:00
 tags: itp, medium
+temperature: employable
 cover: /blog/assets/improbable-seminar-14.jpg
 ---
 

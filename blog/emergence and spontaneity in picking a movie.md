@@ -3,6 +3,7 @@ title: emergence and spontaneity in picking a movie
 link: emergence-and-spontaneity-in-picking-a-movie
 published_date: 2026-01-02 00:19
 tags: medium
+temperature: employable
 ---
 chris is my mom's good friend and housemate. he's a (horror) movie enthusiast, and over the past few years of coexistence, has become an unlikely friend of mine too. he watches at least 1 movie a day, so it's always interesting to walk past the living room and peek at what he has playing on the TV. 
 

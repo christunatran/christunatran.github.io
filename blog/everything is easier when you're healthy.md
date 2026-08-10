@@ -3,6 +3,7 @@ title: everything is easier when you're healthy
 link: everything-is-easier-when-youre-healthy
 published_date: 2026-01-28 10:03
 tags: short
+temperature: employable
 ---
 uhhhh, no brainer here. but i find it really true, especially now that i'm being more intentional about prioritizing my health this year.
 

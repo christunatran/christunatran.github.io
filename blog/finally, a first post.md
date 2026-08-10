@@ -3,6 +3,7 @@ title: finally, a first post
 link: finally
 published_date: 2025-08-09 16:10
 tags: long
+temperature: employable
 ---
 
 I actually started this blog in October 2024. Since then, I have yet to make a single post, besides updating my "about" and "now" pages every few months.

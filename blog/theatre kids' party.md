@@ -3,6 +3,7 @@ title: theatre kids' party
 link: theatre-kids-party
 published_date: 2025-11-02 00:18
 tags: medium
+temperature: personal
 ---
 on halloween this year, i went to a party thrown by people who would typically be labeled as "theatre kids". i am writing to report that as adults, theatre kids seem to have the most fun.
 
