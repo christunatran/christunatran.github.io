@@ -7,7 +7,7 @@ temperature:
 cover: /blog/assets/new-museum-bounding-boxes.jpeg
 ---
 
-Back in June, I visited the New Museum with my friends Lingwu, Justin, Chianli, Ashley, Bryan and Weilin.
+Back in June, I visited the New Museum with my friends Lingwu, Justin, Chianli, Ashley, Marcos, Bryan and Weilin.
 
 ### Some things I liked:
 
