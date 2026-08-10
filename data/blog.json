@@ -1,5 +1,25 @@
 [
   {
+    "slug": "trip-to-the-new-museum",
+    "title": "trip to the new museum",
+    "date": "2026.08.09",
+    "file": "trip to the new museum.md",
+    "snippet": "Back in June, I visited the New Museum with my friends Lingwu, Justin, Chianli, Ashley, Bryan and Weylin.",
+    "tags": [
+      "art"
+    ]
+  },
+  {
+    "slug": "trip-to-visarts-and-glenstone",
+    "title": "trip to visarts and glenstone",
+    "date": "2026.08.09",
+    "file": "trip to visarts and glenstone.md",
+    "snippet": "At VisArts Center in Rockville, Maryland, I encountered a video art by Kyle Butler. And then, at Glenstone Art Museum...",
+    "tags": [
+      "art"
+    ]
+  },
+  {
     "slug": "temperature-dial-build-log",
     "title": "temperature dial build log",
     "date": "2026.08.08",

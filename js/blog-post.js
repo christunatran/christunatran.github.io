@@ -126,14 +126,60 @@
             );
 
             // marked.js is loaded via CDN before this script.
-            renderedHtml = `
+            contentEl.innerHTML = `
               <h1>${escapeHtml(title)}</h1>
               ${metaRowHtml(post)}
               ${rendered}
             `;
-            contentEl.innerHTML = renderedHtml;
+            autoGridConsecutiveImages(contentEl);
+            renderedHtml = contentEl.innerHTML; // cache post-grid HTML
             document.title = `${title} — tunapee`;
           });
+      }
+
+      /**
+       * Groups runs of consecutive single-image paragraphs into CSS grid
+       * wrappers (.img-grid--2/3/4) for a side-by-side layout. Mirrors
+       * work-detail.js's version of this helper.
+       */
+      function autoGridConsecutiveImages(container) {
+        const children = Array.from(container.children);
+        let i = 0;
+
+        while (i < children.length) {
+          const el              = children[i];
+          const isSingleImgPara = el.tagName === 'P'
+            && el.children.length === 1
+            && el.children[0].tagName === 'IMG';
+
+          if (!isSingleImgPara) { i++; continue; }
+
+          const run = [el];
+          let j = i + 1;
+          while (j < children.length) {
+            const next = children[j];
+            if (next.tagName === 'P' && next.children.length === 1 && next.children[0].tagName === 'IMG') {
+              run.push(next);
+              j++;
+            } else {
+              break;
+            }
+          }
+
+          if (run.length >= 2) {
+            for (let k = 0; k < run.length;) {
+              const chunk = run.slice(k, k + 4);
+              const grid  = document.createElement('div');
+              grid.className = `img-grid img-grid--${chunk.length}`;
+              chunk[0].parentNode.insertBefore(grid, chunk[0]);
+              chunk.forEach(p => grid.appendChild(p.children[0]));
+              chunk.forEach(p => p.remove());
+              k += 4;
+            }
+          }
+
+          i = j;
+        }
       }
 
       function update() {
