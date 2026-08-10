@@ -1,10 +1,11 @@
 ---
 title: trip to visarts and glenstone
 link: trip-to-visarts-and-glenstone
-published_date: 2026-08-09 22:25
+published_date: 2026-08-09 22:37
 tags: art
 temperature:
 snippet: At VisArts Center in Rockville, Maryland, I encountered a video art by Kyle Butler. And then, at Glenstone Art Museum...
+cover: /blog/assets/glenstone-visarts-split-rocker.png
 ---
 
 ## VisArts Center
@@ -51,7 +52,7 @@ I keep encountering circles that open up to the sky this year. I've been seeing 
 
 ![Compression Line by Michael Hezier](assets/glenstone-visarts-compression-line.png)
 
-An interesting display of On Kawara's "Moon Landing". I drew inspiration from this to make [tunapee.online/doomscroll](https://tunapee.online/doomscroll).
+An interesting display of On Kawara's "Moon Landing". The ceiling was soooooooooo high. I drew inspiration from this to make [tunapee.online/doomscroll](https://tunapee.online/doomscroll).
 
 ![On Kawara's Moon Landing](assets/glenstone-visarts-moon-landing.png)
 

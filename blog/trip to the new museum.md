@@ -4,6 +4,7 @@ link: trip-to-the-new-museum
 published_date: 2026-08-09 22:25
 tags: art
 temperature:
+cover: /blog/assets/new-museum-bounding-boxes.jpeg
 ---
 
 Back in June, I visited the New Museum with my friends Lingwu, Justin, Chianli, Ashley, Bryan and Weylin.
@@ -11,6 +12,10 @@ Back in June, I visited the New Museum with my friends Lingwu, Justin, Chianli, 
 Some things I liked.
 
 I liked how this fan was being suspended from the ceiling.
+
+I liked this installation of bounding boxes as seating surrounding this video art piece about the use of bounding boxes in computer vision. It reminds me of my past life as a machine learning engineer.
+
+![bounding boxes seating installation](assets/new-museum-bounding-boxes.jpeg)
 
 ![fan suspended from the ceiling](assets/new-museum-fan.png)
 
@@ -21,6 +26,7 @@ The infamous "Useless Machine" by Marvin Minsky. Bryan tried to touch it before 
 I'm super into metalwork these days.
 
 ![metalwork piece](assets/new-museum-metalwork.png)
+
 
 Is this considered automata? I love the idea of having to manually turn a crank to reveal a story.
 

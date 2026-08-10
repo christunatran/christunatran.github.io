@@ -7,7 +7,8 @@
     "snippet": "Back in June, I visited the New Museum with my friends Lingwu, Justin, Chianli, Ashley, Bryan and Weylin.",
     "tags": [
       "art"
-    ]
+    ],
+    "cover": "/blog/assets/new-museum-bounding-boxes.jpeg"
   },
   {
     "slug": "trip-to-visarts-and-glenstone",
@@ -17,7 +18,8 @@
     "snippet": "At VisArts Center in Rockville, Maryland, I encountered a video art by Kyle Butler. And then, at Glenstone Art Museum...",
     "tags": [
       "art"
-    ]
+    ],
+    "cover": "/blog/assets/glenstone-visarts-split-rocker.png"
   },
   {
     "slug": "temperature-dial-build-log",
