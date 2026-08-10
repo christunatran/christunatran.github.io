@@ -68,4 +68,6 @@ There's lots of nice spaces like this filled with books where visitors can hang 
 
 ![reading space 1](assets/glenstone-visarts-reading-space-1.png)
 
+&nbsp;
+
 ![reading space 2](assets/glenstone-visarts-reading-space-2.png)

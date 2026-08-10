@@ -4,7 +4,6 @@ link: poisonous-thoughts
 published_date: 2026-05-06
 tags: rant, life
 temperature: shit-talk
-disabled: true
 ---
 
 it's a harsh way of thinking, but i feel like i'm sometimes prone to being such a loser... spending so much time in my head, not leaning into action, being negative and focusing on others rather than myself. when i behave in this way, i consider it my **loser behavior**. it fills me with insecurity. and i think that what they say about "energy attracts" is true. i find that when i lean into optimism not as being delusional, but rather intentionally being ruthlessly optimistic as a resistance to how much the world sucks, i attract so many wonderful people and events into my life. it makes me more confident to get to know the people i respect and admire, and to no longer, out of loneliness, accept 'friends' into my life even when they make me feel bad. ABUNDANCE MINDSET hahaha.

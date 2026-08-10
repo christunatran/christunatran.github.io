@@ -12,12 +12,16 @@
  *   tags           — comma-separated string → array
  *   temperature    — "employable" | "personal" | "shit-talk" (appropriateness level)
  *   snippet        — optional override for the auto-extracted preview text
- *   disabled       — "true" to hide the post
  *
  * Note: the `snippet` preview always ships regardless of temperature tier —
  * only the full post body is gated by the temperature dial (js/temperature.js),
  * on the individual post page. A locked listing card still shows its title
  * and snippet as normal, just with a small corner badge indicating it's gated.
+ *
+ * `disabled` is NOT a frontmatter field — it lives only in data/blog.json.
+ * To hide a post, set "disabled": true directly on its entry in blog.json;
+ * regeneration preserves whatever's already there instead of deriving it
+ * from the .md file, so it survives every re-run.
  *
  * Usage:  node _dev/generate-blog-json.js
  */
@@ -86,6 +90,19 @@ function formatDate(raw) {
 function generate() {
   const files = fs.readdirSync(BLOG_DIR).filter(f => f.endsWith('.md'));
 
+  // `disabled` is managed by hand directly in blog.json, not frontmatter —
+  // carry forward whatever's already set so regeneration doesn't clobber it.
+  let previouslyDisabled = new Set();
+  if (fs.existsSync(OUTPUT)) {
+    try {
+      previouslyDisabled = new Set(
+        JSON.parse(fs.readFileSync(OUTPUT, 'utf8'))
+          .filter(p => p.disabled)
+          .map(p => p.slug)
+      );
+    } catch {}
+  }
+
   const posts = files.flatMap(filename => {
     const content = fs.readFileSync(path.join(BLOG_DIR, filename), 'utf8');
     const fm      = parseFrontmatter(content);
@@ -109,7 +126,7 @@ function generate() {
     };
 
     if (fm.temperature) post.temperature = fm.temperature;
-    if (fm.disabled === 'true') post.disabled = true;
+    if (previouslyDisabled.has(post.slug)) post.disabled = true;
     if (fm.blogOnly === 'true') post.blogOnly = true;
     if (fm.cover) post.cover = fm.cover;
 
