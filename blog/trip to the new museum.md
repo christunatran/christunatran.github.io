@@ -9,15 +9,16 @@ cover: /blog/assets/new-museum-bounding-boxes.jpeg
 
 Back in June, I visited the New Museum with my friends Lingwu, Justin, Chianli, Ashley, Bryan and Weylin.
 
-Some things I liked.
-
-I liked how this fan was being suspended from the ceiling.
+### Some things I liked:
 
 I liked this installation of bounding boxes as seating surrounding this video art piece about the use of bounding boxes in computer vision. It reminds me of my past life as a machine learning engineer.
 
-![bounding boxes seating installation](assets/new-museum-bounding-boxes.jpeg)
+I liked how this fan was being suspended from the ceiling.
 
 ![fan suspended from the ceiling](assets/new-museum-fan.png)
+
+![bounding boxes seating installation](assets/new-museum-bounding-boxes.jpeg)
+
 
 The infamous "Useless Machine" by Marvin Minsky. Bryan tried to touch it before the security guard had to stop him.
 
