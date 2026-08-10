@@ -5,7 +5,7 @@ published_date: 2026-08-09 22:37
 tags: art
 temperature:
 snippet: At VisArts Center in Rockville, Maryland, I encountered a video art by Kyle Butler. And then, at Glenstone Art Museum...
-cover: /blog/assets/glenstone-visarts-split-rocker.png
+cover: /blog/assets/glenstone-visarts-reading-space-2.png
 ---
 
 ## VisArts Center
