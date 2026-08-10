@@ -15,28 +15,54 @@ Over a week, we exchanged ideas with peers from around the world, shared past wo
 
 ![improbable seminar](assets/improbable-seminar-01.jpg)
 
+&nbsp;
+
 ![improbable seminar](assets/improbable-seminar-02.jpg)
+
+&nbsp;
 
 ![improbable seminar](assets/improbable-seminar-03.jpg)
 
+&nbsp;
+
 ![improbable seminar](assets/improbable-seminar-04.jpg)
+
+&nbsp;
 
 ![improbable seminar](assets/improbable-seminar-05.jpg)
 
+&nbsp;
+
 ![improbable seminar](assets/improbable-seminar-06.jpg)
+
+&nbsp;
 
 ![improbable seminar](assets/improbable-seminar-07.jpg)
 
+&nbsp;
+
 ![improbable seminar](assets/improbable-seminar-08.jpg)
+
+&nbsp;
 
 ![improbable seminar](assets/improbable-seminar-09.jpg)
 
+&nbsp;
+
 ![improbable seminar](assets/improbable-seminar-10.jpg)
+
+&nbsp;
 
 ![improbable seminar](assets/improbable-seminar-11.jpg)
 
+&nbsp;
+
 ![improbable seminar](assets/improbable-seminar-12.jpg)
 
+&nbsp;
+
 ![improbable seminar](assets/improbable-seminar-13.jpg)
+
+&nbsp;
 
 ![improbable seminar](assets/improbable-seminar-14.jpg)

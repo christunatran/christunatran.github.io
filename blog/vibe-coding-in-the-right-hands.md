@@ -12,6 +12,8 @@ i am learning the đàn bầu, the vietnamese monochord, from anh thu and nhan. 
 
 ![dan bau 1](assets/dan-bau-1.jpeg)
 
+&nbsp;
+
 ![dan bau 2](assets/dan-bau-2.jpeg)
 
 <video src="/blog/assets/dan-bau-3.mov" controls style="width:100%"></video>

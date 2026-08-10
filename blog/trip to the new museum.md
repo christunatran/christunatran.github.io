@@ -13,12 +13,11 @@ Back in June, I visited the New Museum with my friends Lingwu, Justin, Chianli, 
 
 I liked this installation of bounding boxes as seating surrounding this video art piece about the use of bounding boxes in computer vision. It reminds me of my past life as a machine learning engineer.
 
+![bounding boxes seating installation](assets/new-museum-bounding-boxes.jpeg)
+
 I liked how this fan was being suspended from the ceiling.
 
 ![fan suspended from the ceiling](assets/new-museum-fan.png)
-
-![bounding boxes seating installation](assets/new-museum-bounding-boxes.jpeg)
-
 
 The infamous "Useless Machine" by Marvin Minsky. Bryan tried to touch it before the security guard had to stop him.
 
@@ -50,5 +49,7 @@ Of course, like the basic bitch who visits the New Museum I am, the obligatory A
 And then, our friend Morry, who happens to be a New Inc resident, gave us a tour of the office that he works out of upstairs and gave us each a piece of his, First Light! (I later saw the physical installation for this at the Exploratorium in SF so it felt really special.)
 
 ![First Light piece, part 1](assets/new-museum-new-inc-1.png)
+
+&nbsp;
 
 ![First Light piece, part 2](assets/new-museum-new-inc-2.png)

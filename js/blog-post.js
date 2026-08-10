@@ -96,6 +96,7 @@
       function fetchAndRender() {
         if (renderedHtml) {
           contentEl.innerHTML = renderedHtml;
+          initLightbox(contentEl);
           document.title = `${displayTitle(post)} — tunapee`;
           return Promise.resolve();
         }
@@ -133,8 +134,25 @@
             `;
             autoGridConsecutiveImages(contentEl);
             renderedHtml = contentEl.innerHTML; // cache post-grid HTML
+            initLightbox(contentEl);
             document.title = `${title} — tunapee`;
           });
+      }
+
+      /**
+       * Initialises GLightbox on all images in the container. Mirrors
+       * work-detail.js's version of this helper.
+       */
+      function initLightbox(container) {
+        if (!window.GLightbox) return;
+        const images   = Array.from(container.querySelectorAll('img'));
+        const elements = images.map(img => ({ href: img.src, type: 'image' }));
+        const lb       = GLightbox({ elements, touchNavigation: true });
+
+        images.forEach((img, idx) => {
+          img.style.cursor = 'pointer';
+          img.addEventListener('click', () => lb.openAt(idx));
+        });
       }
 
       /**

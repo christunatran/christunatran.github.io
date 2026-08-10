@@ -47,6 +47,8 @@ throwback to when i bullet journaled in undergrad when i took much pride in bein
 
 ![habit tracker 2](assets/habit-tracker-college.png)
 
+&nbsp;
+
 ![habit tracker 1](assets/habit-tracker-2020.JPG)
 
 fast forward to 2025 when i tracked my 5k training on my dingy fridge whiteboard:

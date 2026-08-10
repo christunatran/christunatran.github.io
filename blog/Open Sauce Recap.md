@@ -11,9 +11,15 @@ On July 17-19, I boothed at Open Sauce in San Mateo, CA with my roommates Justin
 
 ![open sauce booth](assets/2026-07-18_13-16-54_498.jpg)
 
+&nbsp;
+
 ![open sauce booth](assets/2026-07-17_17-04-51_382.jpg)
 
+&nbsp;
+
 ![open sauce booth](assets/2026-07-18_13-16-13_582.jpeg)
+
+&nbsp;
 
 ![open sauce booth](assets/2026-07-17_13-57-41_234.jpg)
 
@@ -25,7 +31,11 @@ Then we met up with people from our "Name Goes Here" Discord server:
 
 ![open sauce discord meetup](assets/opensaucegroup1.PNG)
 
+&nbsp;
+
 ![open sauce discord meetup](assets/opensaucegroup2.PNG)
+
+&nbsp;
 
 ![open sauce discord meetup](assets/opensaucegroup3.PNG)
 
