@@ -1,10 +1,20 @@
 [
   {
+    "slug": "no-human-being",
+    "title": "No human being, however great, or powerful, was ever so free as a fish.",
+    "date": "2026.08.11",
+    "file": "No human being.md",
+    "snippet": "-- John Ruskin",
+    "tags": [
+      "quotes"
+    ]
+  },
+  {
     "slug": "trip-to-the-new-museum",
     "title": "trip to the new museum",
     "date": "2026.08.09",
     "file": "trip to the new museum.md",
-    "snippet": "Back in June, I visited the New Museum with my friends Lingwu, Justin, Chianli, Ashley, Bryan and Weilin.",
+    "snippet": "Back in June, I visited the New Museum with my friends Lingwu, Justin, Chianli, Ashley, Marcos, Bryan and Weilin.",
     "tags": [
       "art"
     ],
