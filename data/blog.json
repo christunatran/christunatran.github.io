@@ -61,7 +61,8 @@
     "tags": [
       "rant"
     ],
-    "temperature": "shit-talk"
+    "temperature": "shit-talk",
+    "blogOnly": true
   },
   {
     "slug": "when-the-devil-can-t-get-to-you",
@@ -72,7 +73,8 @@
     "tags": [
       "quotes"
     ],
-    "temperature": "personal"
+    "temperature": "personal",
+    "blogOnly": true
   },
   {
     "slug": "fidget-camp-recap",

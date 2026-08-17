@@ -5,6 +5,7 @@ published_date: 2026-08-04 21:03
 tags: rant
 temperature: shit-talk
 snippet: I grew up hearing: Never marry a man who has these three addictions...
+blogOnly: true
 ---
 
 I grew up hearing:
