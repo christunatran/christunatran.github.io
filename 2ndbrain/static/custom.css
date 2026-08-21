@@ -1,3 +1,14 @@
+/* Kosugi renders curly quotes/apostrophes ('  '  "  ") at double the width of a normal
+   letter (CJK fonts often treat Latin punctuation as full-width) — looks like a stray
+   space before/around every smart quote. Redirect just those 4 characters to a font
+   with normal Latin metrics; everything else still renders in Kosugi. Fixes it
+   everywhere Kosugi is used site-wide, since font-family "Kosugi" is referenced by name. */
+@font-face {
+  font-family: "Kosugi";
+  src: local("Helvetica Neue"), local("Helvetica"), local("Arial");
+  unicode-range: U+2018, U+2019, U+201C, U+201D;
+}
+
 /* site-title / explorer heading — matches christunatran.github.io's h2 (style.css) */
 .left.sidebar .page-title,
 .left.sidebar .explorer .title-button h2 {
