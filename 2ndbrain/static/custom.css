@@ -312,3 +312,21 @@ footer {
 footer * {
   font-size: inherit;
 }
+
+/* search result titles — body font, bold, smaller than default */
+.card-title {
+  font-family: "Kosugi", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* tag index — big "#tag" headers matched to how tags actually look inline in posts */
+.center h2 .tag-link {
+  font-family: "Kosugi", sans-serif;
+  font-size: 16px;
+}
+
+/* tag index — small per-entry tag pills, smaller than body text */
+.center ul.tags .tag-link {
+  font-size: 12px;
+}
