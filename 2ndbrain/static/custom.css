@@ -22,8 +22,9 @@
 }
 
 .left.sidebar .explorer .title-button .fold {
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
+  stroke-width: 1.5px;
 }
 
 .left.sidebar .explorer .title-button h2 {
@@ -65,6 +66,7 @@
 /* explorer tree — airier spacing, underlined note links */
 .left.sidebar .explorer-ul {
   gap: 6px;
+  padding-left: 14px;
 }
 
 .left.sidebar .explorer-ul li {
@@ -94,6 +96,116 @@
 
 .left.sidebar .folder-icon {
   color: var(--gray);
+}
+
+/* individual notes — styled like a blog post on christunatran.github.io (see style.css .about-block / #work-content) */
+body:not([data-slug="index"]) .center {
+  border: 1px dashed var(--dark);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+body:not([data-slug="index"]) .center hr {
+  display: none;
+}
+
+body:not([data-slug="index"]) .page-header {
+  margin-top: 0;
+}
+
+/* back link — mirrors .work-back "← blog" */
+body:not([data-slug="index"]) .breadcrumb-container {
+  font-family: "Silkscreen", "Courier New", monospace;
+  font-size: 9px;
+  margin-bottom: 20px;
+}
+
+body:not([data-slug="index"]) .breadcrumb-element:not(:first-child) {
+  display: none;
+}
+
+body:not([data-slug="index"]) .breadcrumb-element:first-child p {
+  display: none;
+}
+
+body:not([data-slug="index"]) .breadcrumb-element:first-child a {
+  border-bottom: 1px dashed var(--dark);
+}
+
+body:not([data-slug="index"]) .breadcrumb-element:first-child a::before {
+  content: "← ";
+}
+
+/* title — mirrors #work-content h1 */
+body:not([data-slug="index"]) .article-title,
+body:not([data-slug="index"]) .markdown-preview-view h1 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--dark);
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+body:not([data-slug="index"]) .article-title {
+  margin-top: 0;
+}
+
+/* date/tag row — mirrors .post-meta-row */
+body:not([data-slug="index"]) .content-meta {
+  font-size: 14px;
+  color: var(--tertiary);
+}
+
+/* body copy — mirrors #work-content p/ul/li/a/img/pre */
+body:not([data-slug="index"]) .markdown-preview-view p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+body:not([data-slug="index"]) .markdown-preview-view ul,
+body:not([data-slug="index"]) .markdown-preview-view ol {
+  padding-left: 18px;
+  margin-bottom: 14px;
+}
+
+body:not([data-slug="index"]) .markdown-preview-view li {
+  line-height: 1.8;
+  font-size: 9px;
+}
+
+body:not([data-slug="index"]) .markdown-preview-view a {
+  border-bottom: 1px dashed var(--dark);
+  text-decoration: none;
+}
+
+body:not([data-slug="index"]) .markdown-preview-view a:hover {
+  border-bottom-color: transparent;
+}
+
+body:not([data-slug="index"]) .markdown-preview-view img {
+  max-width: 60%;
+  width: auto;
+  display: block;
+  margin: 10px auto;
+  opacity: 0.9;
+}
+
+body:not([data-slug="index"]) .markdown-preview-view pre {
+  background-color: #f8f8f8;
+  border: 1px dashed var(--dark);
+  padding: 10px;
+  overflow-x: auto;
+  margin: 12px 0;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+body:not([data-slug="index"]) .markdown-preview-view code {
+  font-family: "Courier Prime", "Courier New", monospace;
+  font-size: 9px;
 }
 
 /* graph view — relabel, enclose in a dashed box */
