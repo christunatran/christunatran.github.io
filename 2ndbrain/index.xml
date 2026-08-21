@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
     <channel>
-      <title>Quartz 5</title>
+      <title>tunapee&#039;s second brain</title>
       <link>https://tunapee.online/2ndbrain</link>
-      <description>Last 10 notes on Quartz 5</description>
+      <description>Last 10 notes on tunapee&#039;s second brain</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
     <title>Tag Index</title>
     <link>https://tunapee.online/2ndbrain/tags/</link>
     <guid>https://tunapee.online/2ndbrain/tags/</guid>
     <description><![CDATA[  ]]></description>
-    <pubDate>Fri, 21 Aug 2026 06:58:46 GMT</pubDate>
+    <pubDate>Fri, 21 Aug 2026 07:14:12 GMT</pubDate>
   </item><item>
     <title>Second Brain</title>
     <link>https://tunapee.online/2ndbrain/</link>
     <guid>https://tunapee.online/2ndbrain/</guid>
-    <description><![CDATA[ Notes, in progress. ]]></description>
-    <pubDate>Fri, 21 Aug 2026 06:04:03 GMT</pubDate>
+    <description><![CDATA[ this is h1 this is h2 this is h3 this is h4 this is h5 this is h6 this is body this is body italicized this is body bold. ]]></description>
+    <pubDate>Fri, 21 Aug 2026 07:13:08 GMT</pubDate>
+  </item><item>
+    <title>header test</title>
+    <link>https://tunapee.online/2ndbrain/header-test</link>
+    <guid>https://tunapee.online/2ndbrain/header-test</guid>
+    <description><![CDATA[ this is h1 this is h2 this is h3 this is h4 this is h5 this is h6 this is body this is body italicized this is body bold. ]]></description>
+    <pubDate>Fri, 21 Aug 2026 07:12:41 GMT</pubDate>
   </item><item>
     <title>what i want to fill my brain with</title>
     <link>https://tunapee.online/2ndbrain/what-i-want-to-fill-my-brain-with</link>
