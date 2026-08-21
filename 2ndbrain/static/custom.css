@@ -41,14 +41,14 @@
 
 /* search box — flat fill, no border, no pill shape */
 .left.sidebar .search-button {
-  background-color: var(--lightgray);
+  background-color: #e8e8e8;
   border: none;
   border-radius: 0;
   padding: 6px 10px;
 }
 
 .left.sidebar .search-button:hover {
-  background-color: var(--lightgray);
+  background-color: #e8e8e8;
   opacity: 0.8;
 }
 
@@ -76,7 +76,7 @@
 .left.sidebar .nav-file-title,
 .left.sidebar .folder-title {
   font-family: "Kosugi", sans-serif;
-  font-size: 8px;
+  font-size: 9px;
   color: var(--darkgray);
   text-decoration: underline;
   text-decoration-color: var(--lightgray);
