@@ -30,6 +30,10 @@
   margin-bottom: 0;
 }
 
+.left.sidebar .explorer-content {
+  margin-top: 0;
+}
+
 .left.sidebar .page-title a {
   text-decoration: none;
 }
