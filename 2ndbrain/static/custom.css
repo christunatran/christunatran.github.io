@@ -24,10 +24,18 @@
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
+  margin-top: -3.5px;
+  margin-left: 0;
   width: 7px;
   height: 7px;
   stroke-width: 1.5px;
+  transition: none;
+}
+
+/* Quartz's own component CSS drops this rule at build time (only added via JS at
+   runtime, so its static analysis misses it) — replicated here */
+.left.sidebar .explorer.collapsed .title-button .fold {
+  transform: rotateZ(-90deg);
 }
 
 .left.sidebar .explorer .title-button h2 {
@@ -110,7 +118,7 @@
 .center {
   border: 1px dashed var(--dark);
   padding: 10px;
-  margin-top: 40px;
+  margin-top: 96px;
   margin-bottom: 40px;
   box-sizing: border-box;
 }
@@ -215,6 +223,54 @@
 .markdown-preview-view code {
   font-family: "Courier Prime", "Courier New", monospace;
   font-size: 9px;
+}
+
+/* table of contents — same treatment as the explorer heading/list */
+.right.sidebar .toc-header h3 {
+  font-family: "Silkscreen", "Courier New", monospace;
+  font-size: 9px;
+  font-weight: lighter;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--dark);
+  padding-bottom: 4px;
+  margin: 0;
+}
+
+.right.sidebar .toc-header {
+  position: relative;
+  padding-left: 10px;
+}
+
+.right.sidebar .toc-header .fold {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -3.5px;
+  margin-left: 0;
+  width: 7px;
+  height: 7px;
+  stroke-width: 1.5px;
+  transition: none;
+}
+
+.right.sidebar .toc-header.collapsed .fold {
+  transform: rotateZ(-90deg);
+}
+
+.right.sidebar .toc-content a {
+  font-family: "Kosugi", sans-serif;
+  font-size: 9px;
+  color: var(--darkgray);
+  text-decoration: underline;
+  text-decoration-color: var(--lightgray);
+  text-underline-offset: 3px;
+}
+
+.right.sidebar .toc-content a:hover,
+.right.sidebar .toc-content a.in-view {
+  color: var(--tertiary);
+  text-decoration-color: var(--tertiary);
 }
 
 /* graph view — relabel, enclose in a dashed box */
