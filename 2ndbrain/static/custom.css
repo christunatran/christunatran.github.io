@@ -56,6 +56,10 @@
   display: none;
 }
 
+.left.sidebar .search-bar::placeholder {
+  color: transparent;
+}
+
 .left.sidebar .search-button p {
   font-family: "Kosugi", sans-serif;
   font-size: 12px;
@@ -99,46 +103,46 @@
 }
 
 /* individual notes — styled like a blog post on christunatran.github.io (see style.css .about-block / #work-content) */
-body:not([data-slug="index"]) .center {
+.center {
   border: 1px dashed var(--dark);
   padding: 10px;
   box-sizing: border-box;
 }
 
-body:not([data-slug="index"]) .center hr {
+.center hr {
   display: none;
 }
 
-body:not([data-slug="index"]) .page-header {
+.page-header {
   margin-top: 0;
 }
 
 /* back link — mirrors .work-back "← blog" */
-body:not([data-slug="index"]) .breadcrumb-container {
+.breadcrumb-container {
   font-family: "Silkscreen", "Courier New", monospace;
   font-size: 9px;
   margin-bottom: 20px;
 }
 
-body:not([data-slug="index"]) .breadcrumb-element:not(:first-child) {
+.breadcrumb-element:not(:first-child) {
   display: none;
 }
 
-body:not([data-slug="index"]) .breadcrumb-element:first-child p {
+.breadcrumb-element:first-child p {
   display: none;
 }
 
-body:not([data-slug="index"]) .breadcrumb-element:first-child a {
+.breadcrumb-element:first-child a {
   border-bottom: 1px dashed var(--dark);
 }
 
-body:not([data-slug="index"]) .breadcrumb-element:first-child a::before {
+.breadcrumb-element:first-child a::before {
   content: "← ";
 }
 
 /* title — mirrors #work-content h1 */
-body:not([data-slug="index"]) .article-title,
-body:not([data-slug="index"]) .markdown-preview-view h1 {
+.article-title,
+.markdown-preview-view h1 {
   font-size: 14px;
   font-weight: 700;
   text-transform: lowercase;
@@ -149,43 +153,42 @@ body:not([data-slug="index"]) .markdown-preview-view h1 {
   margin-bottom: 16px;
 }
 
-body:not([data-slug="index"]) .article-title {
+.article-title {
   margin-top: 0;
 }
 
 /* date/tag row — mirrors .post-meta-row */
-body:not([data-slug="index"]) .content-meta {
+.content-meta {
   font-size: 14px;
   color: var(--tertiary);
 }
 
 /* body copy — mirrors #work-content p/ul/li/a/img/pre */
-body:not([data-slug="index"]) .markdown-preview-view p {
+.markdown-preview-view p {
   line-height: 1.6;
   margin-bottom: 12px;
 }
 
-body:not([data-slug="index"]) .markdown-preview-view ul,
-body:not([data-slug="index"]) .markdown-preview-view ol {
+.markdown-preview-view ul,
+.markdown-preview-view ol {
   padding-left: 18px;
   margin-bottom: 14px;
 }
 
-body:not([data-slug="index"]) .markdown-preview-view li {
+.markdown-preview-view li {
   line-height: 1.8;
-  font-size: 9px;
 }
 
-body:not([data-slug="index"]) .markdown-preview-view a {
+.markdown-preview-view a {
   border-bottom: 1px dashed var(--dark);
   text-decoration: none;
 }
 
-body:not([data-slug="index"]) .markdown-preview-view a:hover {
+.markdown-preview-view a:hover {
   border-bottom-color: transparent;
 }
 
-body:not([data-slug="index"]) .markdown-preview-view img {
+.markdown-preview-view img {
   max-width: 60%;
   width: auto;
   display: block;
@@ -193,7 +196,7 @@ body:not([data-slug="index"]) .markdown-preview-view img {
   opacity: 0.9;
 }
 
-body:not([data-slug="index"]) .markdown-preview-view pre {
+.markdown-preview-view pre {
   background-color: #f8f8f8;
   border: 1px dashed var(--dark);
   padding: 10px;
@@ -203,7 +206,7 @@ body:not([data-slug="index"]) .markdown-preview-view pre {
   line-height: 1.6;
 }
 
-body:not([data-slug="index"]) .markdown-preview-view code {
+.markdown-preview-view code {
   font-family: "Courier Prime", "Courier New", monospace;
   font-size: 9px;
 }
