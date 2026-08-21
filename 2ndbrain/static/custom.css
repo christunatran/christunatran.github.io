@@ -1,15 +1,15 @@
-/* Kosugi is a fully monospaced font — every character, including punctuation, is the
-   exact same advance width as a letter (confirmed: ',' '.' '"' etc. all measure
-   identically to 'A'). That reads fine for letters but makes punctuation look like it
-   has a stray space around it, since normal typesetting expects tight punctuation.
-   Redirect the characters where this is most noticeable (quotes/apostrophes, comma,
-   period) to a font with normal proportional metrics; everything else still renders
-   in Kosugi. Fixes it everywhere Kosugi is used site-wide, since font-family "Kosugi"
-   is referenced by name. */
+/* Kosugi has systematic Latin-punctuation problems: it's fully monospaced (every
+   character, including punctuation, has the exact same advance width as a letter —
+   confirmed ',' '.' '"' etc. all measure identically to 'A', reading as a stray space
+   around punctuation), and separately its ellipsis glyph (…) is drawn floating well
+   above the baseline instead of resting on it like a period (measured descent -9.8px
+   vs Arial's ~0px). Redirect the affected characters to a font with normal Latin
+   metrics; everything else still renders in Kosugi. Fixes it everywhere Kosugi is
+   used site-wide, since font-family "Kosugi" is referenced by name. */
 @font-face {
   font-family: "Kosugi";
   src: local("Helvetica Neue"), local("Helvetica"), local("Arial");
-  unicode-range: U+2018, U+2019, U+201C, U+201D, U+002C, U+002E;
+  unicode-range: U+2018, U+2019, U+201C, U+201D, U+002C, U+002E, U+2026;
 }
 
 /* site-title / explorer heading — matches christunatran.github.io's h2 (style.css) */
