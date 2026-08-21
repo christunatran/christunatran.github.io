@@ -20,6 +20,19 @@
       .replace(/"/g, '&quot;');
   }
 
+  /**
+   * Wraps a "quotes"-tagged post's title in quote marks — but only on
+   * whichever side doesn't already have one, since some titles are
+   * typed with the quote marks already included in frontmatter.
+   */
+  function wrapQuoteTitle(title) {
+    const openQuotes = ['"', '“'];
+    const closeQuotes = ['"', '”'];
+    const hasOpen = openQuotes.some(q => title.startsWith(q));
+    const hasClose = closeQuotes.some(q => title.endsWith(q));
+    return (hasOpen ? '' : '"') + title + (hasClose ? '' : '"');
+  }
+
   function buildCard(post, locked) {
     const card = document.createElement('div');
     card.className = 'post post-text' + (locked ? ' temp-locked' : '');
@@ -29,7 +42,7 @@
       : '';
 
     const isQuote = post.tags && post.tags.includes('quotes');
-    const displayTitle = isQuote ? `"${post.title}"` : post.title;
+    const displayTitle = isQuote ? wrapQuoteTitle(post.title) : post.title;
 
     const badgeHtml = locked
       ? `<span class="temp-lock-badge">${window.Temperature.LOCK_ICON}<span>${escapeHtml(post.temperature)}</span></span>`
