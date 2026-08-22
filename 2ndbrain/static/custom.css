@@ -439,3 +439,35 @@ footer * {
 .backlinks ul li {
   display: inline-block;
 }
+
+/* pin the footer to the very bottom of the viewport (like a true page footnote)
+   instead of it floating right under whatever content happens to be on the page.
+   The center column grows to absorb the leftover space; .center opts out of grid's
+   default stretch so the dashed content box itself stays content-sized, with the
+   gap landing below it instead of inflating the box. Row counts/order mirror
+   Quartz's own #quartz-body breakpoints exactly (see index-f2774a91.css). */
+.page > #quartz-body {
+  min-height: 100dvh;
+}
+
+.page > #quartz-body > .center {
+  align-self: start;
+}
+
+@media (min-width: 1200px) {
+  .page > #quartz-body {
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+  .page > #quartz-body {
+    grid-template-rows: auto 1fr auto auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .page > #quartz-body {
+    grid-template-rows: auto auto 1fr auto auto;
+  }
+}

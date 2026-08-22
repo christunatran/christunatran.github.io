@@ -339,16 +339,30 @@ blockquote {
   left: 74vw;
   transform: translateX(-50%);
   width: min(400px, 52vw - 30px);
+  /* The image block + info block below the now-box must always render at
+     full size — only the now-box is allowed to give up space when short
+     on room, via the flex-shrink/min-height:0 rules below. */
+  max-height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
 }
 
-/* ── now preview box — sits above the ascii art, home page only ── */
+/* ── now preview box — sits above the ascii art, home page only ──
+   Shrinks first (and scrolls internally) when the column runs out of
+   vertical room; #side-art-box/#side-info-box are flex-shrink:0 so
+   they're never the ones that get squeezed. */
 #now-box {
   border: 1px dashed var(--border);
   margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+  min-height: 40px;
 }
 
 .now-box-header {
   display: block;
+  flex-shrink: 0;
   font-family: 'Silkscreen', 'Courier New', monospace;
   font-size: 11px;
   letter-spacing: 1px;
@@ -367,7 +381,8 @@ blockquote {
 }
 
 .now-box-body {
-  max-height: 380px;
+  flex: 1 1 auto;
+  min-height: 0;
   overflow-y: auto;
   padding: 10px 12px;
   font-family: 'Kosugi', sans-serif;
