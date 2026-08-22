@@ -131,6 +131,31 @@
     grid.style.height = Math.max(...ys) + 'px';
   }
 
+  // ── "now" preview box — sits above the ascii art in the side panel.
+  // Nav no longer links to /now directly; this box (and its header link)
+  // is the only way to reach it besides typing the URL.
+  function injectNowPreview() {
+    const panel = document.getElementById('side-panel');
+    if (!panel) return;
+
+    const box = document.createElement('div');
+    box.id = 'now-box';
+    box.innerHTML = `
+      <a href="/now" class="now-box-header">now</a>
+      <div class="now-box-body" id="now-box-body"></div>
+    `;
+    panel.insertBefore(box, panel.firstChild);
+
+    fetch('/now/index.md', { cache: 'no-store' })
+      .then(r => r.text())
+      .then(md => {
+        document.getElementById('now-box-body').innerHTML = marked.parse(md);
+      })
+      .catch(() => {});
+  }
+
+  injectNowPreview();
+
   const MOBILE_BREAKPOINT = 768;
 
   function buildGrid(works, posts) {

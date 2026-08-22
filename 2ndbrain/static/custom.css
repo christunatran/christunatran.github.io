@@ -44,16 +44,16 @@
   text-decoration: none;
 }
 
-/* search box — flat fill, no border, no pill shape */
+/* search box — dashed box, matching .center/.graph-outer elsewhere on the site */
 .left.sidebar .search-button {
-  background-color: #e8e8e8;
-  border: none;
+  background-color: var(--light);
+  border: 1px dashed var(--dark);
   border-radius: 0;
   padding: 6px 10px;
 }
 
 .left.sidebar .search-button:hover {
-  background-color: #e8e8e8;
+  background-color: var(--light);
   opacity: 0.8;
 }
 
