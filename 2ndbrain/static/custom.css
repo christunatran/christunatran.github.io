@@ -392,15 +392,25 @@ footer * {
   align-items: center;
 }
 
+/* tags column sizes to its own content (never wraps) instead of a fixed 1fr share;
+   the title column takes whatever's left and wraps/shrinks instead */
+.page-listing .section {
+  grid-template-columns: fit-content(8em) 1fr max-content;
+}
+
+.page-listing .desc {
+  min-width: 0;
+}
+
 /* per-row tags — Quartz's own CSS only ever put list-style:none on the note-page
    version of ul.tags; this listing-page instance was left as a plain bulleted list.
-   Make it flow inline to the right of the title, wrapping instead of stacking. */
+   Make it flow inline to the right of the title, always on one line. */
 .page-listing ul.tags {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 6px;
   justify-content: flex-end;
   align-content: center;
