@@ -45,7 +45,7 @@ Sometimes I receive unsolicited bits of information about what he and his buddie
 
 One of his friends, who I frankly don't really respect, told me that I should "navigate this breakup with grace and to just let it go". No thanks. I'm allowed to be upset and bitter. And those aren't the only feelings I experience. I also feel clarity, relief, and peace now that I'm back on my own and don't have to worry about an emotionally undeveloped man-child. Multiple truths and feelings can exist at the same time. I *am* upset but this thing doesn't totally consume me, life moves on. I just tend to learn my lessons the hard way. 
 
-*I to move on with my life while feeling like people like that shouldn't continue to walk around unchecked.*
+*I move on with my life while feeling like people like that shouldn't continue to walk around unchecked.*
 
 So, to whichever quiet Asian girl he's kicking it with now (that's his admitted type), enjoy it while it lasts, because it's always fun at first. But watch what happens the moment you express a single need. 
 
@@ -72,7 +72,7 @@ I found a video of the guide that he must have followed to a tee to end up the w
 I wonder how many people have heard his "if I went missing, would you still post on your story?" bit.
 
 #### And 
-the part about paying for prostitution, because it's so normalized within his friend group over in Markham.
+the part about paying for prostitution, because it's so normalized within his privileged friend group over in Markham.
 
 #### And finally 
 

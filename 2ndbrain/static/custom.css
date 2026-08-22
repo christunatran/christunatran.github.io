@@ -1,0 +1,391 @@
+/* Kosugi has systematic Latin-punctuation problems: it's fully monospaced (every
+   character, including punctuation, has the exact same advance width as a letter —
+   confirmed ',' '.' '"' etc. all measure identically to 'A', reading as a stray space
+   around punctuation), and separately its ellipsis glyph (…) is drawn floating well
+   above the baseline instead of resting on it like a period (measured descent -9.8px
+   vs Arial's ~0px). Redirect the affected characters to a font with normal Latin
+   metrics; everything else still renders in Kosugi. Fixes it everywhere Kosugi is
+   used site-wide, since font-family "Kosugi" is referenced by name. */
+@font-face {
+  font-family: "Kosugi";
+  src: local("Helvetica Neue"), local("Helvetica"), local("Arial");
+  unicode-range: U+2018, U+2019, U+201C, U+201D, U+002C, U+002E, U+2026;
+}
+
+/* site title — matches christunatran.github.io's h2 (style.css) */
+.left.sidebar .page-title {
+  font-family: "Silkscreen", "Courier New", monospace;
+  font-size: 9px;
+  font-weight: lighter;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  line-height: 12px;
+  border-bottom: 1px solid var(--dark);
+  padding-bottom: 4px;
+  margin-bottom: 15px;
+}
+
+/* "Explorer" dropdown removed — the top-level folder ("ITP", etc.) now carries the
+   heading treatment the Explorer label used to have (see folder-container /
+   folder-icon / folder-title below), so there's no separate toggle anymore. */
+.left.sidebar .explorer .title-button.desktop-explorer {
+  display: none;
+}
+
+.left.sidebar .explorer.collapsed {
+  flex: 0 1 auto;
+}
+
+.left.sidebar .explorer-content {
+  margin-top: 0;
+}
+
+.left.sidebar .page-title a {
+  text-decoration: none;
+}
+
+/* search box — flat fill, no border, no pill shape */
+.left.sidebar .search-button {
+  background-color: #e8e8e8;
+  border: none;
+  border-radius: 0;
+  padding: 6px 10px;
+}
+
+.left.sidebar .search-button:hover {
+  background-color: #e8e8e8;
+  opacity: 0.8;
+}
+
+.left.sidebar .search-button svg {
+  display: none;
+}
+
+.left.sidebar .search-bar::placeholder {
+  color: transparent;
+}
+
+.left.sidebar .search-button p {
+  font-family: "Kosugi", sans-serif;
+  font-size: 12px;
+  color: var(--darkgray);
+  text-transform: lowercase;
+}
+
+/* explorer tree — airier spacing, underlined note links */
+.left.sidebar .explorer-ul {
+  gap: 6px;
+  padding-left: 0;
+}
+
+.left.sidebar .explorer-ul li {
+  margin: 2px 0;
+}
+
+.left.sidebar .nav-file-title {
+  font-family: "Kosugi", sans-serif;
+  font-size: 10px;
+  color: var(--darkgray);
+  text-decoration: underline;
+  text-decoration-color: var(--lightgray);
+  text-underline-offset: 3px;
+  padding: 3px 0;
+}
+
+.left.sidebar .nav-file-title:hover {
+  color: var(--tertiary);
+  text-decoration-color: var(--tertiary);
+}
+
+/* nested-list connector line — pulled in from Quartz's default 6px so it lines up
+   directly under the center of the folder-icon chevron above it (see .folder-icon) */
+.left.sidebar .folder-outer > ul {
+  margin-left: 3.5px;
+}
+
+/* folder heading — same treatment the removed Explorer label/chevron used to have */
+.left.sidebar .folder-container {
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
+/* Quartz's base CSS only styles `.folder-container div > button` — when the explorer
+   is in "link" mode it swaps that button for an <a>, which the stylesheet never
+   accounted for, so it fell back to an inline-block anchor with an inherited 24px
+   line-height and threw off vertical centering. Restyle it to match the button case. */
+.left.sidebar .folder-container div > .folder-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.left.sidebar .folder-icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -6px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 7px;
+  height: 7px;
+  stroke-width: 1.5px;
+  transition: none;
+  color: var(--dark);
+}
+
+.left.sidebar .folder-title {
+  font-family: "Silkscreen", "Courier New", monospace;
+  font-size: 9px;
+  font-weight: lighter;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  line-height: 12px;
+  border-bottom: 1px solid var(--dark);
+  padding-bottom: 4px;
+  color: var(--dark);
+}
+
+.left.sidebar .folder-title:hover {
+  color: var(--tertiary);
+  border-bottom-color: var(--tertiary);
+}
+
+/* individual notes — styled like a blog post on christunatran.github.io (see style.css .about-block / #work-content) */
+.center {
+  border: 1px dashed var(--dark);
+  padding: 10px;
+  margin-top: 96px;
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.center hr {
+  display: none;
+}
+
+.page-header {
+  margin-top: 0;
+}
+
+/* back link — mirrors .work-back "← blog" */
+.breadcrumb-container {
+  font-family: "Silkscreen", "Courier New", monospace;
+  font-size: 9px;
+  margin-bottom: 20px;
+}
+
+.breadcrumb-element:not(:first-child) {
+  display: none;
+}
+
+.breadcrumb-element:first-child p {
+  display: none;
+}
+
+.breadcrumb-element:first-child a {
+  border-bottom: 1px dashed var(--dark);
+}
+
+.breadcrumb-element:first-child a::before {
+  content: "← ";
+}
+
+/* title — mirrors #work-content h1 */
+.article-title,
+.markdown-preview-view h1 {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--dark);
+  padding-bottom: 6px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.article-title {
+  margin-top: 0;
+}
+
+/* date/tag row — mirrors .post-meta-row */
+.content-meta {
+  font-size: 12px;
+  color: var(--tertiary);
+}
+
+/* body copy — mirrors #work-content p/ul/li/a/img/pre */
+.markdown-preview-view {
+  font-size: 15px;
+}
+
+.markdown-preview-view p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+  padding-left: 18px;
+  margin-bottom: 14px;
+}
+
+.markdown-preview-view li {
+  line-height: 1.8;
+}
+
+.markdown-preview-view a {
+  border-bottom: 1px dashed var(--dark);
+  text-decoration: none;
+}
+
+.markdown-preview-view a:hover {
+  border-bottom-color: transparent;
+}
+
+.markdown-preview-view img {
+  max-width: 60%;
+  width: auto;
+  display: block;
+  margin: 10px auto;
+  opacity: 0.9;
+}
+
+.markdown-preview-view pre {
+  background-color: #f8f8f8;
+  border: 1px dashed var(--dark);
+  padding: 10px;
+  overflow-x: auto;
+  margin: 12px 0;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.markdown-preview-view code {
+  font-family: "Courier Prime", "Courier New", monospace;
+  font-size: 9px;
+}
+
+/* table of contents — same treatment as the explorer heading/list */
+.right.sidebar .toc-header h3 {
+  font-family: "Silkscreen", "Courier New", monospace;
+  font-size: 9px;
+  font-weight: lighter;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid var(--dark);
+  padding-bottom: 4px;
+  margin: 0;
+}
+
+.right.sidebar .toc-header {
+  position: relative;
+  padding-left: 10px;
+}
+
+.right.sidebar .toc-header .fold {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -3.5px;
+  margin-left: 0;
+  width: 7px;
+  height: 7px;
+  stroke-width: 1.5px;
+  transition: none;
+}
+
+.right.sidebar .toc-header.collapsed .fold {
+  transform: rotateZ(-90deg);
+}
+
+.right.sidebar .toc-content a {
+  font-family: "Kosugi", sans-serif;
+  font-size: 9px;
+  color: var(--darkgray);
+  text-decoration: underline;
+  text-decoration-color: var(--lightgray);
+  text-underline-offset: 3px;
+}
+
+.right.sidebar .toc-content a:hover,
+.right.sidebar .toc-content a.in-view {
+  color: var(--tertiary);
+  text-decoration-color: var(--tertiary);
+}
+
+/* graph view — relabel, enclose in a dashed box */
+.graph h3 {
+  font-size: 0;
+}
+
+.graph h3::after {
+  content: "Graph";
+  font-size: 9px;
+  font-family: "Silkscreen", "Courier New", monospace;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+
+.graph .graph-outer {
+  border: 1px dashed var(--dark);
+  border-radius: 0;
+  padding: 10px;
+  background-color: var(--light);
+}
+
+/* footer — match "Graph" label size */
+footer {
+  font-size: 9px;
+}
+
+footer * {
+  font-size: inherit;
+}
+
+/* search result titles — body font, bold, smaller than default */
+.card-title {
+  font-family: "Kosugi", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* tag index — big "#tag" headers matched to how tags actually look inline in posts */
+.center h2 .tag-link {
+  font-family: "Kosugi", sans-serif;
+  font-size: 16px;
+}
+
+/* tag index — small per-entry tag pills, smaller than body text */
+.center ul.tags .tag-link {
+  font-size: 12px;
+}
+
+/* folder/tag listing pages — body text matches note pages; titles switched from
+   the oversized Silkscreen header font to the smaller bold body font */
+.page-listing {
+  font-size: 15px;
+}
+
+/* "N item(s) under this folder" intro line — smaller than the listing body text */
+.page-listing > p {
+  font-size: 13px;
+}
+
+.page-listing h3,
+.page-listing h3 a {
+  font-family: "Kosugi", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* per-entry date — matches .content-meta's size on note pages */
+.page-listing .meta {
+  font-size: 12px;
+}
+
+/* title/date row — center the title against the date instead of grid's default stretch */
+.page-listing .section {
+  align-items: center;
+}
