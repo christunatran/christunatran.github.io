@@ -416,6 +416,15 @@ footer * {
   align-content: center;
 }
 
+/* Quartz deliberately hides tags inside link-hover popover previews — the flex
+   rule above was accidentally overriding that. With tags visible there, they got
+   auto-placed into the popover's date column (only 2 grid tracks in that context),
+   ballooning its fit-content(8em) width to match the tags instead of the date, and
+   shoving every title far to the right. Restore the intended hidden behavior. */
+.popover .page-listing ul.tags {
+  display: none;
+}
+
 .page-listing ul.tags li {
   display: inline-block;
 }
