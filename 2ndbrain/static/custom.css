@@ -211,7 +211,7 @@
 
 /* date/tag row — mirrors .post-meta-row */
 .content-meta {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--tertiary);
 }
 
@@ -368,9 +368,24 @@ footer * {
   font-size: 15px;
 }
 
+/* "N item(s) under this folder" intro line — smaller than the listing body text */
+.page-listing > p {
+  font-size: 13px;
+}
+
 .page-listing h3,
 .page-listing h3 a {
   font-family: "Kosugi", sans-serif;
   font-size: 14px;
   font-weight: 700;
+}
+
+/* per-entry date — matches .content-meta's size on note pages */
+.page-listing .meta {
+  font-size: 12px;
+}
+
+/* title/date row — center the title against the date instead of grid's default stretch */
+.page-listing .section {
+  align-items: center;
 }
