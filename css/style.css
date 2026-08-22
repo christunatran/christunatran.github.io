@@ -177,10 +177,10 @@ blockquote {
    CONTENT AREA
    ============================================================ */
 #content {
-  margin-left: 20px;
+  margin-left: 30px;
   margin-top: 40px;
   padding: 10px;
-  width: calc(48vw - 55px);
+  width: calc(48vw - 65px);
 }
 
 /* ============================================================
@@ -337,7 +337,7 @@ blockquote {
   position: fixed;
   top: 200px;
   left: 74vw;
-  transform: translateX(-50%);
+  transform: translateX(calc(-50% + 10px));
   max-width: calc(52vw - 30px);
 }
 
@@ -940,10 +940,10 @@ blockquote {
 
   #content {
     order: 1;
-    margin-left: 0;
+    margin-left: 12px;
     margin-top: 20px;
     padding: 10px;
-    width: 100%;
+    width: calc(100% - 12px);
   }
 
   /* Side panel: pulled into flow, shown at top */
@@ -955,11 +955,12 @@ blockquote {
     top: auto;
     left: auto;
     transform: none;
-    max-width: 100%;
-    width: 100%;
+    max-width: calc(100% - 12px);
+    width: calc(100% - 12px);
     max-height: none;
     padding: 10px;
     margin-top: 20px;
+    margin-left: 12px;
   }
 
   #now-box { max-height: none; }
