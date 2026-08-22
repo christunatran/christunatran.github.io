@@ -84,9 +84,11 @@ a:hover {
   cursor: pointer;
 }
 
-:not(#work-content) b,
-:not(#work-content) strong {
-  text-transform: uppercase;
+b, strong {
+  font-weight: 700;
+  /* Kosugi ships one weight only, so font-weight alone barely reads as bold —
+     stack a hairline text-shadow to thicken the strokes. */
+  text-shadow: 0.4px 0 0 currentColor, -0.4px 0 0 currentColor;
 }
 
 :not(#work-content) i,

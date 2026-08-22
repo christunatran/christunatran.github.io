@@ -29,7 +29,7 @@
     return;
   }
 
-  fetch(`/works/${slug}/index.md`)
+  fetch(`/works/${slug}/index.md`, { cache: 'no-store' })
     .then(r => {
       if (!r.ok) throw new Error('not found');
       return r.text();
