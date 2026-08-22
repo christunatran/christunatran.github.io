@@ -381,6 +381,16 @@ article:has(.markdown-preview-view:empty) + .page-listing > p {
   margin-top: 0;
 }
 
+/* gap before the first listed post — Quartz's own ul.section-ul has a 2em
+   (30px) margin-top here; bring it down to about one linebreak */
+.page-listing > p {
+  margin-bottom: 0;
+}
+
+.page-listing ul.section-ul {
+  margin-top: 15px;
+}
+
 .page-listing h3,
 .page-listing h3 a {
   font-family: "Kosugi", sans-serif;
