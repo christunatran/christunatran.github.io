@@ -90,6 +90,10 @@
   text-decoration-color: var(--lightgray);
   text-underline-offset: 3px;
   padding: 3px 0;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .left.sidebar .nav-file-title:hover {
