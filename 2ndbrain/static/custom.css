@@ -12,9 +12,8 @@
   unicode-range: U+2018, U+2019, U+201C, U+201D, U+002C, U+002E, U+2026;
 }
 
-/* site-title / explorer heading — matches christunatran.github.io's h2 (style.css) */
-.left.sidebar .page-title,
-.left.sidebar .explorer .title-button h2 {
+/* site title — matches christunatran.github.io's h2 (style.css) */
+.left.sidebar .page-title {
   font-family: "Silkscreen", "Courier New", monospace;
   font-size: 9px;
   font-weight: lighter;
@@ -26,35 +25,15 @@
   margin-bottom: 15px;
 }
 
-.left.sidebar .explorer .title-button {
-  border-bottom: none;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  position: relative;
-  padding-left: 10px;
+/* "Explorer" dropdown removed — the top-level folder ("ITP", etc.) now carries the
+   heading treatment the Explorer label used to have (see folder-container /
+   folder-icon / folder-title below), so there's no separate toggle anymore. */
+.left.sidebar .explorer .title-button.desktop-explorer {
+  display: none;
 }
 
-.left.sidebar .explorer .title-button .fold {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  margin-top: -3.5px;
-  margin-left: 0;
-  width: 7px;
-  height: 7px;
-  stroke-width: 1.5px;
-  transition: none;
-}
-
-/* Quartz's own component CSS drops this rule at build time (only added via JS at
-   runtime, so its static analysis misses it) — replicated here */
-.left.sidebar .explorer.collapsed .title-button .fold {
-  transform: rotateZ(-90deg);
-}
-
-.left.sidebar .explorer .title-button h2 {
-  margin-bottom: 0;
-  margin-left: 0;
+.left.sidebar .explorer.collapsed {
+  flex: 0 1 auto;
 }
 
 .left.sidebar .explorer-content {
@@ -103,10 +82,9 @@
   margin: 2px 0;
 }
 
-.left.sidebar .nav-file-title,
-.left.sidebar .folder-title {
+.left.sidebar .nav-file-title {
   font-family: "Kosugi", sans-serif;
-  font-size: 9px;
+  font-size: 10px;
   color: var(--darkgray);
   text-decoration: underline;
   text-decoration-color: var(--lightgray);
@@ -114,8 +92,7 @@
   padding: 3px 0;
 }
 
-.left.sidebar .nav-file-title:hover,
-.left.sidebar .folder-title:hover {
+.left.sidebar .nav-file-title:hover {
   color: var(--tertiary);
   text-decoration-color: var(--tertiary);
 }
@@ -124,8 +101,42 @@
   padding-left: 14px;
 }
 
+/* folder heading — same treatment the removed Explorer label/chevron used to have */
+.left.sidebar .folder-container {
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+
 .left.sidebar .folder-icon {
-  color: var(--gray);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -3.5px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 7px;
+  height: 7px;
+  stroke-width: 1.5px;
+  transition: none;
+  color: var(--dark);
+}
+
+.left.sidebar .folder-title {
+  font-family: "Silkscreen", "Courier New", monospace;
+  font-size: 9px;
+  font-weight: lighter;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  line-height: 12px;
+  border-bottom: 1px solid var(--dark);
+  padding-bottom: 4px;
+  color: var(--dark);
+}
+
+.left.sidebar .folder-title:hover {
+  color: var(--tertiary);
+  border-bottom-color: var(--tertiary);
 }
 
 /* individual notes — styled like a blog post on christunatran.github.io (see style.css .about-block / #work-content) */
@@ -192,6 +203,10 @@
 }
 
 /* body copy — mirrors #work-content p/ul/li/a/img/pre */
+.markdown-preview-view {
+  font-size: 15px;
+}
+
 .markdown-preview-view p {
   line-height: 1.6;
   margin-bottom: 12px;
@@ -332,4 +347,17 @@ footer * {
 /* tag index — small per-entry tag pills, smaller than body text */
 .center ul.tags .tag-link {
   font-size: 12px;
+}
+
+/* folder/tag listing pages — body text matches note pages; titles switched from
+   the oversized Silkscreen header font to the smaller bold body font */
+.page-listing {
+  font-size: 15px;
+}
+
+.page-listing h3,
+.page-listing h3 a {
+  font-family: "Kosugi", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
 }
