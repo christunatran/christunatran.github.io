@@ -338,6 +338,7 @@
 /* footer — match "Graph" label size */
 footer {
   font-size: 9px;
+  margin-bottom: 12px;
 }
 
 footer * {

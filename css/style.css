@@ -335,13 +335,19 @@ blockquote {
    ============================================================ */
 #side-panel {
   position: fixed;
-  top: 55px;
+  top: 200px;
   left: 74vw;
   transform: translateX(-50%);
+  max-width: calc(52vw - 30px);
+}
+
+/* Home page only (the now-box is injected there by home.js): pull the
+   column up near the dial and let the now-box shrink/scroll so the
+   image + info block below it always renders in full. */
+#side-panel:has(#now-box) {
+  top: 55px;
   width: min(400px, 52vw - 30px);
-  /* The image block + info block below the now-box must always render at
-     full size — only the now-box is allowed to give up space when short
-     on room, via the flex-shrink/min-height:0 rules below. */
+  max-width: none;
   max-height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
@@ -414,6 +420,7 @@ blockquote {
 #side-art-box {
   border: 1px dashed var(--border);
   padding: 5px;
+  flex-shrink: 0;
 }
 
 #side-art {
@@ -421,6 +428,12 @@ blockquote {
   max-width: 100%;
   max-height: 60vh;
   object-fit: contain;
+}
+
+/* Home page: leave more headroom for the now-box above by capping the
+   image smaller than its default size. */
+#side-panel:has(#now-box) #side-art {
+  max-height: 40vh;
 }
 
 #side-info-box {
@@ -431,6 +444,7 @@ blockquote {
   font-size: 9px;
   text-align: center;
   line-height: 2;
+  flex-shrink: 0;
 }
 
 /* ============================================================
@@ -932,7 +946,8 @@ blockquote {
   }
 
   /* Side panel: pulled into flow, shown at top */
-  #side-panel {
+  #side-panel,
+  #side-panel:has(#now-box) {
     order: 0;
     display: block;
     position: static;
@@ -941,11 +956,16 @@ blockquote {
     transform: none;
     max-width: 100%;
     width: 100%;
+    max-height: none;
     padding: 10px;
     margin-top: 20px;
   }
 
-  #side-art {
+  #now-box { max-height: none; }
+  .now-box-body { flex: none; max-height: 260px; }
+
+  #side-art,
+  #side-panel:has(#now-box) #side-art {
     max-height: 40vh;
     max-width: 100%;
     margin: 0 auto;
