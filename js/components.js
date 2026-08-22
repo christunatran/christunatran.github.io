@@ -20,6 +20,7 @@
     { href: '/about', label: 'about' },
     { href: '/works', label: 'works' },
     { href: '/blog',  label: 'blog'  },
+    { href: '/2ndbrain', label: 'brain' },
     { href: '/75',    label: '75'    },
   ];
 
