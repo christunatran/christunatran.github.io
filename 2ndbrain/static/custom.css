@@ -75,7 +75,7 @@
 /* explorer tree — airier spacing, underlined note links */
 .left.sidebar .explorer-ul {
   gap: 6px;
-  padding-left: 14px;
+  padding-left: 0;
 }
 
 .left.sidebar .explorer-ul li {
@@ -97,8 +97,10 @@
   text-decoration-color: var(--tertiary);
 }
 
-.left.sidebar .folder-outer {
-  padding-left: 14px;
+/* nested-list connector line — pulled in from Quartz's default 6px so it lines up
+   directly under the center of the folder-icon chevron above it (see .folder-icon) */
+.left.sidebar .folder-outer > ul {
+  margin-left: 3.5px;
 }
 
 /* folder heading — same treatment the removed Explorer label/chevron used to have */
@@ -108,11 +110,22 @@
   margin-bottom: 15px;
 }
 
+/* Quartz's base CSS only styles `.folder-container div > button` — when the explorer
+   is in "link" mode it swaps that button for an <a>, which the stylesheet never
+   accounted for, so it fell back to an inline-block anchor with an inherited 24px
+   line-height and threw off vertical centering. Restyle it to match the button case. */
+.left.sidebar .folder-container div > .folder-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
 .left.sidebar .folder-icon {
   position: absolute;
   left: 0;
   top: 50%;
-  margin-top: -3.5px;
+  margin-top: -6px;
   margin-left: 0;
   margin-right: 0;
   width: 7px;
