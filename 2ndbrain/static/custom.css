@@ -368,9 +368,11 @@ footer * {
   font-size: 15px;
 }
 
-/* "N item(s) under this folder" intro line — smaller than the listing body text */
+/* "N item(s) under this folder" intro line — footnote-sized, well clear of the
+   markdown body content above it */
 .page-listing > p {
-  font-size: 13px;
+  font-size: 9px;
+  margin-top: 72px;
 }
 
 .page-listing h3,
