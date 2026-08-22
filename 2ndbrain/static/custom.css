@@ -368,11 +368,17 @@ footer * {
   font-size: 15px;
 }
 
-/* "N item(s) under this folder" intro line — footnote-sized, well clear of the
-   markdown body content above it */
+/* "N item(s) in this folder" intro line — footnote-sized, with a small gap below
+   the folder's own description text */
 .page-listing > p {
   font-size: 9px;
-  margin-top: 72px;
+  margin-top: 24px;
+}
+
+/* when the folder has no description, the count line is the first thing in the
+   box — drop the gap above it instead of leaving a big empty space */
+article:has(.markdown-preview-view:empty) + .page-listing > p {
+  margin-top: 0;
 }
 
 .page-listing h3,
