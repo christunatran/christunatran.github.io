@@ -77,6 +77,18 @@
     "blogOnly": true
   },
   {
+    "slug": "makerspace-organization",
+    "title": "makerspace organization",
+    "date": "2026.07.30",
+    "file": "makerspace organization.md",
+    "snippet": "Leia, a new friend from Fidget Camp and ITP alum, is a new media exhibit developer at the Exploratorium in SF. They graciously gave us a tour of the makerspace, which I found to be impeccably organized. I'm in awe, and s…",
+    "tags": [
+      "itp"
+    ],
+    "temperature": "employable",
+    "cover": "/blog/assets/exploratorium-makerspace-wire-and-parts-wall.png"
+  },
+  {
     "slug": "fidget-camp-recap",
     "title": "fidget camp recap",
     "date": "2026.07.19",
