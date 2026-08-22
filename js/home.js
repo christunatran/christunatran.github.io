@@ -198,10 +198,37 @@
     grid.appendChild(col0);
     grid.appendChild(col1);
 
+    const orderedCards = [];
     items.forEach((item) => {
       const card = createItemCard(item);
       if (!card) return;
+      orderedCards.push(card);
       (col0.scrollHeight <= col1.scrollHeight ? col0 : col1).appendChild(card);
+    });
+
+    // The split above is only a first guess: post-image cards are ~0px tall
+    // until their <img> finishes loading, so comparing scrollHeight while
+    // images are still in flight can badly misjudge which column is
+    // shorter — leaving one column much taller than the other with a gap
+    // at the bottom of the short one. Once every image has settled, redo
+    // the same greedy split with real heights and move any misplaced
+    // cards into the correct column.
+    const settle = img => img.complete
+      ? Promise.resolve()
+      : new Promise(res => {
+          img.addEventListener('load', res, { once: true });
+          img.addEventListener('error', res, { once: true });
+        });
+    const allSettled = Promise.all(Array.from(grid.querySelectorAll('img')).map(settle));
+    const timeout = new Promise(res => setTimeout(res, 2500));
+
+    Promise.race([allSettled, timeout]).then(() => {
+      const heights = [0, 0];
+      orderedCards.forEach((card) => {
+        const target = heights[0] <= heights[1] ? col0 : col1;
+        target.appendChild(card);
+        heights[target === col0 ? 0 : 1] += card.offsetHeight + GAP;
+      });
     });
   }
 
