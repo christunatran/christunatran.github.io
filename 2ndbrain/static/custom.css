@@ -391,3 +391,32 @@ footer * {
 .page-listing .section {
   align-items: center;
 }
+
+/* per-row tags — Quartz's own CSS only ever put list-style:none on the note-page
+   version of ul.tags; this listing-page instance was left as a plain bulleted list.
+   Make it flow inline to the right of the title, wrapping instead of stacking. */
+.page-listing ul.tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+  align-content: center;
+}
+
+.page-listing ul.tags li {
+  display: inline-block;
+}
+
+/* backlinks — flow inline instead of one link per line, to take up less vertical space */
+.backlinks ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+
+.backlinks ul li {
+  display: inline-block;
+}
