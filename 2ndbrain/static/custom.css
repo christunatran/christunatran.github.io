@@ -169,27 +169,26 @@
   margin-top: 0;
 }
 
-/* back link — mirrors .work-back "← blog" */
-.breadcrumb-container {
+/* persistent "back to tunapee.online" link — injected into every page's <body> by
+   build-and-sync.sh (replaces the old per-note breadcrumb link), fixed to the
+   top-right corner so it's always visible regardless of page/scroll position */
+#back-to-main-site {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
   font-family: "Silkscreen", "Courier New", monospace;
   font-size: 9px;
-  margin-bottom: 20px;
-}
-
-.breadcrumb-element:not(:first-child) {
-  display: none;
-}
-
-.breadcrumb-element:first-child p {
-  display: none;
-}
-
-.breadcrumb-element:first-child a {
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  color: var(--dark);
+  text-decoration: none;
   border-bottom: 1px dashed var(--dark);
 }
 
-.breadcrumb-element:first-child a::before {
-  content: "← ";
+#back-to-main-site:hover {
+  color: var(--tertiary);
+  border-bottom-color: var(--tertiary);
 }
 
 /* title — mirrors #work-content h1 */
@@ -203,10 +202,6 @@
   padding-bottom: 6px;
   margin-top: 24px;
   margin-bottom: 16px;
-}
-
-.article-title {
-  margin-top: 0;
 }
 
 /* date/tag row — mirrors .post-meta-row */
