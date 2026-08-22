@@ -472,3 +472,28 @@ footer * {
     grid-template-rows: auto auto 1fr auto auto;
   }
 }
+
+/* "back to blog" button — injected into every generated page's <body>
+   (see the inject step in the build), styled to match the small dashed
+   buttons on christunatran.github.io (e.g. #edit-btn / #lock-btn). */
+#back-to-blog {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 999;
+  font-family: "Silkscreen", "Courier New", monospace;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  color: var(--dark);
+  text-decoration: none;
+  background-color: var(--light);
+  border: 1px dashed var(--dark);
+  padding: 4px 7px;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+}
+
+#back-to-blog:hover {
+  opacity: 1;
+}
