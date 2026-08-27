@@ -30,7 +30,7 @@ const ROOT = path.join(__dirname, '..');
 
 const SCAN_DIRS        = ['assets', path.join('blog', 'assets'), 'works'];
 const MAX_DIM          = 2000;          // longest side, px
-const QUALITY          = '80';          // jpeg re-encode quality
+const QUALITY          = '90';          // jpeg re-encode quality
 const RECOMPRESS_BYTES = 600 * 1024;    // jpegs bigger than this get re-encoded even if small enough
 const MIN_BYTES        = 400 * 1024;    // files smaller than this are left alone (keeps deploys fast)
 
