@@ -25,6 +25,7 @@
 const fs   = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
+const { readOrientation, isRotated90 } = require('./exif-orientation');
 
 const ROOT = path.join(__dirname, '..');
 
@@ -58,9 +59,18 @@ function dimensions(file) {
       return w && h ? { w, h } : null;
     }
     const out = execFileSync('sips', ['-g', 'pixelWidth', '-g', 'pixelHeight', file], { encoding: 'utf8' });
-    const w = out.match(/pixelWidth: (\d+)/);
-    const h = out.match(/pixelHeight: (\d+)/);
-    return w && h ? { w: Number(w[1]), h: Number(h[1]) } : null;
+    const wMatch = out.match(/pixelWidth: (\d+)/);
+    const hMatch = out.match(/pixelHeight: (\d+)/);
+    if (!wMatch || !hMatch) return null;
+    let w = Number(wMatch[1]);
+    let h = Number(hMatch[1]);
+
+    // sips reports the raw, un-rotated pixel grid — browsers apply the
+    // EXIF orientation tag and can render width/height swapped from that.
+    if (JPEG_RE.test(file) && isRotated90(readOrientation(file))) {
+      [w, h] = [h, w];
+    }
+    return { w, h };
   } catch {
     return null;
   }
