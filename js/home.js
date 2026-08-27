@@ -11,9 +11,10 @@
 
   const GAP = 20; // px gap between cards and columns
 
+  // w/h reserve layout space before the image loads (see window.Covers)
   const STATIC_IMAGES = [
-    { src: '/assets/my professional headshot.jpg', date: '2025.02' },
-    { src: '/assets/hard mode winner.png', date: '2026.03.08', href: '/work/closer-to-the-fire' },
+    { src: '/assets/my professional headshot.jpg', date: '2025.02', w: 1333, h: 2000 },
+    { src: '/assets/hard mode winner.png', date: '2026.03.08', href: '/work/closer-to-the-fire', w: 1776, h: 980 },
   ];
 
   function escapeHtml(str) {
@@ -27,7 +28,7 @@
     card.className = 'post post-image';
     card.innerHTML = `
       <div class="post-content">
-        <img src="${image.src}" alt="">
+        ${window.Covers.html({ cover: image.src, coverW: image.w, coverH: image.h }, 'post-cover')}
       </div>
       <span class="post-date">${image.date}</span>
     `;
@@ -43,10 +44,11 @@
     card.className = 'post post-image';
     card.innerHTML = `
       <div class="post-content">
-        ${work.cover ? `<img src="${work.cover}" alt="${escapeHtml(work.title)}">` : ''}
+        ${window.Covers.html(work, 'post-cover')}
       </div>
       <span class="post-date">${work.date}</span>
     `;
+    window.Covers.activate(card);
     card.addEventListener('click', () => { window.location.href = `/work/${work.slug}`; });
     return card;
   }
@@ -66,7 +68,7 @@
       card.innerHTML = `
         ${badgeHtml}
         <div class="post-content">
-          <img src="${escapeHtml(post.cover)}" alt="${escapeHtml(post.title)}">
+          ${window.Covers.html(post, 'post-cover')}
         </div>
         <span class="post-date">${post.date}</span>
       `;

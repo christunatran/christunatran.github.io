@@ -4,35 +4,45 @@
     "title": "Freelance Product Design Work",
     "subtitle": "freelance",
     "date": "2026.06.30",
-    "cover": "works/freelance-product-design-work/assets/freelance-design-mockup-2.jpg"
+    "cover": "works/freelance-product-design-work/assets/freelance-design-mockup-2.jpg",
+    "coverW": 1254,
+    "coverH": 1254
   },
   {
     "slug": "itp-camp-2026",
     "title": "ITP Camp 2026",
     "subtitle": "camp counselor",
     "date": "2026.06.26",
-    "cover": "works/itp-camp-2026/assets/itp-camp-group-photo.jpg"
+    "cover": "works/itp-camp-2026/assets/itp-camp-group-photo.jpg",
+    "coverW": 1785,
+    "coverH": 1275
   },
   {
     "slug": "in-26-slides",
     "title": "in 26 slides",
     "subtitle": "nyu tisch operas + ny transit museum",
     "date": "2026.05.20",
-    "cover": "works/in-26-slides/assets/new-cover.jpeg"
+    "cover": "works/in-26-slides/assets/new-cover.jpeg",
+    "coverW": 1917,
+    "coverH": 1278
   },
   {
     "slug": "breathing-light",
     "title": "breathing light",
     "subtitle": "soft robotics + light & interactivity",
     "date": "2026.05.10",
-    "cover": "works/breathing-light/breathing lamp gif.gif"
+    "cover": "works/breathing-light/breathing-lamp-loop.mp4",
+    "coverW": 1080,
+    "coverH": 1080
   },
   {
     "slug": "ALONE",
     "title": "ALONE",
     "subtitle": "web art as site",
     "date": "2026.05.08",
-    "cover": "works/ALONE/assets/alone-cover.gif"
+    "cover": "works/ALONE/assets/alone-cover.gif",
+    "coverW": 480,
+    "coverH": 277
   },
   {
     "slug": "doomscroll",
@@ -40,76 +50,98 @@
     "subtitle": "web art as site",
     "date": "2026.04.07",
     "cover": "works/doomscroll/assets/doomscroll-screenshot-2.png",
-    "hidden": false
+    "hidden": false,
+    "coverW": 2000,
+    "coverH": 1152
   },
   {
     "slug": "we-live-together-anyway",
     "title": "we live together anyway",
     "subtitle": "open call",
     "date": "2026.04.10",
-    "cover": "works/we-live-together-anyway/assets/open-call-poster.jpg"
+    "cover": "works/we-live-together-anyway/assets/open-call-poster.jpg",
+    "coverW": 1600,
+    "coverH": 2000
   },
   {
     "slug": "stupid-hackathon",
     "title": "stupid hackathon",
     "subtitle": "event organizing",
     "date": "2026.02.28",
-    "cover": "works/stupid-hackathon/assets/table-signage.png"
+    "cover": "works/stupid-hackathon/assets/table-signage.png",
+    "coverW": 612,
+    "coverH": 792
   },
   {
     "slug": "closer-to-the-fire",
     "title": "closer to the fire",
     "subtitle": "MIT Hardmode Hackathon",
     "date": "2026.03.08",
-    "cover": "works/closer-to-the-fire/lighter 1.jpeg"
+    "cover": "works/closer-to-the-fire/lighter 1.jpeg",
+    "coverW": 2000,
+    "coverH": 1500
   },
   {
     "slug": "tunapees-favorite-things",
     "title": "tunapee's favorite things",
     "subtitle": "fun",
     "date": "2026.01",
-    "cover": "works/tunapees-favorite-things/favorite things screenshot.png"
+    "cover": "works/tunapees-favorite-things/favorite things screenshot.png",
+    "coverW": 2000,
+    "coverH": 1195
   },
   {
     "slug": "nose-project",
     "title": "pick me",
     "subtitle": "physical computing",
     "date": "2025.12",
-    "cover": "works/nose-project/assets/nose-clean-background.png"
+    "cover": "works/nose-project/assets/nose-clean-background.png",
+    "coverW": 973,
+    "coverH": 1186
   },
   {
     "slug": "fish-cam",
     "title": "fish cam",
     "subtitle": "intro to computational media",
     "date": "2025.11",
-    "cover": "works/fish-cam/assets/Screenshot_2025-11-03_at_4.28.31_PM.png"
+    "cover": "works/fish-cam/assets/Screenshot_2025-11-03_at_4.28.31_PM.png",
+    "coverW": 1280,
+    "coverH": 966
   },
   {
     "slug": "froggy-chair",
     "title": "froggy chair",
     "subtitle": "fun",
     "date": "2025.11",
-    "cover": "works/froggy-chair/assets/chair-main-image.jpg"
+    "cover": "works/froggy-chair/assets/chair-main-image.jpg",
+    "coverW": 1080,
+    "coverH": 1091
   },
   {
     "slug": "fishy-fabrication",
     "title": "fishy fabrication",
     "subtitle": "intro to fabrication",
     "date": "2025.10",
-    "cover": "works/fishy-fabrication/assets/55369b93-a020-421f-9ef9-6853c34d57fd.png"
+    "cover": "works/fishy-fabrication/assets/55369b93-a020-421f-9ef9-6853c34d57fd.png",
+    "coverW": 1513,
+    "coverH": 1672
   },
   {
     "slug": "just-do-one-thing",
     "title": "just do one thing coworking",
     "subtitle": "event organizing",
     "date": "2024.05",
-    "cover": "works/just-do-one-thing/assets/just-do-one-thing.avif"
+    "cover": "works/just-do-one-thing/assets/just-do-one-thing.avif",
+    "coverW": 920,
+    "coverH": 920
   },
   {
     "slug": "santa-stop-motion",
     "title": "santa stop-motion",
     "subtitle": "hypercinema",
     "date": "2025.09",
-    "cover": "works/santa-stop-motion/assets/santaaa.gif"
+    "cover": "works/santa-stop-motion/assets/santa-loop.mp4",
+    "coverW": 480,
+    "coverH": 362
   }
 ]

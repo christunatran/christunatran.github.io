@@ -133,6 +133,13 @@
               ? marked.parse(normalizedBody, { gfm: true })
               : normalizedBody;
 
+            // Lazy-load images and keep videos from downloading up front.
+            // Must happen in the HTML string before it hits the DOM —
+            // setting attributes afterwards is too late to stop the fetch.
+            rendered = rendered
+              .replace(/<img /g, '<img loading="lazy" decoding="async" ')
+              .replace(/<video (?![^>]*preload)/g, '<video preload="metadata" ');
+
             // Convert bare YouTube URLs (on their own line) into embeds.
             rendered = rendered.replace(
               /<p>\s*https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)[^\s<]*\s*<\/p>/g,

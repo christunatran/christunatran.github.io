@@ -62,13 +62,14 @@
         const card = document.createElement('div');
         card.className = 'work-card';
         card.innerHTML = `
-          ${work.cover ? `<img class="work-cover" src="/${work.cover}" alt="${escapeHtml(work.title)}">` : ''}
+          ${window.Covers.html(work, 'work-cover')}
           <div class="work-meta">
             <span class="work-title">${escapeHtml(work.title)}</span>
             <span class="work-subtitle">${escapeHtml(work.subtitle)}</span>
             <span class="work-date">${work.date}</span>
           </div>
         `;
+        window.Covers.activate(card);
         card.addEventListener('click', () => {
           window.location.href = `/work/${work.slug}`;
         });
@@ -78,11 +79,15 @@
 
       function doLayout() { masonry(grid, cards); }
 
-      const imgs = Array.from(grid.querySelectorAll('img'));
-      Promise.all(imgs.map(i => i.decode().catch(() => {}))).then(doLayout);
+      // Covers carry an explicit aspect-ratio (coverW/coverH in works.json),
+      // so card heights are known before any image loads — lay out
+      // immediately and let images lazy-load as they scroll into view.
+      // The ResizeObserver re-lays-out for anything that settles late.
+      doLayout();
+      document.fonts?.ready?.then(doLayout); // card text heights shift when webfonts land
 
       const ro = new ResizeObserver(doLayout);
-      imgs.forEach(i => ro.observe(i));
+      grid.querySelectorAll('img, video').forEach(el => ro.observe(el));
 
       window.addEventListener('resize', doLayout);
     });

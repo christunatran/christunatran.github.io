@@ -30,9 +30,29 @@
 
 const fs   = require('fs');
 const path = require('path');
+const { execFileSync } = require('child_process');
 
 const BLOG_DIR   = path.join(__dirname, '..', 'blog');
 const OUTPUT     = path.join(__dirname, '..', 'data', 'blog.json');
+
+/**
+ * Pixel dimensions of a local cover image (via macOS sips), or null.
+ * The home grid uses these to reserve layout space before the lazy-loaded
+ * cover arrives, so cards don't shift as images come in.
+ */
+function coverDimensions(cover) {
+  if (!cover || !cover.startsWith('/')) return null;
+  const file = path.join(__dirname, '..', cover);
+  if (!fs.existsSync(file)) return null;
+  try {
+    const out = execFileSync('sips', ['-g', 'pixelWidth', '-g', 'pixelHeight', file], { encoding: 'utf8' });
+    const w = out.match(/pixelWidth: (\d+)/);
+    const h = out.match(/pixelHeight: (\d+)/);
+    return w && h ? { w: Number(w[1]), h: Number(h[1]) } : null;
+  } catch {
+    return null;
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Frontmatter parser
@@ -128,7 +148,11 @@ function generate() {
     if (fm.temperature) post.temperature = fm.temperature;
     if (previouslyDisabled.has(post.slug)) post.disabled = true;
     if (fm.blogOnly === 'true') post.blogOnly = true;
-    if (fm.cover) post.cover = fm.cover;
+    if (fm.cover) {
+      post.cover = fm.cover;
+      const dims = coverDimensions(fm.cover);
+      if (dims) { post.coverW = dims.w; post.coverH = dims.h; }
+    }
 
     return [post];
   });

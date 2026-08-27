@@ -235,8 +235,9 @@ blockquote {
   margin-top: 5px;
 }
 
-/* Image posts */
-.post-image .post-content img {
+/* Image posts (video = mp4 loop cover, styled identically) */
+.post-image .post-content img,
+.post-image .post-content video {
   width: 100%;
   display: block;
   opacity: 0.8;
@@ -244,7 +245,8 @@ blockquote {
   margin-bottom: 0;
 }
 
-.post-image .post-content img:hover {
+.post-image .post-content img:hover,
+.post-image .post-content video:hover {
   opacity: 1;
 }
 

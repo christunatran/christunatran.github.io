@@ -40,7 +40,10 @@
       md = md.replace(/\((?!https?:\/\/)(?!\/)([^)]+\.(?:gif|jpe?g|png|mp4|mov|webp|avif|svg|pdf))\)/gi, `(/works/${slug}/$1)`);
       md = md.replace(/['']/g, "'").replace(/[""]/g, '"');
 
-      contentEl.innerHTML = marked.parse(md);
+      // loading="lazy" must be in the HTML string before it hits the DOM —
+      // setting it on the element afterwards is too late to stop the fetch.
+      contentEl.innerHTML = marked.parse(md)
+        .replace(/<img /g, '<img loading="lazy" decoding="async" ');
 
       replaceVideoLinksWithElements(contentEl);
       autoGridConsecutiveImages(contentEl);
@@ -54,15 +57,27 @@
 
   /**
    * Converts <a> and <img> elements pointing at video files (.mov, .mp4)
-   * into <video> elements with controls.
+   * into <video> elements with controls. preload="metadata" keeps the page
+   * from downloading every video up front — only the first frame/duration.
+   *
+   * Files named *-loop.mp4 are treated as gif replacements: they autoplay
+   * muted on a loop with no controls.
    */
   function replaceVideoLinksWithElements(container) {
     container.querySelectorAll('a, img').forEach(el => {
       const src = el.tagName === 'A' ? el.href : el.src;
       if (/\.(mov|mp4|MOV|MP4)$/.test(src)) {
         const video = document.createElement('video');
-        video.src      = src;
-        video.controls = true;
+        video.src     = src;
+        video.preload = 'metadata';
+        if (/-loop\.mp4$/i.test(src)) {
+          video.autoplay    = true;
+          video.muted       = true;
+          video.loop        = true;
+          video.playsInline = true;
+        } else {
+          video.controls = true;
+        }
         el.replaceWith(video);
       }
     });

@@ -18,7 +18,9 @@
     "tags": [
       "art"
     ],
-    "cover": "/blog/assets/new-museum-bounding-boxes.jpeg"
+    "cover": "/blog/assets/new-museum-bounding-boxes.jpeg",
+    "coverW": 1293,
+    "coverH": 1374
   },
   {
     "slug": "trip-to-visarts-and-glenstone",
@@ -29,7 +31,9 @@
     "tags": [
       "art"
     ],
-    "cover": "/blog/assets/glenstone-visarts-reading-space-2.png"
+    "cover": "/blog/assets/glenstone-visarts-reading-space-2.png",
+    "coverW": 1289,
+    "coverH": 1515
   },
   {
     "slug": "temperature-dial-build-log",
@@ -41,7 +45,9 @@
       "medium"
     ],
     "temperature": "employable",
-    "cover": "/blog/assets/temperature-dial-cover.gif"
+    "cover": "/blog/assets/temperature-dial-cover.gif",
+    "coverW": 480,
+    "coverH": 286
   },
   {
     "slug": "sf-is-not-a-great-place-to-be-a-woman",
@@ -86,7 +92,9 @@
       "itp"
     ],
     "temperature": "employable",
-    "cover": "/blog/assets/exploratorium-makerspace-wire-and-parts-wall.png"
+    "cover": "/blog/assets/exploratorium-makerspace-wire-and-parts-wall.png",
+    "coverW": 1292,
+    "coverH": 1723
   },
   {
     "slug": "fidget-camp-recap",
@@ -96,7 +104,9 @@
     "snippet": "From July 24-August 2 I attended Fidget Camp in SF!",
     "tags": [],
     "temperature": "employable",
-    "cover": "/blog/assets/fidget-camp-workshop.jpeg"
+    "cover": "/blog/assets/fidget-camp-workshop.jpeg",
+    "coverW": 2000,
+    "coverH": 1689
   },
   {
     "slug": "open-sauce-recap",
@@ -106,7 +116,9 @@
     "snippet": "On July 17-19, I boothed at Open Sauce in San Mateo, CA with my roommates Justin and Chianli.",
     "tags": [],
     "temperature": "employable",
-    "cover": "/blog/assets/2026-07-18_13-16-54_498.jpg"
+    "cover": "/blog/assets/2026-07-18_13-16-54_498.jpg",
+    "coverW": 1500,
+    "coverH": 2000
   },
   {
     "slug": "improbable-seminar-recap",
@@ -119,7 +131,9 @@
       "medium"
     ],
     "temperature": "employable",
-    "cover": "/blog/assets/improbable-seminar-14.jpg"
+    "cover": "/blog/assets/improbable-seminar-14.jpg",
+    "coverW": 2000,
+    "coverH": 1500
   },
   {
     "slug": "art-as-investigation-and-expression",
@@ -162,7 +176,9 @@
     "snippet": "i am learning the đàn bầu, the vietnamese monochord, from anh thu and nhan. i've been spending some time with them after our weekly classes. today we were snacking on some stir-fried corn. when i shared with them that i…",
     "tags": [],
     "temperature": "employable",
-    "cover": "/blog/assets/dan-bau-1.jpeg"
+    "cover": "/blog/assets/dan-bau-1.jpeg",
+    "coverW": 2000,
+    "coverH": 1500
   },
   {
     "slug": "2025-2026-itp-year-1",

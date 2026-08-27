@@ -69,7 +69,7 @@ I found a video of the guide that he must have followed to a tee to end up the w
 
 > “If you’re successful in your online dating, you can tell the same story over and over and over again, and reset with a brand new audience each time.”
 
-I wonder how many people have heard his "if I went missing, would you still post on your story?" bit.
+I wonder how many people have heard his "if I went missing, would you still post on your story and do your skincare routine?" bit.
 
 #### And 
 the part about paying for prostitution, because it's so normalized within his privileged friend group over in Markham.

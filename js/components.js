@@ -59,4 +59,41 @@
   injectFavicon();
   injectNav();
   injectSidePanel();
+
+  // ── shared cover rendering (home + works listings) ──────────────────────
+  //
+  // Renders a work/post cover as an <img> — or a <video> loop for .mp4
+  // covers (used where an animated gif would be too heavy). Covers load
+  // lazily; the explicit aspect-ratio (coverW/coverH from works.json,
+  // stamped by _dev/optimize-images.js) reserves the right amount of space
+  // so the masonry layouts can position cards before anything loads.
+  function escapeAttr(str) {
+    return String(str)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  window.Covers = {
+    html(item, className) {
+      if (!item.cover) return '';
+      // work covers are stored without a leading slash, blog covers with one
+      const src   = '/' + String(item.cover).replace(/^\//, '');
+      const ratio = item.coverW && item.coverH
+        ? ` style="aspect-ratio:${item.coverW}/${item.coverH}"`
+        : '';
+      if (/\.(mp4|mov)$/i.test(src)) {
+        return `<video class="${className}" src="${escapeAttr(src)}" autoplay muted loop playsinline preload="metadata"${ratio}></video>`;
+      }
+      return `<img class="${className}" src="${escapeAttr(src)}" alt="${escapeAttr(item.title || '')}" loading="lazy" decoding="async"${ratio}>`;
+    },
+
+    // Some browsers ignore the `muted` attribute on videos created via
+    // innerHTML, which blocks autoplay — set the property directly.
+    activate(container) {
+      container.querySelectorAll('video').forEach(v => {
+        v.muted = true;
+        v.play?.().catch?.(() => {});
+      });
+    },
+  };
 })();
