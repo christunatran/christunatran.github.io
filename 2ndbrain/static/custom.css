@@ -512,4 +512,12 @@ article:has(.markdown-preview-view:empty) + .page-listing > p {
   .markdown-preview-view img {
     max-width: 100%;
   }
+
+  /* .left.sidebar is a zero-gap flexbox, and the mobile-only hamburger
+     button (.explorer-toggle.mobile-explorer) sits immediately to the
+     title's left — on desktop that button doesn't exist, so the title
+     never needs this margin there. */
+  .left.sidebar .page-title {
+    margin-left: 10px;
+  }
 }
