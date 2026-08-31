@@ -5,6 +5,9 @@ published_date: 2026-08-31 06:52
 tags: goals, planning
 temperature: employable
 ---
+
+special shoutout to the person who motivated me to do this with them :)
+
 **move-in / onboarding** (first two weeks)
 - [ ] unpack all boxes within 2 weeks
 - [ ] media commons training
