@@ -486,4 +486,30 @@ article:has(.markdown-preview-view:empty) + .page-listing > p {
   .page > #quartz-body {
     grid-template-rows: auto auto 1fr auto auto;
   }
+
+  /* #back-to-main-site (fixed top-right, see above) only clears everything on
+     desktop because nothing else lives up there; on mobile the sidebar's
+     hamburger/title and the search button share that same top strip, so the
+     fixed link was overlapping both. Drop it into normal flow above them. */
+  #back-to-main-site {
+    position: static;
+    display: block;
+    text-align: right;
+    padding: 10px 16px 0;
+  }
+
+  /* .center's margin-top:96px (above) exists purely to clear the fixed
+     back-link on desktop. Mobile stacks .center below the sidebar/header
+     via #quartz-body's grid already, so that clearance just leaves a big
+     dead gap before any content — shrink it back down. */
+  .center {
+    margin-top: 16px;
+  }
+
+  /* 60% (above) is sized for the wide desktop column; on a phone-width
+     .center that shrinks images (screenshots, photos) down to ~35% of the
+     viewport, too small to read. Let them use the available width. */
+  .markdown-preview-view img {
+    max-width: 100%;
+  }
 }
