@@ -516,8 +516,11 @@ article:has(.markdown-preview-view:empty) + .page-listing > p {
   /* .left.sidebar is a zero-gap flexbox, and the mobile-only hamburger
      button (.explorer-toggle.mobile-explorer) sits immediately to the
      title's left — on desktop that button doesn't exist, so the title
-     never needs this margin there. */
+     never needs this margin there. Padding-bottom is bumped from the base
+     4px so the title's underline lines up with the hamburger icon's
+     bottom bar instead of crossing through its middle. */
   .left.sidebar .page-title {
     margin-left: 10px;
+    padding-bottom: 13px;
   }
 }
