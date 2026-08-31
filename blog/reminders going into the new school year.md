@@ -6,4 +6,6 @@ tags: personal
 temperature:
 ---
 
+i hate NYU. i've never been surrounded by so many rich people in my life. it's jarring. here are some reminders i keep to stay grounded:
+
 <video src="/blog/assets/ignore-people-reduce-stress.mp4" controls></video>
