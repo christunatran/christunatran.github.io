@@ -11,7 +11,7 @@
 (function () {
   'use strict';
 
-  var user   = 'christinatran';
+  var user   = 'christina.tran';
   var domain = ['nyu', 'edu'].join('.');
   var at     = String.fromCharCode(64); // "@"
   var address = user + at + domain;
@@ -21,6 +21,37 @@
 
   var link = document.createElement('a');
   link.href = 'mailto:' + address;
-  link.textContent = address;
+  link.textContent = 'email';
   el.appendChild(link);
+})();
+
+(function () {
+  'use strict';
+
+  function makeCycler(elementId, words) {
+    var index = 0;
+    var el = document.getElementById(elementId);
+    if (!el) return;
+
+    function advance() {
+      index = (index + 1) % words.length;
+      el.textContent = words[index];
+    }
+
+    el.addEventListener('click', advance);
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        advance();
+      }
+    });
+  }
+
+  makeCycler('craft-cycle', ['traditional crafts', 'woodworking', 'lantern-making', 'metal working', 'sewing and weaving']);
+  makeCycler('dance-cycle', ['dancing', 'locking', 'street styles', 'hip hop', 'house', 'freestyle']);
+  makeCycler('coffee-cycle', ['coffee', 'specialty coffee', 'pourover coffee', 'robusta coffee']);
+  makeCycler('asia-cycle', ['the world', 'Vietnam', 'South Korea', 'Hong Kong', 'Japan', 'Thailand', 'Taiwan', 'Denmark', 'Sweden', 'Germany', 'Czech Republic', 'France', 'Belgium', 'Netherlands', 'Mexico', 'Honduras']);
+  makeCycler('hci-cycle', ['HCI', 'interfaces', 'building a healthier relationship with technology']);
+  makeCycler('sports-cycle', ['sports', 'weight-training', 'tennis', 'pickleball', 'spikeball']);
+  makeCycler('gatherings-cycle', ['hosting gatherings', 'dinners', 'parties', 'hackathons', 'powerpoint nights', 'coworking sessions']);
 })();

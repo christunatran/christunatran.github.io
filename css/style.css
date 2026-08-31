@@ -652,6 +652,29 @@ blockquote {
   border-bottom-color: transparent;
 }
 
+.about-block blockquote {
+  margin-bottom: 28px;
+}
+
+.craft-cycle {
+  font-weight: 700;
+  text-shadow: 0.4px 0 0 currentColor, -0.4px 0 0 currentColor;
+  border-bottom: 1px dashed var(--border);
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.craft-cycle:hover,
+.craft-cycle:focus-visible {
+  color: var(--link-hover);
+  border-bottom-color: transparent;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.15);
+}
+
+.craft-cycle:active {
+  color: var(--link-hover);
+}
+
 /* ============================================================
    WORKS GALLERY
    ============================================================ */
