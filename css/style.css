@@ -779,6 +779,22 @@ blockquote {
   font-size: 14px;
 }
 
+/* marked.js renders `- [ ]` as a plain <li> with a checkbox <input> inside —
+   it doesn't add a task-list class, so the default bullet marker still shows
+   next to the checkbox unless removed here. */
+#work-content li:has(input[type="checkbox"]) {
+  list-style: none;
+  /* cancel the ul's 18px padding-left (reserved for a bullet marker these
+     items don't have) so the checkbox lines up flush with surrounding text */
+  margin-left: -18px;
+}
+
+#work-content li input[type="checkbox"] {
+  margin-right: 6px;
+  vertical-align: middle;
+  accent-color: var(--border);
+}
+
 #work-content em,
 #work-content i {
   font-style: italic;
