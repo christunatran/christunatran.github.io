@@ -953,7 +953,14 @@ blockquote {
   margin-right: auto !important;
 }
 
-#work-content video,
+#work-content video {
+  max-width: 60%;
+  width: auto;
+  display: block;
+  margin: 10px auto;
+  border: 1px dashed var(--border);
+}
+
 #work-content iframe,
 #work-content embed {
   width: 50%;

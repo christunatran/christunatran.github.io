@@ -16,7 +16,7 @@ i am learning the đàn bầu, the vietnamese monochord, from anh thu and nhan. 
 
 ![dan bau 2](assets/dan-bau-2.jpeg)
 
-<video src="/blog/assets/dan-bau-3.mov" controls style="width:100%"></video>
+<video src="/blog/assets/dan-bau-3.mov" controls></video>
 
 maybe vibe-coding isn't as bad as people make it out to be. as a learning tool, it's powerful. *it was never about the tools in the first place.*
 

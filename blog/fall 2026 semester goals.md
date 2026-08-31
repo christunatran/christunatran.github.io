@@ -4,6 +4,7 @@ link: fall-2026-semester-goals
 published_date: 2026-08-31 06:52
 tags: goals, planning
 temperature: employable
+snippet: setting goals for the new semester
 ---
 
 special shoutout to the person who motivated me to do this with them :)

@@ -26,12 +26,12 @@ One may criticize that if someone was determined enough they'd find a way to get
 
 Here's an MVP I built:
 
-<video autoplay loop muted playsinline style="width:100%">
+<video autoplay loop muted playsinline>
   <source src="/blog/assets/temperature-dial-1.webm" type="video/webm">
   <source src="/blog/assets/temperature-dial-1.mp4" type="video/mp4">
 </video>
 
-<video autoplay loop muted playsinline style="width:100%">
+<video autoplay loop muted playsinline>
   <source src="/blog/assets/temperature-dial-2.webm" type="video/webm">
   <source src="/blog/assets/temperature-dial-2.mp4" type="video/mp4">
 </video>

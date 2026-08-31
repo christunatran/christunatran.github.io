@@ -41,4 +41,4 @@ Then we met up with people from our "Name Goes Here" Discord server:
 
 I also played with 3D printed violins.
 
-<video src="/blog/assets/opensauce-hangout.mov" controls style="width:100%"></video>
+<video src="/blog/assets/opensauce-hangout.mov" controls></video>
