@@ -24,7 +24,7 @@ special shoutout to the person who motivated me to do this with them :)
 - [ ] learn how to use the cnc
 - [ ] build a furniture piece for the new apartment
 - [ ] make the giant tuna fish lantern with friends
-- [ ] design a poster for my bday party
+- [x] design a poster for my bday party
 
 **work**
 - [ ] do a good job at the startup
