@@ -19,6 +19,7 @@ special shoutout to the person who motivated me to do this with them :)
 - [ ] host a weekly dinner with friends
 
 **fabrication & skills**
+- [ ] design my shop badge
 - [ ] design a pcb
 - [ ] learn how to use the cnc
 - [ ] build a furniture piece for the new apartment
