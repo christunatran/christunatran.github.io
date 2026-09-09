@@ -11,8 +11,8 @@ special shoutout to the person who motivated me to do this with them :)
 
 **move-in / onboarding** (first two weeks)
 - [ ] unpack all boxes within 2 weeks
-- [ ] media commons training
-- [ ] tandon makerspace training
+- [x] media commons training
+- [x] tandon makerspace training
 
 **social / community**
 - [ ] host a powerpoint night at school
