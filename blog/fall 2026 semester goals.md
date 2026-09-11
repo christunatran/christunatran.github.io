@@ -7,16 +7,15 @@ temperature: employable
 snippet: setting goals for the new semester
 ---
 
-special shoutout to the person who motivated me to do this with them :)
-
 **move-in / onboarding** (first two weeks)
-- [ ] unpack all boxes within 2 weeks
+- [x] unpack all boxes within 2 weeks
 - [x] media commons training
 - [x] tandon makerspace training
 
 **social / community**
 - [ ] host a powerpoint night at school
 - [ ] host a weekly dinner with friends
+- [ ] host a banger housewarming party
 
 **fabrication & skills**
 - [ ] design my shop badge
@@ -26,11 +25,11 @@ special shoutout to the person who motivated me to do this with them :)
 - [ ] make the giant tuna fish lantern with friends
 - [x] design a poster for my bday party
 
-**work**
+**professional**
 - [ ] do a good job at the startup
 
 **content / documentation**
-- [ ] write a blog post every week
+- [ ] write a blog post every week (14)
 - [ ] make a video documenting a project
 
 **daily systems**
@@ -38,8 +37,13 @@ special shoutout to the person who motivated me to do this with them :)
 - [ ] read 10 pages a day
 - [ ] morning routine app, daily
 - [ ] eat simply and nutritiously
+- [ ] practice eununciation with aligners on weekly
 
 **physical**
 - [ ] gym 40x (3x/week)
 - [ ] spikeball 10x
 - [ ] pickleball 10x
+
+* = added later
+
+special shoutout to the person who motivated me to do this with them :)
