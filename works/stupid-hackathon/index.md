@@ -13,10 +13,22 @@ Stupid Hackathon went viral on Instagram! With **1.5M+ views and 80k+ likes!**
 </div>
 
 
+![Eventbrite](assets/eventbrite.png)
+
+<!-- break -->
+
 ![Table Signage](assets/table-signage.png)
 
 ![Poster](assets/poster-2.png)
 
-![Eventbrite](assets/eventbrite.png)
+<!-- ![Instagram Story](assets/instagram-story.png) -->
 
-![Instagram Story](assets/instagram-story.png)
+![photo](assets/stupidhackathon1.jpeg)
+
+<!-- break -->
+
+![photo](assets/stupidhackathon2.jpeg)
+
+<!-- break -->
+
+![photo](assets/stupidhackathon3.jpeg)

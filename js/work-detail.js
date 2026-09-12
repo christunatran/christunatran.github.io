@@ -85,10 +85,17 @@
 
   /**
    * Groups runs of consecutive single-image paragraphs into CSS grid
-   * wrappers (.img-grid--2/3/4) for a tighter gallery layout.
+   * wrappers (.img-grid--2/3/4) for a tighter gallery layout. Walks
+   * childNodes (not children) so an HTML comment (e.g. `<!-- break -->`)
+   * placed between images in the source markdown can force a run to
+   * split, letting authors opt individual images out of the grid.
    */
   function autoGridConsecutiveImages(container) {
-    const children = Array.from(container.children);
+    // Keep elements and comments, but drop the whitespace-only text nodes
+    // marked.js leaves between block elements — those aren't real breaks.
+    const children = Array.from(container.childNodes).filter(n =>
+      n.nodeType !== Node.TEXT_NODE || n.textContent.trim() !== ''
+    );
     let i = 0;
 
     while (i < children.length) {
