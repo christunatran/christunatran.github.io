@@ -11,8 +11,17 @@
     <loc>https://tunapee.online/2ndbrain/itp/automatons/</loc>
     <lastmod>2026-09-07T18:41:42.011Z</lastmod>
   </url><url>
+    <loc>https://tunapee.online/2ndbrain/itp/automatons/resources</loc>
+    <lastmod>2026-09-13T19:39:07.265Z</lastmod>
+  </url><url>
+    <loc>https://tunapee.online/2ndbrain/itp/automatons/week-1</loc>
+    <lastmod>2026-09-13T19:46:16.483Z</lastmod>
+  </url><url>
     <loc>https://tunapee.online/2ndbrain/itp/creative-computing/</loc>
-    <lastmod>2026-08-31T14:24:46.438Z</lastmod>
+    <lastmod>2026-09-13T21:41:31.475Z</lastmod>
+  </url><url>
+    <loc>https://tunapee.online/2ndbrain/itp/creative-computing/week-1</loc>
+    <lastmod>2026-09-13T21:39:35.009Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/itp/efl/</loc>
     <lastmod>2026-09-10T16:51:37.308Z</lastmod>
@@ -30,7 +39,7 @@
     <lastmod>2026-09-02T04:00:00.000Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/itp/eccentric-engineering/week-2</loc>
-    <lastmod>2026-09-09T17:54:58.142Z</lastmod>
+    <lastmod>2026-09-14T04:07:30.502Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/itp/friction-by-design/</loc>
     <lastmod>2026-08-31T13:23:51.198Z</lastmod>
@@ -51,10 +60,10 @@
     <lastmod>2026-08-28T07:24:53.749Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/itp/projection-mapping/</loc>
-    <lastmod>2026-08-28T07:25:50.991Z</lastmod>
+    <lastmod>2026-09-13T22:17:25.544Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/itp/projection-mapping/week-1</loc>
-    <lastmod>2026-09-08T21:48:05.312Z</lastmod>
+    <lastmod>2026-09-13T23:28:47.415Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/itp/shop/</loc>
     <lastmod>2026-09-08T23:10:32.541Z</lastmod>
@@ -173,6 +182,12 @@
     <loc>https://tunapee.online/2ndbrain/logbook/09-11-2026</loc>
     <lastmod>2026-09-12T04:25:51.518Z</lastmod>
   </url><url>
+    <loc>https://tunapee.online/2ndbrain/logbook/09-12-2026</loc>
+    <lastmod>2026-09-14T00:15:20.626Z</lastmod>
+  </url><url>
+    <loc>https://tunapee.online/2ndbrain/logbook/09-13-2026</loc>
+    <lastmod>2026-09-14T04:18:20.098Z</lastmod>
+  </url><url>
     <loc>https://tunapee.online/2ndbrain/logbook/</loc>
     <lastmod>2026-08-22T11:45:01.059Z</lastmod>
   </url><url>
@@ -219,89 +234,95 @@
     <lastmod>2026-07-19T04:00:00.000Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/people/</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/thoughts</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/design</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/books</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/reading</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
+  </url><url>
+    <loc>https://tunapee.online/2ndbrain/tags/1</loc>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/resonance</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/quotes</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/references</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
+  </url><url>
+    <loc>https://tunapee.online/2ndbrain/tags/thesis</loc>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/idea</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/curious</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/people</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/learning</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/critical</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/haterpee</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/career</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/experiences</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/drafts</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/writing</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/family</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/experiments</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/ai</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/funny</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/vietnam</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/vocab</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/tech</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/ideas</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/feedback</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url><url>
     <loc>https://tunapee.online/2ndbrain/tags/</loc>
-    <lastmod>2026-09-12T04:25:58.496Z</lastmod>
+    <lastmod>2026-09-14T04:18:28.646Z</lastmod>
   </url></urlset>
