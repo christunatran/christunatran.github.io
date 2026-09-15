@@ -244,11 +244,20 @@
 }
 
 .markdown-preview-view img {
-  max-width: 60%;
+  max-width: min(60%, 560px);
   width: auto;
   display: block;
   margin: 10px auto;
   opacity: 0.9;
+}
+
+/* videos matched to the same display size as images above, instead of Quartz's
+   default of stretching to the full article width */
+.markdown-preview-view video {
+  max-width: min(60%, 560px);
+  width: auto;
+  display: block;
+  margin: 10px auto;
 }
 
 .markdown-preview-view pre {
@@ -509,7 +518,8 @@ article:has(.markdown-preview-view:empty) + .page-listing > p {
   /* 60% (above) is sized for the wide desktop column; on a phone-width
      .center that shrinks images (screenshots, photos) down to ~35% of the
      viewport, too small to read. Let them use the available width. */
-  .markdown-preview-view img {
+  .markdown-preview-view img,
+  .markdown-preview-view video {
     max-width: 100%;
   }
 
