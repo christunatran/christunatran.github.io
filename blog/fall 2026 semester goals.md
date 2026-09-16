@@ -24,6 +24,7 @@ snippet: setting goals for the new semester
 - [ ] master my new 3D printer
 - [ ] build a furniture piece for the new apartment
 - [ ] make the giant tuna fish lantern with friends
+- [ ] print something on the UV printer
 - [x] design a poster for my bday party
 
 **professional**
