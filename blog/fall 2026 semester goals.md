@@ -24,11 +24,12 @@ snippet: setting goals for the new semester
 - [ ] master my new 3D printer
 - [ ] build a furniture piece for the new apartment
 - [ ] make the giant tuna fish lantern with friends
-- [ ] print something on the UV printer
+- [ ] print something on the UV printer*
 - [x] design a poster for my bday party
 
-**professional**
+**professional/education**
 - [ ] do a good job at the startup
+- [ ] go to office hours 5x
 
 **content / documentation**
 - [ ] write a blog post every week (14)
@@ -39,13 +40,13 @@ snippet: setting goals for the new semester
 - [ ] read 10 pages a day
 - [ ] morning routine app, daily
 - [ ] eat simply and nutritiously
-- [ ] practice eununciation with aligners on weekly
+- [ ] practice eununciation with aligners on weekly*
 
 **physical**
 - [ ] gym 40x (3x/week)
 - [ ] spikeball 10x
 - [ ] pickleball 10x
 
-* = added later
+\* = added later
 
 special shoutout to the person who motivated me to do this with them :)
