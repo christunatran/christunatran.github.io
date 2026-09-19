@@ -234,6 +234,16 @@
   line-height: 1.8;
 }
 
+/* Kosugi ships as a single (regular) weight, so `strong`'s font-weight: 600
+   (see base.scss) has no real bold face to switch to and browsers' synthetic
+   bold is too subtle to read as bold at this font. Add a text-stroke on top
+   of the weight bump so bold text is unmistakably heavier than body copy. */
+.markdown-preview-view strong,
+.markdown-preview-view b {
+  font-weight: 700;
+  -webkit-text-stroke: 0.5px currentColor;
+}
+
 .markdown-preview-view a {
   border-bottom: 1px dashed var(--dark);
   text-decoration: none;
