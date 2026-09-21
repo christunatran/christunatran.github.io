@@ -15,7 +15,7 @@ snippet: setting goals for the new semester
 **social / community**
 - [ ] host a powerpoint night at school
 - [ ] host a weekly dinner with friends
-- [ ] host a banger housewarming party
+- [x] host a banger housewarming party
 
 **fabrication & skills**
 - [ ] design my shop badge
