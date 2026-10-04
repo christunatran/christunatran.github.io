@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lantern procession preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ECEEF3;
+    --ink: #1B1D2A;
+    --muted: #565B70;
+    --line: #C7CBD7;
+    --accent: #A8322D;
+    --accent-ink: #FFFFFF;
+    --stage: #0E1019;
+    --chip: #FFFFFF;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10121B; --ink: #E8E6EF; --muted: #9EA2B6; --line: #2C2F40;
+      --accent: #D2564C; --accent-ink: #1A0B0A; --stage: #08090F; --chip: #1A1D2A;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10121B; --ink: #E8E6EF; --muted: #9EA2B6; --line: #2C2F40;
+    --accent: #D2564C; --accent-ink: #1A0B0A; --stage: #08090F; --chip: #1A1D2A;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  main { max-width: 1080px; margin: 0 auto; padding: 28px 20px 40px; }
+  h1 { font-size: 1.75rem; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 6px; }
+  .lede { color: var(--muted); margin: 0 0 20px; max-width: 62ch; }
+  #stage { background: var(--stage); border-radius: 14px; overflow: hidden; }
+  #stage canvas { display: block; max-width: 100%; }
+  .caption { color: var(--muted); margin: 12px 0 18px; max-width: 72ch; min-height: 3em; }
+  .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .seg button, .play {
+    font: inherit; font-size: 0.92rem; font-weight: 500; cursor: pointer;
+    background: var(--chip); color: var(--ink); border: 0; padding: 8px 14px;
+  }
+  .seg button + button { border-left: 1px solid var(--line); }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+  .play { border: 1px solid var(--line); border-radius: 10px; min-width: 84px; }
+  .ctl { display: inline-flex; align-items: center; gap: 10px; font-size: 0.92rem; }
+  .ctl output { color: var(--muted); min-width: 11ch; font-variant-numeric: tabular-nums; }
+  .chk { display: inline-flex; align-items: center; gap: 8px; font-size: 0.92rem; cursor: pointer; }
+  input[type="range"], input[type="checkbox"] { accent-color: var(--accent); }
+  input[type="range"] { width: 140px; }
+  .fps { color: var(--muted); font-size: 0.85rem; font-variant-numeric: tabular-nums; margin-left: auto; }
+  .keys { color: var(--muted); font-size: 0.85rem; margin: 16px 0 0; }
+  button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (max-width: 640px) { .fps { margin-left: 0; } input[type="range"] { width: 110px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Lantern procession preview</h1>
+  <p class="lede">Six panels, one moving strip. The circle, triangle and square stand in for the silhouettes the Pi will generate.</p>
+
+  <div id="stage" role="img" aria-label="Animated preview of shapes moving around the six-panel lantern"></div>
+  <p id="caption" class="caption"></p>
+
+  <section class="controls" aria-label="Preview controls">
+    <div class="seg" role="group" aria-label="View">
+      <button type="button" data-view="0" aria-pressed="true">Lantern</button>
+      <button type="button" data-view="1" aria-pressed="false">Unrolled ring</button>
+      <button type="button" data-view="2" aria-pressed="false">Controller output</button>
+    </div>
+    <button type="button" id="play" class="play">Pause</button>
+    <label class="ctl">Speed <input type="range" id="speed" min="30" max="400" step="5" value="90"><output id="speedOut"></output></label>
+    <label class="ctl">Paper softness <input type="range" id="soft" min="0" max="12" step="0.5" value="4"><output id="softOut"></output></label>
+    <label class="chk"><input type="checkbox" id="paper" checked> Paper shade</label>
+    <label class="chk"><input type="checkbox" id="drift" checked> Candle drift</label>
+    <span id="fps" class="fps"></span>
+  </section>
+  <p class="keys">Space pauses. Keys 1, 2 and 3 switch views.</p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+<script>
+// ---------- Settings you will want to change ----------
+const PANEL_W = 800;            // panel resolution (5" panels are usually 800 x 480)
+const PANEL_H = 480;
+const NUM_PANELS = 6;
+const TILE_COLS = 3;            // controller layout: 3 columns x 2 rows
+const TILE_ROWS = 2;
+const PANEL_TO_TILE = [0, 1, 2, 3, 4, 5]; // ring position -> controller tile; edit to match your cables
+const BEZEL_X = 0.05;           // dark border on each side, as a fraction of panel width
+const BEZEL_Y = 0.04;
+const SHAPES = ['circle', 'triangle', 'square', 'circle', 'triangle', 'square'];
+const SIZES  = [250, 270, 230, 210, 290, 240];
+// -------------------------------------------------------
+
+const STRIP_W = PANEL_W * NUM_PANELS;
+let strip, paperTex, holder;
+let offset = 0;
+let playing = true;
+let currentView = 0;
+let speedPx = 90;
+let softness = 4;
+let paperOn = true;
+let driftOn = true;
+let flicker = 1;
+
+const CAPTIONS = [
+  'Front view of the lantern. Three of the six panels face you; shapes enter on the left side, cross the front and leave on the right, as they would on a turning lantern.',
+  'All six panels laid flat in ring order, with the dark seams where the bezels meet. Whatever leaves panel 6 comes back on panel 1.',
+  'The single 1920 × 1080 frame the Pi sends to the video wall controller. The tiles look squashed on purpose: the controller and each panel stretch them back to the right shape. Edit PANEL_TO_TILE to match how your cables are plugged in.'
+];
+
+function modulo(a, n) { return ((a % n) + n) % n; }
+function stageHeight(w) { return Math.round(constrain(w * 0.52, 260, 620)); }
+
+function setup() {
+  holder = document.getElementById('stage');
+  pixelDensity(Math.min(2, window.devicePixelRatio || 1));
+  const c = createCanvas(holder.clientWidth, stageHeight(holder.clientWidth));
+  c.parent(holder);
+  textFont('Be Vietnam Pro, system-ui, sans-serif');
+  strip = buildStrip();
+  paperTex = buildPaper();
+  wireControls();
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) setPlaying(false);
+}
+
+function windowResized() {
+  const w = holder.clientWidth;
+  resizeCanvas(w, stageHeight(w));
+}
+
+// One long white strip, six panels wide, with a black shape in each panel-sized slot.
+function buildStrip() {
+  const g = createGraphics(STRIP_W, PANEL_H);
+  g.pixelDensity(1);
+  g.background(255);
+  g.noStroke();
+  g.fill(0);
+  g.rectMode(CENTER);
+  for (let k = 0; k < NUM_PANELS; k++) {
+    const cx = k * PANEL_W + PANEL_W / 2;
+    const cy = PANEL_H / 2 + (k % 2 ? 18 : -10);
+    const s = SIZES[k];
+    const shape = SHAPES[k % SHAPES.length];
+    if (shape === 'circle') g.circle(cx, cy, s);
+    if (shape === 'square') g.rect(cx, cy, s * 0.85, s * 0.85);
+    if (shape === 'triangle') g.triangle(cx, cy - s * 0.5, cx - s * 0.55, cy + s * 0.42, cx + s * 0.55, cy + s * 0.42);
+  }
+  return g;
+}
+
+// Faint fibres and specks, multiplied over each face to suggest giấy dó or mulberry paper.
+function buildPaper() {
+  const g = createGraphics(PANEL_W, PANEL_H);
+  g.pixelDensity(1);
+  g.background(255);
+  randomSeed(7);
+  g.noFill();
+  for (let i = 0; i < 260; i++) {
+    g.stroke(150, 120, 80, random(18, 45));
+    g.strokeWeight(random(0.6, 1.6));
+    const x = random(PANEL_W), y = random(PANEL_H), a = random(TWO_PI), len = random(20, 90);
+    g.bezier(x, y,
+      x + cos(a) * len * 0.3 + random(-10, 10), y + sin(a) * len * 0.3 + random(-10, 10),
+      x + cos(a) * len * 0.7 + random(-10, 10), y + sin(a) * len * 0.7 + random(-10, 10),
+      x + cos(a) * len, y + sin(a) * len);
+  }
+  g.noStroke();
+  for (let i = 0; i < 400; i++) {
+    g.fill(120, 90, 60, random(10, 35));
+    g.circle(random(PANEL_W), random(PANEL_H), random(1, 3));
+  }
+  return g;
+}
+
+// Draw what panel i is currently showing into a rectangle, wrapping around the end of the strip.
+function drawPanelContent(i, dx, dy, dw, dh) {
+  const x0 = modulo(i * PANEL_W - offset, STRIP_W);
+  const w1 = Math.min(PANEL_W, STRIP_W - x0);
+  const s = dw / PANEL_W;
+  image(strip, dx, dy, w1 * s, dh, x0, 0, w1, PANEL_H);
+  if (w1 < PANEL_W) {
+    image(strip, dx + w1 * s, dy, (PANEL_W - w1) * s, dh, 0, 0, PANEL_W - w1, PANEL_H);
+  }
+}
+
+// One physical panel as seen through the paper: bezel, glowing image, softened by the paper.
+function drawFace(i, x, y, w, h, shade, blurScale) {
+  push();
+  const ctx = drawingContext;
+  const blurPx = paperOn ? softness * blurScale : 0;
+  if (blurPx > 0) ctx.filter = 'blur(' + blurPx.toFixed(1) + 'px)';
+  noStroke();
+  fill(18, 16, 14);
+  rect(x, y, w, h);
+  if (paperOn) tint(241 * flicker, 222 * flicker, 180 * flicker); else noTint();
+  drawPanelContent(i, x + w * BEZEL_X, y + h * BEZEL_Y, w * (1 - 2 * BEZEL_X), h * (1 - 2 * BEZEL_Y));
+  noTint();
+  ctx.filter = 'none';
+  if (paperOn) {
+    blendMode(LIGHTEST);
+    fill(36, 28, 22);
+    rect(x, y, w, h);
+    blendMode(MULTIPLY);
+    image(paperTex, x, y, w, h);
+    blendMode(BLEND);
+  }
+  if (shade > 0) { fill(0, shade); rect(x, y, w, h); }
+  pop();
+}
+
+function draw() {
+  const dt = Math.min(deltaTime / 1000, 0.1);
+  if (playing) {
+    const f = driftOn ? 0.7 + 0.6 * noise(millis() * 0.00012) : 1;
+    offset = modulo(offset + speedPx * f * dt, STRIP_W);
+  }
+  flicker = (driftOn && playing) ? 0.93 + 0.07 * noise(millis() * 0.002 + 50) : 1;
+
+  if (currentView === 0) drawLantern();
+  else if (currentView === 1) drawUnrolled();
+  else drawController();
+
+  if (frameCount % 30 === 0) {
+    document.getElementById('fps').textContent = Math.round(frameRate()) + ' fps';
+  }
+}
+
+function drawLantern() {
+  background(14, 16, 25);
+  const F = Math.min(width * 0.42, (height * 0.62) / 0.6);
+  const faceH = F * 0.6;
+  const x0 = (width - 2 * F) / 2;
+  const y0 = (height - faceH) / 2 + height * 0.03;
+  const capH = faceH * 0.12;
+
+  // hanging cord
+  stroke(70, 60, 55);
+  strokeWeight(2);
+  line(width / 2, 0, width / 2, y0 - capH);
+  noStroke();
+
+  // glow on the wall behind
+  push();
+  drawingContext.shadowBlur = F * 0.5;
+  drawingContext.shadowColor = paperOn
+    ? 'rgba(245,200,120,' + (0.38 * flicker).toFixed(3) + ')'
+    : 'rgba(210,225,255,0.18)';
+  fill(paperOn ? color(245, 200, 120, 40) : color(210, 225, 255, 25));
+  rect(x0, y0, 2 * F, faceH);
+  pop();
+
+  const blurScale = F / 400;
+  drawFace(0, x0, y0, F * 0.5, faceH, 80, blurScale);
+  drawFace(1, x0 + F * 0.5, y0, F, faceH, 0, blurScale);
+  drawFace(2, x0 + F * 1.5, y0, F * 0.5, faceH, 80, blurScale);
+
+  // corner posts and rims
+  fill(40, 26, 20);
+  const post = Math.max(2, F * 0.015);
+  rect(x0 - post / 2, y0, post, faceH);
+  rect(x0 + F * 0.5 - post / 2, y0, post, faceH);
+  rect(x0 + F * 1.5 - post / 2, y0, post, faceH);
+  rect(x0 + 2 * F - post / 2, y0, post, faceH);
+  fill(92, 34, 28);
+  rect(x0 - F * 0.04, y0 - capH, 2 * F + F * 0.08, capH, 3);
+  rect(x0 - F * 0.04, y0 + faceH, 2 * F + F * 0.08, capH, 3);
+}
+
+function drawUnrolled() {
+  background(14, 16, 25);
+  const margin = width * 0.04;
+  const gap = width * 0.012;
+  let fw = (width - 2 * margin - (NUM_PANELS - 1) * gap) / NUM_PANELS;
+  fw = Math.min(fw, (height * 0.55) / 0.6);
+  const fh = fw * 0.6;
+  const total = NUM_PANELS * fw + (NUM_PANELS - 1) * gap;
+  const x0 = (width - total) / 2;
+  const y0 = (height - fh) / 2 - 12;
+  for (let i = 0; i < NUM_PANELS; i++) {
+    const x = x0 + i * (fw + gap);
+    drawFace(i, x, y0, fw, fh, 0, fw / 400);
+    noStroke();
+    fill(170, 172, 185);
+    textAlign(CENTER, TOP);
+    textSize(Math.max(11, fw * 0.08));
+    text('Panel ' + (i + 1), x + fw / 2, y0 + fh + 10);
+  }
+}
+
+function drawController() {
+  background(5, 5, 8);
+  const fw = Math.min(width * 0.9, height * 0.82 * 16 / 9);
+  const fh = fw * 9 / 16;
+  const x0 = (width - fw) / 2;
+  const y0 = (height - fh) / 2 - 10;
+  noStroke();
+  fill(0);
+  rect(x0, y0, fw, fh);
+  const tw = fw / TILE_COLS;
+  const th = fh / TILE_ROWS;
+  noTint();
+  for (let i = 0; i < NUM_PANELS; i++) {
+    const t = PANEL_TO_TILE[i];
+    const tx = x0 + (t % TILE_COLS) * tw;
+    const ty = y0 + Math.floor(t / TILE_COLS) * th;
+    drawPanelContent(i, tx, ty, tw, th);
+    noFill();
+    stroke(210, 86, 76);
+    strokeWeight(1);
+    rect(tx + 0.5, ty + 0.5, tw - 1, th - 1);
+    noStroke();
+    const label = 'Panel ' + (i + 1);
+    textSize(Math.max(11, tw * 0.055));
+    textAlign(LEFT, TOP);
+    const pad = 6;
+    fill(210, 86, 76);
+    rect(tx + 8, ty + 8, textWidth(label) + pad * 2, textSize() + pad * 1.4, 4);
+    fill(255);
+    text(label, tx + 8 + pad, ty + 8 + pad * 0.6);
+  }
+  fill(160, 162, 175);
+  textAlign(CENTER, TOP);
+  textSize(Math.max(11, fw * 0.02));
+  text('1920 × 1080 frame from the Pi, cut into ' + NUM_PANELS + ' tiles', width / 2, y0 + fh + 10);
+}
+
+// ---------- page controls ----------
+function setPlaying(p) {
+  playing = p;
+  document.getElementById('play').textContent = p ? 'Pause' : 'Play';
+}
+
+function setView(v) {
+  currentView = v;
+  document.querySelectorAll('.seg button').forEach(function (b) {
+    b.setAttribute('aria-pressed', String(Number(b.dataset.view) === v));
+  });
+  document.getElementById('caption').textContent = CAPTIONS[v];
+}
+
+function wireControls() {
+  document.querySelectorAll('.seg button').forEach(function (b) {
+    b.addEventListener('click', function () { setView(Number(b.dataset.view)); });
+  });
+  document.getElementById('play').addEventListener('click', function () { setPlaying(!playing); });
+
+  const speed = document.getElementById('speed');
+  const speedOut = document.getElementById('speedOut');
+  const updateSpeed = function () {
+    speedPx = Number(speed.value);
+    speedOut.textContent = 'one panel / ' + (PANEL_W / speedPx).toFixed(1) + ' s';
+  };
+  speed.addEventListener('input', updateSpeed);
+  updateSpeed();
+
+  const soft = document.getElementById('soft');
+  const softOut = document.getElementById('softOut');
+  const updateSoft = function () {
+    softness = Number(soft.value);
+    softOut.textContent = softness === 0 ? 'sharp' : softness.toFixed(1);
+  };
+  soft.addEventListener('input', updateSoft);
+  updateSoft();
+
+  document.getElementById('paper').addEventListener('change', function (e) { paperOn = e.target.checked; });
+  document.getElementById('drift').addEventListener('change', function (e) { driftOn = e.target.checked; });
+  setView(0);
+}
+
+function keyPressed() {
+  const tag = document.activeElement ? document.activeElement.tagName : '';
+  if (tag === 'BUTTON' || tag === 'INPUT') return;
+  if (key === ' ') { setPlaying(!playing); return false; }
+  if (key === '1') setView(0);
+  if (key === '2') setView(1);
+  if (key === '3') setView(2);
+}
+</script>
+</body>
+</html>
