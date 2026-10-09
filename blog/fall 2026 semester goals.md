@@ -21,7 +21,7 @@ snippet: setting goals for the new semester
 - [ ] design my shop badge
 - [ ] design a pcb
 - [ ] learn how to use the cnc
-- [ ] master my new 3D printer
+- [x] master my new 3D printer
 - [ ] build a furniture piece for the new apartment
 - [ ] make the giant tuna fish lantern with friends
 - [ ] print something on the UV printer*
