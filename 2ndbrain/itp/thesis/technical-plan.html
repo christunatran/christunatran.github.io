@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>technical plan</title><meta charset="utf-8"/><link rel="preload" href="../../index-f2774a91.css" as="style"/><link rel="preload" href="../../prescript-e3b0c442.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&amp;family=Kosugi:ital,wght@0,400;0,600;1,400;1,600&amp;family=Courier Prime:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="tunapee's second brain"/><meta property="og:title" content="technical plan"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="technical plan"/><meta name="twitter:description" content="Technical Plan: Modern Đèn Kéo Quân A series of experiments to build the core loop, one piece at a time, in an order that teaches the concepts along the way."/><meta property="og:description" content="Technical Plan: Modern Đèn Kéo Quân A series of experiments to build the core loop, one piece at a time, in an order that teaches the concepts along the way."/><meta property="og:image:alt" content="Technical Plan: Modern Đèn Kéo Quân A series of experiments to build the core loop, one piece at a time, in an order that teaches the concepts along the way."/><meta property="twitter:domain" content="tunapee.online/2ndbrain"/><meta property="og:url" content="https://tunapee.online/2ndbrain/itp/thesis/technical-plan"/><meta property="twitter:url" content="https://tunapee.online/2ndbrain/itp/thesis/technical-plan"/><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐟</text></svg>"/><meta name="description" content="Technical Plan: Modern Đèn Kéo Quân A series of experiments to build the core loop, one piece at a time, in an order that teaches the concepts along the way."/><meta name="generator" content="Quartz"/><link href="../../index-f2774a91.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-defffe3b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../static/resource-style-8548ca37.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../prescript-e3b0c442.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen%3Awght%40400%3B700&amp;family=Kosugi%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=Courier%20Prime%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://tunapee.online/2ndbrain/itp/thesis/technical-plan-og-image.webp"/><meta property="og:image:url" content="https://tunapee.online/2ndbrain/itp/thesis/technical-plan-og-image.webp"/><meta name="twitter:image" content="https://tunapee.online/2ndbrain/itp/thesis/technical-plan-og-image.webp"/><meta property="og:image:type" content="image/webp"/><link rel="stylesheet" href="/2ndbrain/static/custom.css"/></head><body data-slug="itp/thesis/technical-plan" data-basepath="/2ndbrain"><a id="back-to-main-site" href="https://tunapee.online">← back to tunapee.online</a><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h1 class="page-title"><a href="../..">tunapee's second brain</a></h1><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a, b) => {\n  const aIsPeople = a.isFolder &amp;&amp; a.slugSegment === \&quot;people\&quot;;\n  const bIsPeople = b.isFolder &amp;&amp; b.slugSegment === \&quot;people\&quot;;\n  if (aIsPeople || bIsPeople) {\n    if (aIsPeople &amp;&amp; bIsPeople) return 0;\n    return aIsPeople ? 1 : -1;\n  }\n  if (a.isFolder &amp;&amp; b.isFolder) {\n    return (a.displayName || \&quot;\&quot;).localeCompare(b.displayName || \&quot;\&quot;, void 0, { numeric: true, sensitivity: \&quot;base\&quot; });\n  }\n  if (a.isFolder !== b.isFolder) {\n    return a.isFolder ? -1 : 1;\n  }\n  const aDate = a.data &amp;&amp; a.data.date ? new Date(a.data.date).getTime() : 0;\n  const bDate = b.data &amp;&amp; b.data.date ? new Date(b.data.date).getTime() : 0;\n  return bDate - aDate;\n}\n&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\n    return node;\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-77" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-77" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><h1 class="article-title">technical plan</h1><p show-comma="true" class="content-meta"><time datetime="2026-10-14T19:26:39.012Z">Oct 14, 2026</time></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="technical-plan-modern-đèn-kéo-quân">Technical Plan: Modern Đèn Kéo Quân<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#technical-plan-modern-đèn-kéo-quân" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>A series of experiments to build the core loop, one piece at a time, in an order that teaches the concepts along the way. Each experiment ends with a number that was measured and a decision. Speech, translation and images each work on their own first, then get chained together.</p>
+<p><strong>Core loop:</strong> Vietnamese speech → transcription (Moonshine) → English translation and image subject (Gemma) → black-and-white silhouette (Stable Diffusion + silhouette gate) → six-slot procession on six LCD panels behind paper.</p>
+<p><strong>Constraints:</strong> 100% local and offline on a Raspberry Pi 5 (8 GB). Backlight layer fixed and set by me; the AI only changes the silhouette layer. Rotation is animated, not mechanical.</p>
+<hr/>
+<h2 id="how-to-learn-throughout">How to learn throughout<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#how-to-learn-throughout" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li><strong>Keep a lab notebook from day one.</strong> A git repo with one markdown entry per experiment: what I’m testing, setup, the numbers, what surprised me, what I decided. It’s how I’ll actually learn, and by the end of the year it’s my thesis documentation. (Template at the bottom of this file.)</li>
+<li><strong>Change one thing at a time.</strong> When something breaks or gets slower, I’ll know why.</li>
+<li><strong>Measure the same four things every time:</strong> speed, peak memory, temperature and quality.</li>
+</ul>
+<h2 id="a-two-minute-primer-on-local-ai">A two-minute primer on local AI<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#a-two-minute-primer-on-local-ai" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ul>
+<li><strong>A model is a large file of learned numbers</strong> (weights). On its own it does nothing.</li>
+<li><strong>A runtime is the program that runs the model.</strong> Three will come up:
+<ul>
+<li><strong>Ollama</strong>, the easiest way to run text LLMs (built on llama.cpp)</li>
+<li><strong>LiteRT-LM</strong>, what the Gemma Translator uses</li>
+<li><strong>PyTorch</strong>, what runs Stable Diffusion</li>
+</ul>
+</li>
+<li><strong>Quantization</strong> stores the weights with fewer bits, often 4 instead of 16. That shrinks memory use and speeds things up at a small cost in quality. It’s the main reason LLMs fit on a Pi at all.</li>
+<li><strong>Tokens</strong> are word pieces. LLM speed is measured in tokens per second.</li>
+<li><strong>Temperature</strong> controls randomness. Keep it low for translation, since I want the same answer every time.</li>
+<li><strong>On a Pi, everything runs on the CPU and is limited by memory.</strong> Small models (around 1–2 billion parameters) are realistic; big ones aren’t.</li>
+</ul>
+<hr/>
+<h2 id="phase-1-foundations-about-1-week">Phase 1: Foundations (about 1 week)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#phase-1-foundations-about-1-week" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h3 id="e1-finish-the-base-setup">E1. Finish the base setup<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e1-finish-the-base-setup" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Run the thermal test:
+<pre><code>sudo apt install -y stress-ng
+stress-ng --cpu 4 --timeout 300s &amp;
+</code></pre>
+Check <code>vcgencmd measure_temp</code> every minute or so while it runs.</li>
+<li><strong>Pass:</strong> <code>vcgencmd get_throttled</code> reads <code>throttled=0x0</code> after 5 minutes at full load.</li>
+</ul>
+<h3 id="e2-set-up-a-real-workflow">E2. Set up a real workflow<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e2-set-up-a-real-workflow" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Install the <strong>Remote-SSH extension in VS Code</strong> on the laptop, so files on the Pi can be edited as if they were local.</li>
+<li>Create a project folder with a Python virtual environment and a git repo.</li>
+<li><strong>I’ll learn:</strong> basic Linux, virtual environments, git.</li>
+<li><strong>Pass:</strong> I can edit a script on the Pi from VS Code and run it.</li>
+</ul>
+<hr/>
+<h2 id="phase-2-first-local-llm-23-weeks">Phase 2: First local LLM (2–3 weeks)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#phase-2-first-local-llm-23-weeks" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h3 id="e3-hello-llm-with-ollama">E3. Hello LLM with Ollama<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e3-hello-llm-with-ollama" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>The gentlest on-ramp.</p>
+<pre><code>curl -fsSL https://ollama.com/install.sh | sh
+ollama run gemma3:1b --verbose
+</code></pre>
+<ul>
+<li>Use whichever small Gemma model Ollama currently lists; <code>gemma3:1b</code> is an example name. The model downloads once and runs offline after that.</li>
+<li>Chat with it, then read the “eval rate” that <code>--verbose</code> prints: that’s tokens per second.</li>
+<li>Watch memory in a second SSH window with <code>htop</code>.</li>
+<li><strong>I’ll learn:</strong> model files, quantization, tokens per second, prompts.</li>
+<li><strong>Measure:</strong> tokens/second and memory for a 1B model, then a larger one, to get a feel for the trade-off.</li>
+</ul>
+<h3 id="e4-gemma-e2b-through-litert-lm-the-production-path">E4. Gemma E2B through LiteRT-LM (the production path)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e4-gemma-e2b-through-litert-lm-the-production-path" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Set it up following the Gemma Translator repo, but run only its backend pieces by hand. Its full deploy script turns the Pi into a kiosk, which I don’t want on the development Pi yet.</li>
+<li><strong>Measure:</strong> speed and memory, compared with Ollama.</li>
+<li><strong>Decision:</strong> which runtime to use.</li>
+</ul>
+<h3 id="e5-translation-quality">E5. Translation quality<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e5-translation-quality" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Build a test set of about 20 Vietnamese sentences, ideally from real people, with different speakers and topics.</li>
+<li>Test two prompts:
+<ol>
+<li>a plain translation</li>
+<li>“translate, then give a short visual subject for one silhouette”</li>
+</ol>
+</li>
+<li>Ask the model to answer in a fixed format, for example <code>{&quot;english&quot;: &quot;...&quot;, &quot;subject&quot;: &quot;...&quot;}</code>. My code checks the format and retries if it’s broken.</li>
+<li><strong>I’ll learn:</strong> prompt design and handling unreliable model output (the same mindset as the silhouette gate).</li>
+<li><strong>Measure:</strong> meaning preserved (out of 20), format success rate, seconds per sentence.</li>
+</ul>
+<hr/>
+<h2 id="phase-3-speech-about-2-weeks">Phase 3: Speech (about 2 weeks)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#phase-3-speech-about-2-weeks" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><em>First purchase: a USB microphone.</em></p>
+<h3 id="e6-moonshine-vietnamese-on-the-pi">E6. Moonshine Vietnamese on the Pi<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e6-moonshine-vietnamese-on-the-pi" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>First confirm Vietnamese is supported in the current Moonshine release.</li>
+<li>Record with <code>arecord</code>, transcribe, and compare against what was actually said, using the same speakers and sentences as E5.</li>
+<li>If Moonshine is weak, test whisper.cpp as a fallback.</li>
+<li><strong>I’ll learn:</strong> speech-model basics, audio recording on Linux, word error rate (the standard accuracy measure: the share of words wrong).</li>
+<li><strong>Measure:</strong> accuracy and seconds per sentence.</li>
+</ul>
+<h3 id="e7-first-mini-loop-speak--text--translation">E7. First mini-loop: speak → text → translation<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e7-first-mini-loop-speak--text--translation" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Measure:</strong> total time from speech to English.</li>
+</ul>
+<hr/>
+<h2 id="phase-4-images-34-weeks">Phase 4: Images (3–4 weeks)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#phase-4-images-34-weeks" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h3 id="e8-silhouettes-on-the-laptop-first">E8. Silhouettes on the laptop first<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e8-silhouettes-on-the-laptop-first" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<p>Iterating there is much faster.</p>
+<ul>
+<li>Run SDXL-Turbo with a prompt test set through <code>silhouette_pipeline.py</code>.</li>
+<li><strong>I’ll learn:</strong> diffusion basics (steps, seeds, resolution, why guidance 0 disables negative prompts).</li>
+<li><strong>Measure:</strong> how many images pass the gate, and whether the silhouettes read through paper held over the screen.</li>
+</ul>
+<h3 id="e9-sdxl-turbo-on-the-pi">E9. SDXL-Turbo on the Pi<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e9-sdxl-turbo-on-the-pi" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Raise swap to 8 GB.</li>
+<li>Install CPU-only PyTorch in a virtual environment.</li>
+<li>Run the timing script, measuring:
+<ul>
+<li>load time and generation time (separately)</li>
+<li>peak memory (<code>/usr/bin/time -v</code> shows it as “Maximum resident set size”)</li>
+<li>swap written (<code>grep pswpout /proc/vmstat</code> before and after; the difference × 4 KB)</li>
+</ul>
+</li>
+<li>Do 10 runs back to back, watching temperature.</li>
+<li>If it’s too slow or swaps heavily, compare SD-Turbo (a smaller sibling model), SD 1.5 and OnnxStream.</li>
+<li>Check each model’s license on its model card. Some Stability AI models restrict commercial use, which matters if this ever becomes a product.</li>
+<li><strong>Decision:</strong> which image model, and whether an NVMe drive is needed.</li>
+</ul>
+<h3 id="e10-gate-on-the-pi">E10. Gate on the Pi<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e10-gate-on-the-pi" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Pass:</strong> a typed subject goes in, a silhouette lands in the archive.</li>
+</ul>
+<hr/>
+<h2 id="phase-5-the-full-core-loop-about-3-weeks">Phase 5: The full core loop (about 3 weeks)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#phase-5-the-full-core-loop-about-3-weeks" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h3 id="e11-memory-choreography">E11. Memory choreography<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e11-memory-choreography" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Decide which models stay loaded and which get unloaded between steps.</li>
+<li><strong>Measure:</strong> peak memory for each strategy, and make sure nothing gets killed for running out of memory.</li>
+</ul>
+<h3 id="e12-core-loop-on-the-pi-viewed-from-the-laptop">E12. Core loop on the Pi, viewed from the laptop<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e12-core-loop-on-the-pi-viewed-from-the-laptop" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Speak, and the silhouette goes into the archive.</li>
+<li>Serve the p5 sketch from the Pi and open <code>http://tunapee.local:8000</code> in the laptop’s browser. That shows the display with no monitor attached (the local network is used for viewing only).</li>
+<li><strong>Measure:</strong> speech-to-silhouette time, over 20 cycles.</li>
+</ul>
+<h3 id="e13-make-it-robust">E13. Make it robust<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#e13-make-it-robust" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li>Run generation and display as two separate programs that start automatically at boot (using systemd, Linux’s service manager).</li>
+<li>Tests:
+<ul>
+<li>kill the generator and check that the display keeps glowing</li>
+<li>pull the power and check that the archive survives</li>
+</ul>
+</li>
+<li>Port the display to pygame here, if I decide to.</li>
+</ul>
+<hr/>
+<h2 id="phase-6-real-display-hardware-after-phase-5">Phase 6: Real display hardware (after Phase 5)<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#phase-6-real-display-hardware-after-phase-5" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<ol>
+<li>Buy one panel and run the 1080p test (set the Pi’s output to 1920×1080; if the panel shows a scaled picture, it will work with the controller).</li>
+<li>Add the video wall controller and run all six panels.</li>
+<li>Attach the playback button (GPIO 17 to ground).</li>
+</ol>
+<hr/>
+<h2 id="big-decision-points">Big decision points<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#big-decision-points" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>After</th><th>Decide</th></tr></thead><tbody><tr><td>E5</td><td>Which LLM runtime, which translation prompt</td></tr><tr><td>E6</td><td>Which speech model</td></tr><tr><td>E9</td><td>Which image model, NVMe or not, how long generation takes (shapes the experience design)</td></tr><tr><td>E12</td><td>Whether the core loop is fast and stable enough to start buying display hardware</td></tr></tbody></table></div>
+<p><strong>Timing:</strong> roughly 3 months to a working core loop if things go reasonably well. That leaves most of the year for the parts that make it a thesis: testing with people, the lantern’s form and light, and the concept.</p>
+<hr/>
+<h2 id="lab-notebook-template">Lab notebook template<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#lab-notebook-template" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p>Copy this for each experiment.</p>
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="markdown" data-theme="github-light github-dark"><code data-language="markdown" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;" data-token-type="punctuation"># E__: [</span><span style="--shiki-light:#032F62;--shiki-light-text-decoration:underline;--shiki-dark:#DBEDFF;--shiki-dark-text-decoration:underline;" data-token-type="string">name</span><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;" data-token-type="punctuation">]</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-light-font-weight:bold;--shiki-dark:#E1E4E8;--shiki-dark-font-weight:bold;" data-token-type="punctuation">**Date:**</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-light-font-weight:bold;--shiki-dark:#E1E4E8;--shiki-dark-font-weight:bold;" data-token-type="punctuation">**Question:**</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> What am I trying to find out?</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-light-font-weight:bold;--shiki-dark:#E1E4E8;--shiki-dark-font-weight:bold;" data-token-type="punctuation">**Hypothesis:**</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;"> What do I expect, and why?</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;" data-token-type="punctuation">## Setup</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> Hardware:</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> Software / model / version:</span></span>
+<span data-line><span style="--shiki-light:#E36209;--shiki-dark:#FFAB70;" data-token-type="important">-</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="normal"> Settings changed from last time:</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;" data-token-type="punctuation">## Results</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">| Metric | Value |</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">|---|---|</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">| Speed | |</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">| Peak memory | |</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">| Temperature | |</span></span>
+<span data-line><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;" data-token-type="punctuation">| Quality | |</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;" data-token-type="punctuation">## What surprised me</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;" data-token-type="punctuation">## What I learned</span></span>
+<span data-line> </span>
+<span data-line><span style="--shiki-light:#005CC5;--shiki-light-font-weight:bold;--shiki-dark:#79B8FF;--shiki-dark-font-weight:bold;" data-token-type="punctuation">## Decision / next step</span></span></code></pre></figure></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-30" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#technical-plan-modern-đèn-kéo-quân" data-for="technical-plan-modern-đèn-kéo-quân">Technical Plan: Modern Đèn Kéo Quân</a></li><li class="depth-1"><a href="#how-to-learn-throughout" data-for="how-to-learn-throughout">How to learn throughout</a></li><li class="depth-1"><a href="#a-two-minute-primer-on-local-ai" data-for="a-two-minute-primer-on-local-ai">A two-minute primer on local AI</a></li><li class="depth-1"><a href="#phase-1-foundations-about-1-week" data-for="phase-1-foundations-about-1-week">Phase 1: Foundations (about 1 week)</a></li><li class="depth-2"><a href="#e1-finish-the-base-setup" data-for="e1-finish-the-base-setup">E1. Finish the base setup</a></li><li class="depth-2"><a href="#e2-set-up-a-real-workflow" data-for="e2-set-up-a-real-workflow">E2. Set up a real workflow</a></li><li class="depth-1"><a href="#phase-2-first-local-llm-23-weeks" data-for="phase-2-first-local-llm-23-weeks">Phase 2: First local LLM (2–3 weeks)</a></li><li class="depth-2"><a href="#e3-hello-llm-with-ollama" data-for="e3-hello-llm-with-ollama">E3. Hello LLM with Ollama</a></li><li class="depth-2"><a href="#e4-gemma-e2b-through-litert-lm-the-production-path" data-for="e4-gemma-e2b-through-litert-lm-the-production-path">E4. Gemma E2B through LiteRT-LM (the production path)</a></li><li class="depth-2"><a href="#e5-translation-quality" data-for="e5-translation-quality">E5. Translation quality</a></li><li class="depth-1"><a href="#phase-3-speech-about-2-weeks" data-for="phase-3-speech-about-2-weeks">Phase 3: Speech (about 2 weeks)</a></li><li class="depth-2"><a href="#e6-moonshine-vietnamese-on-the-pi" data-for="e6-moonshine-vietnamese-on-the-pi">E6. Moonshine Vietnamese on the Pi</a></li><li class="depth-2"><a href="#e7-first-mini-loop-speak--text--translation" data-for="e7-first-mini-loop-speak--text--translation">E7. First mini-loop: speak → text → translation</a></li><li class="depth-1"><a href="#phase-4-images-34-weeks" data-for="phase-4-images-34-weeks">Phase 4: Images (3–4 weeks)</a></li><li class="depth-2"><a href="#e8-silhouettes-on-the-laptop-first" data-for="e8-silhouettes-on-the-laptop-first">E8. Silhouettes on the laptop first</a></li><li class="depth-2"><a href="#e9-sdxl-turbo-on-the-pi" data-for="e9-sdxl-turbo-on-the-pi">E9. SDXL-Turbo on the Pi</a></li><li class="depth-2"><a href="#e10-gate-on-the-pi" data-for="e10-gate-on-the-pi">E10. Gate on the Pi</a></li><li class="depth-1"><a href="#phase-5-the-full-core-loop-about-3-weeks" data-for="phase-5-the-full-core-loop-about-3-weeks">Phase 5: The full core loop (about 3 weeks)</a></li><li class="depth-2"><a href="#e11-memory-choreography" data-for="e11-memory-choreography">E11. Memory choreography</a></li><li class="depth-2"><a href="#e12-core-loop-on-the-pi-viewed-from-the-laptop" data-for="e12-core-loop-on-the-pi-viewed-from-the-laptop">E12. Core loop on the Pi, viewed from the laptop</a></li><li class="depth-2"><a href="#e13-make-it-robust" data-for="e13-make-it-robust">E13. Make it robust</a></li><li class="depth-1"><a href="#phase-6-real-display-hardware-after-phase-5" data-for="phase-6-real-display-hardware-after-phase-5">Phase 6: Real display hardware (after Phase 5)</a></li><li class="depth-1"><a href="#big-decision-points" data-for="big-decision-points">Big decision points</a></li><li class="depth-1"><a href="#lab-notebook-template" data-for="lab-notebook-template">Lab notebook template</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-0" class="overflow"><li><a href="../../itp/thesis/10-14-2026-setting-up-raspberry-pi" class="internal">10-14-2026 setting up raspberry pi</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul></ul></footer></div></div></body><script src="../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../postscript-3eea7814.js" type="module" data-persist="true"></script></html>
