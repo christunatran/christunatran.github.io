@@ -33,7 +33,10 @@
     "tags": [
       "short"
     ],
-    "temperature": "personal"
+    "temperature": "personal",
+    "cover": "/blog/assets/coffee-table-books.png",
+    "coverW": 1209,
+    "coverH": 1612
   },
   {
     "slug": "fall-2026-semester-goals",

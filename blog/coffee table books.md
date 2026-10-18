@@ -4,6 +4,7 @@ link: coffee-table-books
 published_date: 2026-10-10 12:00
 tags: short
 temperature: personal
+cover: /blog/assets/coffee-table-books.png
 ---
 
 my roommates and i set out some coffee table books. i dubbed a new term, "joy-flipping" as opposed to doomscrolling. because it's so delightful to casually flip through for inspiration.
