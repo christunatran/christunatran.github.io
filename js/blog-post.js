@@ -163,7 +163,8 @@
               ${metaRowHtml(post)}
               ${rendered}
             `;
-            autoGridConsecutiveImages(contentEl);
+            // `grid: false` in frontmatter keeps every image on its own line
+            if (meta.grid !== 'false') autoGridConsecutiveImages(contentEl);
             renderedHtml = contentEl.innerHTML; // cache post-grid HTML
             initLightbox(contentEl);
             initInstagramEmbeds(contentEl);
