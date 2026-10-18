@@ -8,5 +8,6 @@ temperature: personal
 
 ![text message: you are artistic, disciplined, genuine, and you have so much swag](assets/tunapee-testimony-1.png)
 
+<div></div>
 
 ![discord message: no like let's lock in. itp - In TunaPee (we trust)](assets/tunapee-testimony-2.png)
