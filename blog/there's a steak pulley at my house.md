@@ -11,9 +11,10 @@ my roommates built a steak pulley out of our second floor apartment and are sell
 
 we've been advertising it in various ways, which has been a blast.
 
-https://www.instagram.com/p/DehLXDrP0xG/
-
 [website](https://someguyshouse.com/)
+
+
+https://www.instagram.com/p/DehLXDrP0xG/
 
 ![the beef supreme: a big angus steak with creamed spinach and a yukon potato, $25](assets/steak-pulley-website.png)
 
