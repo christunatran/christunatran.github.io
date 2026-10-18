@@ -1,5 +1,30 @@
 [
   {
+    "slug": "theres-a-steak-pulley-at-my-house",
+    "title": "there's a steak pulley at my house",
+    "date": "2026.10.18",
+    "file": "there's a steak pulley at my house.md",
+    "snippet": "my roommates built a steak pulley out of our second floor apartment and are selling steaks out of it.",
+    "tags": [
+      "short"
+    ],
+    "temperature": "personal",
+    "cover": "/blog/assets/steak-pulley-cover.gif",
+    "coverW": 360,
+    "coverH": 360
+  },
+  {
+    "slug": "tunapee-testimonies",
+    "title": "tunapee testimonies",
+    "date": "2026.10.18",
+    "file": "tunapee testimonies.md",
+    "snippet": "",
+    "tags": [
+      "short"
+    ],
+    "temperature": "personal"
+  },
+  {
     "slug": "fall-2026-semester-goals",
     "title": "fall 2026 semester goals",
     "date": "2026.08.31",
@@ -17,11 +42,11 @@
     "date": "2026.08.31",
     "file": "reminders going into the new school year.md",
     "snippet": "",
-    "disabled": true,
     "tags": [
-      "personal"
+      "cope"
     ],
-    "temperature": "shit-talk"
+    "temperature": "shit-talk",
+    "disabled": true
   },
   {
     "slug": "no-human-being",

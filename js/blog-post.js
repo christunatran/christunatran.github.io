@@ -110,6 +110,7 @@
         if (renderedHtml) {
           contentEl.innerHTML = renderedHtml;
           initLightbox(contentEl);
+          initInstagramEmbeds(contentEl);
           document.title = `${displayTitle(post)} — tunapee`;
           return Promise.resolve();
         }
@@ -146,6 +147,16 @@
               (_, id) => `<div class="video-embed"><iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
             );
 
+            // Convert bare Instagram post/reel URLs (on their own line) into
+            // embed blockquotes; initInstagramEmbeds() turns them into iframes.
+            rendered = rendered.replace(
+              /<p>\s*(?:<a [^>]*>)?https?:\/\/(?:www\.)?instagram\.com\/(p|reel)\/([\w-]+)[^\s<]*(?:<\/a>)?\s*<\/p>/g,
+              (_, kind, id) => {
+                const url = `https://www.instagram.com/${kind}/${id}/`;
+                return `<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14"><a href="${url}" target="_blank">view on instagram</a></blockquote>`;
+              }
+            );
+
             // marked.js is loaded via CDN before this script.
             contentEl.innerHTML = `
               <h1>${escapeHtml(title)}</h1>
@@ -155,8 +166,28 @@
             autoGridConsecutiveImages(contentEl);
             renderedHtml = contentEl.innerHTML; // cache post-grid HTML
             initLightbox(contentEl);
+            initInstagramEmbeds(contentEl);
             document.title = `${title} — tunapee`;
           });
+      }
+
+      /**
+       * Activates any Instagram embed blockquotes in the container. Mirrors
+       * work-detail.js's version of this helper.
+       */
+      function initInstagramEmbeds(container) {
+        if (!container.querySelector('.instagram-media')) return;
+
+        if (window.instgrm) {
+          window.instgrm.Embeds.process();
+          return;
+        }
+
+        const script  = document.createElement('script');
+        script.src    = '//www.instagram.com/embed.js';
+        script.async  = true;
+        script.onload = () => window.instgrm && window.instgrm.Embeds.process();
+        document.body.appendChild(script);
       }
 
       /**

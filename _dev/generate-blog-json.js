@@ -97,7 +97,7 @@ function extractSnippet(content) {
   const paragraphs = body.split(/\n{2,}/);
   const para = (paragraphs.find(p => {
     const t = p.trim();
-    return t && !t.startsWith('![') && !t.startsWith('<video') && !t.startsWith('<img');
+    return t && t !== '&nbsp;' && !t.startsWith('![') && !t.startsWith('<video') && !t.startsWith('<img');
   }) || '')
     .replace(/[#*_`>~]/g, '')   // strip markdown syntax
     .replace(/\s+/g, ' ')
