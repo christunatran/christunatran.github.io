@@ -40,7 +40,7 @@ Run from anywhere (it's a shell alias). This does, in order:
 
 1. `npx quartz build` in `/Users/tunapee/quartz` — rebuilds static HTML from whatever's currently in `Second Brain/`
 2. `rsync -a --delete` copies the output into `christunatran.github.io/2ndbrain/`, deleting anything no longer generated (so deleted/renamed notes disappear from the live site too)
-3. `git add -A && git commit && git push` in this repo
+3. `git add -A -- 2ndbrain && git commit -- 2ndbrain && git push` in this repo — only `2ndbrain/` is staged and committed, so unrelated work in progress (blog drafts, a regenerated `data/blog.json`) never gets swept into a 2ndbrain publish. If nothing in `2ndbrain/` changed, it skips the commit.
 
 Nothing publishes automatically — edits in Obsidian just sit there until you run this command. If the alias isn't available in a shell, either open a new terminal or run `source ~/.zshrc`, or just run the script directly:
 
