@@ -16,6 +16,8 @@ we've been advertising it in various ways, which has been a blast.
 
 https://www.instagram.com/p/DehLXDrP0xG/
 
+(fun fact: i did the voiceover for the animated part)
+
 ![the beef supreme: a big angus steak with creamed spinach and a yukon potato, $25](assets/steak-pulley-website.png)
 
 the pulley
