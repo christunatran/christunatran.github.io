@@ -15,3 +15,5 @@ grid: false
 ![text messages: christina is like one of the cutest people ive ever seen in a long time. shes so small. shes the perfect size lol](assets/tunapee-testimony-3.png)
 
 ![text message: she my dream girl](assets/tunapee-testimony-4.png)
+
+![text message: life explosion](assets/life_explosion.png)
