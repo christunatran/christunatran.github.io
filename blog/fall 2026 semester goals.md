@@ -28,7 +28,7 @@ snippet: setting goals for the new semester
 - [x] design a poster for my bday party
 
 **professional/education**
-- [ ] do a good job at the startup
+- [ ] complete all expected deliverables for the startup
 - [ ] go to office hours 5x
 
 **content / documentation**
