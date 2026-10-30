@@ -13,14 +13,14 @@ snippet: setting goals for the new semester
 - [x] tandon makerspace training
 
 **social / community**
-- [ ] host a powerpoint night at school
-- [ ] host a weekly dinner with friends
+- [x] host a ~~weekly~~ dinner with friends
 - [x] host a banger housewarming party
+- [x] host a reading/coworking session at home*
 
 **fabrication & skills**
 - [ ] design my shop badge
 - [ ] design a pcb
-- [ ] learn how to use the cnc
+- [x] learn how to use the cnc
 - [x] master my new 3D printer
 - [ ] build a furniture piece for the new apartment
 - [ ] make the giant tuna fish lantern with friends
@@ -38,14 +38,11 @@ snippet: setting goals for the new semester
 **daily systems**
 - [ ] no phone in bedroom
 - [ ] read 10 pages a day
-- [ ] morning routine app, daily
-- [ ] eat simply and nutritiously
-- [ ] practice eununciation with aligners on weekly*
+- [x] eat simply and nutritiously
 
 **physical**
-- [ ] gym 40x (3x/week)
-- [ ] spikeball 10x
-- [ ] pickleball 10x
+- [ ] gym at least 2x/week
+
 
 \* = added later
 
