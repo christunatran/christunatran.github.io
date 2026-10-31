@@ -253,7 +253,8 @@
       "life",
       "itp"
     ],
-    "temperature": "personal"
+    "temperature": "personal", 
+    "disabled": true
   },
   {
     "slug": "household-income",
