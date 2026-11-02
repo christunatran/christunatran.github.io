@@ -17,3 +17,9 @@ grid: false
 ![text message: she my dream girl](assets/tunapee-testimony-4.png)
 
 ![text message: life explosion](assets/life_explosion.png)
+
+> "no christina, you've BEEN habesha!"
+>
+> — ruth mekonnen, july 2026
+
+![text message: I really like christina lol i was like i wanna steal her as a friend](assets/tunapee-testimony-5.jpg)
