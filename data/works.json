@@ -1,5 +1,14 @@
 [
   {
+    "slug": "aidr",
+    "title": "ai;dr (artificial intelligence, didn't read)",
+    "subtitle": "improbable education seminar",
+    "date": "2026.07.09",
+    "cover": "works/aidr/assets/improbable-seminar-05.jpg",
+    "coverW": 2000,
+    "coverH": 1335
+  },
+  {
     "slug": "jade-moon-automaton",
     "title": "jade moon automaton",
     "subtitle": "fabricating mechanical automatons",
