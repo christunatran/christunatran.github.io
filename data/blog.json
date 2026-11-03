@@ -9,9 +9,9 @@
       "short"
     ],
     "temperature": "personal",
-    "cover": "/blog/assets/steak-pulley-cover.gif",
+    "cover": "/blog/assets/steak-pulley-cover-2.gif",
     "coverW": 360,
-    "coverH": 360
+    "coverH": 640
   },
   {
     "slug": "tunapee-testimonies",
@@ -253,7 +253,7 @@
       "life",
       "itp"
     ],
-    "temperature": "personal", 
+    "temperature": "personal",
     "disabled": true
   },
   {

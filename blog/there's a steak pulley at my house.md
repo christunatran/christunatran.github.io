@@ -4,7 +4,7 @@ link: theres-a-steak-pulley-at-my-house
 published_date: 2026-10-18 01:15
 tags: short
 temperature: personal
-cover: /blog/assets/steak-pulley-cover.gif
+cover: /blog/assets/steak-pulley-cover-2.gif
 ---
 
 my roommates built a steak pulley out of our second floor apartment and are selling steaks out of it.
