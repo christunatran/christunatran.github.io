@@ -20,29 +20,30 @@ snippet: setting goals for the new semester
 **fabrication & skills**
 - [ ] design my shop badge
 - [ ] design a pcb
+- [ ] make the giant tuna fish lantern with friends
+- [ ] print something on the UV printer\*
+- [ ] build a furniture piece for the new apartment
 - [x] learn how to use the cnc
 - [x] master my new 3D printer
-- [ ] build a furniture piece for the new apartment
-- [ ] make the giant tuna fish lantern with friends
-- [ ] print something on the UV printer*
+- [x] make a risograph print \*
 - [x] design a poster for my bday party
 
 **professional/education**
 - [ ] complete all expected deliverables for the startup
-- [ ] go to office hours 5x
+- [x] go to office hours at least 5x
 
 **content / documentation**
 - [ ] write a blog post every week (14)
 - [ ] make a video documenting a project
 
 **daily systems**
-- [x] write in my logbook every day
 - [ ] no phone in bedroom
 - [ ] read 10 pages a day
+- [x] write in my logbook every day
 - [x] eat simply and nutritiously
 
 **physical**
-- [ ] gym at least 2x/week
+- [x] gym at least 2x/week
 
 
 \* = added later
