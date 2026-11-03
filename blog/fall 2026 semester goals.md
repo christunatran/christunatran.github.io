@@ -36,6 +36,7 @@ snippet: setting goals for the new semester
 - [ ] make a video documenting a project
 
 **daily systems**
+- [x] write in my logbook every day
 - [ ] no phone in bedroom
 - [ ] read 10 pages a day
 - [x] eat simply and nutritiously
