@@ -948,6 +948,21 @@ blockquote {
   display: block;
 }
 
+/* Instagram embed sharing a row with an image (raw-HTML .media-pair in a post) */
+.media-pair { align-items: center; }
+#work-content .media-pair img { max-width: 100%; }
+#work-content .media-pair video {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+#work-content .media-pair .instagram-media {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
 #work-content .instagram-media {
   margin-left: auto !important;
   margin-right: auto !important;
