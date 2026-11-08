@@ -7,7 +7,7 @@ temperature: personal
 cover: /blog/assets/steak-pulley-cover-3.gif
 ---
 
-my roommates built a steak pulley out of our second floor apartment and are selling steaks out of it.
+my roommates built a steak pulley out of our second floor apartment and are serving steaks out of it.
 
 we've been advertising it in various ways, which has been a blast.
 
@@ -30,7 +30,7 @@ we've been advertising it in various ways, which has been a blast.
 
 ![the beef supreme: a big angus steak with creamed spinach and a yukon potato, $25](assets/steak-pulley-website.png)
 
-the pulley
+## the pulley in action
 
 ![the steak pulley](assets/steak-pulley-the-pulley.png)
 
@@ -39,14 +39,15 @@ the pulley
 <video src="/blog/assets/steak-pulley-2.mov" controls></video>
 </div>
 
+## universe 
+
+### stickers
+
+
+### projection mapping
+
 i even played around with some projection mapping, inspired by batman's bat-signal.
 
 ![steak signal projection mapping](assets/steak-pulley-projection-1.png)
 
 ![steak signal projection mapping](assets/steak-pulley-projection-2.png)
-
-stickers
-
-![some guy's house sticker design: the logo drawn in an old ms paint window titled "$20 steak meal - someguyshouse.com"](assets/steak-pulley-sticker-design.jpg)
-
-![the printed some guy's house sticker](assets/steak-pulley-sticker.jpg)
