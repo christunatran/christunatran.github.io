@@ -4,7 +4,7 @@
     "title": "there's a steak pulley at my house",
     "date": "2026.10.18",
     "file": "there's a steak pulley at my house.md",
-    "snippet": "my roommates built a steak pulley out of our second floor apartment and are selling steaks out of it.",
+    "snippet": "my roommates built a steak pulley out of our second floor apartment and are serving steaks out of it.",
     "tags": [
       "short"
     ],
@@ -131,6 +131,7 @@
       "rant"
     ],
     "temperature": "shit-talk",
+    "disabled": true,
     "blogOnly": true
   },
   {

@@ -11,9 +11,10 @@
 
   const GAP = 20; // px gap between cards and columns
 
-  // w/h reserve layout space before the image loads (see window.Covers)
+  // w/h reserve layout space before the image loads (see window.Covers).
+  // disabled: true hides an image from the grid without deleting the entry.
   const STATIC_IMAGES = [
-    { src: '/assets/my professional headshot.jpg', date: '2025.02', w: 1333, h: 2000 },
+    { src: '/assets/my professional headshot.jpg', date: '2025.02', w: 1333, h: 2000, disabled: true },
     { src: '/assets/hard mode winner.png', date: '2026.03.08', href: '/work/closer-to-the-fire', w: 1776, h: 980 },
   ];
 
@@ -162,7 +163,7 @@
 
   function buildGrid(works, posts) {
     const items = [
-      ...STATIC_IMAGES.map(i => ({ type: 'image', date: i.date, data: i })),
+      ...STATIC_IMAGES.filter(i => !i.disabled).map(i => ({ type: 'image', date: i.date, data: i })),
       ...works.map(w =>         ({ type: 'work',  date: w.date, data: w })),
       ...posts.filter(p => !p.disabled && !p.blogOnly).map(p => ({ type: 'blog', date: p.date, data: p })),
     ].sort((a, b) => normalizeDate(b.date).localeCompare(normalizeDate(a.date)));

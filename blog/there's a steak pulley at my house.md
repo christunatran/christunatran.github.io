@@ -43,6 +43,9 @@ we've been advertising it in various ways, which has been a blast.
 
 ### stickers
 
+![some guy's house sticker design: the logo drawn in an old ms paint window titled "$20 steak meal - someguyshouse.com"](assets/steak-pulley-sticker-design.jpg)
+
+![the printed some guy's house sticker](assets/steak-pulley-sticker.jpg)
 
 ### projection mapping
 
