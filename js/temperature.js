@@ -58,6 +58,8 @@
       const t = p.trim();
       return t && !t.startsWith('![') && !t.startsWith('<video') && !t.startsWith('<img');
     }) || '')
+      .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1') // [text](url) → text
+      .replace(/<[^>]+>/g, '')       // drop inline html tags
       .replace(/[#*_`>~]/g, '')
       .replace(/\s+/g, ' ')
       .trim();

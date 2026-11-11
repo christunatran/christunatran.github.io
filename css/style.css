@@ -433,6 +433,12 @@ blockquote {
   margin: 0 auto;
 }
 
+/* hover swap to the dithered profile picture (js/components.js) */
+#side-art.side-art--dithered {
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
 /* Home page: leave more headroom for the now-box above by capping the
    image smaller than its default size. */
 #side-panel:has(#now-box) #side-art {
@@ -706,6 +712,149 @@ blockquote {
 
 .work-card:hover .work-cover {
   opacity: 1;
+}
+
+/* "coming soon" works — dithered low-res stand-in cover (see
+   _dev/coming-soon-covers.js), scaled up with hard pixel edges */
+.coming-soon {
+  position: relative;
+}
+.coming-soon .coming-soon-cover {
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+/* "coming soon" warning dialog — notepad window ported from /doomscroll
+   (built in js/components.js → ComingSoon). Colors are fixed black/white
+   like the original rather than themed. */
+.np-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: none;
+  background: rgba(255, 255, 255, 0.35);
+}
+.np-backdrop.open { display: block; }
+
+.np-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 540px; /* wide enough for the message's second line to not wrap */
+  max-width: calc(100vw - 32px);
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #000;
+  background: #fff;
+  box-shadow: 3px 3px 0 #000;
+  font-family: 'Courier New', Courier, monospace;
+  color: #000;
+}
+
+.np-titlebar span,
+.np-menubar,
+.np-statusbar {
+  filter: blur(2px);
+}
+
+.np-titlebar {
+  background: #000;
+  color: #fff;
+  font-size: 11px;
+  padding: 3px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  cursor: move;
+  touch-action: none;
+}
+.np-titlebar span { letter-spacing: 0.05em; }
+
+.np-controls { display: flex; gap: 4px; }
+.np-controls button {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+  width: 14px;
+  height: 14px;
+  font-size: 9px;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.np-menubar {
+  border-bottom: 1px solid #000;
+  font-size: 11px;
+  padding: 2px 4px;
+  display: flex;
+  gap: 12px;
+  cursor: default;
+}
+.np-menubar span { text-decoration: underline; }
+
+.np-body {
+  font: 12px/1.5 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 28px 20px 16px;
+  margin: 0;
+}
+
+/* Windows-dialog style footer: equal-width buttons splitting the row */
+.np-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 4px 24px 20px;
+}
+
+.np-btn {
+  padding: 5px 10px;
+  font: 11px 'Courier New', Courier, monospace;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  user-select: none;
+  background: #fff;
+  color: #000;
+  border: none;
+  outline: 1px solid #000;
+  transition: background 0.08s, color 0.08s;
+}
+.np-btn--primary { background: #000; color: #fff; }
+.np-btn:active { background: #fff; color: #000; outline: 1px solid #000; }
+.np-btn--primary:hover { background: #333; }
+.np-btn:not(.np-btn--primary):hover { background: #eee; }
+.np-btn:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+@keyframes np-flash {
+  0%   { background: #fff; color: #000; outline: 1px solid #000; }
+  100% { background: #000; color: #fff; outline: none; }
+}
+.np-btn.pressed { animation: np-flash 0.3s ease-out forwards; }
+
+.np-statusbar {
+  border-top: 1px solid #000;
+  font-size: 10px;
+  padding: 2px 6px;
+}
+
+.coming-soon-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3px 8px;
+  font-family: 'Silkscreen', 'Courier New', monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  color: var(--text, #000);
+  background: var(--post-bg, #fff);
+  border: 1px dashed var(--border, #999);
+  pointer-events: none;
 }
 
 .work-meta {

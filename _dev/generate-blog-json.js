@@ -99,6 +99,8 @@ function extractSnippet(content) {
     const t = p.trim();
     return t && t !== '&nbsp;' && !/^<\/?(video|img|div|br)\b/.test(t) && !t.startsWith('![');
   }) || '')
+    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1') // [text](url) → text
+    .replace(/<[^>]+>/g, '')       // drop inline html tags
     .replace(/[#*_`>~]/g, '')   // strip markdown syntax
     .replace(/\s+/g, ' ')
     .trim();

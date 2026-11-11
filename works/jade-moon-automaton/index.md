@@ -8,6 +8,32 @@ for "Fabricating Mechanical Automatons" taught by Josh Corn
 
 ![jade moon automaton](assets/jade-moon-automaton.jpg)
 
+<div class="img-grid img-grid--2 media-pair">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DenswMulpcy/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DenswMulpcy/" target="_blank">view on instagram</a></blockquote>
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/Dem-WelFlk3/" data-instgrm-version="14"><a href="https://www.instagram.com/p/Dem-WelFlk3/" target="_blank">view on instagram</a></blockquote>
+</div>
+
+## nyu program board gallery night
+
+shown at NYU Program Board's Gallery Night, a group show of 16 NYU artists — Kimmel 802, November 12, 2026
+
+<div class="img-grid img-grid--2 media-pair">
+<blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfXa8TOiK42/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DfXa8TOiK42/" target="_blank">view on instagram</a></blockquote>
+<img src="/works/jade-moon-automaton/assets/gallery-night-flyer.jpg" alt="NYU Program Board Gallery Night flyer: a group show of 16 NYU artists, Kimmel 802, Thursday 11/12, 6-8pm">
+</div>
+
+## artist statement
+
+> **Christina Tran (tunapee)**  
+> M.P.S. in Interactive Telecommunications (ITP), second year  
+> Title: Moon Automata
+>
+> Poet Hàn Mặc Tử wrote to the moon as if it were a person: one he could follow and yearn for. Written during the leprosy that isolated him at the end of his short life, his poems “Đây thôn Vĩ Dạ” ("Here is Vi Da Hamlet") and “Trăng vàng trăng ngọc” ("Golden Moon, Jade Moon") ache with longing for something that visits but won’t stay. Nearly a century later, gen Z singer Phương Mỹ Chi’s “Buông Trăng” ("Letting Go of the Moon") was inspired by these poems and carried these lines to a new generation.
+>
+> This automaton is my attempt to carry them into wood and gears. Turning a hand crank drives a gear train that raises a moon along an arc over painted mountains, while a small boat drifts beneath it, following from left to right through the mist. The viewer becomes the one carrying the moon, and it sets every time.
+>
+> As a Vietnamese-American artist, I’m interested in how we inherit traditions by remaking them. A poem becomes a song, a song becomes a machine, and each version keeps the moon just out of reach.
+
 ## inspiration
 
 Hàn Mặc Tử's poems

@@ -5,6 +5,7 @@ MESSAGE="${1:-update}"
 
 cd "$(dirname "$0")/.."
 
+node _dev/coming-soon-covers.js
 node _dev/optimize-images.js
 node _dev/generate-blog-json.js
 node _dev/bump-cache.js

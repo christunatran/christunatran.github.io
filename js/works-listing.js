@@ -70,9 +70,7 @@
           </div>
         `;
         window.Covers.activate(card);
-        card.addEventListener('click', () => {
-          window.location.href = `/work/${work.slug}`;
-        });
+        card.addEventListener('click', () => window.openWork(work));
         grid.appendChild(card);
         cards.push(card);
       });

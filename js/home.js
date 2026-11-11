@@ -50,7 +50,7 @@
       <span class="post-date">${work.date}</span>
     `;
     window.Covers.activate(card);
-    card.addEventListener('click', () => { window.location.href = `/work/${work.slug}`; });
+    card.addEventListener('click', () => window.openWork(work));
     return card;
   }
 
