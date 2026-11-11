@@ -2,6 +2,8 @@
 
 For the month of June, I worked as a Camp Counselor at [ITP Camp](https://www.instagram.com/itpcamp/).
 
+![show one things show performance](assets/show-one-things-show-performance.mp4)
+
 I MC'd the Show One Things Show along with William Yao.
 
 I have to flex that after the show, Nolen told me that "it was the best Show One Things Show yet". 
