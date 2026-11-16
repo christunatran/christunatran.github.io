@@ -974,7 +974,8 @@ blockquote {
 
 #work-content a {
   border-bottom: 1px dashed var(--border);
-  word-break: break-all;
+  /* break only words too long for a line (raw URLs), not normal link text */
+  overflow-wrap: anywhere;
 }
 
 #work-content a:hover {
@@ -1131,6 +1132,29 @@ blockquote {
   display: block;
   margin: 10px auto;
   border: 1px dashed var(--border);
+}
+
+/* ============================================================
+   WORK PAGES (body.work-page, /work/<slug>) — wider content column.
+   Everything normally anchored at 48vw moves to 64vw, and the ascii
+   tuna side panel shrinks to fit the narrower space right of the nav.
+   Desktop only; the mobile layout below is unchanged.
+   ============================================================ */
+@media (min-width: 769px) {
+  .work-page #content          { width: calc(64vw - 65px); }
+  .work-page #custom-scrollbar { left: calc(64vw - 5px); }
+  .work-page #fixed-nav        { left: calc(64vw + 15px); }
+
+  .work-page #side-panel {
+    left: calc(64vw + 140px);
+    transform: none;
+    width: calc(36vw - 160px);
+    max-width: none;
+  }
+  .work-page #side-art { max-height: 45vh; }
+
+  /* side-by-side images fill their grid cells instead of 60% of them */
+  .work-page #work-content .img-grid img { max-width: 100%; }
 }
 
 /* ============================================================

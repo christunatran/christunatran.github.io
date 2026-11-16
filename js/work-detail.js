@@ -50,6 +50,7 @@
       initLightbox(contentEl);
       initInstagramEmbeds(contentEl);
       updatePageTitle(contentEl);
+      addHeadingAnchors(contentEl);
     })
     .catch(() => {
       contentEl.innerHTML = '<p>work not found.</p>';
@@ -168,6 +169,23 @@
     script.async  = true;
     script.onload = () => window.instgrm && window.instgrm.Embeds.process();
     document.body.appendChild(script);
+  }
+
+  /**
+   * Gives each h2/h3 a slug id ("the data" → "the-data") so a table of
+   * contents in the markdown can link to sections with [text](#the-data).
+   * Content renders after page load, so jump to any #hash once ids exist.
+   */
+  function addHeadingAnchors(container) {
+    container.querySelectorAll('h2, h3').forEach(h => {
+      if (h.id) return;
+      h.id = h.textContent.trim().toLowerCase()
+        .replace(/[^\w\s-]/g, '').replace(/\s+/g, '-');
+    });
+    if (window.location.hash) {
+      const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+      if (target) target.scrollIntoView();
+    }
   }
 
   function updatePageTitle(container) {
