@@ -9,6 +9,13 @@
 \pagestyle{fancy}
 \fancyhf{}
 
+% Font fixes: job titles in normal case (no small caps, so every letter in a line
+% is the same size) and lining numbers in dates (so 4s and 6s don't drop or rise)
+\renewcommand{\descript}[1]{
+\color{subheadings}\raggedright\fontspec[Path = fonts/raleway/, Numbers=Lining]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+\renewcommand{\location}[1]{
+\color{subheadings}\raggedright\fontspec[Path = fonts/raleway/, Numbers=Lining]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
+
 % tighter spacing between entries so everything fits on one page
 \renewcommand{\sectionsep}{\vspace{4pt}}
 
@@ -53,7 +60,7 @@
 \section{Experience}
 \runsubsection{Building Diagnostic Robotics}
 \descript{| Growth Engineer}
-\location{Sep 2026 – Present | New York, NY}
+\location{Sep 2026 – Present | Brooklyn, NY}
 \vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
 \item Leading channel-partnership strategy for a pre-seed roof-inspection robotics startup
@@ -62,7 +69,7 @@
 \sectionsep
 
 \runsubsection{Freelance}
-\descript{| Product Designer}
+\descript{| Physical Product Designer}
 \location{May 2026 – Present | Brooklyn, NY}
 % \vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
@@ -79,7 +86,7 @@
 \location{Oct 2026 – Present | Brooklyn, NY}
 % \vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
-\item Analyzing ITP website traffic with Google Analytics and Data Studio
+\item Helping ITP understand its website traffic and the effectiveness of its communications using Google Analytics and Data Studio
 \end{tightemize}
 \descript{Graduate Teaching Assistant }
 \location{Sep 2025 – Present | Brooklyn, NY}
@@ -96,7 +103,7 @@
 %\vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
 \item Led weekly creative coding reading group for "The Nature of Code"
-\item Organized AI safety reading group following ARENA curriculum, implementing a GPT-style transformer architecture using PyTorch
+\item Led AI safety reading group; built GPT-style transformer in PyTorch
 % \item Developed creative computing and physical computing projects as part of "100 Silly Projects" personal challenge
 \end{tightemize}
 \sectionsep
@@ -285,14 +292,19 @@ English (fluent) \textbullet{} Vietnamese (fluent) \\ French (intermediate)
 \sectionsep{}
 
 \section{Awards \& Exhibitions}
-\award{\textit{Bétonsalon, Paris}: ``ai;dr''}{Jul 2026}
-\award{\textit{Improbable Seminar, ESCP}}{Jul 2026}
-\award{\textit{NY Transit Museum}: ``in 26 slides''}{May 2026}
-\award{\textit{ITP Spring Show}: ``Breathing Lamp''}{May 2026}
-\award{\textit{MIT Hardmode}: SEEED Studio Prize}{Feb 2026}
-\award{\textit{ITP Winter Show}: ``Pick Me''}{Dec 2025}
-\award{\textit{Tisch Department Scholarship}}{Apr 2025}
-\award{\textit{Deloitte Analytics Challenge}: 1st place}{Mar 2020}
+{\fontsize{9pt}{12pt}\selectfont
+\award{\textit{Bétonsalon, Paris}: ``ai;dr''}{2026}
+\award{\textit{Improbable Education Seminar, ESCP}: Speaker}{2026}
+\award{\textit{Fidget Camp, SF}: Workshop Presenter}{2026}
+\award{\textit{NY Transit Museum}: ``in 26 slides''}{2026}
+\award{\textit{ITP Spring Show}: ``Breathing Lamp''}{2026}
+\award{\textit{MIT Hardmode Hackathon}: SEEED Studio Prize}{2026}
+\award{\textit{ITP Winter Show}: ``Pick Me''}{2025}
+\award{\textit{Tisch Department Scholarship}}{2025}
+\award{\textit{MAOP Research Scholarship, Virginia Tech}}{2022}
+\award{\textit{Deloitte Analytics Challenge}: 1st place}{2020}
+\award{\textit{Raytheon Fellowship Program}}{2019}
+}
 
 
 \sectionsep{}

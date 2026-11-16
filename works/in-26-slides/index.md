@@ -24,7 +24,7 @@ Read Matt's blog post about it [here](https://mattblanco.me/projects/26_slides).
 
 ![](assets/new-cover.jpeg)
 
-![](assets/new-cover-2.jpeg)
+![](assets/dark.jpeg)
 
 <!-- break -->
 
@@ -40,7 +40,7 @@ Read Matt's blog post about it [here](https://mattblanco.me/projects/26_slides).
 
 <!-- break -->
 
-![](assets/dark.jpeg)
+![](assets/new-cover-2.jpeg)
 
 ![](assets/angled.jpeg)
 
@@ -64,13 +64,13 @@ Read Matt's blog post about it [here](https://mattblanco.me/projects/26_slides).
 
 <!-- break -->
 
-![](assets/text.jpeg)
-
 ![](assets/cover.jpeg)
+
+![](assets/2026-05-19_16-15-33_889.jpeg)
 
 <!-- break -->
 
-![](assets/2026-05-19_16-15-33_889.jpeg)
+![](assets/text.jpeg)
 
 
 ## process
