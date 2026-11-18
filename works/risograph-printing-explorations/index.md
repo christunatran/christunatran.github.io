@@ -1,74 +1,16 @@
 # risograph printing explorations
 
-## print 1: knockout
+**print 1: knockout**
 
-### results
+<div class="img-grid img-grid--2 media-pair">
+<img src="/works/risograph-printing-explorations/assets/knockout-scan-2.png" alt="knockout riso print scan">
+<img src="/works/risograph-printing-explorations/assets/knockout-scan-1.png" alt="knockout riso print scan">
+</div>
 
-![knockout riso print](assets/knockout-print-1.png)
 
-<!-- break -->
+**print 2: animation**
+<div class="img-grid img-grid--2 media-pair">
+<video src="/works/risograph-printing-explorations/assets/dark-to-light-animation-loop.mp4" autoplay muted loop playsinline></video>
+<img src="/works/risograph-printing-explorations/assets/foodbox-preview.jpg" alt="foodbox riso print preview">
+</div>
 
-![knockout riso print](assets/knockout-print-2.png)
-
-<!-- break -->
-
-![knockout riso print](assets/knockout-print-3.png)
-
-<!-- break -->
-
-![knockout riso print](assets/knockout-print-4.png)
-
-**preview**
-
-![knockout preview](assets/knockout-preview.png)
-
-**red-only**
-
-![red layer](assets/knockout-tomato.png)
-
-**blue-only**
-
-some blue is kept to intentionally mix with the red and provide shading
-
-![blue layer](assets/knockout-skyblue.png)
-
-### code
-
-- `p5.riso.js`
-- `style.css`
-- `index-v6-light-bg.html`
-- `sketch-v6-light-bg.js`
-
-## process
-
-### questions
-
-- doing this assignment makes me wonder why we're doing this programmatically. is there no existing good software to do this?
-
-### ideas
-
-- some guys house merch
-- plastic stool
-- automaton promo
-- fishing rod diagram
-- foldable den keo quan
-
-![early sketch](assets/knockout-sketch.png)
-
-before the cutout/knockout step:
-
-the brown-looking muddy red parts signify that there needs to be a cutout there so that the colors don't mix during printing
-
-![before the knockout](assets/knockout-before-cutout.png)
-
-after blue knockout
-
-![after blue knockout](assets/knockout-after-blue-knockout.png)
-
-changed `RED` to `TOMATO` since it's closer to my desired color
-
-![changing red to tomato](assets/knockout-tomato-color.png)
-
-created registration marks and a slider to adjust color easily before export
-
-![registration marks and color slider](assets/knockout-registration-marks.png)
