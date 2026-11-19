@@ -2,6 +2,8 @@
 
 for "New Interfaces for Musical Expression" (NIME)
 
+i hacked a fishing rod to turn it into a musical instrument. cranking the reel produces sound and pulling the fishing line manipulates the sound.
+
 <div class="img-grid img-grid--2 media-pair">
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfBhOWvllDW/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DfBhOWvllDW/" target="_blank">view on instagram</a></blockquote>
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/De1MFDXFqGf/" data-instgrm-version="14"><a href="https://www.instagram.com/p/De1MFDXFqGf/" target="_blank">view on instagram</a></blockquote>
@@ -9,7 +11,7 @@ for "New Interfaces for Musical Expression" (NIME)
 
 ## midterm duet with ceren
 
-i performed a demo of it for my midterm with my friend ceren. i wasn't planning to perform this duet, but after our midterm rehearsals, the people asked for a duet of the two animals: the fish and the bird. and so, i had to give the people what they want.
+i performed a prototype of it for my midterm with my friend ceren. i wasn't planning to perform this duet, but after our midterm rehearsals, the people asked for a duet of the two animals: the fish and the bird. and so, i had to give the people what they want.
 
 <div class="img-grid img-grid--2 media-pair">
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfDnHDLqQic/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DfDnHDLqQic/" target="_blank">view on instagram</a></blockquote>

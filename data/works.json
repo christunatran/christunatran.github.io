@@ -31,11 +31,9 @@
     "title": "jade moon automaton",
     "subtitle": "fabricating mechanical automatons",
     "date": "2026.10.20",
-    "cover": "works/jade-moon-automaton/assets/jade-moon-automaton-loop.mp4",
-    "coverW": 692,
-    "coverH": 924,
-    "comingSoon": true,
-    "coverObscured": "works/jade-moon-automaton/assets/coming-soon-cover.gif"
+    "cover": "works/jade-moon-automaton/assets/jade-moon-automaton-cover.gif",
+    "coverW": 400,
+    "coverH": 225
   },
   {
     "slug": "freelance-product-design-work",
