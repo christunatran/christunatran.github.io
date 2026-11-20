@@ -53,5 +53,5 @@
   makeCycler('asia-cycle', ['the world', 'Vietnam', 'South Korea', 'Hong Kong', 'Japan', 'Thailand', 'Taiwan', 'Denmark', 'Sweden', 'Germany', 'Czech Republic', 'France', 'Belgium', 'Netherlands', 'Mexico', 'Honduras']);
   makeCycler('hci-cycle', ['HCI', 'interfaces', 'building a healthier relationship with technology']);
   makeCycler('sports-cycle', ['sports', 'weight-training', 'tennis', 'pickleball', 'spikeball']);
-  makeCycler('gatherings-cycle', ['hosting gatherings', 'dinners', 'parties', 'hackathons', 'powerpoint nights', 'coworking sessions']);
+  makeCycler('gatherings-cycle', ['hosting gatherings', 'hackathons', 'powerpoint nights', 'coworking sessions']);
 })();

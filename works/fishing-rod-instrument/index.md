@@ -2,7 +2,7 @@
 
 for "New Interfaces for Musical Expression" (NIME)
 
-i hacked a fishing rod to turn it into a musical instrument. cranking the reel produces sound and pulling the fishing line manipulates the sound.
+i hacked a fishing rod to turn it into a musical instrument. cranking the reel produces sound and pulling the fishing line manipulates the sound. i'm going to be performing it at the NIME showcase on december 14.
 
 <div class="img-grid img-grid--2 media-pair">
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DfBhOWvllDW/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DfBhOWvllDW/" target="_blank">view on instagram</a></blockquote>
