@@ -6,6 +6,10 @@ A data physicalization sculpture that depicts 26 years of historical ridership d
 
 Read Matt's blog post about it [here](https://mattblanco.me/projects/26_slides).
 
+We're featured on the [American Opera Projects website](https://www.aopopera.org/opera-lab-2026-the-transit-operas)!
+
+![in 26 slides featured on the American Opera Projects website](assets/aop-feature.jpeg)
+
 **contents**
 
 - [process](#process)

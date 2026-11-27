@@ -23,3 +23,6 @@ grid: false
 > — ruth mekonnen, july 2026
 
 ![text message: I really like christina lol i was like i wanna steal her as a friend](assets/tunapee-testimony-5.jpg)
+
+
+> "i had a pretty bad impression of that guy and his lack of craft, but when you started dating him, i thought to myself, 'well, christina is so awesome! so there must be something good about him that i'm not seeing.'"

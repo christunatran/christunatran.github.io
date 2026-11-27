@@ -3,7 +3,7 @@
 I co-organized the 2026 ITP Stupid Hackathon with Anshula Saha! It was a major success, with 150+ attendees and 40+ demos during this 12-hour event.
 
 # Why
-Play, whimsy, and fun are acts of resilience these days. My grand dream is that more people see this, and don't wait for an event like Stupid Hackathon to have fun while building. It is a practice that we can incorporate into our every day. I wish that we can build more than we consume, and this is also a step toward encouraging that.
+Play, whimsy, and fun are acts of resilience these days. My grand dream is that more people see this, and don't wait for an event like Stupid Hackathon to have fun while building. It is a practice that we can incorporate into our every day. I wish that we can build more than we consume, and this is also a step toward encouraging tha
 
 I shared more of these thoughts at the [Improbable Education Seminar at ESCP Paris](https://tunapee.online/blog-post/improbable-seminar-recap).
 
