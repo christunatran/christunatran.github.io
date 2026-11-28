@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en" data-slop-level="3">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>tunapee</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css?v=mvt20xgt">
+  <link rel="stylesheet" href="/dist/slopstrap.css?v=4.2.0">
+  <link rel="stylesheet" href="/css/slop-skin.css?v=mvt20xgt">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="/dist/slopstrap.js?v=4.2.0" defer></script>
+  <script src="/js/components.js?v=mvt20xgt" defer></script>
+  <script src="/js/script.js?v=mvt20xgt" defer></script>
+
+  <style>
+    /* ── tracker header ── */
+    #tracker-header {
+      position: relative;
+      text-align: center;
+      margin-bottom: 16px;
+      padding: 0 70px;
+    }
+    #tracker-header h1 {
+      margin-bottom: 0;
+      font-size: clamp(0.6rem, 3vw, 1.5rem);
+      line-height: 1.3;
+    }
+    #edit-btn, #lock-btn, #sync-status {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    #sync-status { right: 50px; }
+
+    #sync-status {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      letter-spacing: 1px;
+      opacity: 0.4;
+      transition: opacity 0.3s;
+    }
+    #sync-status.syncing { opacity: 1; }
+    #edit-btn, #lock-btn {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 3px 6px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      color: var(--text);
+      opacity: 0.4;
+      transition: opacity 0.2s;
+    }
+    #edit-btn:hover, #lock-btn:hover { opacity: 1; }
+
+    /* ── password modal ── */
+    #pw-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(255,255,255,0.85);
+      z-index: 999999;
+      align-items: center;
+      justify-content: center;
+    }
+    #pw-modal.open { display: flex; }
+
+    #pw-box {
+      border: 1px dashed var(--border);
+      padding: 20px;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 220px;
+    }
+    #pw-box h3 { font-size: 9px; letter-spacing: 1px; margin-bottom: 4px; }
+
+    #pw-form { display: flex; gap: 6px; }
+
+    #pw-input {
+      font-family: 'Kosugi', sans-serif;
+      font-size: 14px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 4px 6px;
+      outline: none;
+      flex: 1;
+      color: var(--text);
+    }
+    #pw-submit {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 4px 8px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      color: var(--text);
+      transition: background 0.2s, color 0.2s;
+    }
+    #pw-submit:hover { background: var(--border); color: var(--bg); }
+    #pw-error { font-size: 9px; opacity: 0.5; display: none; }
+
+    /* ── weeks grid ── */
+    .tracker-week {
+      border: 1px dashed var(--border);
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      overflow-x: auto;
+    }
+    .tracker-grid {
+      display: grid;
+      grid-template-columns: 148px repeat(7, 26px);
+      row-gap: 0;
+      column-gap: 2px;
+      min-width: 342px;
+      flex-shrink: 0;
+    }
+    .tracker-grid.days-1 { grid-template-columns: 148px repeat(1, 26px); }
+    .tracker-grid.days-2 { grid-template-columns: 148px repeat(2, 26px); }
+    .tracker-grid.days-3 { grid-template-columns: 148px repeat(3, 26px); }
+    .tracker-grid.days-4 { grid-template-columns: 148px repeat(4, 26px); }
+    .tracker-grid.days-5 { grid-template-columns: 148px repeat(5, 26px); }
+    .tracker-grid.days-6 { grid-template-columns: 148px repeat(6, 26px); }
+
+    .tracker-week-label {
+      grid-column: 1 / -1;
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-bottom: 1px dashed var(--border);
+      padding-bottom: 5px;
+      margin-bottom: 4px;
+    }
+    .tracker-header-cell {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      text-align: center;
+      opacity: 0.4;
+      line-height: 22px;
+      padding-bottom: 3px;
+    }
+    .tracker-task-label {
+      font-family: 'Kosugi', sans-serif;
+      font-size: 11px;
+      line-height: 24px;
+      white-space: nowrap;
+      padding-right: 8px;
+      opacity: 0.85;
+    }
+    .tracker-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 24px;
+    }
+
+    /* ── checkboxes ── */
+    .tracker-cb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 13px;
+      height: 13px;
+      border: 1px solid #aaa;
+      background: transparent;
+      flex-shrink: 0;
+      transition: background 0.1s, border-color 0.1s;
+    }
+    .tracker-cb:not(:disabled) { cursor: pointer; }
+    .tracker-cb:disabled { cursor: default; opacity: 0.6; }
+    .tracker-cb:not(:disabled):hover:not(:checked) { border-color: #666; background: #f0f0f0; }
+    .tracker-cb:checked { background: #999; border-color: #999; }
+
+    /* ── workout/design/gratitude cells — hover tooltip (nav style) ── */
+    .workout-cell, .design-cell, .gratitude-cell {
+      position: relative;
+    }
+    .workout-cell[data-activity]:not([data-activity=""])::after,
+    .design-cell[data-design]:not([data-design=""])::after,
+    .gratitude-cell[data-gratitude]:not([data-gratitude=""])::after {
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 9px;
+      font-family: 'Silkscreen', monospace;
+      white-space: normal;
+      max-width: 180px;
+      opacity: 0;
+      pointer-events: none;
+      background-color: var(--border);
+      color: var(--bg);
+      padding: 3px 5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      z-index: 100;
+      transition: opacity 0.2s ease;
+    }
+    .workout-cell[data-activity]:not([data-activity=""])::after {
+      content: attr(data-activity);
+    }
+    .design-cell[data-design]:not([data-design=""])::after {
+      content: attr(data-design);
+    }
+    .gratitude-cell[data-gratitude]:not([data-gratitude=""])::after {
+      content: attr(data-gratitude);
+    }
+    .workout-cell[data-activity]:not([data-activity=""]):hover::after,
+    .design-cell[data-design]:not([data-design=""]):hover::after,
+    .gratitude-cell[data-gratitude]:not([data-gratitude=""]):hover::after {
+      opacity: 1;
+    }
+    /* in edit mode, show cursor on picker-controlled cells */
+    .edit-mode .workout-cell, .edit-mode .design-cell, .edit-mode .gratitude-cell { cursor: pointer; }
+
+    /* ── text picker (design / gratitude) ── */
+    #text-picker {
+      position: fixed;
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      border: 1px dashed var(--border);
+      background: var(--bg);
+      padding: 8px;
+      z-index: 999990;
+      min-width: 160px;
+    }
+    #text-picker.open { display: flex; }
+    #text-input {
+      font-family: 'Kosugi', sans-serif;
+      font-size: 11px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 3px 5px;
+      outline: none;
+      color: var(--text);
+    }
+    #text-confirm {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 3px 5px;
+      cursor: pointer;
+      color: var(--text);
+      transition: background 0.15s, color 0.15s;
+    }
+    #text-confirm:hover { background: var(--border); color: var(--bg); }
+    #text-clear {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      opacity: 0.4;
+      padding: 2px 5px;
+      cursor: pointer;
+      text-align: left;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-top: 1px dashed var(--border);
+      padding-top: 6px;
+      margin-top: 2px;
+    }
+    #text-clear:hover { opacity: 1; }
+
+    /* ── activity picker ── */
+    #activity-picker {
+      position: fixed;
+      display: none;
+      flex-direction: column;
+      gap: 2px;
+      border: 1px dashed var(--border);
+      background: var(--bg);
+      padding: 8px;
+      z-index: 999990;
+      min-width: 130px;
+    }
+    #activity-picker.open { display: flex; }
+
+    .activity-opt {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      padding: 4px 6px;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.15s, color 0.15s;
+    }
+    .activity-opt:hover, .activity-opt.selected {
+      background: var(--border);
+      color: var(--bg);
+    }
+    .activity-opt.clear-opt {
+      opacity: 0.4;
+      border-top: 1px dashed var(--border);
+      margin-top: 4px;
+      padding-top: 6px;
+    }
+    .activity-opt.clear-opt:hover { opacity: 1; }
+
+    #custom-input-wrap {
+      display: none;
+      gap: 4px;
+      margin-top: 2px;
+    }
+    #custom-input-wrap.visible { display: flex; }
+    #custom-input {
+      font-family: 'Kosugi', sans-serif;
+      font-size: 11px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 3px 5px;
+      outline: none;
+      color: var(--text);
+      flex: 1;
+      min-width: 0;
+    }
+    #custom-confirm {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      border: 1px dashed var(--border);
+      background: transparent;
+      padding: 3px 5px;
+      cursor: pointer;
+      color: var(--text);
+      transition: background 0.15s, color 0.15s;
+    }
+    #custom-confirm:hover { background: var(--border); color: var(--bg); }
+
+    /* ── week body (grid + inline notes) ── */
+    .week-body {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+    }
+    .week-notes {
+      display: none; /* temporarily hidden */
+      flex: 1;
+      min-width: 0;
+      padding-top: 4px;
+    }
+    .week-notes-label {
+      font-family: 'Silkscreen', monospace;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.45;
+      margin-bottom: 6px;
+    }
+    .week-notes-body::-webkit-scrollbar {
+      display: block;
+      width: 3px;
+    }
+    .week-notes-body::-webkit-scrollbar-thumb {
+      background-color: rgba(0,0,0,0.4);
+    }
+    .week-notes-body {
+      height: 180px;
+      overflow-y: scroll;
+      padding-right: 10px;
+      font-family: 'Kosugi', sans-serif;
+      font-size: 11px;
+      line-height: 1.7;
+      color: var(--text);
+    }
+    .week-notes-body ul { padding-left: 14px; }
+    .week-notes-body p  { margin-bottom: 4px; }
+    .week-notes-body a  { color: var(--link); }
+
+    /* hide notes when window is too narrow for them to be useful */
+    @media (max-width: 720px) { .week-notes { display: none; } }
+
+    /* ── progress ── */
+    #progress-line {
+      font-family: 'Silkscreen', monospace;
+      font-size: 12px;
+      opacity: 0.4;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body class="slop-body slop-grid-bg">
+
+  <div id="line"></div>
+  <div id="line2"></div>
+  <div id="line3"></div>
+  <div id="line4"></div>
+
+  <div id="content">
+    <div class="about-block">
+      <div id="tracker-header">
+        <h1>tunapee's 75 hard challenge</h1>
+        <button id="edit-btn">edit</button>
+        <span id="sync-status" style="display:none"></span>
+        <button id="lock-btn" style="display:none">lock</button>
+      </div>
+      <h3 style="text-align:center; margin-bottom:14px;"><a href="/blog-post/75-hard">why am i doing this?</a></h3>
+      <p id="progress-line"></p>
+      <div id="weeks-container"></div>
+    </div>
+  </div>
+
+  <!-- password modal -->
+  <div id="pw-modal">
+    <div id="pw-box">
+      <h3>enter password to edit</h3>
+      <div id="pw-form">
+        <input type="password" id="pw-input" autocomplete="off">
+        <button id="pw-submit">enter</button>
+      </div>
+      <p id="pw-error">wrong password</p>
+    </div>
+  </div>
+
+  <!-- activity picker (shared, repositioned per cell) -->
+  <div id="activity-picker">
+    <button class="activity-opt" data-value="weight-training">weight-training</button>
+    <button class="activity-opt" data-value="run">run</button>
+    <button class="activity-opt" data-value="dance">dance</button>
+    <button class="activity-opt" data-value="rest day">rest day</button>
+    <button class="activity-opt" data-value="__custom__">custom</button>
+    <div id="custom-input-wrap">
+      <input type="text" id="custom-input" placeholder="type activity...">
+      <button id="custom-confirm">ok</button>
+    </div>
+    <button class="activity-opt clear-opt" data-value="">clear</button>
+  </div>
+
+  <!-- text picker (design/build + gratitude) -->
+  <div id="text-picker">
+    <input type="text" id="text-input" placeholder="type here...">
+    <button id="text-confirm">ok</button>
+    <button id="text-clear">clear</button>
+  </div>
+
+  <div id="side-panel"></div>
+  <nav id="fixed-nav" aria-label="site navigation"></nav>
+
+  <script>
+    const PASSWORD       = 'chillyandlangley';
+    const JSONBIN_KEY    = '$2a$10$Hrxpcjy9db3YHvO.KvffEO.TcH5./Di29Anj6G4VB.tM3HYXjRZoq';   // filled by _dev/setup-jsonbin.js
+    const JSONBIN_BIN    = '69c2a3f6aa77b81da91557db';   // filled by _dev/setup-jsonbin.js
+    const STORAGE_KEY    = '75hard-checks';
+    const ACTIVITIES_KEY = '75hard-activities';
+    const DESIGN_KEY     = '75hard-design';
+    const GRATITUDE_KEY  = '75hard-gratitude';
+    const UNLOCK_KEY     = '75hard-unlocked';
+    const WORKOUT_IDX    = 0; // index of '45-min workout' in TASKS
+    const DESIGN_IDX     = 2; // index of '1 hr on design/build' in TASKS
+    const GRATITUDE_IDX  = 7; // index of 'gratitude journal' in TASKS
+
+    const TASKS = [
+      '45-min workout',
+      'start work by 10am',
+      '1 hr on design/build',
+      '10 pages of a book',
+      '2 glasses of water',
+      'take creatine',
+      'no phone in bedroom',
+      'gratitude journal',
+      'log progress',
+    ];
+
+    const START_DAY     = 0;
+    const END_DAY       = 74;
+    const TOTAL_DAYS    = END_DAY - START_DAY + 1;
+    const DAYS_PER_WEEK = 7;
+
+    // State — populated by initState() before buildTracker() runs.
+    // Fetched from /data/75hard-progress.json so all visitors see live progress.
+    // In edit mode, localStorage overrides the fetched state (editor's live edits).
+    let checks = {}, activities = {}, designs = {}, gratitudes = {};
+
+    function saveChecks()     { localStorage.setItem(STORAGE_KEY,    JSON.stringify(checks));     scheduleSync(); }
+    function saveActivities() { localStorage.setItem(ACTIVITIES_KEY, JSON.stringify(activities)); scheduleSync(); }
+    function saveDesigns()    { localStorage.setItem(DESIGN_KEY,     JSON.stringify(designs));    scheduleSync(); }
+    function saveGratitudes() { localStorage.setItem(GRATITUDE_KEY,  JSON.stringify(gratitudes)); scheduleSync(); }
+
+    // ── cloud sync (JSONbin) ─────────────────────────────────
+    let syncTimer = null;
+
+    function setSyncStatus(msg) {
+      const el = document.getElementById('sync-status');
+      if (!el) return;
+      el.textContent = msg;
+      el.classList.toggle('syncing', msg === 'syncing...');
+    }
+
+    function scheduleSync() {
+      if (!isUnlocked() || !JSONBIN_KEY || !JSONBIN_BIN) return;
+      clearTimeout(syncTimer);
+      setSyncStatus('syncing...');
+      syncTimer = setTimeout(syncToCloud, 2000);
+    }
+
+    async function syncToCloud() {
+      try {
+        const r = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_KEY },
+          body: JSON.stringify({ checks, activities, designs, gratitudes }),
+        });
+        setSyncStatus(r.ok ? 'synced ✓' : 'sync failed');
+        if (r.ok) setTimeout(() => setSyncStatus(''), 3000);
+      } catch (e) {
+        setSyncStatus('sync failed');
+      }
+    }
+
+    async function initState() {
+      // Load from localStorage immediately (fast, no network)
+      const lc = localStorage.getItem(STORAGE_KEY);
+      const la = localStorage.getItem(ACTIVITIES_KEY);
+      const ld = localStorage.getItem(DESIGN_KEY);
+      const lg = localStorage.getItem(GRATITUDE_KEY);
+      if (lc) checks     = JSON.parse(lc);
+      if (la) activities = JSON.parse(la);
+      if (ld) designs    = JSON.parse(ld);
+      if (lg) gratitudes = JSON.parse(lg);
+
+      // Fetch live progress from JSONbin in the background
+      if (JSONBIN_BIN && !isUnlocked()) {
+        fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN}/latest`,
+          JSONBIN_KEY ? { headers: { 'X-Master-Key': JSONBIN_KEY } } : {}
+        ).then(r => r.ok ? r.json() : null).then(d => {
+          if (!d) return;
+          checks     = d.record.checks     || {};
+          activities = d.record.activities || {};
+          designs    = d.record.designs    || {};
+          gratitudes = d.record.gratitudes || {};
+          // Cache for next visit
+          localStorage.setItem(STORAGE_KEY,    JSON.stringify(checks));
+          localStorage.setItem(ACTIVITIES_KEY, JSON.stringify(activities));
+          localStorage.setItem(DESIGN_KEY,     JSON.stringify(designs));
+          localStorage.setItem(GRATITUDE_KEY,  JSON.stringify(gratitudes));
+          buildTracker();
+          loadNotes();
+        }).catch(() => {});
+      } else if (!JSONBIN_BIN) {
+        // Fallback: local JSON file
+        try {
+          const r = await fetch('/data/75hard-progress.json');
+          if (r.ok) {
+            const d = await r.json();
+            checks     = d.checks     || {};
+            activities = d.activities || {};
+            designs    = d.designs    || {};
+            gratitudes = d.gratitudes || {};
+          }
+        } catch (e) {}
+      }
+    }
+
+    function getCheck(day, tIdx)     { return !!(checks[day] && checks[day][tIdx]); }
+    function getActivity(day)        { return activities[day] || ''; }
+    function getDesign(day)          { return designs[day] || ''; }
+    function getGratitude(day)       { return gratitudes[day] || ''; }
+
+    function setCheck(day, tIdx, val) {
+      if (!checks[day]) checks[day] = {};
+      checks[day][tIdx] = val;
+      saveChecks();
+      updateProgress();
+    }
+
+    function commitActivity(day, activity) {
+      activities[day] = activity;
+      saveActivities();
+      const cell = document.querySelector(`.workout-cell[data-day="${day}"]`);
+      if (cell) {
+        if (activity) cell.dataset.activity = activity;
+        else delete cell.dataset.activity;
+      }
+    }
+
+    function commitDesign(day, activity) {
+      designs[day] = activity;
+      saveDesigns();
+      const cell = document.querySelector(`.design-cell[data-day="${day}"]`);
+      if (cell) {
+        if (activity) cell.dataset.design = activity;
+        else delete cell.dataset.design;
+      }
+    }
+
+    function commitGratitude(day, text) {
+      gratitudes[day] = text;
+      saveGratitudes();
+      const cell = document.querySelector(`.gratitude-cell[data-day="${day}"]`);
+      if (cell) {
+        if (text) cell.dataset.gratitude = text;
+        else delete cell.dataset.gratitude;
+      }
+    }
+
+    function isUnlocked() { return localStorage.getItem(UNLOCK_KEY) === '1'; }
+
+    function setEditMode(on) {
+      document.querySelectorAll('.tracker-cb').forEach(cb => { cb.disabled = !on; });
+      document.getElementById('edit-btn').style.display   = on ? 'none' : '';
+      document.getElementById('sync-status').style.display = on && JSONBIN_BIN ? '' : 'none';
+      document.getElementById('lock-btn').style.display   = on ? '' : 'none';
+      document.getElementById('weeks-container').classList.toggle('edit-mode', on);
+      if (on) setSyncStatus('');
+    }
+
+    function updateProgress() {
+      let done = 0;
+      for (let d = START_DAY; d <= END_DAY; d++) {
+        for (let t = 0; t < TASKS.length; t++) {
+          if (getCheck(d, t)) done++;
+        }
+      }
+      const total = TOTAL_DAYS * TASKS.length;
+      const pct   = Math.round((done / total) * 100);
+      document.getElementById('progress-line').textContent = `${done} / ${total} (${pct}%)`;
+    }
+
+    // ── text picker (design / gratitude) ─────────────────────
+    let textPickerDay  = null;
+    let textPickerType = null;
+
+    function openTextPicker(day, anchorEl, type) {
+      if (!isUnlocked()) return;
+      textPickerDay  = day;
+      textPickerType = type;
+      const picker = document.getElementById('text-picker');
+      const input  = document.getElementById('text-input');
+      const current = type === 'gratitude' ? getGratitude(day) : getDesign(day);
+      input.value = current;
+      const rect = anchorEl.getBoundingClientRect();
+      const ph   = 90;
+      const top  = rect.top - ph - 8 > 0 ? rect.top - ph - 8 : rect.bottom + 6;
+      const left = Math.min(rect.left, window.innerWidth - 200);
+      picker.style.top  = top + 'px';
+      picker.style.left = left + 'px';
+      picker.classList.add('open');
+      setTimeout(() => input.focus(), 30);
+    }
+
+    function closeTextPicker() {
+      document.getElementById('text-picker').classList.remove('open');
+      textPickerDay  = null;
+      textPickerType = null;
+    }
+
+    // ── activity picker ──────────────────────────────────────
+    let pickerDay  = null;
+    let pickerType = null; // 'workout'
+
+    function openPicker(day, anchorEl, type) {
+      if (!isUnlocked()) return;
+      pickerDay  = day;
+      pickerType = type;
+      const picker    = document.getElementById('activity-picker');
+      const current   = type === 'design' ? getDesign(day) : getActivity(day);
+      const customWrap = document.getElementById('custom-input-wrap');
+      const customInput = document.getElementById('custom-input');
+
+      // mark selected option
+      const presets = ['weight-training', 'run', 'dance', 'rest day'];
+      picker.querySelectorAll('.activity-opt').forEach(btn => {
+        const val = btn.dataset.value;
+        const isCustomPreset = val === '__custom__';
+        const isCurrentCustom = current && !presets.includes(current);
+        btn.classList.toggle('selected',
+          val === current || (isCustomPreset && isCurrentCustom)
+        );
+      });
+
+      // show custom input if current activity is a custom one
+      const isCustom = current && !presets.includes(current);
+      customWrap.classList.toggle('visible', isCustom);
+      if (isCustom) customInput.value = current;
+      else customInput.value = '';
+
+      // position picker above (or below if not enough room) the cell
+      const rect  = anchorEl.getBoundingClientRect();
+      const ph    = 220; // approx picker height
+      const top   = rect.top - ph - 8 > 0 ? rect.top - ph - 8 : rect.bottom + 6;
+      const left  = Math.min(rect.left, window.innerWidth - 160);
+      picker.style.top  = top + 'px';
+      picker.style.left = left + 'px';
+      picker.classList.add('open');
+    }
+
+    function closePicker() {
+      document.getElementById('activity-picker').classList.remove('open');
+      pickerDay  = null;
+      pickerType = null;
+    }
+
+    function loadNotes() {
+      document.querySelectorAll('.week-notes').forEach(async div => {
+        const week = div.dataset.week;
+        const body = div.querySelector('.week-notes-body');
+        try {
+          const r = await fetch(`/75/notes/week-${week}.md`, { cache: 'no-store' });
+          if (r.ok) {
+            const md = await r.text();
+            body.innerHTML = marked.parse(md);
+          }
+        } catch(e) {}
+      });
+    }
+
+    function buildTracker() {
+      const container = document.getElementById('weeks-container');
+      container.innerHTML = '';
+
+      const allDays = [];
+      for (let d = START_DAY; d <= END_DAY; d++) allDays.push(d);
+
+      for (let i = 0; i < allDays.length; i += DAYS_PER_WEEK) {
+        const chunk   = allDays.slice(i, i + DAYS_PER_WEEK);
+        const weekNum = Math.floor(i / DAYS_PER_WEEK);
+        const numDays = chunk.length;
+
+        const weekEl = document.createElement('div');
+        weekEl.className = 'tracker-week';
+
+        const gridEl = document.createElement('div');
+        gridEl.className = 'tracker-grid' + (numDays < 7 ? ' days-' + numDays : '');
+
+        // week label
+        const label = document.createElement('div');
+        label.className = 'tracker-week-label';
+        label.textContent = 'week ' + (weekNum + 1);
+        gridEl.appendChild(label);
+
+        // header row
+        const emptyHeader = document.createElement('div');
+        emptyHeader.className = 'tracker-header-cell';
+        gridEl.appendChild(emptyHeader);
+        chunk.forEach(d => {
+          const cell = document.createElement('div');
+          cell.className = 'tracker-header-cell';
+          cell.textContent = d + 1;
+          gridEl.appendChild(cell);
+        });
+
+        // task rows
+        TASKS.forEach((task, tIdx) => {
+          const taskLabel = document.createElement('div');
+          taskLabel.className = 'tracker-task-label';
+          taskLabel.textContent = task;
+          gridEl.appendChild(taskLabel);
+
+          chunk.forEach(d => {
+            const cell = document.createElement('div');
+            const cb   = document.createElement('input');
+            cb.type      = 'checkbox';
+            cb.checked   = getCheck(d, tIdx);
+            cb.disabled  = true;
+
+            if (tIdx === WORKOUT_IDX) {
+              cell.className = 'tracker-cell workout-cell';
+              cell.dataset.day = d;
+              const act = getActivity(d);
+              if (act) cell.dataset.activity = act;
+              cb.className = 'tracker-cb workout-cb';
+              cb.dataset.day = d;
+              cb.addEventListener('change', () => setCheck(d, tIdx, cb.checked));
+              cb.addEventListener('click', e => e.stopPropagation());
+              cell.addEventListener('click', () => openPicker(d, cell, 'workout'));
+            } else if (tIdx === DESIGN_IDX) {
+              cell.className = 'tracker-cell design-cell';
+              cell.dataset.day = d;
+              const des = getDesign(d);
+              if (des) cell.dataset.design = des;
+              cb.className = 'tracker-cb design-cb';
+              cb.dataset.day = d;
+              cb.addEventListener('change', () => setCheck(d, tIdx, cb.checked));
+              cb.addEventListener('click', e => e.stopPropagation());
+              cell.addEventListener('click', () => openTextPicker(d, cell, 'design'));
+            } else if (tIdx === GRATITUDE_IDX) {
+              cell.className = 'tracker-cell gratitude-cell';
+              cell.dataset.day = d;
+              const grat = getGratitude(d);
+              if (grat) cell.dataset.gratitude = grat;
+              cb.className = 'tracker-cb gratitude-cb';
+              cb.dataset.day = d;
+              cb.addEventListener('change', () => setCheck(d, tIdx, cb.checked));
+              cb.addEventListener('click', e => e.stopPropagation());
+              cell.addEventListener('click', () => openTextPicker(d, cell, 'gratitude'));
+            } else {
+              cell.className = 'tracker-cell';
+              cb.className   = 'tracker-cb';
+              cb.addEventListener('change', () => setCheck(d, tIdx, cb.checked));
+            }
+
+            cell.appendChild(cb);
+            gridEl.appendChild(cell);
+          });
+        });
+
+        const body = document.createElement('div');
+        body.className = 'week-body';
+        body.appendChild(gridEl);
+
+        const notesDiv = document.createElement('div');
+        notesDiv.className = 'week-notes';
+        notesDiv.dataset.week = weekNum + 1;
+        notesDiv.innerHTML = '<div class="week-notes-label">notes</div><div class="week-notes-body"></div>';
+        body.appendChild(notesDiv);
+
+        weekEl.appendChild(body);
+        container.appendChild(weekEl);
+      }
+
+      updateProgress();
+      if (isUnlocked()) setEditMode(true);
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      await initState();
+      buildTracker();
+
+      // ── password modal ──
+      const modal   = document.getElementById('pw-modal');
+      const input   = document.getElementById('pw-input');
+      const submit  = document.getElementById('pw-submit');
+      const error   = document.getElementById('pw-error');
+      const editBtn = document.getElementById('edit-btn');
+      const lockBtn = document.getElementById('lock-btn');
+
+      editBtn.addEventListener('click', () => {
+        modal.classList.add('open');
+        input.value = '';
+        error.style.display = 'none';
+        setTimeout(() => input.focus(), 50);
+      });
+
+      modal.addEventListener('click', e => {
+        if (e.target === modal) modal.classList.remove('open');
+      });
+
+      function tryUnlock() {
+        if (input.value === PASSWORD) {
+          localStorage.setItem(UNLOCK_KEY, '1');
+          modal.classList.remove('open');
+          setEditMode(true);
+        } else {
+          error.style.display = 'block';
+          input.value = '';
+          input.focus();
+        }
+      }
+
+      submit.addEventListener('click', tryUnlock);
+      input.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
+
+      lockBtn.addEventListener('click', () => {
+        localStorage.removeItem(UNLOCK_KEY);
+        setEditMode(false);
+        closePicker();
+        closeTextPicker();
+      });
+
+
+      // ── activity picker (workout only) ──
+      const picker      = document.getElementById('activity-picker');
+      const customWrap  = document.getElementById('custom-input-wrap');
+      const customInput = document.getElementById('custom-input');
+      const customOk    = document.getElementById('custom-confirm');
+
+      picker.querySelectorAll('.activity-opt').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (pickerDay === null) return;
+          const val = btn.dataset.value;
+          if (val === '__custom__') {
+            customWrap.classList.add('visible');
+            customInput.focus();
+          } else {
+            commitActivity(pickerDay, val);
+            closePicker();
+          }
+        });
+      });
+
+      customOk.addEventListener('click', () => {
+        const val = customInput.value.trim();
+        if (val && pickerDay !== null) {
+          commitActivity(pickerDay, val);
+          closePicker();
+        }
+      });
+
+      customInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter') customOk.click();
+        if (e.key === 'Escape') closePicker();
+      });
+
+      // ── text picker (design / gratitude) ──
+      const textPicker   = document.getElementById('text-picker');
+      const textInput    = document.getElementById('text-input');
+      const textConfirm  = document.getElementById('text-confirm');
+      const textClearBtn = document.getElementById('text-clear');
+
+      function commitTextPicker(val) {
+        if (textPickerDay === null) return;
+        if (textPickerType === 'gratitude') commitGratitude(textPickerDay, val);
+        else commitDesign(textPickerDay, val);
+        closeTextPicker();
+      }
+
+      textConfirm.addEventListener('click', () => {
+        commitTextPicker(textInput.value.trim());
+      });
+
+      textClearBtn.addEventListener('click', () => {
+        commitTextPicker('');
+      });
+
+      textInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter') commitTextPicker(textInput.value.trim());
+        if (e.key === 'Escape') closeTextPicker();
+      });
+
+      // ── inline notes per week ──
+      loadNotes();
+
+      // close pickers on outside click
+      document.addEventListener('pointerdown', e => {
+        if (!picker.contains(e.target) && !e.target.closest('.workout-cell')) {
+          closePicker();
+        }
+        if (!textPicker.contains(e.target) &&
+            !e.target.closest('.design-cell') &&
+            !e.target.closest('.gratitude-cell')) {
+          closeTextPicker();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

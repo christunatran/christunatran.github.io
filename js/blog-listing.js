@@ -62,7 +62,7 @@
 
     if (!locked) {
       card.addEventListener('click', () => {
-        window.location.href = `/blog-post/${post.slug}`;
+        window.location.href = (window.withSiteBase || (h => h))(`/blog-post/${post.slug}`);
       });
     }
 

@@ -13,10 +13,10 @@
     // showing the requested clean URL) and lets its own script read the
     // slug from location.pathname.
     (function () {
-      var match = window.location.pathname.match(/^\/(blog-post|work)\/([^/]+)\/?$/);
+      var match = window.location.pathname.match(/^\/(fake\/)?(blog-post|work)\/([^/]+)\/?$/);
 
       if (match) {
-        fetch('/' + match[1] + '/index.html')
+        fetch('/' + (match[1] || '') + match[2] + '/index.html')
           .then(function (r) { return r.text(); })
           .then(function (html) {
             document.open();

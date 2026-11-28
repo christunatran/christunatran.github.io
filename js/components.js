@@ -14,6 +14,35 @@
 (function () {
   'use strict';
 
+  // The Slopstrap parody copy of the site lives under /fake/ and reuses
+  // all the same js/data. SITE_BASE is "/fake" there and "" everywhere
+  // else, and internal links get the prefix so visitors stay in the
+  // parody until they click out on purpose.
+  const SITE_BASE = /^\/fake(\/|$)/.test(window.location.pathname) ? '/fake' : '';
+  window.SITE_BASE = SITE_BASE;
+
+  const SITE_ROUTE = /^\/(?:(?:about|works|blog|now|75)\/?|(?:work|blog-post)\/[^/?#]+\/?)?(?:[?#].*)?$/;
+  function withBase(href) {
+    if (!SITE_BASE || !href || !SITE_ROUTE.test(href)) return href;
+    return SITE_BASE + href;
+  }
+  window.withSiteBase = withBase;
+
+  // Rewrite a link just before it's followed (pointer or keyboard), so
+  // links injected later by markdown or listings are covered too, and
+  // cmd/middle-click "open in new tab" gets the right URL.
+  if (SITE_BASE) {
+    const rewrite = e => {
+      const a = e.target.closest && e.target.closest('a[href^="/"]');
+      if (!a) return;
+      const href = a.getAttribute('href');
+      const next = withBase(href);
+      if (next !== href) a.setAttribute('href', next);
+    };
+    document.addEventListener('pointerdown', rewrite, true);
+    document.addEventListener('focusin', rewrite, true);
+  }
+
   const NAV_LINKS = [
     { href: '/',      label: 'home'  },
     { href: '/about', label: 'about' },
@@ -36,7 +65,7 @@
     if (!nav) return;
     nav.innerHTML = NAV_LINKS
       .map(({ href, label }) =>
-        `<a href="${href}" class="nav-link" data-label="${label}">${label}</a>`
+        `<a href="${withBase(href)}" class="nav-link" data-label="${label}">${label}</a>`
       )
       .join('');
   }
@@ -216,7 +245,7 @@
 
   // Navigate to a work, routing comingSoon works through the warning dialog.
   window.openWork = function (work) {
-    const href = `/work/${work.slug}`;
+    const href = withBase(`/work/${work.slug}`);
     if (work.comingSoon) ComingSoon.open(href);
     else window.location.href = href;
   };

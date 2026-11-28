@@ -19,6 +19,15 @@ const TARGET_FILES = [
   'work/index.html',
   'now/index.html',
   '75/index.html',
+  // Slopstrap parody copy at /fake/
+  'fake/index.html',
+  'fake/about/index.html',
+  'fake/blog/index.html',
+  'fake/blog-post/index.html',
+  'fake/works/index.html',
+  'fake/work/index.html',
+  'fake/now/index.html',
+  'fake/75/index.html',
 ];
 
 const CSS_RE = /(href="\/css\/style\.css)(?:\?v=[^"]*)?(")/g;

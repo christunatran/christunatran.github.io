@@ -18,10 +18,10 @@
 
   if (slug) {
     // legacy ?slug= link — switch the address bar to the clean URL
-    history.replaceState(null, '', '/work/' + encodeURIComponent(slug));
+    history.replaceState(null, '', (window.withSiteBase || (h => h))('/work/' + encodeURIComponent(slug)));
   } else {
     const parts = window.location.pathname.split('/').filter(Boolean);
-    slug = parts.length > 1 ? decodeURIComponent(parts[1]) : null;
+    slug = parts.length > 1 ? decodeURIComponent(parts[parts.length - 1]) : null; // last segment, so /fake/work/<slug> works too
   }
 
   if (!slug) {
