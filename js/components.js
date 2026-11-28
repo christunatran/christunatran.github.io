@@ -80,7 +80,30 @@
     });
   }
 
+  // Slopstrap shell: ambient blurred orbs behind everything, plus a
+  // blinking status pill connected to absolutely nothing. Only on pages
+  // that opted in with <body class="slop-body">; the home page writes
+  // its own orb layer and navbar, so skip anything already present.
+  function injectSlopShell() {
+    if (!document.body.classList.contains('slop-body')) return;
+    if (!document.querySelector('.slop-orb-layer')) {
+      const orbs = document.createElement('div');
+      orbs.className = 'slop-orb-layer';
+      orbs.setAttribute('aria-hidden', 'true');
+      orbs.innerHTML = ['purple', 'cyan', 'pink', 'emerald']
+        .map(c => `<div class="slop-orb slop-orb-${c}"></div>`).join('');
+      document.body.prepend(orbs);
+    }
+    if (!document.querySelector('.slop-navbar, .slop-site-status')) {
+      const status = document.createElement('span');
+      status.className = 'slop-status slop-site-status';
+      status.innerHTML = '<span class="slop-dot slop-dot-green"></span> All Cats Operational';
+      document.body.appendChild(status);
+    }
+  }
+
   injectFavicon();
+  injectSlopShell();
   injectNav();
   injectSidePanel();
   initSideArtHover();
