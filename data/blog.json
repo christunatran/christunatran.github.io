@@ -277,7 +277,8 @@
     "tags": [
       "haha"
     ],
-    "temperature": "shit-talk"
+    "temperature": "shit-talk",
+    "disabled": true
   },
   {
     "slug": "13-hours",
@@ -289,7 +290,8 @@
       "itp",
       "life"
     ],
-    "temperature": "personal"
+    "temperature": "personal",
+    "disabled": true
   },
   {
     "slug": "schadenfreude",
@@ -381,7 +383,8 @@
     "tags": [
       "quotes"
     ],
-    "temperature": "personal"
+    "temperature": "personal",
+    "disabled": true
   },
   {
     "slug": "anger-issues",
@@ -502,7 +505,8 @@
     "tags": [
       "medium"
     ],
-    "temperature": "employable"
+    "temperature": "employable",
+    "disabled": true
   },
   {
     "slug": "where-the-hell-did-the-time-go",
@@ -513,7 +517,8 @@
     "tags": [
       "medium"
     ],
-    "temperature": "employable"
+    "temperature": "employable",
+    "disabled": true
   },
   {
     "slug": "on-naps",
@@ -597,7 +602,8 @@
     "tags": [
       "short"
     ],
-    "temperature": "personal"
+    "temperature": "personal",
+    "disabled": true
   },
   {
     "slug": "thinking-about-where-to-go-with-this-blog",
