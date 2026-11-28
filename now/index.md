@@ -17,7 +17,7 @@
 - Turning our apartment into a home!
 - Living with 3 cats: Langley, Meowzer, and Mitty
 - Lifting weights, running, playing pickleball
-- Documenting what's going on [@100tunapee](https://instagram.com/100tunapee)
+- Documenting what's going on [@tunapee.ee](https://instagram.com/tunapee.ee)
 
 ### consuming
 - 📚 "Vietnamese Legends & Folk Tales"

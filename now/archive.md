@@ -11,7 +11,7 @@
 - Moving in with my 4 good friends!!!
 - Thinking about how to make my computer a safe space for meaning and focus...
 - Working at the ITP Shop
-- Documenting what's going on [@100tunapee](https://instagram.com/100tunapee)
+- Documenting what's going on [@tunapee.ee](https://instagram.com/tunapee.ee)
 
 ### consuming
 - 📰 "[North Americans Have Depressing Relationships](https://the6thspence.substack.com/p/north-americans-have-depressing-relationships?s=r&curius=5294)"
@@ -36,7 +36,7 @@
 - built a [lamp that breathes](https://www.instagram.com/p/DXiHJamDH-4/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==)
 - i'm on summer break! i'm writing my summer bucket list and summer syllabus
 - developing my CPG startup idea (i'm open to a co-founder!)
-- documenting my work via this blog and videos on my instagram [@100tunapee](https://instagram.com/100tunapee)
+- documenting my work via this blog and videos on my instagram [@tunapee.ee](https://instagram.com/tunapee.ee)
 
 ### consuming
 - 📚 "Memorial Park: Revisiting Vietnam" by Minh Nguyen
@@ -86,7 +86,7 @@
 - doing research for the [Equitable Syllabus Project](https://itp.nyu.edu/esp)
 - building a [lamp that breathes](https://www.instagram.com/p/DXiHJamDH-4/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==)
 - making [web art](/doomscroll) inspired by [nancy holt's locators](https://holtsmithsonfoundation.org/dual-locators)
-- documenting my work via this blog and videos on my instagram [@100tunapee](https://instagram.com/100tunapee)
+- documenting my work via this blog and videos on my instagram [@tunapee.ee](https://instagram.com/tunapee.ee)
 
 ### consuming
 - 📚 "Memorial Park: Revisiting Vietnam" by Minh Nguyen
@@ -129,7 +129,7 @@
 - doing research for the [Equitable Syllabus Project](https://itp.nyu.edu/esp)
 - building a lamp that breathes
 - making [web art](/doomscroll) inspired by [nancy holt's locators](https://holtsmithsonfoundation.org/dual-locators)
-- documenting my work via this blog and videos on my instagram [@100tunapee](https://instagram.com/100tunapee)
+- documenting my work via this blog and videos on my instagram [@tunapee.ee](https://instagram.com/tunapee.ee)
 
 ### consuming
 
